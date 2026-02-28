@@ -539,13 +539,10 @@ document.querySelectorAll('.sf').forEach(function(el){obsSF(el);});
 setupBarObs();
 
 // Auto-start (no envelope)
-window.addEventListener('load',function(){initPetals();setTimeout(triggerWrite,500);setTimeout(function(){var fmp=document.getElementById('fmp');if(fmp)fmp.classList.add('show');},1200);});
-// Autoplay on first user interaction (browsers block autoplay without gesture)
+window.addEventListener('load',function(){initPetals();setTimeout(triggerWrite,500);setTimeout(function(){var fmp=document.getElementById('fmp');if(fmp)fmp.classList.add('show');// Try muted autoplay first (allowed by browsers), then unmute
+if(W.songAudio){audio=new Audio(W.songAudio);audio.onended=stopSong;audio.ontimeupdate=updateFmpUI;audio.currentTime=18;audio.muted=true;audio.play().then(function(){audio.muted=false;playing=true;setSongUI(true);}).catch(function(){// fallback: play on first interaction
+var unlock=function(){if(songStarted)return;songStarted=true;document.removeEventListener('click',unlock);document.removeEventListener('touchstart',unlock);audio.muted=false;audio.play().then(function(){playing=true;setSongUI(true);}).catch(function(){});};document.addEventListener('click',unlock);document.addEventListener('touchstart',unlock);});}},1200);});
 var songStarted=false;
-function tryAutoplay(){if(songStarted)return;songStarted=true;document.removeEventListener('click',tryAutoplay);document.removeEventListener('touchstart',tryAutoplay);document.removeEventListener('keydown',tryAutoplay);if(!audio){audio=new Audio(W.songAudio);audio.onended=stopSong;audio.ontimeupdate=updateFmpUI;}audio.currentTime=18;audio.play().then(function(){playing=true;setSongUI(true);}).catch(function(){});}
-document.addEventListener('click',tryAutoplay);
-document.addEventListener('touchstart',tryAutoplay);
-document.addEventListener('keydown',tryAutoplay);
 
 document.addEventListener('click',function(e){if(!e.target.closest('#lang-wrap'))closeLangDD();if(!e.target.closest('.cal-w'))document.querySelectorAll('.cal-dd').forEach(function(d){d.classList.remove('open');});});
 </script>
