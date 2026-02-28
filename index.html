@@ -539,7 +539,13 @@ document.querySelectorAll('.sf').forEach(function(el){obsSF(el);});
 setupBarObs();
 
 // Auto-start (no envelope)
-window.addEventListener('load',function(){initPetals();setTimeout(triggerWrite,500);setTimeout(function(){var fmp=document.getElementById('fmp');if(fmp)fmp.classList.add('show');autoplaySong();},1200);});
+window.addEventListener('load',function(){initPetals();setTimeout(triggerWrite,500);setTimeout(function(){var fmp=document.getElementById('fmp');if(fmp)fmp.classList.add('show');},1200);});
+// Autoplay on first user interaction (browsers block autoplay without gesture)
+var songStarted=false;
+function tryAutoplay(){if(songStarted)return;songStarted=true;document.removeEventListener('click',tryAutoplay);document.removeEventListener('touchstart',tryAutoplay);document.removeEventListener('keydown',tryAutoplay);if(!audio){audio=new Audio(W.songAudio);audio.onended=stopSong;audio.ontimeupdate=updateFmpUI;}audio.currentTime=18;audio.play().then(function(){playing=true;setSongUI(true);}).catch(function(){});}
+document.addEventListener('click',tryAutoplay);
+document.addEventListener('touchstart',tryAutoplay);
+document.addEventListener('keydown',tryAutoplay);
 
 document.addEventListener('click',function(e){if(!e.target.closest('#lang-wrap'))closeLangDD();if(!e.target.closest('.cal-w'))document.querySelectorAll('.cal-dd').forEach(function(d){d.classList.remove('open');});});
 </script>
