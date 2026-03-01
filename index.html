@@ -89,10 +89,10 @@ body{background:var(--cream);color:var(--text);font-family:var(--sans);overflow-
 @keyframes qWrite{0%{transform:rotate(28deg)}50%{transform:rotate(27deg) translateY(3px)}100%{transform:rotate(28deg)}}
 #quill.writing{animation:qWrite .22s ease-in-out infinite;}
 .hiw{overflow:hidden;max-height:0;opacity:0;transition:max-height .7s,opacity .6s,margin .5s;margin-top:0;}
-.hiw.show{max-height:80px;opacity:1;margin-top:16px;}
+.hiw.show{max-height:40px;opacity:1;margin-top:16px;}
 .sl-wrap{display:flex;align-items:center;gap:18px;margin:10px auto;width:min(320px,78%);}
-.sl{flex:1;height:.5px;background:rgba(255,255,255,.5);}
-.sd{width:5px;height:5px;background:rgba(255,255,255,.8);transform:rotate(45deg);flex-shrink:0;}
+.sl{flex:1;height:1px;background:rgba(255,255,255,.75);}
+.sd{width:6px;height:6px;background:rgba(255,255,255,.9);transform:rotate(45deg);flex-shrink:0;}
 #h-date{font-size:.52rem;letter-spacing:7px;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:300;color:rgba(255,255,255,.75);margin-top:6px;}
 .hss{position:absolute;inset:0;z-index:0;opacity:0;transition:opacity 1s;}.hss.show{opacity:1;}
 .ss-frame{position:absolute;inset:0;overflow:hidden;}
@@ -291,13 +291,11 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
     <h1 class="hnf" id="hnf"><span id="fn1"></span><span class="amp"> &amp; </span><span id="fn2"></span></h1>
     <svg id="quill" viewBox="0 0 40 110" xmlns="http://www.w3.org/2000/svg"><path d="M20,3 Q36,14 33,48 Q27,66 20,78" fill="#DDB87A" opacity=".82"/><path d="M20,3 Q4,14 7,48 Q13,66 20,78" fill="#C8965A" opacity=".82"/><line x1="20" y1="3" x2="20" y2="92" stroke="#8B6010" stroke-width="1.3" stroke-linecap="round"/><path d="M17.5,79 Q18.5,86 20,94 Q21.5,86 22.5,79 Q21.5,77 20,76 Q18.5,77 17.5,79Z" fill="#5C3A10"/><ellipse cx="20" cy="97" rx="1.8" ry="2.6" fill="#2A160A" opacity=".6"/></svg>
   </div>
-  <div class="hiw" id="hiw"><div class="sl-wrap"><div class="sl"></div><div class="sd"></div><div class="sl"></div></div><p id="h-date">3 &middot; VII &middot; 2026</p></div>
+  <div class="hiw" id="hiw" style="text-align:center;"><svg viewBox="0 0 380 24" style="width:min(320px,78%)" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="12" x2="148" y2="12" stroke="rgba(255,255,255,.8)" stroke-width="1"/><polygon points="162,12 168,7 174,12 168,17" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="1.2"/><circle cx="186" cy="12" r="3" fill="rgba(255,255,255,.9)"/><polygon points="198,12 204,7 210,12 204,17" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="1.2"/><line x1="222" y1="12" x2="380" y2="12" stroke="rgba(255,255,255,.8)" stroke-width="1"/></svg></div>
 </section>
 
 <div class="slim-div" style="background:transparent;position:relative;z-index:1;"><svg viewBox="0 0 380 24" style="width:min(380px,88vw)" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="12" x2="148" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".6"/><polygon points="162,12 168,7 174,12 168,17" fill="none" stroke="#C8965A" stroke-width=".8"/><circle cx="186" cy="12" r="2.5" fill="#C8965A" opacity=".9"/><polygon points="198,12 204,7 210,12 204,17" fill="none" stroke="#C8965A" stroke-width=".8"/><line x1="222" y1="12" x2="380" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".6"/></svg></div>
 <div class="quote-s"><div class="quote-bg"></div><div class="qi"><p class="qt" data-i18n="quoteText"></p><p class="qa">&mdash; Moroni 7:45</p></div></div>
-
-<div class="fdv" style="background:#2C1A0E;"><svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FEF9F6"/><stop offset="100%" stop-color="#2C1A0E"/></linearGradient></defs><rect width="1200" height="60" fill="url(#g1)"/></svg></div>
 
 <section id="sec-nombram" class="sp sf">
   <svg width="0" height="0" style="position:absolute"><defs><linearGradient id="gld" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#C8860A"/><stop offset="30%" stop-color="#FFD060"/><stop offset="60%" stop-color="#C8860A"/><stop offset="80%" stop-color="#F0C040"/><stop offset="100%" stop-color="#8B5E08"/></linearGradient></defs></svg>
@@ -309,8 +307,6 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
     <div id="nm-list" style="max-width:480px;margin:24px auto 0;"></div>
   </div>
 </section>
-
-<div class="fdv" style="background:var(--cream);"><svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><defs><linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2C1A0E"/><stop offset="100%" stop-color="#FEF9F6"/></linearGradient></defs><rect width="1200" height="60" fill="url(#g2)"/></svg></div>
 
 <section id="sec-events" class="floral-bg sp sf"><div class="inn"><span class="gl" data-i18n="scheduleLabel"></span><h2 class="sc-ttl" data-i18n="eventsTitle"></h2><div class="ec-grid" id="ec-grid"></div></div></section>
 
@@ -391,9 +387,8 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
 <footer><span class="f-brand">Mak Invitations</span><span class="f-url">makinvitations.com.mx</span><span class="f-couple" id="f-couple"></span></footer>
 
 <div id="fmp">
-  <svg id="fmp-ring-wrap" viewBox="0 0 62 62"><circle id="fmp-ring-bg" cx="31" cy="31" r="27"/><circle id="fmp-ring-fill" cx="31" cy="31" r="27"/></svg>
-  <div class="fmp-waves paused" id="fmp-waves"><div class="fmp-bar b1"></div><div class="fmp-bar b2"></div><div class="fmp-bar b3"></div><div class="fmp-bar b4"></div><div class="fmp-bar b5"></div></div>
-  <button style="background:none;border:none;cursor:pointer;pointer-events:none;"><svg id="fmp-pi" width="18" height="18" viewBox="0 0 24 24" fill="#d8809e"><path d="M8 5v14l11-7z"/></svg></button>
+  <svg id="fmp-ring-wrap" viewBox="0 0 62 62" style="position:absolute;inset:0;pointer-events:none;"><circle id="fmp-ring-bg" cx="31" cy="31" r="27"/><circle id="fmp-ring-fill" cx="31" cy="31" r="27"/></svg>
+  <svg id="fmp-pi" width="26" height="26" viewBox="0 0 24 24" fill="#d8809e" style="position:relative;z-index:1;"><path d="M8 5v14l11-7z"/></svg>
 </div>
 
 <script>
@@ -620,7 +615,7 @@ function toggleCalDD(id){var dd=document.getElementById(id);if(!dd)return;var wa
 function openGCal(k){var ev=CFG.events.find(function(e){return e.ck===k;});if(!ev)return;var t=currentLang==='en'?ev.cal.tEN:ev.cal.tES;window.open('https://www.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(t)+'&dates='+ev.cal.s+'/'+ev.cal.e+'&location='+encodeURIComponent((ev.name&&ev.name.es)||''),'_blank');document.querySelectorAll('.cal-dd').forEach(function(d){if(d)d.classList.remove('open');});}
 function dlICS(k){var ev=CFG.events.find(function(e){return e.ck===k;});if(!ev)return;var t=currentLang==='en'?ev.cal.tEN:ev.cal.tES;var ics='BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nSUMMARY:'+t+'\r\nDTSTART:'+ev.cal.s+'\r\nDTEND:'+ev.cal.e+'\r\nLOCATION:'+((ev.name&&ev.name.es)||'')+'\r\nEND:VEVENT\r\nEND:VCALENDAR';var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));a.download=k+'-boda.ics';document.body.appendChild(a);a.click();document.body.removeChild(a);document.querySelectorAll('.cal-dd').forEach(function(d){if(d)d.classList.remove('open');});}
 function submitRSVP(){var fn=((document.getElementById('ri-fn')||{}).value||'').trim();var ln=((document.getElementById('ri-ln')||{}).value||'').trim();var msg=((document.getElementById('ri-msg')||{}).value||'').trim();var adults=parseInt((document.getElementById('ri-adults')||{}).value)||0;var asi=document.querySelector('input[name="asistir"]:checked');if(!fn){alert('Por favor completa los campos requeridos.');return;}var m='Hola! Soy '+fn+(ln?' '+ln:'')+'. '+(asi&&asi.value==='si'?'Confirmo mi asistencia.':'No podr\u00e9 asistir.')+' Adultos: '+adults+'.'+(msg?' Mensaje: '+msg:'');window.open('https://wa.me/'+CFG.rsvpWa+'?text='+encodeURIComponent(m),'_blank');}
-function setSongUI(on){var w=document.getElementById('fmp-waves');if(w)w.classList.toggle('paused',!on);var fpi=document.getElementById('fmp-pi');if(fpi)fpi.innerHTML=on?'<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>':'<path d="M8 5v14l11-7z"/>';}
+function setSongUI(on){var fpi=document.getElementById('fmp-pi');if(fpi)fpi.innerHTML=on?'<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>':'<path d="M8 5v14l11-7z"/>';}
 function stopSong(){playing=false;setSongUI(false);}
 function updateFmpUI(){var ring=document.getElementById('fmp-ring-fill');if(ring&&audio&&audio.duration)ring.style.strokeDashoffset=((2*Math.PI*27)*(1-audio.currentTime/audio.duration)).toFixed(2);}
 function toggleSong(){if(CFG.songAudio){if(!audio){audio=new Audio(CFG.songAudio);audio.onended=stopSong;audio.ontimeupdate=updateFmpUI;}if(playing){audio.pause();stopSong();}else{audio.currentTime=audio.currentTime||18;audio.play().then(function(){playing=true;setSongUI(true);}).catch(function(){});}}else{if(!playing){playing=true;setSongUI(true);window.open(CFG.songSpotify,'_blank');}else stopSong();}}
