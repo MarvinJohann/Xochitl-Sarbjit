@@ -54,7 +54,7 @@ body{background:var(--cream);color:var(--text);font-family:var(--sans);overflow-
 .ni{filter:sepia(1) saturate(4) hue-rotate(-15deg) brightness(.85);}
 .nav-sep{height:1px;background:rgba(200,150,90,.12);margin:4px 20px;}
 /* Hero — dark fallback so white text is always readable before photo loads */
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 60px;position:relative;overflow:hidden;background:linear-gradient(160deg,#C9A0B4,#B48AAA,#C4A8C0);}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 60px;position:relative;overflow:hidden;background:linear-gradient(160deg,#F9EEF3,#EEE4F0);}
 .hero-bg{position:absolute;inset:0;background-image:url('img/IMG_7517.jpeg');background-size:cover;background-position:center;z-index:0;}
 .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,8,12,.4),rgba(20,8,12,.18) 40%,rgba(20,8,12,.46));}
 .hero>*{position:relative;z-index:1;}
@@ -70,8 +70,9 @@ body{background:var(--cream);color:var(--text);font-family:var(--sans);overflow-
 .hnf{display:block;font-family:var(--script);font-size:clamp(2.8rem,9vw,5.5rem);color:#fff;white-space:nowrap;opacity:0;transform:translateY(24px) scale(.95);transition:opacity .8s,transform .8s;text-shadow:0 2px 18px rgba(20,8,12,.6);overflow:visible;line-height:1.3;}
 .hnf.show{opacity:1;transform:none;}
 .hnf .amp{background:linear-gradient(160deg,#E8C068,#C8965A 30%,#F0D080 50%,#A87030 70%,#D4A850);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.wc{display:inline-block;padding:.25em .25em;margin:-.25em -.25em;clip-path:inset(-40% 103% -55% -15%);transition:clip-path .19s ease-out;vertical-align:baseline;}
-.wc.on{clip-path:inset(-40% -15% -55% -15%);}
+/* extra bottom room for descenders (j, y, g in Great Vibes) */
+.wc{display:inline-block;padding:.25em .25em;margin:-.25em -.25em;clip-path:inset(-40% 103% -100% -15%);transition:clip-path .19s ease-out;vertical-align:baseline;}
+.wc.on{clip-path:inset(-40% -15% -100% -15%);}
 .wc-amp{color:#C8965A;}
 #quill{position:absolute;width:clamp(28px,4.5vw,44px);pointer-events:none;opacity:0;z-index:10;transform-origin:50% 10%;transform:rotate(28deg);transition:left .12s,top .12s,opacity .4s;}
 @keyframes qWrite{0%{transform:rotate(28deg)}50%{transform:rotate(27deg) translateY(3px)}100%{transform:rotate(28deg)}}
@@ -277,10 +278,6 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
 
 <section id="sec-events" class="floral-bg sp sf"><div class="inn"><span class="gl" data-i18n="scheduleLabel"></span><h2 class="sc-ttl" data-i18n="eventsTitle"></h2><div class="ec-grid" id="ec-grid"></div></div></section>
 
-<div class="slim-div floral-bg"><svg viewBox="0 0 380 24" style="width:min(380px,88vw)" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="12" x2="148" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".4"/><polygon points="162,12 168,7 174,12 168,17" fill="none" stroke="#C8965A" stroke-width=".8"/><circle cx="186" cy="12" r="2.5" fill="#C8965A" opacity=".7"/><polygon points="198,12 204,7 210,12 204,17" fill="none" stroke="#C8965A" stroke-width=".8"/><line x1="222" y1="12" x2="380" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".4"/></svg></div>
-
-<section id="sec-dress" class="floral-bg sp sf"><div class="inn"><span class="gl" data-i18n="dresscodeLabel"></span><h2 class="sc-ttl" data-i18n="dresscodeTitle2"></h2><div class="dress-cols" id="dress-cols"></div><p class="avoid-lbl bt" data-i18n="avoidColors"></p><div class="avoid-sw" id="avoid-sw"></div></div></section>
-
 <div class="fdv" style="background:#1C0F07;"><svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><defs><linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FEF9F6"/><stop offset="100%" stop-color="#1C0F07"/></linearGradient></defs><rect width="1200" height="60" fill="url(#g3)"/></svg></div>
 
 <section id="sec-gallery" style="background:#F5EBF8;padding:50px 0 44px;">
@@ -313,18 +310,28 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
 
 <div class="fdv" style="background:var(--cream);"><svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><defs><linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1C0F07"/><stop offset="100%" stop-color="#FEF9F6"/></linearGradient></defs><rect width="1200" height="60" fill="url(#g4)"/></svg></div>
 
-<section id="sec-hotels" class="floral-bg sp sf"><div class="inn"><span class="gl" data-i18n="hotelLabel"></span><h2 class="sc-ttl" data-i18n="hotelTitle"></h2><p class="bt" data-i18n="hotelBody"></p><div class="h-cards" id="h-cards"></div></div></section>
+<!-- CUENTA REGRESIVA -->
+<div class="cd-section">
+  <span style="font-size:.85rem;letter-spacing:6px;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:300;background:linear-gradient(160deg,#E8C068,#C8965A 40%,#F0D080 60%,#A87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;margin-bottom:10px;" data-i18n="countdown"></span>
+  <div style="display:flex;justify-content:center;gap:clamp(20px,5vw,56px);">
+    <div><div id="cd-d" style="font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,10vw,5.5rem);font-weight:300;line-height:1;background:linear-gradient(160deg,#E8C068,#C8965A 30%,#F0D080 50%,#A87030 70%,#D4A850);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">00</div><div style="font-size:.72rem;letter-spacing:4px;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:300;background:linear-gradient(160deg,#E8C068,#C8965A 40%,#F0D080 60%,#A87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:6px;" data-i18n="days"></div></div>
+    <div><div id="cd-h" style="font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,10vw,5.5rem);font-weight:300;line-height:1;background:linear-gradient(160deg,#E8C068,#C8965A 30%,#F0D080 50%,#A87030 70%,#D4A850);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">00</div><div style="font-size:.72rem;letter-spacing:4px;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:300;background:linear-gradient(160deg,#E8C068,#C8965A 40%,#F0D080 60%,#A87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:6px;" data-i18n="hours"></div></div>
+    <div><div id="cd-m" style="font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,10vw,5.5rem);font-weight:300;line-height:1;background:linear-gradient(160deg,#E8C068,#C8965A 30%,#F0D080 50%,#A87030 70%,#D4A850);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">00</div><div style="font-size:.72rem;letter-spacing:4px;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:300;background:linear-gradient(160deg,#E8C068,#C8965A 40%,#F0D080 60%,#A87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:6px;" data-i18n="minutes"></div></div>
+    <div><div id="cd-s" style="font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,10vw,5.5rem);font-weight:300;line-height:1;background:linear-gradient(160deg,#E8C068,#C8965A 30%,#F0D080 50%,#A87030 70%,#D4A850);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">00</div><div style="font-size:.72rem;letter-spacing:4px;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:300;background:linear-gradient(160deg,#E8C068,#C8965A 40%,#F0D080 60%,#A87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:6px;" data-i18n="seconds"></div></div>
+  </div>
+</div>
 
 <div class="slim-div floral-bg"><svg viewBox="0 0 380 24" style="width:min(380px,88vw)" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="12" x2="148" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".4"/><polygon points="162,12 168,7 174,12 168,17" fill="none" stroke="#C8965A" stroke-width=".8"/><circle cx="186" cy="12" r="2.5" fill="#C8965A" opacity=".7"/><polygon points="198,12 204,7 210,12 204,17" fill="none" stroke="#C8965A" stroke-width=".8"/><line x1="222" y1="12" x2="380" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".4"/></svg></div>
 
 <section id="sec-gifts" class="floral-bg sp sf"><div class="inn"><span class="gl" data-i18n="giftsLabel"></span><h2 class="sc-ttl" data-i18n="giftsTitle"></h2><p class="bt" data-i18n="giftsBody"></p><p class="bt" style="margin-top:14px;font-style:italic;font-size:.78rem;color:var(--muted);" data-i18n="giftsCash"></p><div class="gifts-grid" id="gifts-grid"></div></div></section>
+
+<div class="slim-div floral-bg"><svg viewBox="0 0 380 24" style="width:min(380px,88vw)" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="12" x2="148" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".4"/><polygon points="162,12 168,7 174,12 168,17" fill="none" stroke="#C8965A" stroke-width=".8"/><circle cx="186" cy="12" r="2.5" fill="#C8965A" opacity=".7"/><polygon points="198,12 204,7 210,12 204,17" fill="none" stroke="#C8965A" stroke-width=".8"/><line x1="222" y1="12" x2="380" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".4"/></svg></div>
 
 <section id="sec-rsvp" class="floral-bg sp sf" style="border-top:1px solid rgba(200,150,90,.12);">
   <div class="inn">
     <span class="gl" data-i18n="rsvpLabel"></span><h2 class="sc-ttl" data-i18n="rsvpTitle"></h2><p class="bt" id="rsvp-dl"></p>
     <div class="rsvp-grid">
       <div class="rsvp-box">
-        <!-- 18+ elegant notice -->
         <div style="text-align:center;padding:14px 0 22px;border-bottom:1px solid rgba(200,150,90,.2);margin-bottom:20px;">
           <span style="font-family:'Great Vibes',cursive;font-size:3.2rem;background:linear-gradient(160deg,#FFE08A,#C8860A 20%,#F5D060 38%,#A06010 55%,#F0C840 72%,#8B5E08);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;line-height:1;filter:drop-shadow(0 2px 6px rgba(200,150,90,.35));">18+</span>
           <span style="font-size:.52rem;letter-spacing:5px;text-transform:uppercase;color:var(--muted);display:block;margin-top:10px;font-family:var(--sans);" data-i18n="rsvp18Notice"></span>
@@ -344,15 +351,11 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
 
 <div class="slim-div floral-bg"><svg viewBox="0 0 380 24" style="width:min(380px,88vw)" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="12" x2="148" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".4"/><polygon points="162,12 168,7 174,12 168,17" fill="none" stroke="#C8965A" stroke-width=".8"/><circle cx="186" cy="12" r="2.5" fill="#C8965A" opacity=".7"/><polygon points="198,12 204,7 210,12 204,17" fill="none" stroke="#C8965A" stroke-width=".8"/><line x1="222" y1="12" x2="380" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".4"/></svg></div>
 
-<div class="cd-section">
-  <span style="font-size:.85rem;letter-spacing:6px;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:300;background:linear-gradient(160deg,#E8C068,#C8965A 40%,#F0D080 60%,#A87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;margin-bottom:10px;" data-i18n="countdown"></span>
-  <div style="display:flex;justify-content:center;gap:clamp(20px,5vw,56px);">
-    <div><div id="cd-d" style="font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,10vw,5.5rem);font-weight:300;line-height:1;background:linear-gradient(160deg,#E8C068,#C8965A 30%,#F0D080 50%,#A87030 70%,#D4A850);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">00</div><div style="font-size:.72rem;letter-spacing:4px;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:300;background:linear-gradient(160deg,#E8C068,#C8965A 40%,#F0D080 60%,#A87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:6px;" data-i18n="days"></div></div>
-    <div><div id="cd-h" style="font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,10vw,5.5rem);font-weight:300;line-height:1;background:linear-gradient(160deg,#E8C068,#C8965A 30%,#F0D080 50%,#A87030 70%,#D4A850);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">00</div><div style="font-size:.72rem;letter-spacing:4px;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:300;background:linear-gradient(160deg,#E8C068,#C8965A 40%,#F0D080 60%,#A87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:6px;" data-i18n="hours"></div></div>
-    <div><div id="cd-m" style="font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,10vw,5.5rem);font-weight:300;line-height:1;background:linear-gradient(160deg,#E8C068,#C8965A 30%,#F0D080 50%,#A87030 70%,#D4A850);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">00</div><div style="font-size:.72rem;letter-spacing:4px;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:300;background:linear-gradient(160deg,#E8C068,#C8965A 40%,#F0D080 60%,#A87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:6px;" data-i18n="minutes"></div></div>
-    <div><div id="cd-s" style="font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,10vw,5.5rem);font-weight:300;line-height:1;background:linear-gradient(160deg,#E8C068,#C8965A 30%,#F0D080 50%,#A87030 70%,#D4A850);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">00</div><div style="font-size:.72rem;letter-spacing:4px;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:300;background:linear-gradient(160deg,#E8C068,#C8965A 40%,#F0D080 60%,#A87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:6px;" data-i18n="seconds"></div></div>
-  </div>
-</div>
+<section id="sec-dress" class="floral-bg sp sf"><div class="inn"><span class="gl" data-i18n="dresscodeLabel"></span><h2 class="sc-ttl" data-i18n="dresscodeTitle2"></h2><div class="dress-cols" id="dress-cols"></div><p class="avoid-lbl bt" data-i18n="avoidColors"></p><div class="avoid-sw" id="avoid-sw"></div></div></section>
+
+<div class="slim-div floral-bg"><svg viewBox="0 0 380 24" style="width:min(380px,88vw)" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="12" x2="148" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".4"/><polygon points="162,12 168,7 174,12 168,17" fill="none" stroke="#C8965A" stroke-width=".8"/><circle cx="186" cy="12" r="2.5" fill="#C8965A" opacity=".7"/><polygon points="198,12 204,7 210,12 204,17" fill="none" stroke="#C8965A" stroke-width=".8"/><line x1="222" y1="12" x2="380" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".4"/></svg></div>
+
+<section id="sec-hotels" class="floral-bg sp sf"><div class="inn"><span class="gl" data-i18n="hotelLabel"></span><h2 class="sc-ttl" data-i18n="hotelTitle"></h2><p class="bt" data-i18n="hotelBody"></p><div class="h-cards" id="h-cards"></div></div></section>
 
 <footer><span class="f-brand">Mak Invitations</span><span class="f-url">makinvitations.com.mx</span><span class="f-couple" id="f-couple"></span></footer>
 
@@ -694,7 +697,40 @@ function updateFmpUI(){var ring=document.getElementById('fmp-ring-fill');if(ring
 function toggleSong(){if(CFG.songAudio){if(!audio){audio=new Audio(CFG.songAudio);audio.onended=stopSong;audio.ontimeupdate=updateFmpUI;}if(playing){audio.pause();stopSong();}else{audio.currentTime=audio.currentTime||18;audio.play().then(function(){playing=true;setSongUI(true);}).catch(function(){});}}else{if(!playing){playing=true;setSongUI(true);window.open(CFG.songSpotify,'_blank');}else stopSong();}}
 function mkP(){return{x:Math.random()*innerWidth,y:Math.random()*-innerHeight,r:Math.random()*7+4,sp:Math.random()*1+.4,sx:Math.random()*1.2-.6,sw:Math.random()*.03+.01,sc:Math.random()*Math.PI*2,op:Math.random()*.5+.2,h:Math.random()<.5};}
 function initPetals(){pC=document.getElementById('pc');if(!pC)return;pC.width=innerWidth;pC.height=innerHeight;pX=pC.getContext('2d');window.addEventListener('resize',function(){if(pC){pC.width=innerWidth;pC.height=innerHeight;}});for(var i=0;i<28;i++)pts.push(mkP());pC.classList.add('show');pR=true;animP();}
-function animP(){if(!pR)return;pX.clearRect(0,0,pC.width,pC.height);pts.forEach(function(p){p.y+=p.sp;p.x+=Math.sin(p.sc)*p.sx;p.sc+=p.sw;var px=p.x+Math.sin(p.sc)*3;pX.save();pX.translate(px,p.y);pX.globalAlpha=Math.min(1,p.op*.52);pX.shadowColor='rgba(180,80,120,.5)';pX.shadowBlur=8;if(p.h){pX.beginPath();pX.moveTo(0,-p.r);pX.bezierCurveTo(p.r,-p.r,p.r,p.r/2,0,p.r);pX.bezierCurveTo(-p.r,p.r/2,-p.r,-p.r,0,-p.r);pX.fillStyle='rgb(242,200,208)';pX.fill();}else{pX.beginPath();pX.ellipse(0,0,p.r*.6,p.r,Math.sin(p.sc)*.5,0,Math.PI*2);pX.fillStyle='rgba(232,150,180,.92)';pX.fill();}pX.restore();if(p.y>innerHeight+20){p.y=-20;p.x=Math.random()*innerWidth;}});requestAnimationFrame(animP);}
+var mouseX=-9999,mouseY=-9999;
+function animP(){
+  if(!pR)return;
+  pX.clearRect(0,0,pC.width,pC.height);
+  pts.forEach(function(p){
+    p.y+=p.sp;p.x+=Math.sin(p.sc)*p.sx;p.sc+=p.sw;
+    var px=p.x+Math.sin(p.sc)*3;
+    /* flickering: random opacity + subtle color shift */
+    var flicker=0.85+Math.random()*0.15;
+    var r=Math.round(232+flicker*10),g=Math.round(148+flicker*8),b=Math.round(178+flicker*12);
+    var hr=Math.round(242+flicker*5),hg=Math.round(198+flicker*6),hb=Math.round(208+flicker*8);
+    /* mouse proximity: scale up when within 80px */
+    var dx=px-mouseX,dy=p.y-mouseY,dist=Math.sqrt(dx*dx+dy*dy);
+    var near=dist<80;
+    pX.save();
+    pX.translate(px,p.y);
+    pX.globalAlpha=Math.min(1,p.op*(near?0.9+(1-dist/80)*0.1:0.52)*flicker);
+    pX.shadowColor='rgba(220,100,150,0.6)';
+    pX.shadowBlur=near?20:8;
+    if(p.h){
+      pX.beginPath();pX.moveTo(0,-p.r);
+      pX.bezierCurveTo(p.r,-p.r,p.r,p.r/2,0,p.r);
+      pX.bezierCurveTo(-p.r,p.r/2,-p.r,-p.r,0,-p.r);
+      pX.fillStyle='rgb('+hr+','+hg+','+hb+')';pX.fill();
+    }else{
+      pX.beginPath();pX.ellipse(0,0,p.r*.6,p.r,Math.sin(p.sc)*.5,0,Math.PI*2);
+      pX.fillStyle='rgba('+r+','+g+','+b+',.92)';pX.fill();
+    }
+    pX.restore();
+    if(p.y>innerHeight+20){p.y=-20;p.x=Math.random()*innerWidth;}
+  });
+  requestAnimationFrame(animP);
+}
+document.addEventListener('mousemove',function(e){mouseX=e.clientX;mouseY=e.clientY;});
 function startInvite(lang){var splash=document.getElementById('splash');if(!splash)return;setLang(lang);buildGallery();if(CFG.songAudio){if(!audio){audio=new Audio(CFG.songAudio);audio.onended=stopSong;audio.ontimeupdate=updateFmpUI;}audio.currentTime=18;audio.play().then(function(){playing=true;setSongUI(true);}).catch(function(){});}splash.style.transition='opacity .7s ease';splash.style.opacity='0';setTimeout(function(){if(splash.parentNode)splash.parentNode.removeChild(splash);initPetals();setTimeout(triggerWrite,300);setTimeout(function(){var fmp=document.getElementById('fmp');if(fmp)fmp.classList.add('show');},800);},700);}
 function obsSF(el){new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('vis');});},{threshold:.06}).observe(el);}
 window.addEventListener('scroll',function(){document.querySelectorAll('.sf:not(.vis)').forEach(function(el){if(el.getBoundingClientRect().top<window.innerHeight*.9)el.classList.add('vis');});},{passive:true});
@@ -706,27 +742,27 @@ window.addEventListener('DOMContentLoaded',function(){
   setLang('es');
   document.querySelectorAll('.sf').forEach(function(el){obsSF(el);});
   (function(){var tgt=new Date('2026-07-03T17:00:00').getTime();function pad(n){return n<10?'0'+n:''+n;}function tick(){var diff=Math.max(0,tgt-Date.now());var a=document.getElementById('cd-d'),b=document.getElementById('cd-h'),c=document.getElementById('cd-m'),d=document.getElementById('cd-s');if(a)a.innerHTML=pad(Math.floor(diff/86400000));if(b)b.innerHTML=pad(Math.floor((diff%86400000)/3600000));if(c)c.innerHTML=pad(Math.floor((diff%3600000)/60000));if(d)d.innerHTML=pad(Math.floor((diff%60000)/1000));}tick();setInterval(tick,1000);})();
-  document.getElementById('btn-es').addEventListener('click',function(){startInvite('es');});
-  document.getElementById('btn-en').addEventListener('click',function(){startInvite('en');});
-  document.getElementById('btn-pa').addEventListener('click',function(){startInvite('pa');});
-  document.getElementById('ham-btn').addEventListener('click',toggleNav);
-  document.getElementById('nav-ov').addEventListener('click',closeNav);
+  var be=document.getElementById('btn-es');if(be)be.addEventListener('click',function(){startInvite('es');});
+  var ben=document.getElementById('btn-en');if(ben)ben.addEventListener('click',function(){startInvite('en');});
+  var bp=document.getElementById('btn-pa');if(bp)bp.addEventListener('click',function(){startInvite('pa');});
+  var hb=document.getElementById('ham-btn');if(hb)hb.addEventListener('click',toggleNav);
+  var no=document.getElementById('nav-ov');if(no)no.addEventListener('click',closeNav);
   var navMap={home:'section-hero',parents:'sec-nombram',dates:'sec-events',attire:'sec-dress',gallery:'sec-gallery',hotels:'sec-hotels',gifts:'sec-gifts',rsvp:'sec-rsvp'};
   Object.keys(navMap).forEach(function(k){var el=document.getElementById('nav-'+k);if(el)el.addEventListener('click',function(){navTo(navMap[k]);});});
-  document.getElementById('lo-es').addEventListener('click',function(){setLang('es');closeLangDD();});
-  document.getElementById('lo-en').addEventListener('click',function(){setLang('en');closeLangDD();});
-  document.getElementById('lo-pa').addEventListener('click',function(){setLang('pa');closeLangDD();});
-  document.getElementById('lang-icon-btn').addEventListener('click',toggleLangDD);
-  document.getElementById('rsvp-submit').addEventListener('click',submitRSVP);
-  document.getElementById('fmp').addEventListener('click',toggleSong);
-  document.getElementById('lb-close').addEventListener('click',closeLB);
-  document.getElementById('lb-prev').addEventListener('click',function(){lbIdx=(lbIdx-1+lbImgs.length)%lbImgs.length;var img=document.getElementById('lb-img');if(img)img.src=lbImgs[lbIdx]||'';});
-  document.getElementById('lb-next').addEventListener('click',function(){lbIdx=(lbIdx+1)%lbImgs.length;var img=document.getElementById('lb-img');if(img)img.src=lbImgs[lbIdx]||'';});
-  document.getElementById('lb').addEventListener('click',function(e){if(e.target===this)closeLB();});
-  document.getElementById('ss-prev').addEventListener('click',function(){clearInterval(ssTmr);ssGo(ssIdx-1);ssTmr=setInterval(function(){ssGo(ssIdx+1);},3800);});
-  document.getElementById('ss-next').addEventListener('click',function(){clearInterval(ssTmr);ssGo(ssIdx+1);ssTmr=setInterval(function(){ssGo(ssIdx+1);},3800);});
-  document.getElementById('gal-prev').addEventListener('click',function(){galleryNav(-1);});
-  document.getElementById('gal-next').addEventListener('click',function(){galleryNav(1);});
+  var le=document.getElementById('lo-es');if(le)le.addEventListener('click',function(){setLang('es');closeLangDD();});
+  var len=document.getElementById('lo-en');if(len)len.addEventListener('click',function(){setLang('en');closeLangDD();});
+  var lp=document.getElementById('lo-pa');if(lp)lp.addEventListener('click',function(){setLang('pa');closeLangDD();});
+  var lb2=document.getElementById('lang-icon-btn');if(lb2)lb2.addEventListener('click',toggleLangDD);
+  var rs=document.getElementById('rsvp-submit');if(rs)rs.addEventListener('click',submitRSVP);
+  var fmp=document.getElementById('fmp');if(fmp)fmp.addEventListener('click',toggleSong);
+  var lbc=document.getElementById('lb-close');if(lbc)lbc.addEventListener('click',closeLB);
+  var lbp=document.getElementById('lb-prev');if(lbp)lbp.addEventListener('click',function(){lbIdx=(lbIdx-1+lbImgs.length)%lbImgs.length;var img=document.getElementById('lb-img');if(img)img.src=lbImgs[lbIdx]||'';});
+  var lbn=document.getElementById('lb-next');if(lbn)lbn.addEventListener('click',function(){lbIdx=(lbIdx+1)%lbImgs.length;var img=document.getElementById('lb-img');if(img)img.src=lbImgs[lbIdx]||'';});
+  var lbel=document.getElementById('lb');if(lbel)lbel.addEventListener('click',function(e){if(e.target===this)closeLB();});
+  var ssp=document.getElementById('ss-prev');if(ssp)ssp.addEventListener('click',function(){clearInterval(ssTmr);ssGo(ssIdx-1);ssTmr=setInterval(function(){ssGo(ssIdx+1);},3800);});
+  var ssn=document.getElementById('ss-next');if(ssn)ssn.addEventListener('click',function(){clearInterval(ssTmr);ssGo(ssIdx+1);ssTmr=setInterval(function(){ssGo(ssIdx+1);},3800);});
+  var gp=document.getElementById('gal-prev');if(gp)gp.addEventListener('click',function(){galleryNav(-1);});
+  var gn=document.getElementById('gal-next');if(gn)gn.addEventListener('click',function(){galleryNav(1);});
   var go=document.getElementById('gal-outer');if(go){var tx=0;go.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;},{passive:true});go.addEventListener('touchend',function(e){var dx=tx-e.changedTouches[0].clientX;if(Math.abs(dx)>40)galleryNav(dx>0?1:-1);},{passive:true});}
   document.addEventListener('keydown',function(e){var lb=document.getElementById('lb');if(!lb||!lb.classList.contains('open'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft'){lbIdx=(lbIdx-1+lbImgs.length)%lbImgs.length;var img=document.getElementById('lb-img');if(img)img.src=lbImgs[lbIdx]||'';}if(e.key==='ArrowRight'){lbIdx=(lbIdx+1)%lbImgs.length;var img2=document.getElementById('lb-img');if(img2)img2.src=lbImgs[lbIdx]||'';}});
   document.addEventListener('click',function(e){if(!e.target.closest('#lang-wrap'))closeLangDD();});
