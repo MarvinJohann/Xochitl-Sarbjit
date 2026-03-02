@@ -61,7 +61,7 @@ body{background:var(--cream);color:var(--text);font-family:var(--sans);overflow-
 .hero::after{content:'';position:absolute;top:58px;right:18px;width:54px;height:54px;border-top:1px solid rgba(200,150,90,.3);border-right:1px solid rgba(200,150,90,.3);z-index:1;}
 .hcbl{position:absolute;bottom:38px;left:18px;width:54px;height:54px;border-bottom:1px solid rgba(200,150,90,.3);border-left:1px solid rgba(200,150,90,.3);z-index:1;}
 .hcbr{position:absolute;bottom:38px;right:18px;width:54px;height:54px;border-bottom:1px solid rgba(200,150,90,.3);border-right:1px solid rgba(200,150,90,.3);z-index:1;}
-.hno{position:relative;display:inline-block;max-width:92vw;overflow:visible;margin-top:clamp(-380px,-32vh,-160px);padding-bottom:1.2em;}
+.hno{position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);display:inline-block;max-width:92vw;overflow:visible;padding-bottom:1.2em;z-index:1;}
 .nwl{position:absolute;top:0;left:50%;transform:translateX(-50%);text-align:center;pointer-events:none;z-index:2;white-space:nowrap;transition:opacity .6s,transform .6s;transform-origin:center top;}
 .nwl.exit{opacity:0;transform:translateX(-50%) scale(.92) translateY(-14px);}
 .nwl-ln{display:block;font-family:var(--script);font-size:clamp(3.2rem,11vw,6.5rem);color:#fff;white-space:nowrap;text-shadow:0 2px 18px rgba(20,8,12,.6);overflow:visible;line-height:1.6;padding-bottom:.3em;}
@@ -75,7 +75,7 @@ body{background:var(--cream);color:var(--text);font-family:var(--sans);overflow-
 #quill{position:absolute;width:clamp(28px,4.5vw,44px);pointer-events:none;opacity:0;z-index:10;transform-origin:50% 10%;transform:rotate(28deg);transition:left .12s,top .12s,opacity .4s;}
 @keyframes qWrite{0%{transform:rotate(28deg)}50%{transform:rotate(27deg) translateY(3px)}100%{transform:rotate(28deg)}}
 #quill.writing{animation:qWrite .22s ease-in-out infinite;}
-.hiw{overflow:hidden;max-height:0;opacity:0;transition:max-height .7s,opacity .6s,margin .5s;margin-top:0;}
+.hiw{position:absolute;bottom:clamp(60px,10vh,100px);left:50%;transform:translateX(-50%);overflow:hidden;max-height:0;opacity:0;transition:max-height .7s,opacity .6s;white-space:nowrap;}
 .hiw.show{max-height:40px;opacity:1;margin-top:16px;}
 .hss{position:absolute;inset:0;z-index:0;opacity:0;transition:opacity 1s;}.hss.show{opacity:1;}
 .ss-frame{position:absolute;inset:0;overflow:hidden;}
@@ -92,8 +92,8 @@ body{background:var(--cream);color:var(--text);font-family:var(--sans);overflow-
 .nom-frame-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;}
 .nombram-inner{position:relative;z-index:2;padding:0 24px;}
 .nm-item{margin-bottom:28px;text-align:center;}
-.nm-role{font-size:.52rem;letter-spacing:5px;text-transform:uppercase;font-weight:600;margin-bottom:6px;background:linear-gradient(160deg,#FFE08A,#C8860A 20%,#F5D060 38%,#A06010 55%,#F0C840 72%,#8B5E08 88%,#E8C050);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.nm-names{font-family:var(--serif);font-size:1.1rem;font-style:italic;color:#3A1428;line-height:1.9;font-weight:600;}
+.nm-role{font-size:.58rem;letter-spacing:5px;text-transform:uppercase;font-weight:700;margin-bottom:8px;background:linear-gradient(160deg,#FFE08A,#C8860A 20%,#F5D060 38%,#A06010 55%,#F0C840 72%,#8B5E08 88%,#E8C050);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.nm-names{font-family:var(--serif);font-size:1.25rem;font-style:italic;color:#3A1428;line-height:2;font-weight:600;}
 .ec-grid{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;max-width:900px;margin:32px auto 0;padding:0 16px;}
 .ecard{background:#F8F2E6;border-radius:6px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.28);transition:transform .3s;width:min(280px,88vw);}
 .ecard:hover{transform:translateY(-5px);}
@@ -262,7 +262,7 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
   <svg class="nom-frame-svg" viewBox="0 0 900 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="880" height="580" fill="none" stroke="url(#gld)" stroke-width="2.2" vector-effect="non-scaling-stroke"/><rect x="20" y="17" width="860" height="566" fill="none" stroke="url(#gld)" stroke-width="1" opacity=".5" vector-effect="non-scaling-stroke"/></svg>
   <div class="nombram-inner inn">
     <h2 class="sc-ttl" data-i18n="nombramTitle"></h2>
-    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,2.6vw,1.3rem);margin:16px auto 0;max-width:480px;line-height:1.9;text-align:center;background:linear-gradient(160deg,#FFE08A,#C8860A 20%,#F5D060 38%,#A06010 55%,#F0C840 72%,#8B5E08 88%,#E8C050);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 1px 3px rgba(160,100,0,.3));" data-i18n="nmThanks"></p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2.8vw,1.45rem);margin:16px auto 0;max-width:480px;line-height:1.9;text-align:center;background:linear-gradient(160deg,#FFE08A,#C8860A 20%,#F5D060 38%,#A06010 55%,#F0C840 72%,#8B5E08 88%,#E8C050);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 1px 3px rgba(160,100,0,.3));" data-i18n="nmThanks"></p>
     <div id="nm-list" style="max-width:560px;margin:24px auto 0;"></div>
   </div>
 </section>
