@@ -111,7 +111,6 @@ body{background:var(--cream);color:var(--text);font-family:var(--sans);overflow-
 .avoid-lbl{font-size:.82rem;color:#5A3A44;margin:18px 0 10px;}
 .avoid-sw{display:flex;justify-content:center;gap:16px;}
 .av-sw{width:46px;height:46px;border-radius:50%;border:2px solid rgba(100,60,40,.25);box-shadow:inset 0 0 0 1px rgba(255,255,255,.6),0 2px 6px rgba(0,0,0,.15);}
-/* Gallery */
 @keyframes bulbGlow{0%,100%{opacity:.6}50%{opacity:1}}
 @keyframes ropeSway{0%,100%{transform:translateX(-4px)}50%{transform:translateX(4px)}}
 @keyframes swing0{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
@@ -138,6 +137,10 @@ body{background:var(--cream);color:var(--text);font-family:var(--sans);overflow-
 .sg-photo{background:#FEFCF8;padding:9px 9px 44px;box-shadow:0 20px 60px rgba(0,0,0,.4);cursor:pointer;width:240px;}
 .sg-photo img{width:100%;aspect-ratio:.85;object-fit:cover;display:block;}
 .sg-ph{width:100%;aspect-ratio:.85;background:#D8C4D0;display:flex;align-items:center;justify-content:center;font-size:2.5rem;}
+/* ── ROPE BULBS ── */
+#rope-bulbs{position:absolute;top:0;left:0;right:0;height:70px;pointer-events:none;z-index:2;}
+.rb-stem{position:absolute;width:2px;height:11px;background:#5A3A10;transform:translateX(-50%);}
+.rb-bulb{position:absolute;width:12px;height:12px;border-radius:50%;background:#FFD060;transform:translateX(-50%);box-shadow:0 0 8px 3px rgba(255,176,0,.8),0 0 18px 6px rgba(255,90,0,.45);}
 /* Gifts */
 .gifts-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:24px;}
 .gift-card,.bank-flip-wrap{width:200px;height:168px;flex-shrink:0;}
@@ -281,20 +284,14 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
 
 <section id="sec-gallery" style="background:#F5EBF8;padding:50px 0 44px;">
   <div class="inn" style="margin-bottom:28px;"><span class="gl" data-i18n="galleryLabel"></span><h2 class="sc-ttl" data-i18n="galleryTitle"></h2></div>
-  <div style="position:relative;width:100%;">
-    <svg id="gal-rope" style="width:100%;height:40px;display:block;overflow:visible;" viewBox="0 0 1000 28" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <div id="rope-wrap" style="position:relative;width:100%;">
+    <!-- Rope wave SVG — only the wire, no bulbs -->
+    <svg id="gal-rope" style="width:100%;height:44px;display:block;overflow:visible;" viewBox="0 0 1000 28" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,14 Q50,7 100,14 Q150,21 200,14 Q250,7 300,14 Q350,21 400,14 Q450,7 500,14 Q550,21 600,14 Q650,7 700,14 Q750,21 800,14 Q850,7 900,14 Q950,21 1000,14" stroke="#4A2E08" stroke-width="3" fill="none"/>
       <path d="M0,13 Q50,6 100,13 Q150,20 200,13 Q250,6 300,13 Q350,20 400,13 Q450,6 500,13 Q550,20 600,13 Q650,6 700,13 Q750,20 800,13 Q850,6 900,13 Q950,20 1000,13" stroke="#C89030" stroke-width="1" fill="none" opacity=".5"/>
-      <line x1="80" y1="9" x2="80" y2="14" stroke="#5A3A10" stroke-width="1.5"/><circle cx="80" cy="22" r="5.5" fill="#FFD060" style="animation:bulbGlow 2s 0s ease-in-out infinite;filter:drop-shadow(0 0 7px #FFB000) drop-shadow(0 0 16px #FF6000)"/>
-      <line x1="200" y1="12" x2="200" y2="17" stroke="#5A3A10" stroke-width="1.5"/><circle cx="200" cy="25" r="5.5" fill="#FFD060" style="animation:bulbGlow 1.7s .4s ease-in-out infinite;filter:drop-shadow(0 0 7px #FFB000) drop-shadow(0 0 16px #FF6000)"/>
-      <line x1="320" y1="8" x2="320" y2="13" stroke="#5A3A10" stroke-width="1.5"/><circle cx="320" cy="21" r="5.5" fill="#FFD060" style="animation:bulbGlow 2.2s .2s ease-in-out infinite;filter:drop-shadow(0 0 7px #FFB000) drop-shadow(0 0 16px #FF6000)"/>
-      <line x1="440" y1="12" x2="440" y2="17" stroke="#5A3A10" stroke-width="1.5"/><circle cx="440" cy="25" r="5.5" fill="#FFD060" style="animation:bulbGlow 1.9s .6s ease-in-out infinite;filter:drop-shadow(0 0 7px #FFB000) drop-shadow(0 0 16px #FF6000)"/>
-      <line x1="500" y1="7" x2="500" y2="12" stroke="#5A3A10" stroke-width="1.5"/><circle cx="500" cy="20" r="5.5" fill="#FFD060" style="animation:bulbGlow 2.3s .1s ease-in-out infinite;filter:drop-shadow(0 0 7px #FFB000) drop-shadow(0 0 16px #FF6000)"/>
-      <line x1="620" y1="13" x2="620" y2="18" stroke="#5A3A10" stroke-width="1.5"/><circle cx="620" cy="26" r="5.5" fill="#FFD060" style="animation:bulbGlow 1.8s .5s ease-in-out infinite;filter:drop-shadow(0 0 7px #FFB000) drop-shadow(0 0 16px #FF6000)"/>
-      <line x1="740" y1="9" x2="740" y2="14" stroke="#5A3A10" stroke-width="1.5"/><circle cx="740" cy="22" r="5.5" fill="#FFD060" style="animation:bulbGlow 2.1s .3s ease-in-out infinite;filter:drop-shadow(0 0 7px #FFB000) drop-shadow(0 0 16px #FF6000)"/>
-      <line x1="860" y1="12" x2="860" y2="17" stroke="#5A3A10" stroke-width="1.5"/><circle cx="860" cy="25" r="5.5" fill="#FFD060" style="animation:bulbGlow 1.6s .7s ease-in-out infinite;filter:drop-shadow(0 0 7px #FFB000) drop-shadow(0 0 16px #FF6000)"/>
-      <line x1="970" y1="10" x2="970" y2="15" stroke="#5A3A10" stroke-width="1.5"/><circle cx="970" cy="23" r="5.5" fill="#FFD060" style="animation:bulbGlow 2.4s .2s ease-in-out infinite;filter:drop-shadow(0 0 7px #FFB000) drop-shadow(0 0 16px #FF6000)"/>
     </svg>
+    <!-- Bulbs rendered as HTML elements (always perfectly circular) -->
+    <div id="rope-bulbs"></div>
     <div id="gal-outer" style="position:relative;width:100%;height:460px;overflow:hidden;margin-top:-22px;">
       <button id="gal-prev" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);z-index:20;width:42px;height:42px;border-radius:50%;background:rgba(200,150,90,.15);border:1px solid rgba(200,150,90,.5);font-size:1.5rem;cursor:pointer;color:var(--text);line-height:1;">&#8249;</button>
       <button id="gal-next" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);z-index:20;width:42px;height:42px;border-radius:50%;background:rgba(200,150,90,.15);border:1px solid rgba(200,150,90,.5);font-size:1.5rem;cursor:pointer;color:var(--text);line-height:1;">&#8250;</button>
@@ -420,15 +417,15 @@ en:{countdown:'countdown',days:'days',hours:'hours',minutes:'minutes',seconds:'s
     nav_home:'Home',nav_parents:'Our Families',nav_dates:'Dates & Location',nav_attire:'Attire',nav_gallery:'Gallery',nav_hotels:'Lodging',nav_gifts:'Gifts',nav_rsvp:'RSVP'},
 pa:{countdown:'\u0a09\u0a32\u0a1f\u0a40 \u0a17\u0a3f\u0a23\u0a24\u0a40',days:'\u0a26\u0a3f\u0a28',hours:'\u0a18\u0a70\u0a1f\u0a47',minutes:'\u0a2e\u0a3f\u0a70\u0a1f',seconds:'\u0a38\u0a15\u0a3f\u0a70\u0a1f',
     quoteText:'\u0a2a\u0a3f\u0a06\u0a30 \u0a38\u0a2c\u0a30 \u0a15\u0a30\u0a26\u0a3e \u0a39\u0a48 \u0a05\u0a24\u0a47 \u0a26\u0a3f\u0a06\u0a32\u0a3e \u0a39\u0a48\u0b4d',
-    nombramTitle:'\u0a38਼\u0a3e\u0a21\u0a3c\u0a47 \u0a2a\u0a30\u0a3f\u0a35\u0a3e\u0a30',nmThanks:'\u0a05\u0a38\u0a40\u0a02 \u0a06\u0a2a\u0a23\u0a47 \u0a2e\u0a3e\u0a24\u0a3e-\u0a2a\u0a3f\u0a24\u0a3e \u0a26\u0a47 \u0a38\u0a3c\u0a41\u0a15\u0a30\u0a17\u0a41\u0a1c\u0a3c\u0a3e\u0a30 \u0a39\u0a3e\u0a02\u0b4d',
+    nombramTitle:'\u0a38\u0a3c\u0a3e\u0a21\u0a3c\u0a47 \u0a2a\u0a30\u0a3f\u0a35\u0a3e\u0a30',nmThanks:'\u0a05\u0a38\u0a40\u0a02 \u0a06\u0a2a\u0a23\u0a47 \u0a2e\u0a3e\u0a24\u0a3e-\u0a2a\u0a3f\u0a24\u0a3e \u0a26\u0a47 \u0a38\u0a3c\u0a41\u0a15\u0a30\u0a17\u0a41\u0a1c\u0a3c\u0a3e\u0a30 \u0a39\u0a3e\u0a02\u0b4d',
     padresNovia:'\u0a32\u0a3e\u0a5c\u0a40 \u0a26\u0a47 \u0a2e\u0a3e\u0a24\u0a3e-\u0a2a\u0a3f\u0a24\u0a3e',padresNovio:'\u0a32\u0a3e\u0a5c\u0a47 \u0a26\u0a47 \u0a2e\u0a3e\u0a24\u0a3e-\u0a2a\u0a3f\u0a24\u0a3e',
     scheduleLabel:'\u0a24\u0a3e\u0a30\u0a40\u0a16\u0a3e\u0a82',eventsTitle:'\u0a38\u0a2e\u0a3e\u0a17\u0a2e',eLblAddr:'\u0a2a\u0a24\u0a3e',eLblDateTime:'\u0a24\u0a3e\u0a30\u0a40\u0a16 \u0a05\u0a24\u0a47 \u0a38\u0a2e\u0a3e\u0a82',eLblDate:'\u0a24\u0a3e\u0a30\u0a40\u0a16',
     dresscodeLabel:'\u0a2a\u0a39\u0a3f\u0a30\u0a3e\u0a35\u0a3e',dresscodeTitle2:'\u0a30\u0a38\u0a2e\u0a40 \u0a2a\u0a39\u0a3f\u0a30\u0a3e\u0a35\u0a3e',dressClrLady:'\u0a39\u0a32\u0a15\u0a47 \u0a30\u0a70\u0a17',dressClrGent:'\u0a15\u0a3e\u0a32\u0a3e',avoidColors:'\u0a07\u0a39 \u0a30\u0a70\u0a17 \u0a28\u0a3e \u0a2a\u0a39\u0a3f\u0a28\u0a4b',dressLadies:'\u0a14\u0a30\u0a24\u0a3e\u0a82',dressGents:'\u0a2e\u0a30\u0a26',vestidoLargo:'\u0a32\u0a70\u0a2c\u0a3e \u0a32\u0a3f\u0a2c\u0a3e\u0a38',traje:'\u0a38\u0a42\u0a1f',
     galleryLabel:'\u0a17\u0a48\u0a32\u0a30\u0a40',galleryTitle:'\u0a38\u0a3e\u0a21\u0a3c\u0a47 \u0a2a\u0a32',
     hotelLabel:'\u0a39\u0a4b\u0a1f\u0a32',hotelTitle:'\u0a39\u0a4b\u0a1f\u0a32',hotelBody:'\u0a38\u0a3f\u0a2b\u0a3c\u0a3e\u0a30\u0a38\u0a3c \u0a39\u0a4b\u0a1f\u0a32',hotelDir:'\u0a28\u0a15\u0a38\u0a3c\u0a3e',
     giftsLabel:'\u0a24\u0a4b\u0a39\u0a2b\u0a3c\u0a47',giftsTitle:'\u0a26\u0a3f\u0a32\u0a4b\u0a82 \u0a24\u0a4b\u0a39\u0a2b\u0a3c\u0a3e',giftsBody:'\u0a24\u0a41\u0a39\u0a3e\u0a21\u0a3c\u0a40 \u0a39\u0a3e\u0a1c\u0a3c\u0a30\u0a40',giftsCash:'\u0a38\u0a3f\u0a30\u0a2b\u0a3c \u0a28\u0a15\u0a26 \u0a1c\u0a3e\u0a82 \u0a2c\u0a48\u0a02\u0a15 \u0a1f\u0a4d\u0a30\u0a3e\u0a02\u0a38\u0a2b\u0a3c\u0a30',
-    rsvpLabel:'\u0a39\u0a3e\u0a1c\u0a3c\u0a30\u0a40',rsvpTitle:'\u0a39\u0a3e\u0a1c\u0a3c\u0a30\u0a40 \u0a2a\u0a71\u0a15\u0a40 \u0a15\u0a30\u0a4b',rsvpPre:'\u0a07\u0a38 \u0a24\u0a3e\u0a30\u0a40\u0a16 \u0a24\u0a4b\u0a82 \u0a2a\u0a39\u0a3f\u0a32\u0a3e\u0a82',rsvpFname:'\u0a28\u0a3e\u0a2e',rsvpLname:'\u0a09\u0a2a\u0a28\u0a3e\u0a2e',rsvpMsg:'\u0a38\u0a70\u0a26\u0a47\u0a38\u0a3c\u0a3e',rsvpAdults:'\u0a2c\u0a3e\u0a32\u0a17',rsvpSubmit:'\u0a2a\u0a41\u0a38\u0a3c\u0a1f\u0a40 \u0a2d\u0a47\u0a1c\u0a4b',rsvpWaTitle:'\u0a38\u0a35\u0a3e\u0a32?',rsvpWaBody:'WhatsApp \u0a24\u0a47 \u0a38\u0a70\u0a2a\u0a30\u0a15 \u0a15\u0a30\u0a4b',rsvp18Notice:'18 \u0a38\u0a3e\u0a32 \u0a24\u0a4b\u0a02 \u0a35\u0a71\u0a21\u0a47',
-    nav_home:'\u0a2e\u0a41\u0a71\u0a16 \u0a2a\u0a70\u0a28\u0a3e',nav_parents:'\u0a38਼\u0a3e\u0a21\u0a3c\u0a47 \u0a2a\u0a30\u0a3f\u0a35\u0a3e\u0a30',nav_dates:'\u0a24\u0a3e\u0a30\u0a40\u0a16\u0a3e\u0a82',nav_attire:'\u0a2a\u0a39\u0a3f\u0a30\u0a3e\u0a35\u0a3e',nav_gallery:'\u0a17\u0a48\u0a32\u0a30\u0a40',nav_hotels:'\u0a39\u0a4b\u0a1f\u0a32',nav_gifts:'\u0a24\u0a4b\u0a39\u0a2b\u0a3c\u0a47',nav_rsvp:'\u0a2a\u0a41\u0a38\u0a3c\u0a1f\u0a40'}
+    rsvpLabel:'\u0a39\u0a3e\u0a1c\u0a3c\u0a30\u0a40',rsvpTitle:'\u0a39\u0a3e\u0a1c\u0a3c\u0a30\u0a40 \u0a2a\u0a71\u0a15\u0a40 \u0a15\u0a30\u0a4b',rsvpPre:'\u0a07\u0a38 \u0a24\u0a3e\u0a30\u0a40\u0a16 \u0a24\u0a4b\u0a82 \u0a2a\u0a39\u0a3f\u0a32\u0a3e\u0a82',rsvpFname:'\u0a28\u0a3e\u0a2e',rsvpLname:'\u0a09\u0a2a\u0a28\u0a3e\u0a2e',rsvpMsg:'\u0a38\u0a70\u0a26\u0a47\u0a38\u0a3c\u0a3e',rsvpAdults:'\u0a2c\u0a3e\u0a32\u0a17',rsvpSubmit:'\u0a2a\u0a41\u0a38\u0a3c\u0a1f\u0a40 \u0a2d\u0a47\u0a1c\u0a4b',rsvpWaTitle:'\u0a38\u0a35\u0a3e\u0a32?',rsvpWaBody:'WhatsApp \u0a24\u0a47 \u0a38\u0a70\u0a2a\u0a30\u0a15 \u0a15\u0a30\u0a4b',rsvp18Notice:'18 \u0a38\u0a3e\u0a32 \u0a24\u0a4b\u0a82 \u0a35\u0a71\u0a21\u0a47',
+    nav_home:'\u0a2e\u0a41\u0a71\u0a16 \u0a2a\u0a70\u0a28\u0a3e',nav_parents:'\u0a38\u0a3c\u0a3e\u0a21\u0a3c\u0a47 \u0a2a\u0a30\u0a3f\u0a35\u0a3e\u0a30',nav_dates:'\u0a24\u0a3e\u0a30\u0a40\u0a16\u0a3e\u0a82',nav_attire:'\u0a2a\u0a39\u0a3f\u0a30\u0a3e\u0a35\u0a3e',nav_gallery:'\u0a17\u0a48\u0a32\u0a30\u0a40',nav_hotels:'\u0a39\u0a4b\u0a1f\u0a32',nav_gifts:'\u0a24\u0a4b\u0a39\u0a2b\u0a3c\u0a47',nav_rsvp:'\u0a2a\u0a41\u0a38\u0a3c\u0a1f\u0a40'}
 };
 
 var LADY_SVG='<svg viewBox="0 0 130 280" overflow="visible" style="width:90px;height:auto;" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="dg1l" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#F8D4E0"/><stop offset="100%" stop-color="#E090B0"/></radialGradient><radialGradient id="dg2l" cx="50%" cy="30%" r="70%"><stop offset="0%" stop-color="#FAE0EA"/><stop offset="100%" stop-color="#D87898"/></radialGradient></defs><ellipse cx="65" cy="22" rx="14" ry="16" fill="#F8C4BC"/><path d="M52,14 Q40,30 38,58 Q36,82 39,110" fill="#6A3820" opacity=".95"/><path d="M78,14 Q90,30 92,58 Q94,82 91,110" fill="#6A3820" opacity=".95"/><ellipse cx="65" cy="10" rx="17" ry="10" fill="#6A3820"/><path d="M48,54 Q38,68 32,84 Q28,96 31,100 Q35,103 38,90 Q44,74 52,58Z" fill="#F8C4BC"/><path d="M82,54 Q92,68 98,84 Q102,96 99,100 Q95,103 92,90 Q86,74 78,58Z" fill="#F8C4BC"/><path d="M46,52 Q51,42 65,39 Q79,42 84,52 L82,86 L48,86Z" fill="url(#dg2l)"/><path d="M50,99 L22,190 L12,236 Q38,229 65,232 Q92,229 118,236 L108,190 L80,99Z" fill="url(#dg1l)"/><path d="M10,236 Q24,250 38,244 Q50,237 58,244 Q62,250 65,245 Q68,250 72,244 Q80,237 92,244 Q106,250 120,236" stroke="#E8A0B8" stroke-width="2.5" fill="#FAD8E8" fill-opacity=".65" stroke-linecap="round"/></svg>';
@@ -438,6 +435,48 @@ var NM_DATA=[{roleKey:'padresNovia',names:'brideParents'},{roleKey:'padresNovio'
 var currentLang='es',audio=null,playing=false,galIdx=0,lbIdx=0,lbImgs=[],ssIdx=0,ssTmr=null,ssSlides=[],wT=false,pC,pX,pts=[],pR=false;
 var mouseX=-9999,mouseY=-9999;
 var GAL_W=280;
+
+/* ── ROPE BULBS — rendered as HTML divs so they stay perfectly circular on any screen ── */
+var BULB_DATA=[
+  {pct:8, dur:2.0, del:0.0},{pct:20,dur:1.7,del:0.4},
+  {pct:32,dur:2.2,del:0.2},{pct:44,dur:1.9,del:0.6},
+  {pct:50,dur:2.3,del:0.1},{pct:62,dur:1.8,del:0.5},
+  {pct:74,dur:2.1,del:0.3},{pct:86,dur:1.6,del:0.7},
+  {pct:97,dur:2.4,del:0.2}
+];
+/* Evalúa la bezier cuadrática del cable en viewBox coords (0-1000 x, 0-28 y) */
+function getRopeY(pct, svgH){
+  var x=(pct/100)*1000;
+  var period=200, phase=x%period, t, y;
+  if(phase<=100){t=phase/100; y=(1-t)*(1-t)*14+2*(1-t)*t*7+t*t*14;}
+  else{t=(phase-100)/100; y=(1-t)*(1-t)*14+2*(1-t)*t*21+t*t*14;}
+  return (y/28)*svgH;
+}
+function buildRopeBulbs(){
+  var cont=document.getElementById('rope-bulbs');
+  var svg=document.getElementById('gal-rope');
+  if(!cont||!svg)return;
+  /* Si el SVG aún no tiene altura real, reintentamos tras un frame */
+  var svgH=svg.getBoundingClientRect().height;
+  if(!svgH){requestAnimationFrame(function(){buildRopeBulbs();});return;}
+  cont.innerHTML='';
+  cont.style.height=(svgH+24)+'px';
+  BULB_DATA.forEach(function(b){
+    var wy=getRopeY(b.pct,svgH);
+    var stem=document.createElement('div');
+    stem.className='rb-stem';
+    stem.style.left=b.pct+'%';
+    stem.style.top=Math.round(wy)+'px';
+    stem.style.height='11px';
+    var bulb=document.createElement('div');
+    bulb.className='rb-bulb';
+    bulb.style.left=b.pct+'%';
+    bulb.style.top=Math.round(wy+11)+'px';
+    bulb.style.animation='bulbGlow '+b.dur+'s '+b.del+'s ease-in-out infinite';
+    cont.appendChild(stem);
+    cont.appendChild(bulb);
+  });
+}
 
 /* ── GALLERY ── */
 function buildGallery(){
@@ -480,17 +519,15 @@ function galApplyPos(instant){
 }
 function galGoTo(n){if(n===galIdx)return;galIdx=n;galApplyPos(false);}
 function galleryNav(dir){galIdx=(galIdx+dir+CFG.photos.length)%CFG.photos.length;galApplyPos(false);}
-window.addEventListener('resize',function(){galApplyPos(true);},{passive:true});
+window.addEventListener('resize',function(){galApplyPos(true);requestAnimationFrame(buildRopeBulbs);},{passive:true});
 
-/* ── GIFTS — single clean definition, no dependencies on T for card labels ── */
+/* ── GIFTS ── */
 var COPY_SVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
 function doCopy(btn,val){try{navigator.clipboard.writeText(val);}catch(e){var ta=document.createElement('textarea');ta.value=val;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e2){}document.body.removeChild(ta);}btn.innerHTML='&#10003;';btn.style.color='#C8965A';setTimeout(function(){btn.innerHTML=COPY_SVG;btn.style.color='';},1600);}
 
 function buildGifts(){
   var gg=document.getElementById('gifts-grid');if(!gg)return;gg.innerHTML='';
-  var t=T[currentLang]||T.es;
   var isEN=currentLang==='en',isPA=currentLang==='pa';
-  /* Label strings derived directly from currentLang — no T lookup for card face */
   var bankL1=isEN?'Bank':isPA?'\u0a2c\u0a48\u0a02\u0a15':'Transferencia';
   var bankL2=isEN?'Transfer':isPA?'\u0a1f\u0a4d\u0a30\u0a3e\u0a02\u0a38\u0a2b\u0a3c\u0a30':'Bancaria';
   var bankTap=isEN?'Tap to see details':isPA?'\u0a1f\u0a48\u0a2a \u0a15\u0a30\u0a4b':'Toca para ver datos';
@@ -539,12 +576,9 @@ function buildGifts(){
         +'</span>';
       var ppLbl=document.createElement('div');
       ppLbl.style.cssText='height:46px;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.5;border-top:1px solid rgba(200,150,90,.13);';
-      /* ES: Transferencia arriba, PayPal abajo. EN/PA: PayPal arriba, Transfer abajo */
-      ppLbl.innerHTML= (!isEN&&!isPA)
-        ? '<span style="font-size:.56rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">Transferencia</span>'
-          +'<span style="font-size:.56rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">PayPal</span>'
-        : '<span style="font-size:.56rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">PayPal</span>'
-          +'<span style="font-size:.56rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">'+ppL2+'</span>';
+      ppLbl.innerHTML=(!isEN&&!isPA)
+        ?'<span style="font-size:.56rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">Transferencia</span><span style="font-size:.56rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">PayPal</span>'
+        :'<span style="font-size:.56rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">PayPal</span><span style="font-size:.56rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">'+ppL2+'</span>';
       var ppSub=document.createElement('div');
       ppSub.style.cssText='height:34px;display:flex;align-items:center;justify-content:center;font-size:.58rem;color:var(--muted);';
       ppSub.innerHTML=ppTap+' &#x2197;';
@@ -662,24 +696,44 @@ function setSongUI(on){var fpi=document.getElementById('fmp-pi');if(fpi)fpi.inne
 function stopSong(){playing=false;setSongUI(false);}
 function updateFmpUI(){var ring=document.getElementById('fmp-ring-fill');if(ring&&audio&&audio.duration)ring.style.strokeDashoffset=((2*Math.PI*27)*(1-audio.currentTime/audio.duration)).toFixed(2);}
 function toggleSong(){if(CFG.songAudio){if(!audio){audio=new Audio(CFG.songAudio);audio.onended=stopSong;audio.ontimeupdate=updateFmpUI;}if(playing){audio.pause();stopSong();}else{audio.currentTime=audio.currentTime||18;audio.play().then(function(){playing=true;setSongUI(true);}).catch(function(){});}}else{if(!playing){playing=true;setSongUI(true);window.open(CFG.songSpotify,'_blank');}else stopSong();}}
-function mkP(){return{x:Math.random()*innerWidth,y:Math.random()*-innerHeight,r:Math.random()*7+4,sp:Math.random()*1+.4,sx:Math.random()*1.2-.6,sw:Math.random()*.03+.01,sc:Math.random()*Math.PI*2,op:Math.random()*.5+.2,h:Math.random()<.5};}
+function mkP(){return{x:Math.random()*innerWidth,y:Math.random()*-innerHeight,r:Math.random()*7+4,sp:Math.random()*1+.4,sx:Math.random()*1.2-.6,sw:Math.random()*.03+.01,sc:Math.random()*Math.PI*2,op:Math.random()*.5+.2,h:Math.random()<.5,
+  /* flickering */
+  fk:Math.random()*Math.PI*2,  /* flicker phase */
+  fks:Math.random()*.18+.08,   /* flicker speed */
+  fkd:Math.random()*.55+.25    /* flicker depth */
+};}
 function initPetals(){pC=document.getElementById('pc');if(!pC)return;pC.width=innerWidth;pC.height=innerHeight;pX=pC.getContext('2d');window.addEventListener('resize',function(){if(pC){pC.width=innerWidth;pC.height=innerHeight;}});for(var i=0;i<28;i++)pts.push(mkP());pC.classList.add('show');pR=true;animP();}
 function animP(){
   if(!pR)return;
   pX.clearRect(0,0,pC.width,pC.height);
   pts.forEach(function(p){
     p.y+=p.sp;p.x+=Math.sin(p.sc)*p.sx;p.sc+=p.sw;
+    p.fk+=p.fks;
+    var flicker=1-(p.fkd*(0.6*(0.5+0.5*Math.sin(p.fk))+0.4*(0.5+0.5*Math.sin(p.fk*2.3+1.1))));
     var px=p.x+Math.sin(p.sc)*3;
-    var flicker=0.85+Math.random()*0.15;
     var dx=px-mouseX,dy=p.y-mouseY,dist=Math.sqrt(dx*dx+dy*dy);
-    var near=dist<80;
-    var r=Math.round(232+flicker*10),g=Math.round(148+flicker*8),b=Math.round(178+flicker*12);
-    var hr=Math.round(242+flicker*5),hg=Math.round(198+flicker*6),hb=Math.round(208+flicker*8);
-    pX.save();pX.translate(px,p.y);
-    pX.globalAlpha=Math.min(1,p.op*(near?0.9+(1-dist/80)*0.1:0.52)*flicker);
-    pX.shadowColor='rgba(220,100,150,0.6)';pX.shadowBlur=near?20:8;
-    if(p.h){pX.beginPath();pX.moveTo(0,-p.r);pX.bezierCurveTo(p.r,-p.r,p.r,p.r/2,0,p.r);pX.bezierCurveTo(-p.r,p.r/2,-p.r,-p.r,0,-p.r);pX.fillStyle='rgb('+hr+','+hg+','+hb+')';pX.fill();}
-    else{pX.beginPath();pX.ellipse(0,0,p.r*.6,p.r,Math.sin(p.sc)*.5,0,Math.PI*2);pX.fillStyle='rgba('+r+','+g+','+b+',.92)';pX.fill();}
+    var focusR=180;
+    var proximity=Math.max(0,1-dist/focusR);
+    var eased=proximity*proximity*(3-2*proximity);
+    var scale=1+eased*0.55;
+    var sr=p.r*scale;
+
+    /* todo dentro de save/restore para que no se acumule entre pétalos */
+    pX.save();
+    pX.translate(px,p.y);
+    pX.globalAlpha=Math.min(1,(0.28+flicker*0.18)+(0.64)*eased);
+    pX.filter='blur('+(Math.max(0,5*(1-eased))).toFixed(1)+'px)';
+    pX.shadowColor='rgba(220,80,140,'+(0.25+eased*0.65)+')';
+    pX.shadowBlur=4+eased*26;
+    if(p.h){
+      pX.beginPath();pX.moveTo(0,-sr);pX.bezierCurveTo(sr,-sr,sr,sr/2,0,sr);pX.bezierCurveTo(-sr,sr/2,-sr,-sr,0,-sr);
+      pX.fillStyle='rgb('+Math.round(242+flicker*8)+','+Math.round(198+flicker*6)+','+Math.round(208+flicker*8)+')';
+      pX.fill();
+    } else {
+      pX.beginPath();pX.ellipse(0,0,sr*.6,sr,Math.sin(p.sc)*.5,0,Math.PI*2);
+      pX.fillStyle='rgba('+Math.round(232+flicker*10+eased*12)+','+Math.round(148+flicker*8)+','+Math.round(178+flicker*12)+',.92)';
+      pX.fill();
+    }
     pX.restore();
     if(p.y>innerHeight+20){p.y=-20;p.x=Math.random()*innerWidth;}
   });
@@ -687,12 +741,12 @@ function animP(){
 }
 document.addEventListener('mousemove',function(e){mouseX=e.clientX;mouseY=e.clientY;});
 
-function startInvite(lang){var splash=document.getElementById('splash');if(!splash)return;setLang(lang);buildGallery();if(CFG.songAudio){if(!audio){audio=new Audio(CFG.songAudio);audio.onended=stopSong;audio.ontimeupdate=updateFmpUI;}audio.currentTime=18;audio.play().then(function(){playing=true;setSongUI(true);}).catch(function(){});}splash.style.transition='opacity .7s ease';splash.style.opacity='0';setTimeout(function(){if(splash.parentNode)splash.parentNode.removeChild(splash);initPetals();setTimeout(triggerWrite,300);setTimeout(function(){var fmp=document.getElementById('fmp');if(fmp)fmp.classList.add('show');},800);},700);}
+function startInvite(lang){var splash=document.getElementById('splash');if(!splash)return;setLang(lang);buildGallery();buildRopeBulbs();if(CFG.songAudio){if(!audio){audio=new Audio(CFG.songAudio);audio.onended=stopSong;audio.ontimeupdate=updateFmpUI;}audio.currentTime=18;audio.play().then(function(){playing=true;setSongUI(true);}).catch(function(){});}splash.style.transition='opacity .7s ease';splash.style.opacity='0';setTimeout(function(){if(splash.parentNode)splash.parentNode.removeChild(splash);initPetals();setTimeout(triggerWrite,300);setTimeout(function(){var fmp=document.getElementById('fmp');if(fmp)fmp.classList.add('show');},800);},700);}
 function obsSF(el){new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('vis');});},{threshold:.06}).observe(el);}
 window.addEventListener('scroll',function(){document.querySelectorAll('.sf:not(.vis)').forEach(function(el){if(el.getBoundingClientRect().top<window.innerHeight*.9)el.classList.add('vis');});},{passive:true});
 
 window.addEventListener('DOMContentLoaded',function(){
-  buildNameSpans();buildSS();buildGallery();
+  buildNameSpans();buildSS();buildGallery();buildRopeBulbs();
   var rf=document.getElementById('fmp-ring-fill');if(rf){var C=(2*Math.PI*27).toFixed(2);rf.style.strokeDasharray=C;rf.style.strokeDashoffset=C;}
   var fc=document.getElementById('f-couple');if(fc)fc.innerHTML='X\u00f3chitl &amp; Sarbjit &middot; 2026';
   setLang('es');
