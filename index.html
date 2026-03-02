@@ -627,7 +627,7 @@ function buildEvents(){
 
 function buildDress(){
   var t=T[currentLang]||T.es,c=document.getElementById('dress-cols');if(!c)return;
-  c.innerHTML='<div class="dress-col"><p class="dress-lbl">'+(t.dressLadies||'')+'</p>'+LADY_SVG+'<p style="font-family:var(--serif);font-size:.88rem;font-style:italic;color:#5A3A44;">'+(t.vestidoLargo||'')+'</p></div><div class="dress-col"><p class="dress-lbl">'+(t.dressGents||'')+'</p>'+GENT_SVG+'<p style="font-family:var(--serif);font-size:.88rem;font-style:italic;color:#5A3A44;">'+(t.traje||'')+'</p></div>';
+  c.innerHTML='<div style="text-align:center;margin:0 auto;"><img src="img/20882607-005a-4b9c-855c-885cd3f50aca.jpeg" alt="Dress code" style="max-width:min(420px,90vw);width:100%;border-radius:4px;box-shadow:0 8px 32px rgba(0,0,0,.18);"></div>';
   var sw=document.getElementById('avoid-sw');if(!sw)return;sw.innerHTML='';
   CFG.avoidColors.forEach(function(col){var s=document.createElement('div');s.className='av-sw';s.style.background=col;sw.appendChild(s);});
 }
