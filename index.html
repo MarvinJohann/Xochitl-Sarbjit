@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Invitación Xóchitl &amp; Sarbjit</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Great+Vibes&family=Montserrat:wght@200;300;400&family=Noto+Sans+Gurmukhi:wght@300;400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
 :root{--cream:#FEF9F6;--pk:#D4608A;--gold:#A8720A;--text:#1A0C10;--muted:#6A3848;--serif:'Cormorant Garamond',serif;--script:'Great Vibes',cursive;--sans:'Montserrat',sans-serif;}
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -196,6 +197,18 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
 <body>
 <canvas id="pc"></canvas>
 <div id="lb"><button id="lb-close">&#10005;</button><button id="lb-prev"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button><img id="lb-img" src="" alt=""><button id="lb-next"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button></div>
+
+<div id="qr-modal">
+  <div id="qr-modal-box">
+    <button id="qr-modal-close">&#10005;</button>
+    <div style="font-family:'Great Vibes',cursive;font-size:2.2rem;color:#C8965A;margin-bottom:4px;">¡Confirmado!</div>
+    <p style="font-size:.6rem;letter-spacing:3px;text-transform:uppercase;color:#8A5060;margin-bottom:4px;">Guarda tu código QR</p>
+    <div id="qr-code"></div>
+    <p style="font-size:.55rem;letter-spacing:3px;text-transform:uppercase;color:#C8965A;margin-bottom:4px;">Código de confirmación</p>
+    <p id="qr-conf-id" style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:#1A0C10;margin-bottom:14px;letter-spacing:2px;"></p>
+    <p style="font-size:.72rem;color:#8A5060;line-height:1.75;">Toma una captura de pantalla.<br>Lo necesitarás el día del evento.</p>
+  </div>
+</div>
 
 <div id="splash" style="position:fixed;inset:0;z-index:9999;background:linear-gradient(160deg,#F9EEF3,#EEE4F0);display:flex;align-items:center;justify-content:center;padding:20px;">
   <div style="background:linear-gradient(160deg,#F9EEF3,#EEE4F0);max-width:360px;width:100%;padding:40px 32px;text-align:center;box-shadow:0 24px 80px rgba(0,0,0,.35);position:relative;border:1px solid rgba(200,150,90,.25);">
@@ -698,6 +711,13 @@ function toggleLangDD(){var dd=document.getElementById('lang-dd');if(dd)dd.class
 function closeLangDD(){var dd=document.getElementById('lang-dd');if(dd)dd.classList.remove('open');}
 function openLB(imgs,idx){lbImgs=imgs;lbIdx=idx;var img=document.getElementById('lb-img'),lb=document.getElementById('lb');if(img)img.src=imgs[idx]||'';if(lb)lb.classList.add('open');}
 function closeLB(){var lb=document.getElementById('lb');if(lb)lb.classList.remove('open');}
+function genConfID(){
+  var chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  var id='CONF-';
+  for(var i=0;i<8;i++)id+=chars[Math.floor(Math.random()*chars.length)];
+  return id;
+}
+
 function submitRSVP(){
   var fn=((document.getElementById('ri-fn')||{}).value||'').trim();
   var ln=((document.getElementById('ri-ln')||{}).value||'').trim();
@@ -705,13 +725,26 @@ function submitRSVP(){
   var adults=parseInt((document.getElementById('ri-adults')||{}).value)||0;
   if(!fn){alert('Por favor completa los campos requeridos.');return;}
 
-  fetch('https://script.google.com/macros/s/AKfycbzhscRSi5vUk0tubVNfXlia8ZNdYOQ11nulaKsuflAsqpGLOzXfLAsCRrPQZJuF1_Qgyw/exec',{
-    method:'POST',
-    body:JSON.stringify({nombre:fn,apellido:ln,adultos:adults,mensaje:msg})
-  }).catch(function(){});
+  var confID=genConfID();
+  var qrText='Confirmacion: '+confID+'\nNombre: '+fn+(ln?' '+ln:'')+'\nAdultos: '+adults+'\nBoda: Xochitl & Sarbjit\n3 Jul 2026';
 
-  var m='Hola! Soy '+fn+(ln?' '+ln:'')+'. Confirmo mi asistencia. Adultos: '+adults+'.'+(msg?' Mensaje: '+msg:'');
-  window.open('https://wa.me/'+CFG.rsvpWa+'?text='+encodeURIComponent(m),'_blank');
+  var qrDiv=document.getElementById('qr-code');
+  var confEl=document.getElementById('qr-conf-id');
+  var modal=document.getElementById('qr-modal');
+
+  qrDiv.innerHTML='';
+  new QRCode(qrDiv,{text:qrText,width:220,height:220,colorDark:'#1A0C10',colorLight:'#ffffff'});
+  if(confEl)confEl.innerHTML=confID;
+  modal.classList.add('open');
+
+  setTimeout(function(){
+    var canvas=qrDiv.querySelector('canvas');
+    var qrBase64=canvas?canvas.toDataURL('image/png'):'';
+    fetch('https://script.google.com/macros/s/AKfycbzhscRSi5vUk0tubVNfXlia8ZNdYOQ11nulaKsuflAsqpGLOzXfLAsCRrPQZJuF1_Qgyw/exec',{
+      method:'POST',
+      body:JSON.stringify({nombre:fn,apellido:ln,adultos:adults,mensaje:msg,confirmacion:confID,qr:qrBase64})
+    }).catch(function(){});
+  },400);
 }
 function setSongUI(on){var fpi=document.getElementById('fmp-pi');if(fpi)fpi.innerHTML=on?'<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>':'<path d="M8 5v14l11-7z"/>';}
 function stopSong(){playing=false;setSongUI(false);}
@@ -784,6 +817,8 @@ window.addEventListener('DOMContentLoaded',function(){
   document.getElementById('lo-pa').addEventListener('click',function(){setLang('pa');closeLangDD();});
   document.getElementById('lang-icon-btn').addEventListener('click',toggleLangDD);
   document.getElementById('rsvp-submit').addEventListener('click',submitRSVP);
+  document.getElementById('qr-modal-close').addEventListener('click',function(){document.getElementById('qr-modal').classList.remove('open');});
+  document.getElementById('qr-modal').addEventListener('click',function(e){if(e.target===this)this.classList.remove('open');});
   document.getElementById('fmp').addEventListener('click',toggleSong);
   document.getElementById('lb-close').addEventListener('click',closeLB);
   document.getElementById('lb-prev').addEventListener('click',function(){lbIdx=(lbIdx-1+lbImgs.length)%lbImgs.length;var img=document.getElementById('lb-img');if(img)img.src=lbImgs[lbIdx]||'';});
