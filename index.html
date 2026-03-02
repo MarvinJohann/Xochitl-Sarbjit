@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Invitación Xóchitl &amp; Sarbjit</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@200;300;400&family=Noto+Sans+Gurmukhi:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Great+Vibes&family=Montserrat:wght@200;300;400&family=Noto+Sans+Gurmukhi:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root{--cream:#FEF9F6;--pk:#D4608A;--gold:#A8720A;--text:#1A0C10;--muted:#6A3848;--serif:'Cormorant Garamond',serif;--script:'Great Vibes',cursive;--sans:'Montserrat',sans-serif;}
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -76,7 +76,7 @@ body{background:var(--cream);color:var(--text);font-family:var(--sans);overflow-
 @keyframes qWrite{0%{transform:rotate(28deg)}50%{transform:rotate(27deg) translateY(3px)}100%{transform:rotate(28deg)}}
 #quill.writing{animation:qWrite .22s ease-in-out infinite;}
 .hiw{position:absolute;bottom:clamp(60px,10vh,100px);left:50%;transform:translateX(-50%);overflow:hidden;max-height:0;opacity:0;transition:max-height .7s,opacity .6s;white-space:nowrap;}
-.hiw.show{max-height:40px;opacity:1;margin-top:16px;}
+.hiw.show{max-height:40px;opacity:1;}
 .hss{position:absolute;inset:0;z-index:0;opacity:0;transition:opacity 1s;}.hss.show{opacity:1;}
 .ss-frame{position:absolute;inset:0;overflow:hidden;}
 .ss-slide{position:absolute;inset:0;opacity:0;transition:opacity 2.8s ease-in-out;}.ss-slide.active{opacity:1;}
@@ -92,7 +92,7 @@ body{background:var(--cream);color:var(--text);font-family:var(--sans);overflow-
 .nom-frame-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;}
 .nombram-inner{position:relative;z-index:2;padding:0 24px;}
 .nm-item{margin-bottom:28px;text-align:center;}
-.nm-role{font-size:.58rem;letter-spacing:5px;text-transform:uppercase;font-weight:700;margin-bottom:8px;background:linear-gradient(160deg,#FFE08A,#C8860A 20%,#F5D060 38%,#A06010 55%,#F0C840 72%,#8B5E08 88%,#E8C050);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.nm-role{font-size:.68rem;letter-spacing:5px;text-transform:uppercase;font-weight:700;margin-bottom:8px;background:linear-gradient(160deg,#FFE08A,#C8860A 20%,#F5D060 38%,#A06010 55%,#F0C840 72%,#8B5E08 88%,#E8C050);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;-webkit-text-stroke:0.3px #A06010;}
 .nm-names{font-family:var(--serif);font-size:1.25rem;font-style:italic;color:#3A1428;line-height:2;font-weight:600;}
 .ec-grid{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;max-width:900px;margin:32px auto 0;padding:0 16px;}
 .ecard{background:#F8F2E6;border-radius:6px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.28);transition:transform .3s;width:min(280px,88vw);}
@@ -262,7 +262,7 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
   <svg class="nom-frame-svg" viewBox="0 0 900 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="880" height="580" fill="none" stroke="url(#gld)" stroke-width="2.2" vector-effect="non-scaling-stroke"/><rect x="20" y="17" width="860" height="566" fill="none" stroke="url(#gld)" stroke-width="1" opacity=".5" vector-effect="non-scaling-stroke"/></svg>
   <div class="nombram-inner inn">
     <h2 class="sc-ttl" data-i18n="nombramTitle"></h2>
-    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2.8vw,1.45rem);margin:16px auto 0;max-width:480px;line-height:1.9;text-align:center;background:linear-gradient(160deg,#FFE08A,#C8860A 20%,#F5D060 38%,#A06010 55%,#F0C840 72%,#8B5E08 88%,#E8C050);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 1px 3px rgba(160,100,0,.3));" data-i18n="nmThanks"></p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.3rem,3.2vw,1.7rem);font-weight:700;margin:16px auto 0;max-width:520px;line-height:1.9;text-align:center;background:linear-gradient(160deg,#C8860A,#8B5E08 30%,#C8860A 60%,#8B5E08);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 1px 4px rgba(120,80,0,.4));-webkit-text-stroke:0.3px #A06010;" data-i18n="nmThanks"></p>
     <div id="nm-list" style="max-width:560px;margin:24px auto 0;"></div>
   </div>
 </section>
