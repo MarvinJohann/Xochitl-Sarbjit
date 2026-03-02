@@ -163,8 +163,11 @@ body{background:var(--cream);color:var(--text);font-family:var(--sans);overflow-
 .h-link{display:inline-block;margin-top:10px;font-size:.56rem;letter-spacing:2px;text-transform:uppercase;color:#1A0C10;text-decoration:none;border-bottom:1px solid rgba(160,100,40,.6);font-weight:600;}
 .rsvp-grid{display:grid;grid-template-columns:1fr 210px;gap:22px;max-width:720px;margin:28px auto 0;align-items:start;}
 @media(max-width:640px){
-  .qt{font-size:1.15rem;font-weight:600;color:#3A1428;-webkit-text-stroke:0.3px #3A1428;text-shadow:none;line-height:1.95;}
-  .quote-s{padding:60px 22px;}
+  .qt{font-size:1.6rem;font-weight:700;color:#3A1428;-webkit-text-stroke:0.5px #3A1428;text-shadow:none;line-height:1.9;}
+  .quote-s{padding:60px 18px;}
+  .rsvp-grid{display:flex !important;flex-direction:column !important;max-width:420px;margin-left:auto;margin-right:auto;}
+  .rsvp-box{order:1;}
+  .rwa{order:2;margin-top:16px;}
 }
 .rsvp-box{background:white;border:1px solid rgba(200,150,90,.22);padding:26px 20px;}
 .rr2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
