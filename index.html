@@ -54,9 +54,7 @@ body{background:var(--cream);color:var(--text);font-family:var(--sans);overflow-
 .nav-item:hover{background:#FAEEF2;color:var(--pk);}
 .ni{filter:sepia(1) saturate(4) hue-rotate(-15deg) brightness(.85);}
 .nav-sep{height:1px;background:rgba(200,150,90,.12);margin:4px 20px;}
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 60px;position:relative;overflow:hidden;background:linear-gradient(160deg,#F9EEF3,#EEE4F0);}
-.hero-bg{position:absolute;inset:0;background-image:url('img/IMG_7517.jpeg');background-size:cover;background-position:center;z-index:0;}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,8,12,.4),rgba(20,8,12,.18) 40%,rgba(20,8,12,.46));}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 60px;position:relative;overflow:hidden;background:linear-gradient(160deg,#2A1018,#1A0828);}
 .hero>*{position:relative;z-index:1;}
 .hero::before{content:'';position:absolute;top:58px;left:18px;width:54px;height:54px;border-top:1px solid rgba(200,150,90,.3);border-left:1px solid rgba(200,150,90,.3);z-index:1;}
 .hero::after{content:'';position:absolute;top:58px;right:18px;width:54px;height:54px;border-top:1px solid rgba(200,150,90,.3);border-right:1px solid rgba(200,150,90,.3);z-index:1;}
@@ -80,7 +78,7 @@ body{background:var(--cream);color:var(--text);font-family:var(--sans);overflow-
 .hiw.show{max-height:40px;opacity:1;margin-top:14px;}
 .hss{position:absolute;inset:0;z-index:0;opacity:0;transition:opacity 1s;}.hss.show{opacity:1;}
 .ss-frame{position:absolute;inset:0;overflow:hidden;}
-.ss-slide{position:absolute;inset:0;opacity:0;transition:opacity 2.8s ease-in-out;}.ss-slide.active{opacity:1;}
+.ss-slide{position:absolute;inset:0;opacity:0;transition:opacity 2.8s ease-in-out;background:linear-gradient(160deg,#3A1828,#1A0C28);}.ss-slide.active{opacity:1;}
 .ss-slide img{width:100%;height:100%;object-fit:cover;display:block;}
 .ss-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,8,12,.35),rgba(20,8,12,.15) 45%,rgba(20,8,12,.45));z-index:1;}
 .ss-arr{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:12px;z-index:3;}
@@ -98,15 +96,14 @@ body{background:var(--cream);color:var(--text);font-family:var(--sans);overflow-
 .ec-grid{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;max-width:900px;margin:32px auto 0;padding:0 16px;}
 .ecard{background:#F8F2E6;border-radius:6px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.28);transition:transform .3s;width:min(280px,88vw);}
 .ecard:hover{transform:translateY(-5px);}
-.ecard-img{width:100%;height:160px;object-fit:cover;display:block;}
+.ecard-img{width:100%;height:160px;object-fit:cover;display:block;background:linear-gradient(160deg,#C8A060,#8B5E20);}
 .ecard-body{padding:18px 16px;}
 .ecard-title{font-family:var(--script);font-size:1.7rem;color:#8B5E20;text-align:center;margin-bottom:4px;}
 .ecard-dots{text-align:center;letter-spacing:5px;color:rgba(180,130,60,.45);font-size:.5rem;margin:8px 0;}
 .ecard-lbl{font-size:.5rem;letter-spacing:4px;text-transform:uppercase;color:#8B5E20;font-weight:700;text-align:center;margin-bottom:3px;}
 .ecard-info{font-family:var(--serif);font-size:.88rem;color:#3A2510;text-align:center;line-height:1.65;}
 .ecard-hora{font-family:var(--serif);font-size:1.1rem;font-style:italic;color:#8B5E20;text-align:center;margin-top:4px;}
-.dress-cols{display:flex;justify-content:center;gap:clamp(40px,14vw,100px);margin:32px auto 24px;align-items:flex-end;flex-wrap:wrap;}
-.dress-col{text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;}
+.dress-cols{display:flex;flex-direction:column;align-items:center;gap:0;margin:32px auto 24px;}
 .dress-lbl{font-size:.56rem;letter-spacing:5px;text-transform:uppercase;color:var(--gold);font-weight:600;}
 .avoid-lbl{font-size:.82rem;color:#5A3A44;margin:18px 0 10px;}
 .avoid-sw{display:flex;justify-content:center;gap:16px;}
@@ -136,7 +133,7 @@ body{background:var(--cream);color:var(--text);font-family:var(--sans);overflow-
 .cp-bottom{width:18px;height:16px;background:linear-gradient(to bottom,#C8A060,#A07840,#886030);border-radius:0 0 4px 4px;margin:0 auto;box-shadow:1px 2px 4px rgba(0,0,0,.5);}
 .sg-photo{background:#FEFCF8;padding:9px 9px 44px;box-shadow:0 20px 60px rgba(0,0,0,.4);cursor:pointer;width:240px;}
 .sg-photo img{width:100%;aspect-ratio:.85;object-fit:cover;display:block;}
-.sg-ph{width:100%;aspect-ratio:.85;background:#D8C4D0;display:flex;align-items:center;justify-content:center;font-size:2.5rem;}
+.sg-ph{width:100%;aspect-ratio:.85;background:linear-gradient(160deg,#D8C4D0,#C4A8BC);display:flex;align-items:center;justify-content:center;font-size:2.5rem;}
 #rope-bulbs{position:absolute;top:0;left:0;right:0;height:70px;pointer-events:none;z-index:2;}
 .rb-stem{position:absolute;width:2px;height:11px;background:#5A3A10;transform:translateX(-50%);}
 .rb-bulb{position:absolute;width:12px;height:12px;border-radius:50%;background:#FFD060;transform:translateX(-50%);box-shadow:0 0 8px 3px rgba(255,176,0,.8),0 0 18px 6px rgba(255,90,0,.45);}
@@ -163,10 +160,7 @@ body{background:var(--cream);color:var(--text);font-family:var(--sans);overflow-
 .h-note{font-size:.7rem;color:#3A1820;line-height:1.8;padding-top:8px;border-top:1px solid rgba(200,150,90,.25);font-weight:400;}
 .h-link{display:inline-block;margin-top:10px;font-size:.56rem;letter-spacing:2px;text-transform:uppercase;color:#1A0C10;text-decoration:none;border-bottom:1px solid rgba(160,100,40,.6);font-weight:600;}
 .rsvp-grid{display:block;max-width:520px;margin:28px auto 0;}
-@media(max-width:640px){
-  .qt{font-size:1.6rem;font-weight:700;color:#3A1428;-webkit-text-stroke:0.5px #3A1428;text-shadow:none;line-height:1.9;}
-  .quote-s{padding:60px 18px;}
-}
+@media(max-width:640px){.qt{font-size:1.6rem;font-weight:700;color:#3A1428;-webkit-text-stroke:0.5px #3A1428;text-shadow:none;line-height:1.9;}.quote-s{padding:60px 18px;}}
 .rsvp-box{background:white;border:1px solid rgba(200,150,90,.22);padding:26px 20px;}
 .rr2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
 .rfg{margin-bottom:12px;}
@@ -175,7 +169,6 @@ body{background:var(--cream);color:var(--text);font-family:var(--sans);overflow-
 .ri,.rta{width:100%;border:1px solid rgba(200,150,90,.3);background:#FDFAF8;padding:9px 11px;font-family:var(--serif);font-size:.95rem;color:var(--text);font-style:italic;outline:none;}
 .rta{resize:vertical;min-height:76px;}
 .r-sub{width:100%;margin-top:14px;padding:12px;background:rgba(200,150,90,.08);border:1px solid var(--gold);color:#7A5A18;font-size:.58rem;letter-spacing:4px;text-transform:uppercase;cursor:pointer;font-family:var(--sans);}
-.rwa{background:rgba(200,150,90,.07);border:1px solid rgba(200,150,90,.28);padding:22px 16px;text-align:center;}
 .rwa-t{font-family:var(--serif);font-size:1.3rem;font-style:italic;color:var(--gold);margin-bottom:8px;}
 .rwa-b{font-size:.7rem;color:var(--muted);line-height:1.8;margin-bottom:14px;}
 .rwa-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:11px;background:#E8A0B4;color:white;font-size:.6rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;width:100%;}
@@ -192,6 +185,9 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
 .f-couple{font-size:.52rem;letter-spacing:4px;text-transform:uppercase;}
 .fdv{width:100%;line-height:0;overflow:hidden;display:block;}.fdv svg{width:100%;display:block;}
 .slim-div{padding:6px 0;text-align:center;}
+/* dress-code img placeholder */
+.dc-img-ph{width:100%;max-width:420px;height:260px;background:linear-gradient(160deg,#F0E0E8,#E0D0E8);display:flex;align-items:center;justify-content:center;border-radius:4px;box-shadow:0 8px 32px rgba(0,0,0,.18);margin:0 auto;}
+.dc-img-ph span{font-family:var(--serif);font-style:italic;color:#9B5070;font-size:1rem;}
 </style>
 </head>
 <body>
@@ -208,9 +204,9 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
     <div style="font-size:.48rem;letter-spacing:6px;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:300;color:#9B5070;margin-bottom:28px;">3 &middot; VII &middot; 2026</div>
     <div style="width:40px;height:1px;background:rgba(200,150,90,.4);margin:0 auto 20px;"></div>
     <div style="display:flex;flex-direction:column;gap:10px;">
-      <button id="btn-es" style="padding:12px;background:rgba(200,150,90,.08);border:1px solid rgba(200,150,90,.45);font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#7A4A60;cursor:pointer;display:flex;align-items:center;gap:10px;justify-content:center;"><span>&#127474;&#127485;</span><span style="letter-spacing:2px;">Espa&#241;ol</span></button>
-      <button id="btn-en" style="padding:12px;background:rgba(200,150,90,.08);border:1px solid rgba(200,150,90,.45);font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#7A4A60;cursor:pointer;display:flex;align-items:center;gap:10px;justify-content:center;"><span>&#127464;&#127462;</span><span style="letter-spacing:2px;">English</span></button>
-      <button id="btn-pa" style="padding:12px;background:rgba(200,150,90,.08);border:1px solid rgba(200,150,90,.45);font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#7A4A60;cursor:pointer;display:flex;align-items:center;gap:10px;justify-content:center;"><span>&#127470;&#127475;</span><span style="letter-spacing:2px;">&#2602;&#2672;&#2588;&#2622;&#2604;&#2624;</span></button>
+      <button id="btn-es" style="padding:12px;background:rgba(200,150,90,.08);border:1px solid rgba(200,150,90,.45);font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#7A4A60;cursor:pointer;display:flex;align-items:center;gap:10px;justify-content:center;"><span>🇲🇽</span><span style="letter-spacing:2px;">Español</span></button>
+      <button id="btn-en" style="padding:12px;background:rgba(200,150,90,.08);border:1px solid rgba(200,150,90,.45);font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#7A4A60;cursor:pointer;display:flex;align-items:center;gap:10px;justify-content:center;"><span>🇨🇦</span><span style="letter-spacing:2px;">English</span></button>
+      <button id="btn-pa" style="padding:12px;background:rgba(200,150,90,.08);border:1px solid rgba(200,150,90,.45);font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#7A4A60;cursor:pointer;display:flex;align-items:center;gap:10px;justify-content:center;"><span>🇮🇳</span><span style="letter-spacing:2px;">ਪੰਜਾਬੀ</span></button>
     </div>
   </div>
 </div>
@@ -218,16 +214,16 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
 <div id="nav-ov"></div>
 <div id="nav-drawer"><div class="nav-inner">
   <div class="nav-couple"><div class="nav-cn">Xóchitl &amp; Sarbjit</div><div class="nav-cd">3 &middot; VII &middot; 2026</div></div>
-  <button class="nav-item" id="nav-home"><span class="ni">&#127968;</span>&nbsp;<span data-i18n="nav_home"></span></button>
-  <button class="nav-item" id="nav-parents"><span class="ni">&#128106;</span>&nbsp;<span data-i18n="nav_parents"></span></button>
-  <button class="nav-item" id="nav-dates"><span class="ni">&#128197;</span>&nbsp;<span data-i18n="nav_dates"></span></button>
-  <button class="nav-item" id="nav-gallery"><span class="ni">&#128247;</span>&nbsp;<span data-i18n="nav_gallery"></span></button>
+  <button class="nav-item" id="nav-home"><span class="ni">🏠</span>&nbsp;<span data-i18n="nav_home"></span></button>
+  <button class="nav-item" id="nav-parents"><span class="ni">👪</span>&nbsp;<span data-i18n="nav_parents"></span></button>
+  <button class="nav-item" id="nav-dates"><span class="ni">📅</span>&nbsp;<span data-i18n="nav_dates"></span></button>
+  <button class="nav-item" id="nav-gallery"><span class="ni">📷</span>&nbsp;<span data-i18n="nav_gallery"></span></button>
   <div class="nav-sep"></div>
-  <button class="nav-item" id="nav-gifts"><span class="ni">&#127873;</span>&nbsp;<span data-i18n="nav_gifts"></span></button>
-  <button class="nav-item" id="nav-rsvp"><span class="ni">&#128140;</span>&nbsp;<span data-i18n="nav_rsvp"></span></button>
+  <button class="nav-item" id="nav-gifts"><span class="ni">🎁</span>&nbsp;<span data-i18n="nav_gifts"></span></button>
+  <button class="nav-item" id="nav-rsvp"><span class="ni">💌</span>&nbsp;<span data-i18n="nav_rsvp"></span></button>
   <div class="nav-sep"></div>
-  <button class="nav-item" id="nav-attire"><span class="ni">&#128248;</span>&nbsp;<span data-i18n="nav_attire"></span></button>
-  <button class="nav-item" id="nav-hotels"><span class="ni">&#127968;</span>&nbsp;<span data-i18n="nav_hotels"></span></button>
+  <button class="nav-item" id="nav-attire"><span class="ni">👗</span>&nbsp;<span data-i18n="nav_attire"></span></button>
+  <button class="nav-item" id="nav-hotels"><span class="ni">🏨</span>&nbsp;<span data-i18n="nav_hotels"></span></button>
 </div></div>
 
 <div class="top-bar">
@@ -237,15 +233,15 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
     <button class="lang-icon-btn" id="lang-icon-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C8965A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></button>
     <span id="lang-label">ES</span>
     <div class="lang-dd" id="lang-dd">
-      <button class="lang-opt active" id="lo-es">&#127474;&#127485; Espa&#241;ol<span class="lo-check">&#10003;</span></button>
-      <button class="lang-opt" id="lo-en">&#127464;&#127462; English<span class="lo-check">&#10003;</span></button>
-      <button class="lang-opt" id="lo-pa">&#127470;&#127475; &#2602;&#2672;&#2588;&#2622;&#2604;&#2624;<span class="lo-check">&#10003;</span></button>
+      <button class="lang-opt active" id="lo-es">🇲🇽 Español<span class="lo-check">✓</span></button>
+      <button class="lang-opt" id="lo-en">🇨🇦 English<span class="lo-check">✓</span></button>
+      <button class="lang-opt" id="lo-pa">🇮🇳 ਪੰਜਾਬੀ<span class="lo-check">✓</span></button>
     </div>
   </div></div>
 </div>
 
 <section id="section-hero" class="hero">
-  <div class="hero-bg"></div><div class="hcbl"></div><div class="hcbr"></div>
+  <div class="hcbl"></div><div class="hcbr"></div>
   <div class="hss" id="hss"><div class="ss-frame"><div id="ss-track"></div><div class="ss-ov"></div>
     <div class="ss-arr"><button class="ssa" id="ss-prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button><button class="ssa" id="ss-next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button></div>
   </div><div class="ss-dots" id="ss-dots"></div></div>
@@ -286,8 +282,8 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
     </svg>
     <div id="rope-bulbs"></div>
     <div id="gal-outer" style="position:relative;width:100%;height:460px;overflow:hidden;margin-top:-22px;">
-      <button id="gal-prev" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);z-index:20;width:42px;height:42px;border-radius:50%;background:rgba(200,150,90,.15);border:1px solid rgba(200,150,90,.5);font-size:1.5rem;cursor:pointer;color:var(--text);line-height:1;">&#8249;</button>
-      <button id="gal-next" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);z-index:20;width:42px;height:42px;border-radius:50%;background:rgba(200,150,90,.15);border:1px solid rgba(200,150,90,.5);font-size:1.5rem;cursor:pointer;color:var(--text);line-height:1;">&#8250;</button>
+      <button id="gal-prev" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);z-index:20;width:42px;height:42px;border-radius:50%;background:rgba(200,150,90,.15);border:1px solid rgba(200,150,90,.5);font-size:1.5rem;cursor:pointer;color:var(--text);line-height:1;">‹</button>
+      <button id="gal-next" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);z-index:20;width:42px;height:42px;border-radius:50%;background:rgba(200,150,90,.15);border:1px solid rgba(200,150,90,.5);font-size:1.5rem;cursor:pointer;color:var(--text);line-height:1;">›</button>
       <div id="gal-track" style="position:absolute;top:0;height:100%;transition:left .7s cubic-bezier(.4,0,.2,1);"></div>
     </div>
   </div>
@@ -299,10 +295,10 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
 <div class="cd-section">
   <span style="font-size:.85rem;letter-spacing:6px;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:300;background:linear-gradient(160deg,#E8C068,#C8965A 40%,#F0D080 60%,#A87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;margin-bottom:10px;filter:drop-shadow(0 1px 4px rgba(160,100,0,.3));" data-i18n="countdown"></span>
   <div style="display:flex;justify-content:center;gap:clamp(20px,5vw,56px);">
-    <div><div id="cd-d" style="font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,10vw,5.5rem);font-weight:300;line-height:1;background:linear-gradient(160deg,#E8C068,#C8965A 30%,#F0D080 50%,#A87030 70%,#D4A850);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 3px 8px rgba(160,100,0,.45)) drop-shadow(0 1px 2px rgba(0,0,0,.2));">00</div><div style="font-size:.72rem;letter-spacing:4px;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:300;background:linear-gradient(160deg,#E8C068,#C8965A 40%,#F0D080 60%,#A87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:6px;" data-i18n="days"></div></div>
-    <div><div id="cd-h" style="font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,10vw,5.5rem);font-weight:300;line-height:1;background:linear-gradient(160deg,#E8C068,#C8965A 30%,#F0D080 50%,#A87030 70%,#D4A850);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 3px 8px rgba(160,100,0,.45)) drop-shadow(0 1px 2px rgba(0,0,0,.2));">00</div><div style="font-size:.72rem;letter-spacing:4px;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:300;background:linear-gradient(160deg,#E8C068,#C8965A 40%,#F0D080 60%,#A87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:6px;" data-i18n="hours"></div></div>
-    <div><div id="cd-m" style="font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,10vw,5.5rem);font-weight:300;line-height:1;background:linear-gradient(160deg,#E8C068,#C8965A 30%,#F0D080 50%,#A87030 70%,#D4A850);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 3px 8px rgba(160,100,0,.45)) drop-shadow(0 1px 2px rgba(0,0,0,.2));">00</div><div style="font-size:.72rem;letter-spacing:4px;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:300;background:linear-gradient(160deg,#E8C068,#C8965A 40%,#F0D080 60%,#A87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:6px;" data-i18n="minutes"></div></div>
-    <div><div id="cd-s" style="font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,10vw,5.5rem);font-weight:300;line-height:1;background:linear-gradient(160deg,#E8C068,#C8965A 30%,#F0D080 50%,#A87030 70%,#D4A850);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 3px 8px rgba(160,100,0,.45)) drop-shadow(0 1px 2px rgba(0,0,0,.2));">00</div><div style="font-size:.72rem;letter-spacing:4px;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:300;background:linear-gradient(160deg,#E8C068,#C8965A 40%,#F0D080 60%,#A87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:6px;" data-i18n="seconds"></div></div>
+    <div><div id="cd-d" style="font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,10vw,5.5rem);font-weight:300;line-height:1;background:linear-gradient(160deg,#E8C068,#C8965A 30%,#F0D080 50%,#A87030 70%,#D4A850);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 3px 8px rgba(160,100,0,.45));">00</div><div style="font-size:.72rem;letter-spacing:4px;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:300;background:linear-gradient(160deg,#E8C068,#C8965A 40%,#F0D080 60%,#A87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:6px;" data-i18n="days"></div></div>
+    <div><div id="cd-h" style="font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,10vw,5.5rem);font-weight:300;line-height:1;background:linear-gradient(160deg,#E8C068,#C8965A 30%,#F0D080 50%,#A87030 70%,#D4A850);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 3px 8px rgba(160,100,0,.45));">00</div><div style="font-size:.72rem;letter-spacing:4px;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:300;background:linear-gradient(160deg,#E8C068,#C8965A 40%,#F0D080 60%,#A87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:6px;" data-i18n="hours"></div></div>
+    <div><div id="cd-m" style="font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,10vw,5.5rem);font-weight:300;line-height:1;background:linear-gradient(160deg,#E8C068,#C8965A 30%,#F0D080 50%,#A87030 70%,#D4A850);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 3px 8px rgba(160,100,0,.45));">00</div><div style="font-size:.72rem;letter-spacing:4px;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:300;background:linear-gradient(160deg,#E8C068,#C8965A 40%,#F0D080 60%,#A87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:6px;" data-i18n="minutes"></div></div>
+    <div><div id="cd-s" style="font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,10vw,5.5rem);font-weight:300;line-height:1;background:linear-gradient(160deg,#E8C068,#C8965A 30%,#F0D080 50%,#A87030 70%,#D4A850);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 3px 8px rgba(160,100,0,.45));">00</div><div style="font-size:.72rem;letter-spacing:4px;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:300;background:linear-gradient(160deg,#E8C068,#C8965A 40%,#F0D080 60%,#A87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:6px;" data-i18n="seconds"></div></div>
   </div>
 </div>
 
@@ -355,217 +351,140 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
 
 <script>
 var CFG={
-  name1:'X\u00f3chitl',name2:'Sarbjit',dateISO:'2026-07-03T17:00:00',
+  name1:'Xóchitl',name2:'Sarbjit',dateISO:'2026-07-03T17:00:00',
   brideParents:'Ernesto Oyarzabal Barrios & Xochitl Aragon Dominguez',
   groomParents:'Jobanjit Singh Kahlon & Devinder Kaur',
   events:[
-    {tkLabel:{es:'Sellamiento',en:'Sealing',pa:'\u0a30\u0a38\u0a2e'},photo:'img/coloniajuareztemple.jpeg',
-     name:{es:'Templo de Ciudad Ju\u00e1rez',en:'Ciudad Ju\u00e1rez Temple',pa:'Temple'},
-     date:{es:'Jueves, 2 de Julio de 2026',en:'Thursday, July 2nd, 2026',pa:'2 \u0a1c\u0a41\u0a32\u0a3e\u0a08 2026'},
-     addr:{es:'Calle Paraguay 2900, Cd. Ju\u00e1rez',en:'Calle Paraguay 2900, Cd. Ju\u00e1rez',pa:'Cd. Ju\u00e1rez'},
+    {tkLabel:{es:'Sellamiento',en:'Sealing',pa:'ਰਸਮ'},photo:'',
+     name:{es:'Templo de Ciudad Juárez',en:'Ciudad Juárez Temple',pa:'Temple'},
+     date:{es:'Jueves, 2 de Julio de 2026',en:'Thursday, July 2nd, 2026',pa:'2 ਜੁਲਾਈ 2026'},
+     addr:{es:'Calle Paraguay 2900, Cd. Juárez',en:'Calle Paraguay 2900, Cd. Juárez',pa:'Cd. Juárez'},
      hora:'',map:'',ck:'temple'},
-    {tkLabel:{es:'Recepci\u00f3n',en:'Reception',pa:'\u0a38\u0a35\u0a3e\u0a17\u0a24'},photo:'img/church.jpg',
-     name:{es:'Estaca Chihuahua M\u00e9xico',en:'Estaca Chihuahua M\u00e9xico',pa:'Estaca Chihuahua M\u00e9xico'},
-     date:{es:'Viernes, 3 de Julio de 2026',en:'Friday, July 3rd, 2026',pa:'3 \u0a1c\u0a41\u0a32\u0a3e\u0a08 2026'},
+    {tkLabel:{es:'Recepción',en:'Reception',pa:'ਸਵਾਗਤ'},photo:'',
+     name:{es:'Estaca Chihuahua México',en:'Estaca Chihuahua México',pa:'Estaca Chihuahua México'},
+     date:{es:'Viernes, 3 de Julio de 2026',en:'Friday, July 3rd, 2026',pa:'3 ਜੁਲਾਈ 2026'},
      addr:{es:'Av. Paseo del Real s/n, Chihuahua',en:'Av. Paseo del Real s/n, Chihuahua',pa:'Chihuahua'},
-     hora:'8:00 PM \u2013 12:00 AM',map:'https://maps.app.goo.gl/s2tX6y8cdfHfnhJYA',ck:'reception'}
+     hora:'8:00 PM – 12:00 AM',map:'https://maps.app.goo.gl/s2tX6y8cdfHfnhJYA',ck:'reception'}
   ],
   avoidColors:['#FFFFFF','#F5F5F0'],
   hotels:[
     {name:'City Express by Marriott Chihuahua',stars:4,
-     dist:{es:'~5 min del sal\u00f3n',en:'~5 min from venue',pa:'~5 \u0a2e\u0a3f\u0a70\u0a1f'},
-     note:{es:'Desayuno incluido \u00b7 Gym \u00b7 Estacionamiento gratuito \u00b7 WiFi \u00b7 Transporte (10 km)',en:'Breakfast included \u00b7 Gym \u00b7 Free parking \u00b7 WiFi \u00b7 Shuttle (10 km)',pa:'\u0a28\u0a3e\u0a38\u0a3c\u0a24\u0a3e \u00b7 Gym \u00b7 \u0a2a\u0a3e\u0a30\u0a15\u0a3f\u0a70\u0a17 \u00b7 WiFi'},
+     dist:{es:'~5 min del salón',en:'~5 min from venue',pa:'~5 ਮਿੰਟ'},
+     note:{es:'Desayuno incluido · Gym · Estacionamiento gratuito · WiFi',en:'Breakfast included · Gym · Free parking · WiFi',pa:'ਨਾਸ਼ਤਾ · Gym · ਪਾਰਕਿੰਗ · WiFi'},
      url:'https://maps.app.goo.gl/B1JVwGGf6PiEtSar9'},
     {name:'Hampton Inn by Hilton Chihuahua',stars:4,
-     dist:{es:'~7 min del sal\u00f3n',en:'~7 min from venue',pa:'~7 \u0a2e\u0a3f\u0a70\u0a1f'},
-     note:{es:'Desayuno gratuito \u00b7 Alberca \u00b7 Gym \u00b7 Estacionamiento gratuito',en:'Free breakfast \u00b7 Pool \u00b7 Gym \u00b7 Free parking',pa:'\u0a28\u0a3e\u0a38\u0a3c\u0a24\u0a3e \u00b7 \u0a2a\u0a42\u0a32 \u00b7 Gym'},
-     url:'https://maps.google.com/?q=Hampton+Inn+Hilton+Chihuahua+Periferico+Juventud'},
+     dist:{es:'~7 min del salón',en:'~7 min from venue',pa:'~7 ਮਿੰਟ'},
+     note:{es:'Desayuno gratuito · Alberca · Gym · Estacionamiento gratuito',en:'Free breakfast · Pool · Gym · Free parking',pa:'ਨਾਸ਼ਤਾ · ਪੂਲ · Gym'},
+     url:'https://maps.google.com/?q=Hampton+Inn+Hilton+Chihuahua'},
     {name:'Hilton Garden Inn Chihuahua',stars:4,
-     dist:{es:'~8 min del sal\u00f3n',en:'~8 min from venue',pa:'~8 \u0a2e\u0a3f\u0a70\u0a1f'},
-     note:{es:'Restaurante \u00b7 Rooftop bar \u00b7 Gym \u00b7 WiFi gratuito',en:'Restaurant \u00b7 Rooftop bar \u00b7 Gym \u00b7 Free WiFi',pa:'\u0a30\u0a47\u0a38\u0a24\u0a30\u0a3e\u0a02 \u00b7 Rooftop bar \u00b7 Gym'},
-     url:'https://maps.google.com/?q=Hilton+Garden+Inn+Chihuahua+Av+Juventud'}
+     dist:{es:'~8 min del salón',en:'~8 min from venue',pa:'~8 ਮਿੰਟ'},
+     note:{es:'Restaurante · Rooftop bar · Gym · WiFi gratuito',en:'Restaurant · Rooftop bar · Gym · Free WiFi',pa:'ਰੇਸਤਰਾਂ · Rooftop bar · Gym'},
+     url:'https://maps.google.com/?q=Hilton+Garden+Inn+Chihuahua'}
   ],
-  songAudio:'Ed Sheeran - Perfect (Official Music Video) - (320 Kbps).mp3',
   songSpotify:'https://open.spotify.com/track/0tgVpDi06FyKpA1z0VMD4v',
   gifts:[
     {store:'Bank',banco:'BBVA Bancomer',titular:'Xochitl Oyarzabal',clabe:'012345678901234567'},
     {store:'PayPal',url:'https://www.paypal.com/paypalme/TUUSUARIO'}
   ],
-  rsvpDeadline:{es:'1 de Mayo de 2026',en:'May 1st, 2026',pa:'1 \u0a2e\u0a08 2026'},
+  rsvpDeadline:{es:'1 de Mayo de 2026',en:'May 1st, 2026',pa:'1 ਮਈ 2026'},
   rsvpWa:'526141418429',
-  /* Hero slideshow — fotos originales */
-  slideshow:[
-    'img/Facetune_07-02-2026-13-18-06.jpeg','img/Facetune_07-02-2026-13-59-51.jpeg',
-    'img/Facetune_07-02-2026-14-07-42.jpeg','img/IMG_7485.jpeg',
-    'img/Facetune_07-02-2026-13-56-07.jpeg'
-  ],
-  /* Gallery photos */
-  photos:[
-    'img/IMG-20250919-WA0177.jpeg','img/IMG-20251004-WA0099.jpeg','img/IMG-20251015-WA0066.jpeg',
-    'img/IMG-20251025-WA0104.jpeg','img/IMG-20251110-WA0058.jpeg','img/IMG-20251110-WA0062.jpeg',
-    'img/PHOTO-2026-03-01-16-53-49 10.jpeg','img/PHOTO-2026-03-01-16-53-49 11.jpeg',
-    'img/PHOTO-2026-03-01-16-53-49 2.jpeg','img/PHOTO-2026-03-01-16-53-49 3.jpeg',
-    'img/PHOTO-2026-03-01-16-53-49 4.jpeg','img/PHOTO-2026-03-01-16-53-49 5.jpeg',
-    'img/PHOTO-2026-03-01-16-53-49 6.jpeg','img/PHOTO-2026-03-01-16-53-49 7.jpeg',
-    'img/PHOTO-2026-03-01-16-53-49 8.jpeg','img/PHOTO-2026-03-01-16-53-49 9.jpeg',
-    'img/PHOTO-2026-03-01-16-53-49.jpeg','img/PHOTO-2026-03-01-16-53-50 2.jpeg',
-    'img/PHOTO-2026-03-01-16-53-50.jpeg','img/PHOTO-2026-03-01-17-09-42.jpeg',
-    'img/PHOTO-2026-03-01-17-12-13.jpeg','img/PHOTO-2026-03-01-17-26-32.jpeg'
-  ]
+  slideshow:[],
+  photos:Array(8).fill('')
 };
 
 var T={
 es:{countdown:'cuenta regresiva',days:'dias',hours:'horas',minutes:'minutos',seconds:'segundos',
-    quoteText:'Y la caridad sufre con paciencia, y es bondadosa, y no envidia, y no se envanece; no busca lo suyo, no se irrita f\u00e1cilmente, no piensa el mal; no se regocija en la iniquidad sino que se regocija en la verdad; todo lo sufre, todo lo cree, todo lo espera, todo lo soporta.',
-    nombramTitle:'Nuestras Familias',nmThanks:'Con el cari\u00f1o, el amor y bendici\u00f3n de nuestros padres.',
+    quoteText:'Y la caridad sufre con paciencia, y es bondadosa, y no envidia, y no se envanece; no busca lo suyo, no se irrita fácilmente, no piensa el mal; no se regocija en la iniquidad sino que se regocija en la verdad; todo lo sufre, todo lo cree, todo lo espera, todo lo soporta.',
+    nombramTitle:'Nuestras Familias',nmThanks:'Con el cariño, el amor y bendición de nuestros padres.',
     padresNovia:'Padres de la Novia',padresNovio:'Padres del Novio',
-    eventsTitle:'Eventos',eLblAddr:'Direcci\u00f3n',eLblDateTime:'Fecha y Hora',eLblDate:'Fecha',
-    dresscodeLabel:'c\u00f3digo de vestimenta',dresscodeTitle2:'Vestimenta Formal',dressClrLady:'Tonos pasteles',dressClrGent:'Negro, neutros',avoidColors:'Evita usar los siguientes colores',dressLadies:'Mujeres',dressGents:'Hombres',vestidoLargo:'Vestido Largo',traje:'Traje',
-    galleryLabel:'galer\u00eda de fotos',galleryTitle:'Nuestros Momentos',
+    eventsTitle:'Eventos',eLblAddr:'Dirección',eLblDateTime:'Fecha y Hora',eLblDate:'Fecha',
+    dresscodeLabel:'código de vestimenta',dresscodeTitle2:'Vestimenta Formal',
+    dressLadies:'Mujeres',dressGents:'Hombres',vestidoLargo:'Vestido Largo',traje:'Traje',
+    dressClrLady:'Tonos pasteles',dressClrGent:'Negro, neutros',avoidColors:'Evita usar los siguientes colores',
+    galleryLabel:'galería de fotos',galleryTitle:'Nuestros Momentos',
     hotelLabel:'hospedaje recomendado',hotelTitle:'Opciones de Hospedaje',hotelBody:'Para mayor comodidad, recomendamos los siguientes hoteles.',hotelDir:'Mapa',
-    giftsLabel:'mesa de regalos',giftsTitle:'Un Regalo del Coraz\u00f3n',giftsBody:'Tu presencia es nuestro mejor regalo.',giftsCash:'\u00danicamente recibiremos regalos en efectivo o transferencia bancaria.',
-    rsvpLabel:'confirmaci\u00f3n de asistencia',rsvpTitle:'Confirmar Asistencia',rsvpPre:'Por favor, confirma tu asistencia antes del',rsvpFname:'Nombre',rsvpLname:'Apellido',rsvpMsg:'Mensaje para los novios',rsvpAdults:'N\u00famero de Adultos',rsvpSubmit:'Enviar mi Confirmaci\u00f3n',rsvpWaTitle:'\u00bfDudas?',rsvpWaBody:'Env\u00edanos un WhatsApp.',rsvp18Notice:'Exclusivamente mayores de 18 a\u00f1os',    rsvpErrorMsg:'Por favor completa:',
+    giftsLabel:'mesa de regalos',giftsTitle:'Un Regalo del Corazón',giftsBody:'Tu presencia es nuestro mejor regalo.',giftsCash:'Únicamente recibiremos regalos en efectivo o transferencia bancaria.',
+    rsvpLabel:'confirmación de asistencia',rsvpTitle:'Confirmar Asistencia',rsvpPre:'Por favor, confirma tu asistencia antes del',rsvpFname:'Nombre',rsvpLname:'Apellido',rsvpMsg:'Mensaje para los novios',rsvpAdults:'Número de Adultos',rsvpSubmit:'Enviar mi Confirmación',rsvpWaTitle:'¿Dudas?',rsvpWaBody:'Envíanos un WhatsApp.',rsvp18Notice:'Exclusivamente mayores de 18 años',rsvpErrorMsg:'Por favor completa:',
     qrConfirmed:'¡Confirmado!',qrSaveHint:'Guarda tu código QR',qrCodeLabel:'Código de confirmación',qrSaveBtn:'Guardar imagen',qrEventHint:'Necesitarás esta imagen el día del evento.',
-    nav_home:'Inicio',nav_parents:'Nuestras Familias',nav_dates:'Fechas y Ubicaci\u00f3n',nav_attire:'Vestimenta',nav_gallery:'Galer\u00eda',nav_hotels:'Hospedaje',nav_gifts:'Regalos',nav_rsvp:'Confirmar'},
+    nav_home:'Inicio',nav_parents:'Nuestras Familias',nav_dates:'Fechas y Ubicación',nav_attire:'Vestimenta',nav_gallery:'Galería',nav_hotels:'Hospedaje',nav_gifts:'Regalos',nav_rsvp:'Confirmar'},
 en:{countdown:'countdown',days:'days',hours:'hours',minutes:'minutes',seconds:'seconds',
     quoteText:'And charity suffereth long, and is kind, and envieth not, and is not puffed up, seeketh not her own, is not easily provoked, thinketh no evil, and rejoiceth not in iniquity but rejoiceth in the truth, beareth all things, believeth all things, hopeth all things, endureth all things.',
     nombramTitle:'Our Families',nmThanks:'We are grateful to our parents who taught us the value of love, faith and family.',
     padresNovia:"Bride's Parents",padresNovio:"Groom's Parents",
     eventsTitle:'Events',eLblAddr:'Address',eLblDateTime:'Date & Time',eLblDate:'Date',
-    dresscodeLabel:'dress code',dresscodeTitle2:'Formal Attire',dressClrLady:'Pastel tones',dressClrGent:'Black, neutrals',avoidColors:'Please avoid these colors',dressLadies:'Women',dressGents:'Men',vestidoLargo:'Long Gown',traje:'Suit',
+    dresscodeLabel:'dress code',dresscodeTitle2:'Formal Attire',
+    dressLadies:'Women',dressGents:'Men',vestidoLargo:'Long Gown',traje:'Suit',
+    dressClrLady:'Pastel tones',dressClrGent:'Black, neutrals',avoidColors:'Please avoid these colors',
     galleryLabel:'photo gallery',galleryTitle:'Our Moments',
     hotelLabel:'recommended lodging',hotelTitle:'Lodging Options',hotelBody:'For your convenience, we recommend the following hotels.',hotelDir:'Map',
     giftsLabel:'gift registry',giftsTitle:'A Gift from the Heart',giftsBody:'Your presence is our greatest gift.',giftsCash:'We will only accept gifts in cash or bank transfer.',
-    rsvpLabel:'rsvp',rsvpTitle:'Confirm Attendance',rsvpPre:'Please confirm your attendance before',rsvpFname:'First Name',rsvpLname:'Last Name',rsvpMsg:'Message for the couple',rsvpAdults:'Number of Adults',rsvpSubmit:'Send my Confirmation',rsvpWaTitle:'Questions?',rsvpWaBody:'Send us a WhatsApp.',rsvp18Notice:'Exclusively for guests 18 and older',    rsvpErrorMsg:'Please complete:',
+    rsvpLabel:'rsvp',rsvpTitle:'Confirm Attendance',rsvpPre:'Please confirm your attendance before',rsvpFname:'First Name',rsvpLname:'Last Name',rsvpMsg:'Message for the couple',rsvpAdults:'Number of Adults',rsvpSubmit:'Send my Confirmation',rsvpWaTitle:'Questions?',rsvpWaBody:'Send us a WhatsApp.',rsvp18Notice:'Exclusively for guests 18 and older',rsvpErrorMsg:'Please complete:',
     qrConfirmed:'Confirmed!',qrSaveHint:'Save your QR code',qrCodeLabel:'Confirmation code',qrSaveBtn:'Save image',qrEventHint:'You will need this image on the day of the event.',
     nav_home:'Home',nav_parents:'Our Families',nav_dates:'Dates & Location',nav_attire:'Attire',nav_gallery:'Gallery',nav_hotels:'Lodging',nav_gifts:'Gifts',nav_rsvp:'RSVP'},
-pa:{countdown:'\u0a09\u0a32\u0a1f\u0a40 \u0a17\u0a3f\u0a23\u0a24\u0a40',days:'\u0a26\u0a3f\u0a28',hours:'\u0a18\u0a70\u0a1f\u0a47',minutes:'\u0a2e\u0a3f\u0a70\u0a1f',seconds:'\u0a38\u0a15\u0a3f\u0a70\u0a1f',
-    quoteText:'\u0a2a\u0a3f\u0a06\u0a30 \u0a38\u0a2c\u0a30 \u0a15\u0a30\u0a26\u0a3e \u0a39\u0a48 \u0a05\u0a24\u0a47 \u0a26\u0a3f\u0a06\u0a32\u0a3e \u0a39\u0a48\u0b4d',
-    nombramTitle:'\u0a38\u0a3c\u0a3e\u0a21\u0a3c\u0a47 \u0a2a\u0a30\u0a3f\u0a35\u0a3e\u0a30',nmThanks:'\u0a05\u0a38\u0a40\u0a02 \u0a06\u0a2a\u0a23\u0a47 \u0a2e\u0a3e\u0a24\u0a3e-\u0a2a\u0a3f\u0a24\u0a3e \u0a26\u0a47 \u0a38\u0a3c\u0a41\u0a15\u0a30\u0a17\u0a41\u0a1c\u0a3c\u0a3e\u0a30 \u0a39\u0a3e\u0a02\u0b4d',
-    padresNovia:'\u0a32\u0a3e\u0a5c\u0a40 \u0a26\u0a47 \u0a2e\u0a3e\u0a24\u0a3e-\u0a2a\u0a3f\u0a24\u0a3e',padresNovio:'\u0a32\u0a3e\u0a5c\u0a47 \u0a26\u0a47 \u0a2e\u0a3e\u0a24\u0a3e-\u0a2a\u0a3f\u0a24\u0a3e',
-    eventsTitle:'\u0a38\u0a2e\u0a3e\u0a17\u0a2e',eLblAddr:'\u0a2a\u0a24\u0a3e',eLblDateTime:'\u0a24\u0a3e\u0a30\u0a40\u0a16 \u0a05\u0a24\u0a47 \u0a38\u0a2e\u0a3e\u0a82',eLblDate:'\u0a24\u0a3e\u0a30\u0a40\u0a16',
-    dresscodeLabel:'\u0a2a\u0a39\u0a3f\u0a30\u0a3e\u0a35\u0a3e',dresscodeTitle2:'\u0a30\u0a38\u0a2e\u0a40 \u0a2a\u0a39\u0a3f\u0a30\u0a3e\u0a35\u0a3e',dressClrLady:'\u0a39\u0a32\u0a15\u0a47 \u0a30\u0a70\u0a17',dressClrGent:'\u0a15\u0a3e\u0a32\u0a3e',avoidColors:'\u0a07\u0a39 \u0a30\u0a70\u0a17 \u0a28\u0a3e \u0a2a\u0a39\u0a3f\u0a28\u0a4b',dressLadies:'\u0a14\u0a30\u0a24\u0a3e\u0a82',dressGents:'\u0a2e\u0a30\u0a26',vestidoLargo:'\u0a32\u0a70\u0a2c\u0a3e \u0a32\u0a3f\u0a2c\u0a3e\u0a38',traje:'\u0a38\u0a42\u0a1f',
-    galleryLabel:'\u0a17\u0a48\u0a32\u0a30\u0a40',galleryTitle:'\u0a38\u0a3e\u0a21\u0a3c\u0a47 \u0a2a\u0a32',
-    hotelLabel:'\u0a39\u0a4b\u0a1f\u0a32',hotelTitle:'\u0a39\u0a4b\u0a1f\u0a32',hotelBody:'\u0a38\u0a3f\u0a2b\u0a3c\u0a3e\u0a30\u0a38\u0a3c \u0a39\u0a4b\u0a1f\u0a32',hotelDir:'\u0a28\u0a15\u0a38\u0a3c\u0a3e',
-    giftsLabel:'\u0a24\u0a4b\u0a39\u0a2b\u0a3c\u0a47',giftsTitle:'\u0a26\u0a3f\u0a32\u0a4b\u0a82 \u0a24\u0a4b\u0a39\u0a2b\u0a3c\u0a3e',giftsBody:'\u0a24\u0a41\u0a39\u0a3e\u0a21\u0a3c\u0a40 \u0a39\u0a3e\u0a1c\u0a3c\u0a30\u0a40',giftsCash:'\u0a38\u0a3f\u0a30\u0a2b\u0a3c \u0a28\u0a15\u0a26 \u0a1c\u0a3e\u0a82 \u0a2c\u0a48\u0a02\u0a15 \u0a1f\u0a4d\u0a30\u0a3e\u0a02\u0a38\u0a2b\u0a3c\u0a30',
-    rsvpLabel:'\u0a39\u0a3e\u0a1c\u0a3c\u0a30\u0a40',rsvpTitle:'\u0a39\u0a3e\u0a1c\u0a3c\u0a30\u0a40 \u0a2a\u0a71\u0a15\u0a40 \u0a15\u0a30\u0a4b',rsvpPre:'\u0a07\u0a38 \u0a24\u0a3e\u0a30\u0a40\u0a16 \u0a24\u0a4b\u0a82 \u0a2a\u0a39\u0a3f\u0a32\u0a3e\u0a82',rsvpFname:'\u0a28\u0a3e\u0a2e',rsvpLname:'\u0a09\u0a2a\u0a28\u0a3e\u0a2e',rsvpMsg:'\u0a38\u0a70\u0a26\u0a47\u0a38\u0a3c\u0a3e',rsvpAdults:'\u0a2c\u0a3e\u0a32\u0a17',rsvpSubmit:'\u0a2a\u0a41\u0a38\u0a3c\u0a1f\u0a40 \u0a2d\u0a47\u0a1c\u0a4b',rsvpWaTitle:'\u0a38\u0a35\u0a3e\u0a32?',rsvpWaBody:'WhatsApp \u0a24\u0a47 \u0a38\u0a70\u0a2a\u0a30\u0a15 \u0a15\u0a30\u0a4b',rsvp18Notice:'18 \u0a38\u0a3e\u0a32 \u0a24\u0a4b\u0a82 \u0a35\u0a71\u0a21\u0a47',    rsvpErrorMsg:'\u0a15\u0a3f\u0a30\u0a2a\u0a3e \u0a2d\u0a30\u0a4b:',
-    qrConfirmed:'\u0a2a\u0a71\u0a15\u0a40 \u0a39\u0a4b \u0a17\u0a08!',qrSaveHint:'\u0a05\u0a2a\u0a28\u0a3e QR \u0a15\u0a4b\u0a21 \u0a38\u0a70\u0a2d\u0a3e\u0a32\u0a4b',qrCodeLabel:'\u0a2a\u0a41\u0a38\u0a3c\u0a1f\u0a40 \u0a15\u0a4b\u0a21',qrSaveBtn:'\u0a24\u0a38\u0a35\u0a40\u0a30 \u0a38\u0a70\u0a2d\u0a3e\u0a32\u0a4b',qrEventHint:'\u0a07\u0a38 \u0a24\u0a38\u0a35\u0a40\u0a30 \u0a26\u0a40 \u0a38\u0a2e\u0a3e\u0a17\u0a2e \u0a35\u0a3e\u0a32\u0a47 \u0a26\u0a3f\u0a28 \u0a32\u0a4b\u0a5c \u0a39\u0a4b\u0a35\u0a47\u0a17\u0a40\u0a2c.',
-    nav_home:'\u0a2e\u0a41\u0a71\u0a16 \u0a2a\u0a70\u0a28\u0a3e',nav_parents:'\u0a38\u0a3c\u0a3e\u0a21\u0a3c\u0a47 \u0a2a\u0a30\u0a3f\u0a35\u0a3e\u0a30',nav_dates:'\u0a24\u0a3e\u0a30\u0a40\u0a16\u0a3e\u0a82',nav_attire:'\u0a2a\u0a39\u0a3f\u0a30\u0a3e\u0a35\u0a3e',nav_gallery:'\u0a17\u0a48\u0a32\u0a30\u0a40',nav_hotels:'\u0a39\u0a4b\u0a1f\u0a32',nav_gifts:'\u0a24\u0a4b\u0a39\u0a2b\u0a3c\u0a47',nav_rsvp:'\u0a2a\u0a41\u0a38\u0a3c\u0a1f\u0a40'}
+pa:{countdown:'ਉਲਟੀ ਗਿਣਤੀ',days:'ਦਿਨ',hours:'ਘੰਟੇ',minutes:'ਮਿੰਟ',seconds:'ਸਕਿੰਟ',
+    quoteText:'ਪਿਆਰ ਸਬਰ ਕਰਦਾ ਹੈ ਅਤੇ ਦਿਆਲਾ ਹੈ।',
+    nombramTitle:'ਸਾਡੇ ਪਰਿਵਾਰ',nmThanks:'ਅਸੀਂ ਆਪਣੇ ਮਾਤਾ-ਪਿਤਾ ਦੇ ਸ਼ੁਕਰਗੁਜ਼ਾਰ ਹਾਂ।',
+    padresNovia:'ਲਾੜੀ ਦੇ ਮਾਤਾ-ਪਿਤਾ',padresNovio:'ਲਾੜੇ ਦੇ ਮਾਤਾ-ਪਿਤਾ',
+    eventsTitle:'ਸਮਾਗਮ',eLblAddr:'ਪਤਾ',eLblDateTime:'ਤਾਰੀਖ ਅਤੇ ਸਮਾਂ',eLblDate:'ਤਾਰੀਖ',
+    dresscodeLabel:'ਪਹਿਰਾਵਾ',dresscodeTitle2:'ਰਸਮੀ ਪਹਿਰਾਵਾ',
+    dressLadies:'ਔਰਤਾਂ',dressGents:'ਮਰਦ',vestidoLargo:'ਲੰਬਾ ਲਿਬਾਸ',traje:'ਸੂਟ',
+    dressClrLady:'ਹਲਕੇ ਰੰਗ',dressClrGent:'ਕਾਲਾ',avoidColors:'ਇਹ ਰੰਗ ਨਾ ਪਹਿਨੋ',
+    galleryLabel:'ਗੈਲਰੀ',galleryTitle:'ਸਾਡੇ ਪਲ',
+    hotelLabel:'ਹੋਟਲ',hotelTitle:'ਹੋਟਲ',hotelBody:'ਸਿਫ਼ਾਰਸ਼ ਹੋਟਲ',hotelDir:'ਨਕਸ਼ਾ',
+    giftsLabel:'ਤੋਹਫ਼ੇ',giftsTitle:'ਦਿਲੋਂ ਤੋਹਫ਼ਾ',giftsBody:'ਤੁਹਾਡੀ ਹਾਜ਼ਰੀ',giftsCash:'ਸਿਰਫ਼ ਨਕਦ ਜਾਂ ਬੈਂਕ ਟ੍ਰਾਂਸਫ਼ਰ',
+    rsvpLabel:'ਹਾਜ਼ਰੀ',rsvpTitle:'ਹਾਜ਼ਰੀ ਪੱਕੀ ਕਰੋ',rsvpPre:'ਇਸ ਤਾਰੀਖ ਤੋਂ ਪਹਿਲਾਂ',rsvpFname:'ਨਾਮ',rsvpLname:'ਉਪਨਾਮ',rsvpMsg:'ਸੰਦੇਸ਼ਾ',rsvpAdults:'ਬਾਲਗ',rsvpSubmit:'ਪੁਸ਼ਟੀ ਭੇਜੋ',rsvpWaTitle:'ਸਵਾਲ?',rsvpWaBody:'WhatsApp ਤੇ ਸੰਪਰਕ ਕਰੋ',rsvp18Notice:'18 ਸਾਲ ਤੋਂ ਵੱਡੇ',rsvpErrorMsg:'ਕਿਰਪਾ ਭਰੋ:',
+    qrConfirmed:'ਪੱਕੀ ਹੋ ਗਈ!',qrSaveHint:'ਅਪਨਾ QR ਕੋਡ ਸੰਭਾਲੋ',qrCodeLabel:'ਪੁਸ਼ਟੀ ਕੋਡ',qrSaveBtn:'ਤਸਵੀਰ ਸੰਭਾਲੋ',qrEventHint:'ਇਸ ਤਸਵੀਰ ਦੀ ਸਮਾਗਮ ਵਾਲੇ ਦਿਨ ਲੋੜ ਹੋਵੇਗੀ।',
+    nav_home:'ਮੁੱਖ ਪੰਨਾ',nav_parents:'ਸਾਡੇ ਪਰਿਵਾਰ',nav_dates:'ਤਾਰੀਖਾਂ',nav_attire:'ਪਹਿਰਾਵਾ',nav_gallery:'ਗੈਲਰੀ',nav_hotels:'ਹੋਟਲ',nav_gifts:'ਤੋਹਫ਼ੇ',nav_rsvp:'ਪੁਸ਼ਟੀ'}
 };
 
-var LADY_SVG='<svg viewBox="0 0 130 280" overflow="visible" style="width:90px;height:auto;" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="dg1l" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#F8D4E0"/><stop offset="100%" stop-color="#E090B0"/></radialGradient><radialGradient id="dg2l" cx="50%" cy="30%" r="70%"><stop offset="0%" stop-color="#FAE0EA"/><stop offset="100%" stop-color="#D87898"/></radialGradient></defs><ellipse cx="65" cy="22" rx="14" ry="16" fill="#F8C4BC"/><path d="M52,14 Q40,30 38,58 Q36,82 39,110" fill="#6A3820" opacity=".95"/><path d="M78,14 Q90,30 92,58 Q94,82 91,110" fill="#6A3820" opacity=".95"/><ellipse cx="65" cy="10" rx="17" ry="10" fill="#6A3820"/><path d="M48,54 Q38,68 32,84 Q28,96 31,100 Q35,103 38,90 Q44,74 52,58Z" fill="#F8C4BC"/><path d="M82,54 Q92,68 98,84 Q102,96 99,100 Q95,103 92,90 Q86,74 78,58Z" fill="#F8C4BC"/><path d="M46,52 Q51,42 65,39 Q79,42 84,52 L82,86 L48,86Z" fill="url(#dg2l)"/><path d="M50,99 L22,190 L12,236 Q38,229 65,232 Q92,229 118,236 L108,190 L80,99Z" fill="url(#dg1l)"/><path d="M10,236 Q24,250 38,244 Q50,237 58,244 Q62,250 65,245 Q68,250 72,244 Q80,237 92,244 Q106,250 120,236" stroke="#E8A0B8" stroke-width="2.5" fill="#FAD8E8" fill-opacity=".65" stroke-linecap="round"/></svg>';
-var GENT_SVG='<svg viewBox="0 0 130 280" overflow="visible" style="width:90px;height:auto;" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sg1g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4A4A6A"/><stop offset="100%" stop-color="#2A2A48"/></linearGradient><linearGradient id="sg2g" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#3A3A58"/><stop offset="50%" stop-color="#5A5A7A"/><stop offset="100%" stop-color="#3A3A58"/></linearGradient></defs><ellipse cx="65" cy="22" rx="14" ry="16" fill="#F5C0B0"/><ellipse cx="65" cy="11" rx="15" ry="8" fill="#4A2E10"/><path d="M44,50 Q51,40 62,37 L65,52 L68,37 Q79,40 86,50 L84,122 L46,122Z" fill="url(#sg1g)"/><path d="M62,37 L65,65 L68,37" fill="#3A3A56"/><path d="M61,42 L65,65 L69,42" fill="white" opacity=".9"/><rect x="46" y="120" width="38" height="6" rx="1" fill="#2A1A08"/><path d="M46,126 L36,216 L54,216 L65,170 L76,216 L94,216 L84,126Z" fill="url(#sg2g)"/><path d="M36,216 Q35,224 34,230" stroke="#3A3A58" stroke-width="10" stroke-linecap="round" fill="none"/><path d="M94,216 Q95,224 96,230" stroke="#3A3A58" stroke-width="10" stroke-linecap="round" fill="none"/></svg>';
-
+var COPY_SVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
 var NM_DATA=[{roleKey:'padresNovia',names:'brideParents'},{roleKey:'padresNovio',names:'groomParents'}];
 var currentLang='es',audio=null,playing=false,galIdx=0,lbIdx=0,lbImgs=[],ssIdx=0,ssTmr=null,ssSlides=[],wT=false,pC,pX,pts=[],pR=false;
-var mouseX=-9999,mouseY=-9999;
-var GAL_W=280;
+var mouseX=-9999,mouseY=-9999,GAL_W=280;
 
-var BULB_DATA=[
-  {pct:8,dur:2.0,del:0.0},{pct:20,dur:1.7,del:0.4},
-  {pct:32,dur:2.2,del:0.2},{pct:44,dur:1.9,del:0.6},
-  {pct:50,dur:2.3,del:0.1},{pct:62,dur:1.8,del:0.5},
-  {pct:74,dur:2.1,del:0.3},{pct:86,dur:1.6,del:0.7},
-  {pct:97,dur:2.4,del:0.2}
-];
+var BULB_DATA=[{pct:8,dur:2.0,del:0.0},{pct:20,dur:1.7,del:0.4},{pct:32,dur:2.2,del:0.2},{pct:44,dur:1.9,del:0.6},{pct:50,dur:2.3,del:0.1},{pct:62,dur:1.8,del:0.5},{pct:74,dur:2.1,del:0.3},{pct:86,dur:1.6,del:0.7},{pct:97,dur:2.4,del:0.2}];
 
-function getRopeY(pct,svgH){
-  var x=(pct/100)*1000,period=200,phase=x%period,t,y;
-  if(phase<=100){t=phase/100;y=(1-t)*(1-t)*14+2*(1-t)*t*7+t*t*14;}
-  else{t=(phase-100)/100;y=(1-t)*(1-t)*14+2*(1-t)*t*21+t*t*14;}
-  return (y/28)*svgH;
-}
-
-function buildRopeBulbs(){
-  var cont=document.getElementById('rope-bulbs');
-  var svg=document.getElementById('gal-rope');
-  if(!cont||!svg)return;
-  var svgH=svg.getBoundingClientRect().height;
-  if(!svgH){requestAnimationFrame(buildRopeBulbs);return;}
-  cont.innerHTML='';
-  cont.style.height=(svgH+24)+'px';
-  BULB_DATA.forEach(function(b){
-    var wy=getRopeY(b.pct,svgH);
-    var stem=document.createElement('div');
-    stem.className='rb-stem';
-    stem.style.left=b.pct+'%';
-    stem.style.top=Math.round(wy)+'px';
-    stem.style.height='11px';
-    var bulb=document.createElement('div');
-    bulb.className='rb-bulb';
-    bulb.style.left=b.pct+'%';
-    bulb.style.top=Math.round(wy+11)+'px';
-    bulb.style.animation='bulbGlow '+b.dur+'s '+b.del+'s ease-in-out infinite';
-    cont.appendChild(stem);
-    cont.appendChild(bulb);
-  });
-}
+function getRopeY(pct,svgH){var x=(pct/100)*1000,period=200,phase=x%period,t,y;if(phase<=100){t=phase/100;y=(1-t)*(1-t)*14+2*(1-t)*t*7+t*t*14;}else{t=(phase-100)/100;y=(1-t)*(1-t)*14+2*(1-t)*t*21+t*t*14;}return(y/28)*svgH;}
+function buildRopeBulbs(){var cont=document.getElementById('rope-bulbs'),svg=document.getElementById('gal-rope');if(!cont||!svg)return;var svgH=svg.getBoundingClientRect().height;if(!svgH){requestAnimationFrame(buildRopeBulbs);return;}cont.innerHTML='';cont.style.height=(svgH+24)+'px';BULB_DATA.forEach(function(b){var wy=getRopeY(b.pct,svgH);var stem=document.createElement('div');stem.className='rb-stem';stem.style.left=b.pct+'%';stem.style.top=Math.round(wy)+'px';stem.style.height='11px';var bulb=document.createElement('div');bulb.className='rb-bulb';bulb.style.left=b.pct+'%';bulb.style.top=Math.round(wy+11)+'px';bulb.style.animation='bulbGlow '+b.dur+'s '+b.del+'s ease-in-out infinite';cont.appendChild(stem);cont.appendChild(bulb);});}
 
 function buildGallery(){
-  var track=document.getElementById('gal-track'),dots=document.getElementById('gal-dots');
-  if(!track||!dots)return;
-  track.innerHTML='';dots.innerHTML='';
-  track.style.transition='none';
-  track.style.width=(CFG.photos.length*GAL_W)+'px';
-  var swCls=['s0','s1','s2','s3','s4','s5'],lbI=CFG.photos.filter(Boolean);
+  var track=document.getElementById('gal-track'),dots=document.getElementById('gal-dots');if(!track||!dots)return;
+  track.innerHTML='';dots.innerHTML='';track.style.transition='none';track.style.width=(CFG.photos.length*GAL_W)+'px';
+  var swCls=['s0','s1','s2','s3','s4','s5'];
   CFG.photos.forEach(function(src,i){
     var item=document.createElement('div');item.className='gal-item';item.style.left=(i*GAL_W)+'px';item.style.width=GAL_W+'px';
     var swing=document.createElement('div');swing.className='gal-swing '+swCls[i%swCls.length];
-    var pin=document.createElement('div');pin.className='cp';
-    pin.innerHTML='<div class="cp-top"><div class="cp-arm"></div><div class="cp-arm"></div></div><div class="cp-spring"></div><div class="cp-stem"></div><div class="cp-bottom"></div>';
-    var photo=document.createElement('div');photo.className='sg-photo';
-    if(src){var img=document.createElement('img');img.src=src;img.alt='';photo.appendChild(img);}
-    else{photo.innerHTML='<div class="sg-ph">&#x1F338;</div>';}
-    (function(n){photo.addEventListener('click',function(){if(galIdx===n)openLB(lbI,n);});})(i);
+    var pin=document.createElement('div');pin.className='cp';pin.innerHTML='<div class="cp-top"><div class="cp-arm"></div><div class="cp-arm"></div></div><div class="cp-spring"></div><div class="cp-stem"></div><div class="cp-bottom"></div>';
+    var photo=document.createElement('div');photo.className='sg-photo';photo.innerHTML='<div class="sg-ph">🌸</div>';
     swing.appendChild(pin);swing.appendChild(photo);item.appendChild(swing);track.appendChild(item);
-    var dot=document.createElement('button');
-    dot.style.cssText='width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;transition:background .3s,transform .3s;background:'+(i===0?'var(--gold)':'rgba(100,60,80,.3)')+';transform:'+(i===0?'scale(1.4)':'scale(1)')+';';
-    (function(n){dot.addEventListener('click',function(){galGoTo(n);});})(i);
-    dots.appendChild(dot);
+    var dot=document.createElement('button');dot.style.cssText='width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;transition:background .3s,transform .3s;background:'+(i===0?'var(--gold)':'rgba(100,60,80,.3)')+';transform:'+(i===0?'scale(1.4)':'scale(1)')+';';
+    (function(n){dot.addEventListener('click',function(){galGoTo(n);});})(i);dots.appendChild(dot);
   });
-  galApplyPos(true);
-  requestAnimationFrame(function(){requestAnimationFrame(function(){var t=document.getElementById('gal-track');if(t)t.style.transition='left .7s cubic-bezier(.4,0,.2,1)';});});
+  galApplyPos(true);requestAnimationFrame(function(){requestAnimationFrame(function(){var t=document.getElementById('gal-track');if(t)t.style.transition='left .7s cubic-bezier(.4,0,.2,1)';});});
 }
-
-function galApplyPos(instant){
-  var track=document.getElementById('gal-track'),outer=document.getElementById('gal-outer');
-  if(!track||!outer)return;
-  if(instant)track.style.transition='none';
-  track.style.left=Math.round(outer.offsetWidth/2-galIdx*GAL_W-GAL_W/2)+'px';
-  track.querySelectorAll('.gal-item').forEach(function(item,i){
-    var d=Math.abs(i-galIdx);
-    if(d===0){item.style.opacity='1';item.style.filter='brightness(1)';item.style.zIndex='5';}
-    else if(d===1){item.style.opacity='.5';item.style.filter='brightness(.55)';item.style.zIndex='3';}
-    else{item.style.opacity='0';item.style.filter='brightness(.1)';item.style.zIndex='1';}
-  });
-  document.querySelectorAll('#gal-dots button').forEach(function(d,i){d.style.background=i===galIdx?'var(--gold)':'rgba(100,60,80,.3)';d.style.transform=i===galIdx?'scale(1.4)':'scale(1)';});
-}
+function galApplyPos(instant){var track=document.getElementById('gal-track'),outer=document.getElementById('gal-outer');if(!track||!outer)return;if(instant)track.style.transition='none';track.style.left=Math.round(outer.offsetWidth/2-galIdx*GAL_W-GAL_W/2)+'px';track.querySelectorAll('.gal-item').forEach(function(item,i){var d=Math.abs(i-galIdx);if(d===0){item.style.opacity='1';item.style.filter='brightness(1)';item.style.zIndex='5';}else if(d===1){item.style.opacity='.5';item.style.filter='brightness(.55)';item.style.zIndex='3';}else{item.style.opacity='0';item.style.filter='brightness(.1)';item.style.zIndex='1';}});document.querySelectorAll('#gal-dots button').forEach(function(d,i){d.style.background=i===galIdx?'var(--gold)':'rgba(100,60,80,.3)';d.style.transform=i===galIdx?'scale(1.4)':'scale(1)';});}
 function galGoTo(n){if(n===galIdx)return;galIdx=n;galApplyPos(false);}
 function galleryNav(dir){galIdx=(galIdx+dir+CFG.photos.length)%CFG.photos.length;galApplyPos(false);}
 window.addEventListener('resize',function(){galApplyPos(true);requestAnimationFrame(buildRopeBulbs);},{passive:true});
 
-var COPY_SVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
-function doCopy(btn,val){try{navigator.clipboard.writeText(val);}catch(e){var ta=document.createElement('textarea');ta.value=val;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e2){}document.body.removeChild(ta);}btn.innerHTML='&#10003;';btn.style.color='#C8965A';setTimeout(function(){btn.innerHTML=COPY_SVG;btn.style.color='';},1600);}
+function doCopy(btn,val){try{navigator.clipboard.writeText(val);}catch(e){}btn.innerHTML='✓';btn.style.color='#C8965A';setTimeout(function(){btn.innerHTML=COPY_SVG;btn.style.color='';},1600);}
 
 function buildGifts(){
   var gg=document.getElementById('gifts-grid');if(!gg)return;gg.innerHTML='';
   var isEN=currentLang==='en',isPA=currentLang==='pa';
-  var bankL1=isEN?'Bank':isPA?'\u0a2c\u0a48\u0a02\u0a15':'Transferencia';
-  var bankL2=isEN?'Transfer':isPA?'\u0a1f\u0a4d\u0a30\u0a3e\u0a02\u0a38\u0a2b\u0a3c\u0a30':'Bancaria';
-  var bankTap=isEN?'Tap to see details':isPA?'\u0a1f\u0a48\u0a2a \u0a15\u0a30\u0a4b':'Toca para ver datos';
-  var ppL2=isEN?'Transfer':isPA?'\u0a1f\u0a4d\u0a30\u0a3e\u0a02\u0a38\u0a2b\u0a3c\u0a30':'Transferencia';
-  var ppTap=isEN?'Tap to go to PayPal':isPA?'PayPal \u0a24\u0a47 \u0a1c\u0a3e\u0a13':'Toca para ir a PayPal';
-  var bankHdr=isEN?'Bank':isPA?'\u0a2c\u0a48\u0a02\u0a15':'Banco';
-  var titHdr=isEN?'Account holder':isPA?'\u0a16\u0a3e\u0a24\u0a3e':'Titular';
+  var bankL1=isEN?'Bank':isPA?'ਬੈਂਕ':'Transferencia',bankL2=isEN?'Transfer':isPA?'ਟ੍ਰਾਂਸਫ਼ਰ':'Bancaria';
+  var bankTap=isEN?'Tap to see details':isPA?'ਟੈਪ ਕਰੋ':'Toca para ver datos';
+  var bankHdr=isEN?'Bank':isPA?'ਬੈਂਕ':'Banco',titHdr=isEN?'Account holder':isPA?'ਖਾਤਾ':'Titular';
+  var ppL2=isEN?'Transfer':isPA?'ਟ੍ਰਾਂਸਫ਼ਰ':'Transferencia';
+  var ppTap=isEN?'Tap to go to PayPal':isPA?'PayPal ਤੇ ਜਾਓ':'Toca para ir a PayPal';
   CFG.gifts.forEach(function(g){
     if(g.store==='Bank'){
       var wrap=document.createElement('div');wrap.className='bank-flip-wrap';
       var inner=document.createElement('div');inner.className='bank-flip-inner';
       var front=document.createElement('div');front.className='bank-face bank-face-front';
-      var fL=document.createElement('div');fL.className='gc-logo';fL.innerHTML='<span style="font-size:2rem;">&#x1F3E6;</span>';
-      var fLb=document.createElement('div');fLb.style.cssText='height:46px;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.5;border-top:1px solid rgba(200,150,90,.13);';
-      fLb.innerHTML='<span style="font-size:.56rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">'+bankL1+'</span><span style="font-size:.56rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">'+bankL2+'</span>';
-      var fS=document.createElement('div');fS.style.cssText='height:34px;display:flex;align-items:center;justify-content:center;font-size:.58rem;color:var(--muted);';fS.innerHTML=bankTap+' &#x21BB;';
+      var fL=document.createElement('div');fL.className='gc-logo';fL.innerHTML='<span style="font-size:2rem;">🏦</span>';
+      var fLb=document.createElement('div');fLb.style.cssText='height:46px;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.5;border-top:1px solid rgba(200,150,90,.13);';fLb.innerHTML='<span style="font-size:.56rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">'+bankL1+'</span><span style="font-size:.56rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">'+bankL2+'</span>';
+      var fS=document.createElement('div');fS.style.cssText='height:34px;display:flex;align-items:center;justify-content:center;font-size:.58rem;color:var(--muted);';fS.innerHTML=bankTap+' ↻';
       front.appendChild(fL);front.appendChild(fLb);front.appendChild(fS);
       var back=document.createElement('div');back.className='bank-face bank-face-back';
       function mkF(lb,vl,cp){var f=document.createElement('div');f.className='bank-field';var l=document.createElement('span');l.className='bank-field-lbl';l.innerHTML=lb;var r=document.createElement('div');r.className='bank-field-row';var v=document.createElement('span');v.className='bank-field-val';v.innerHTML=vl;r.appendChild(v);if(cp){var b=document.createElement('button');b.className='bank-copy-ic';b.innerHTML=COPY_SVG;(function(val,btn){b.addEventListener('click',function(e){e.stopPropagation();doCopy(btn,val);});})(vl,b);r.appendChild(b);}f.appendChild(l);f.appendChild(r);return f;}
@@ -577,17 +496,30 @@ function buildGifts(){
       var pwrap=document.createElement('div');pwrap.className='bank-flip-wrap';
       var pinner=document.createElement('div');pinner.className='bank-flip-inner';
       var pfront=document.createElement('div');pfront.className='bank-face bank-face-front';
-      var ppLogo=document.createElement('div');ppLogo.className='gc-logo';
-      ppLogo.innerHTML='<span style="position:relative;display:inline-block;width:52px;height:44px;"><span style="font-family:Arial Black,sans-serif;font-size:2.8rem;font-weight:900;color:#003087;position:absolute;left:0;top:0;line-height:1;">P</span><span style="font-family:Arial Black,sans-serif;font-size:2.8rem;font-weight:900;color:#009cde;position:absolute;left:18px;top:4px;line-height:1;">P</span></span>';
-      var ppLbl=document.createElement('div');ppLbl.style.cssText='height:46px;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.5;border-top:1px solid rgba(200,150,90,.13);';
-      ppLbl.innerHTML=(!isEN&&!isPA)?'<span style="font-size:.56rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">Transferencia</span><span style="font-size:.56rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">PayPal</span>':'<span style="font-size:.56rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">PayPal</span><span style="font-size:.56rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">'+ppL2+'</span>';
-      var ppSub=document.createElement('div');ppSub.style.cssText='height:34px;display:flex;align-items:center;justify-content:center;font-size:.58rem;color:var(--muted);';ppSub.innerHTML=ppTap+' &#x2197;';
-      pfront.appendChild(ppLogo);pfront.appendChild(ppLbl);pfront.appendChild(ppSub);
-      pinner.appendChild(pfront);pwrap.appendChild(pinner);
+      var ppLogo=document.createElement('div');ppLogo.className='gc-logo';ppLogo.innerHTML='<span style="position:relative;display:inline-block;width:52px;height:44px;"><span style="font-family:Arial Black,sans-serif;font-size:2.8rem;font-weight:900;color:#003087;position:absolute;left:0;top:0;line-height:1;">P</span><span style="font-family:Arial Black,sans-serif;font-size:2.8rem;font-weight:900;color:#009cde;position:absolute;left:18px;top:4px;line-height:1;">P</span></span>';
+      var ppLbl=document.createElement('div');ppLbl.style.cssText='height:46px;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.5;border-top:1px solid rgba(200,150,90,.13);';ppLbl.innerHTML='<span style="font-size:.56rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">PayPal</span><span style="font-size:.56rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">'+ppL2+'</span>';
+      var ppSub=document.createElement('div');ppSub.style.cssText='height:34px;display:flex;align-items:center;justify-content:center;font-size:.58rem;color:var(--muted);';ppSub.innerHTML=ppTap+' ↗';
+      pfront.appendChild(ppLogo);pfront.appendChild(ppLbl);pfront.appendChild(ppSub);pinner.appendChild(pfront);pwrap.appendChild(pinner);
       pwrap.addEventListener('click',function(){window.open(g.url||'#','_blank');});
       gg.appendChild(pwrap);
     }
   });
+}
+
+function buildDress(){
+  var t=T[currentLang]||T.es,c=document.getElementById('dress-cols');if(!c)return;
+  c.innerHTML=
+    '<div style="display:flex;justify-content:center;gap:clamp(40px,12vw,100px);margin-bottom:18px;">'
+      +'<div style="text-align:center;"><div class="dress-lbl">'+(t.dressLadies||'Mujeres')+'</div><div style="font-family:var(--serif);font-style:italic;font-size:.95rem;color:#5A3A44;margin-top:4px;">'+(t.vestidoLargo||'Vestido Largo')+'</div></div>'
+      +'<div style="text-align:center;"><div class="dress-lbl">'+(t.dressGents||'Hombres')+'</div><div style="font-family:var(--serif);font-style:italic;font-size:.95rem;color:#5A3A44;margin-top:4px;">'+(t.traje||'Traje')+'</div></div>'
+    +'</div>'
+    +'<div class="dc-img-ph"><span>dresscode.png</span></div>'
+    +'<div style="display:flex;justify-content:center;gap:clamp(40px,12vw,100px);margin-top:18px;">'
+      +'<div style="text-align:center;"><div class="dress-lbl">'+(t.dressClrLady||'Tonos pasteles')+'</div></div>'
+      +'<div style="text-align:center;"><div class="dress-lbl">'+(t.dressClrGent||'Negro, neutros')+'</div></div>'
+    +'</div>';
+  var sw=document.getElementById('avoid-sw');if(!sw)return;sw.innerHTML='';
+  CFG.avoidColors.forEach(function(col){var s=document.createElement('div');s.className='av-sw';s.style.background=col;sw.appendChild(s);});
 }
 
 function setLang(lang){
@@ -596,10 +528,10 @@ function setLang(lang){
   ['es','en','pa'].forEach(function(l){var el=document.getElementById('lo-'+l);if(el){el.classList.remove('active');if(l===lang)el.classList.add('active');}});
   var t=T[lang]||T.es;
   document.querySelectorAll('[data-i18n]').forEach(function(n){var k=n.getAttribute('data-i18n');if(k&&t[k]!=null)n.innerHTML=String(t[k]).replace(/</g,'&lt;').replace(/>/g,'&gt;');});
-  var phMap={'ri-fn':{es:'Nombre',en:'First Name',pa:'\u0a28\u0a3e\u0a2e'},'ri-ln':{es:'Apellido',en:'Last Name',pa:'\u0a09\u0a2a\u0a28\u0a3e\u0a2e'},'ri-msg':{es:'Escribe tu mensaje aqu\u00ed...',en:'Write your message here...',pa:'\u0a38\u0a70\u0a26\u0a47\u0a38\u0a3c\u0a3e...'},'ri-adults':{es:'0',en:'0',pa:'0'}};
+  var phMap={'ri-fn':{es:'Nombre',en:'First Name',pa:'ਨਾਮ'},'ri-ln':{es:'Apellido',en:'Last Name',pa:'ਉਪਨਾਮ'},'ri-msg':{es:'Escribe tu mensaje aquí...',en:'Write your message here...',pa:'ਸੰਦੇਸ਼ਾ...'},'ri-adults':{es:'0',en:'0',pa:'0'}};
   Object.keys(phMap).forEach(function(id){var el=document.getElementById(id);if(el)el.placeholder=phMap[id][lang]||phMap[id].es;});
   var dl=document.getElementById('rsvp-dl');if(dl)dl.innerHTML=(t.rsvpPre||'')+' <strong>'+((CFG.rsvpDeadline&&CFG.rsvpDeadline[lang])||'')+'</strong>';
-  var wa=document.getElementById('rwa-link');if(wa)wa.href='https://wa.me/'+CFG.rsvpWa+'?text='+encodeURIComponent('Hola, pregunta sobre la boda de X\u00f3chitl & Sarbjit');
+  var wa=document.getElementById('rwa-link');if(wa)wa.href='https://wa.me/'+CFG.rsvpWa+'?text='+encodeURIComponent('Hola, pregunta sobre la boda de Xóchitl & Sarbjit');
   buildNombram();buildEvents();buildDress();buildHotels();buildGifts();
 }
 
@@ -607,9 +539,8 @@ function buildNombram(){
   var t=T[currentLang]||T.es,c=document.getElementById('nm-list');if(!c)return;c.innerHTML='';
   NM_DATA.forEach(function(it,i){
     var d=document.createElement('div');d.className='nm-item sf';
-    var nameLine=CFG[it.names]||'';
     var sep=i<NM_DATA.length-1?'<div style="text-align:center;padding:8px 0;"><svg viewBox="0 0 380 24" style="width:min(300px,80vw)" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="12" x2="148" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".4"/><polygon points="162,12 168,7 174,12 168,17" fill="none" stroke="#C8965A" stroke-width=".8"/><circle cx="186" cy="12" r="2.5" fill="#C8965A" opacity=".7"/><polygon points="198,12 204,7 210,12 204,17" fill="none" stroke="#C8965A" stroke-width=".8"/><line x1="222" y1="12" x2="380" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".4"/></svg></div>':'';
-    d.innerHTML='<p class="nm-role">'+(t[it.roleKey]||'')+'</p><p class="nm-names">'+nameLine+'</p>'+sep;
+    d.innerHTML='<p class="nm-role">'+(t[it.roleKey]||'')+'</p><p class="nm-names">'+(CFG[it.names]||'')+'</p>'+sep;
     c.appendChild(d);obsSF(d);
   });
 }
@@ -618,10 +549,11 @@ function buildEvents(){
   var g=document.getElementById('ec-grid');if(!g)return;g.innerHTML='';var t=T[currentLang]||T.es;
   CFG.events.forEach(function(ev){
     var card=document.createElement('div');card.className='ecard sf';
-    var img=document.createElement('img');img.className='ecard-img';img.src=ev.photo||'';img.alt='';card.appendChild(img);
+    var imgDiv=document.createElement('div');imgDiv.className='ecard-img';imgDiv.style.cssText='background:linear-gradient(160deg,#C8A060,#8B5E20);display:flex;align-items:center;justify-content:center;height:160px;';imgDiv.innerHTML='<span style="font-family:var(--script);font-size:1.8rem;color:rgba(255,255,255,.7);">'+(ev.tkLabel[currentLang]||'')+'</span>';
+    card.appendChild(imgDiv);
     var body=document.createElement('div');body.className='ecard-body';
     var horaHtml=ev.hora?'<p class="ecard-hora">'+ev.hora+'</p>':'';
-    var dateLabel=ev.hora?(t.eLblDateTime||'Fecha y Hora'):(t.eLblDate||'Fecha');
+    var dateLabel=ev.hora?(t.eLblDateTime||''):(t.eLblDate||'');
     body.innerHTML='<div class="ecard-title">'+((ev.tkLabel&&ev.tkLabel[currentLang])||'')+'</div>'
       +'<div class="ecard-dots">+ + + + +</div>'
       +'<p class="ecard-info" style="font-weight:600">'+((ev.name&&ev.name[currentLang])||'')+'</p>'
@@ -632,42 +564,30 @@ function buildEvents(){
       +'<p class="ecard-lbl">'+dateLabel+'</p>'
       +'<p class="ecard-info" style="font-style:italic">'+((ev.date&&ev.date[currentLang])||'')+'</p>'
       +horaHtml
-      +(ev.ck==='reception'&&ev.map?'<div style="text-align:center;margin-top:14px;"><a href="'+ev.map+'" target="_blank" style="display:inline-flex;align-items:center;gap:7px;padding:10px 20px;background:rgba(139,94,32,.08);border:1.5px solid rgba(139,94,32,.5);border-radius:3px;font-size:.52rem;letter-spacing:3px;text-transform:uppercase;color:#5A3200;text-decoration:none;font-family:var(--sans);font-weight:600;transition:background .2s;">&#x1F4CD; '+(t.hotelDir||'Mapa')+'</a></div>':'');
+      +(ev.ck==='reception'&&ev.map?'<div style="text-align:center;margin-top:14px;"><a href="'+ev.map+'" target="_blank" style="display:inline-flex;align-items:center;gap:7px;padding:10px 20px;background:rgba(139,94,32,.08);border:1.5px solid rgba(139,94,32,.5);border-radius:3px;font-size:.52rem;letter-spacing:3px;text-transform:uppercase;color:#5A3200;text-decoration:none;font-family:var(--sans);font-weight:600;">📍 '+(t.hotelDir||'Mapa')+'</a></div>':'');
     card.appendChild(body);g.appendChild(card);obsSF(card);
   });
-}
-
-function buildDress(){
-  var t=T[currentLang]||T.es,c=document.getElementById('dress-cols');if(!c)return;
-  c.innerHTML='<div style="text-align:center;margin:0 auto;"><img src="img/20882607-005a-4b9c-855c-885cd3f50aca.jpeg" alt="Dress code" style="max-width:min(420px,90vw);width:100%;border-radius:4px;box-shadow:0 8px 32px rgba(0,0,0,.18);"></div>';
-  var sw=document.getElementById('avoid-sw');if(!sw)return;sw.innerHTML='';
-  CFG.avoidColors.forEach(function(col){var s=document.createElement('div');s.className='av-sw';s.style.background=col;sw.appendChild(s);});
 }
 
 function buildHotels(){
   var c=document.getElementById('h-cards');if(!c)return;var t=T[currentLang]||T.es;c.innerHTML='';
   CFG.hotels.forEach(function(h){
-    var s='&#9733;'.repeat(h.stars)+'&#9734;'.repeat(5-h.stars);
+    var s='★'.repeat(h.stars)+'☆'.repeat(5-h.stars);
     var card=document.createElement('div');card.className='h-card sf';
-    card.innerHTML='<div class="h-stars">'+s+'</div><div class="h-name">'+h.name+'</div><div class="h-dist">&#x1F4CD; '+((h.dist&&h.dist[currentLang])||'')+'</div><p class="h-note">'+((h.note&&h.note[currentLang])||'')+'</p>';
-    var a=document.createElement('a');a.className='h-link';a.href=h.url||'#';a.target='_blank';a.innerHTML=(t.hotelDir||'')+' &rarr;';card.appendChild(a);c.appendChild(card);obsSF(card);
+    card.innerHTML='<div class="h-stars">'+s+'</div><div class="h-name">'+h.name+'</div><div class="h-dist">📍 '+((h.dist&&h.dist[currentLang])||'')+'</div><p class="h-note">'+((h.note&&h.note[currentLang])||'')+'</p>';
+    var a=document.createElement('a');a.className='h-link';a.href=h.url||'#';a.target='_blank';a.innerHTML=(t.hotelDir||'')+' →';card.appendChild(a);c.appendChild(card);obsSF(card);
   });
 }
 
 function buildSS(){
-  var t=document.getElementById('ss-track'),d=document.getElementById('ss-dots');
-  if(!t||!d)return;
+  var t=document.getElementById('ss-track'),d=document.getElementById('ss-dots');if(!t||!d)return;
   t.innerHTML='';d.innerHTML='';ssSlides=[];
-  CFG.slideshow.forEach(function(src,i){
-    var s=document.createElement('div');
-    s.className='ss-slide'+(i===0?' active':'');
-    if(src){var img=document.createElement('img');img.src=src;img.alt='';s.appendChild(img);}
+  for(var i=0;i<3;i++){
+    var s=document.createElement('div');s.className='ss-slide'+(i===0?' active':'');
     t.appendChild(s);ssSlides.push(s);
-    var dot=document.createElement('button');
-    dot.className='ss-dot'+(i===0?' active':'');
-    (function(n){dot.addEventListener('click',function(){ssGo(n);});})(i);
-    d.appendChild(dot);
-  });
+    var dot=document.createElement('button');dot.className='ss-dot'+(i===0?' active':'');
+    (function(n){dot.addEventListener('click',function(){ssGo(n);});})(i);d.appendChild(dot);
+  }
 }
 function ssGo(n){if(!ssSlides.length)return;var dots=document.querySelectorAll('.ss-dots .ss-dot');if(ssSlides[ssIdx])ssSlides[ssIdx].classList.remove('active');if(dots[ssIdx])dots[ssIdx].classList.remove('active');ssIdx=(n+ssSlides.length)%ssSlides.length;if(ssSlides[ssIdx])ssSlides[ssIdx].classList.add('active');if(dots[ssIdx])dots[ssIdx].classList.add('active');}
 function startSS(){ssTmr=setInterval(function(){ssGo(ssIdx+1);},3800);}
@@ -691,7 +611,7 @@ function triggerWrite(){
   setTimeout(function(){var n=document.getElementById('nwl');if(n)n.classList.add('exit');},tot+450);
   setTimeout(function(){var hh=document.getElementById('hnf');if(hh){hh.classList.add('show');var amp=hh.querySelector('.amp');if(amp){amp.style.background='linear-gradient(160deg,#E8C068,#C8965A 30%,#F0D080 50%,#A87030 70%,#D4A850)';amp.style.webkitBackgroundClip='text';amp.style.webkitTextFillColor='transparent';amp.style.backgroundClip='text';}}},tot+750);
   setTimeout(function(){var w=document.getElementById('hiw');if(w)w.classList.add('show');},tot+1100);
-  setTimeout(function(){var s=document.getElementById('hss');if(s){s.classList.add('show');startSS();}if(CFG.songAudio&&!playing){if(!audio){audio=new Audio(CFG.songAudio);audio.onended=stopSong;audio.ontimeupdate=updateFmpUI;}audio.currentTime=18;audio.play().then(function(){playing=true;setSongUI(true);}).catch(function(){});}},tot+1500);
+  setTimeout(function(){var s=document.getElementById('hss');if(s){s.classList.add('show');startSS();}},tot+1500);
 }
 
 var navOpen=false;
@@ -703,195 +623,34 @@ function toggleLangDD(){var dd=document.getElementById('lang-dd');if(dd)dd.class
 function closeLangDD(){var dd=document.getElementById('lang-dd');if(dd)dd.classList.remove('open');}
 function openLB(imgs,idx){lbImgs=imgs;lbIdx=idx;var img=document.getElementById('lb-img'),lb=document.getElementById('lb');if(img)img.src=imgs[idx]||'';if(lb)lb.classList.add('open');}
 function closeLB(){var lb=document.getElementById('lb');if(lb)lb.classList.remove('open');}
-function showQRModal(fn,ln,adults,confID){
-  var t=T[currentLang]||T.es;
-  var existing=document.getElementById('qr-modal');
-  if(existing)existing.parentNode.removeChild(existing);
-
-  var overlay=document.createElement('div');
-  overlay.id='qr-modal';
-  overlay.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,4,6,.92);z-index:99999;display:flex;align-items:center;justify-content:center;padding:16px;overflow-y:auto;';
-
-  /* ── CARD ── */
-  var card=document.createElement('div');
-  card.style.cssText='background:linear-gradient(160deg,#FEF5F0,#F5E8F4);width:100%;max-width:340px;position:relative;padding:28px 22px 22px;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.5);';
-
-  /* Doble borde dorado */
-  var b1=document.createElement('div');
-  b1.style.cssText='position:absolute;inset:8px;border:2px solid #C8965A;pointer-events:none;';
-  var b2=document.createElement('div');
-  b2.style.cssText='position:absolute;inset:14px;border:1px solid rgba(200,150,90,.35);pointer-events:none;';
-
-  /* Botón cerrar */
-  var closeBtn=document.createElement('button');
-  closeBtn.innerHTML='&#10005;';
-  closeBtn.style.cssText='position:absolute;top:18px;right:18px;background:none;border:none;font-size:1.2rem;cursor:pointer;color:rgba(200,150,90,.7);z-index:2;line-height:1;';
-  closeBtn.onclick=function(){document.body.removeChild(overlay);};
-  overlay.addEventListener('click',function(e){if(e.target===overlay)document.body.removeChild(overlay);});
-
-  /* Título script */
-  var ttl=document.createElement('div');
-  ttl.style.cssText='font-family:Great Vibes,cursive;font-size:2rem;background:linear-gradient(160deg,#FFE08A,#C8860A 30%,#F5D060 60%,#8B5E08);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:2px;margin-top:8px;';
-  ttl.innerHTML='Xóchitl & Sarbjit';
-
-  /* Línea */
-  var hr1=document.createElement('div');
-  hr1.style.cssText='height:1px;background:rgba(200,150,90,.4);margin:8px 20px;';
-
-  /* Subtítulo */
-  var sub=document.createElement('p');
-  sub.style.cssText='font-size:.48rem;letter-spacing:4px;text-transform:uppercase;color:#9B5070;font-family:Montserrat,sans-serif;margin-bottom:10px;';
-  sub.innerHTML=t.qrSaveHint||'Guarda tu código QR';
-
-  /* Nombre invitado */
-  var guestName=document.createElement('div');
-  guestName.style.cssText='font-family:Cormorant Garamond,Georgia,serif;font-size:1.5rem;font-style:italic;font-weight:600;color:#1A0C10;margin-bottom:2px;';
-  guestName.innerHTML=fn+(ln?' '+ln:'');
-
-  /* Adultos */
-  var adultsEl=document.createElement('p');
-  adultsEl.style.cssText='font-size:.55rem;letter-spacing:3px;text-transform:uppercase;color:#6A3848;font-family:Montserrat,sans-serif;margin-bottom:12px;';
-  adultsEl.innerHTML=adults+' adulto'+(adults!=1?'s':'');
-
-  /* QR */
-  var qrWrap=document.createElement('div');
-  qrWrap.style.cssText='display:flex;justify-content:center;margin:0 auto 12px;';
-  var qrInner=document.createElement('div');
-  qrInner.id='qr-code';
-  qrInner.style.cssText='padding:8px;background:white;box-shadow:0 4px 18px rgba(0,0,0,.18);';
-  qrWrap.appendChild(qrInner);
-
-  /* Código label */
-  var codeLabel=document.createElement('p');
-  codeLabel.style.cssText='font-size:.46rem;letter-spacing:4px;text-transform:uppercase;color:#C8965A;font-family:Montserrat,sans-serif;margin-bottom:3px;';
-  codeLabel.innerHTML=t.qrCodeLabel||'Código de confirmación';
-
-  /* Código valor */
-  var codeVal=document.createElement('p');
-  codeVal.style.cssText='font-family:Cormorant Garamond,Georgia,serif;font-size:1.2rem;font-weight:700;color:#1A0C10;letter-spacing:3px;margin-bottom:10px;';
-  codeVal.innerHTML=confID;
-
-  /* Línea */
-  var hr2=document.createElement('div');
-  hr2.style.cssText='height:1px;background:rgba(200,150,90,.35);margin:0 20px 10px;';
-
-  /* Evento info */
-  var evInfo=document.createElement('p');
-  evInfo.style.cssText='font-family:Cormorant Garamond,Georgia,serif;font-size:.85rem;font-style:italic;color:#6A3848;line-height:1.8;margin-bottom:14px;';
-  evInfo.innerHTML='Recepción · Viernes 3 de Julio de 2026<br>8:00 PM · Estaca Chihuahua México';
-
-  /* Botón guardar */
-  var saveBtn=document.createElement('button');
-  saveBtn.style.cssText='width:100%;padding:12px;background:linear-gradient(135deg,#C8965A,#A8720A);border:none;color:white;font-family:Montserrat,sans-serif;font-size:.55rem;letter-spacing:3px;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px;';
-  saveBtn.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>'+(t.qrSaveBtn||'Guardar imagen');
-
-  /* Hint */
-  var hint=document.createElement('p');
-  hint.style.cssText='font-size:.52rem;color:#9B5070;font-family:Montserrat,sans-serif;letter-spacing:1px;';
-  hint.innerHTML=t.qrEventHint||'Necesitarás esta imagen el día del evento.';
-
-  card.appendChild(b1);card.appendChild(b2);card.appendChild(closeBtn);
-  card.appendChild(ttl);card.appendChild(hr1);card.appendChild(sub);
-  card.appendChild(guestName);card.appendChild(adultsEl);
-  card.appendChild(qrWrap);
-  card.appendChild(codeLabel);card.appendChild(codeVal);
-  card.appendChild(hr2);card.appendChild(evInfo);
-  card.appendChild(saveBtn);card.appendChild(hint);
-  overlay.appendChild(card);
-  document.body.appendChild(overlay);
-
-  new QRCode(qrInner,{text:'Confirmacion: '+confID+'\nNombre: '+fn+(ln?' '+ln:'')+'\nAdultos: '+adults+'\nBoda: Xochitl & Sarbjit\n3 Jul 2026',width:200,height:200,colorDark:'#1A0C10',colorLight:'#ffffff'});
-  saveBtn.onclick=function(){saveConfirmationImage(fn,ln,adults,confID);};
-}
-function saveConfirmationImage(fn,ln,adults,confID){
-  var qrCanvas=document.querySelector('#qr-code canvas');
-  if(!qrCanvas)return;
-  var W=600,H=820;
-  var c=document.createElement('canvas');c.width=W;c.height=H;
-  var ctx=c.getContext('2d');
-
-  /* fondo crema con gradiente */
-  var bg=ctx.createLinearGradient(0,0,W,H);
-  bg.addColorStop(0,'#FEF5F0');bg.addColorStop(1,'#F5E8F4');
-  ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
-
-  /* borde dorado doble */
-  ctx.strokeStyle='#C8965A';ctx.lineWidth=3;
-  ctx.strokeRect(14,14,W-28,H-28);
-  ctx.strokeStyle='rgba(200,150,90,.35)';ctx.lineWidth=1;
-  ctx.strokeRect(22,22,W-44,H-44);
-
-  /* esquinas decorativas */
-  var cs=28,co=14;
-  [[[co,co],[co+cs,co],[co,co+cs]],[[W-co,co],[W-co-cs,co],[W-co,co+cs]],
-   [[co,H-co],[co+cs,H-co],[co,H-co-cs]],[[W-co,H-co],[W-co-cs,H-co],[W-co,H-co-cs]]
-  ].forEach(function(pts){ctx.strokeStyle='#C8965A';ctx.lineWidth=2.5;ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);ctx.lineTo(pts[1][0],pts[1][1]);ctx.moveTo(pts[0][0],pts[0][1]);ctx.lineTo(pts[2][0],pts[2][1]);ctx.stroke();});
-
-  /* título script simulado con serif italic */
-  ctx.fillStyle='#C8965A';
-  ctx.font='italic 52px "Cormorant Garamond", Georgia, serif';
-  ctx.textAlign='center';
-  ctx.fillText('Xóchitl & Sarbjit',W/2,100);
-
-  /* línea separadora */
-  ctx.strokeStyle='rgba(200,150,90,.5)';ctx.lineWidth=1;
-  ctx.beginPath();ctx.moveTo(80,118);ctx.lineTo(W-80,118);ctx.stroke();
-
-  /* "Confirmación de asistencia" */
-  ctx.fillStyle='#9B5070';
-  ctx.font='300 13px Montserrat, Arial, sans-serif';
-  ctx.letterSpacing='4px';
-  ctx.fillText('CONFIRMACIÓN DE ASISTENCIA',W/2,146);
-
-  /* nombre del invitado */
-  ctx.fillStyle='#1A0C10';
-  ctx.font='600 italic 36px "Cormorant Garamond", Georgia, serif';
-  ctx.fillText(fn+(ln?' '+ln:''),W/2,200);
-
-  /* adultos */
-  ctx.fillStyle='#6A3848';
-  ctx.font='300 14px Montserrat, Arial, sans-serif';
-  ctx.fillText(adults+' adulto'+(adults!=1?'s':''),W/2,228);
-
-  /* QR centrado */
-  var qrSize=220,qrX=(W-qrSize)/2,qrY=252;
-  ctx.fillStyle='white';
-  ctx.shadowColor='rgba(0,0,0,.15)';ctx.shadowBlur=16;ctx.shadowOffsetY=4;
-  ctx.fillRect(qrX-10,qrY-10,qrSize+20,qrSize+20);
-  ctx.shadowBlur=0;ctx.shadowOffsetY=0;
-  ctx.drawImage(qrCanvas,qrX,qrY,qrSize,qrSize);
-
-  /* código */
-  ctx.fillStyle='#C8965A';
-  ctx.font='700 13px Montserrat, Arial, sans-serif';
-  ctx.fillText('CÓDIGO DE CONFIRMACIÓN',W/2,510);
-  ctx.fillStyle='#1A0C10';
-  ctx.font='700 28px "Cormorant Garamond", Georgia, serif';
-  ctx.fillText(confID,W/2,548);
-
-  /* línea */
-  ctx.strokeStyle='rgba(200,150,90,.4)';ctx.lineWidth=1;
-  ctx.beginPath();ctx.moveTo(80,568);ctx.lineTo(W-80,568);ctx.stroke();
-
-  /* fecha y evento */
-  ctx.fillStyle='#6A3848';
-  ctx.font='italic 18px "Cormorant Garamond", Georgia, serif';
-  ctx.fillText('Recepción · Viernes 3 de Julio de 2026',W/2,600);
-  ctx.fillText('8:00 PM · Estaca Chihuahua México',W/2,628);
-
-  /* footer */
-  ctx.fillStyle='rgba(200,150,90,.6)';
-  ctx.font='300 11px Montserrat, Arial, sans-serif';
-  ctx.fillText('Presenta esta imagen a la entrada del evento',W/2,680);
-
-  /* guardar */
-  var link=document.createElement('a');
-  link.download='Confirmacion-Xochitl-Sarbjit-'+confID+'.png';
-  link.href=c.toDataURL('image/png');
-  link.click();
-}
 
 function genConfID(){var chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';var id='CONF-';for(var i=0;i<8;i++)id+=chars[Math.floor(Math.random()*chars.length)];return id;}
+
+function showQRModal(fn,ln,adults,confID){
+  var t=T[currentLang]||T.es;
+  var existing=document.getElementById('qr-modal');if(existing)existing.parentNode.removeChild(existing);
+  var overlay=document.createElement('div');overlay.id='qr-modal';overlay.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,4,6,.92);z-index:99999;display:flex;align-items:center;justify-content:center;padding:16px;overflow-y:auto;';
+  var card=document.createElement('div');card.style.cssText='background:linear-gradient(160deg,#FEF5F0,#F5E8F4);width:100%;max-width:340px;position:relative;padding:28px 22px 22px;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.5);';
+  var b1=document.createElement('div');b1.style.cssText='position:absolute;inset:8px;border:2px solid #C8965A;pointer-events:none;';
+  var b2=document.createElement('div');b2.style.cssText='position:absolute;inset:14px;border:1px solid rgba(200,150,90,.35);pointer-events:none;';
+  var closeBtn=document.createElement('button');closeBtn.innerHTML='✕';closeBtn.style.cssText='position:absolute;top:18px;right:18px;background:none;border:none;font-size:1.2rem;cursor:pointer;color:rgba(200,150,90,.7);z-index:2;line-height:1;';closeBtn.onclick=function(){document.body.removeChild(overlay);};
+  overlay.addEventListener('click',function(e){if(e.target===overlay)document.body.removeChild(overlay);});
+  var ttl=document.createElement('div');ttl.style.cssText='font-family:Great Vibes,cursive;font-size:2rem;background:linear-gradient(160deg,#FFE08A,#C8860A 30%,#F5D060 60%,#8B5E08);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:2px;margin-top:8px;';ttl.innerHTML='Xóchitl & Sarbjit';
+  var hr1=document.createElement('div');hr1.style.cssText='height:1px;background:rgba(200,150,90,.4);margin:8px 20px;';
+  var sub=document.createElement('p');sub.style.cssText='font-size:.48rem;letter-spacing:4px;text-transform:uppercase;color:#9B5070;font-family:Montserrat,sans-serif;margin-bottom:10px;';sub.innerHTML=t.qrSaveHint||'Guarda tu código QR';
+  var guestName=document.createElement('div');guestName.style.cssText='font-family:Cormorant Garamond,Georgia,serif;font-size:1.5rem;font-style:italic;font-weight:600;color:#1A0C10;margin-bottom:2px;';guestName.innerHTML=fn+(ln?' '+ln:'');
+  var adultsEl=document.createElement('p');adultsEl.style.cssText='font-size:.55rem;letter-spacing:3px;text-transform:uppercase;color:#6A3848;font-family:Montserrat,sans-serif;margin-bottom:12px;';adultsEl.innerHTML=adults+' adulto'+(adults!=1?'s':'');
+  var qrWrap=document.createElement('div');qrWrap.style.cssText='display:flex;justify-content:center;margin:0 auto 12px;';
+  var qrInner=document.createElement('div');qrInner.id='qr-code';qrInner.style.cssText='padding:8px;background:white;box-shadow:0 4px 18px rgba(0,0,0,.18);';qrWrap.appendChild(qrInner);
+  var codeLabel=document.createElement('p');codeLabel.style.cssText='font-size:.46rem;letter-spacing:4px;text-transform:uppercase;color:#C8965A;font-family:Montserrat,sans-serif;margin-bottom:3px;';codeLabel.innerHTML=t.qrCodeLabel||'Código de confirmación';
+  var codeVal=document.createElement('p');codeVal.style.cssText='font-family:Cormorant Garamond,Georgia,serif;font-size:1.2rem;font-weight:700;color:#1A0C10;letter-spacing:3px;margin-bottom:10px;';codeVal.innerHTML=confID;
+  var hr2=document.createElement('div');hr2.style.cssText='height:1px;background:rgba(200,150,90,.35);margin:0 20px 10px;';
+  var evInfo=document.createElement('p');evInfo.style.cssText='font-family:Cormorant Garamond,Georgia,serif;font-size:.85rem;font-style:italic;color:#6A3848;line-height:1.8;margin-bottom:14px;';evInfo.innerHTML='Recepción · Viernes 3 de Julio de 2026<br>8:00 PM · Estaca Chihuahua México';
+  var hint=document.createElement('p');hint.style.cssText='font-size:.52rem;color:#9B5070;font-family:Montserrat,sans-serif;letter-spacing:1px;';hint.innerHTML=t.qrEventHint||'Necesitarás esta imagen el día del evento.';
+  card.appendChild(b1);card.appendChild(b2);card.appendChild(closeBtn);card.appendChild(ttl);card.appendChild(hr1);card.appendChild(sub);card.appendChild(guestName);card.appendChild(adultsEl);card.appendChild(qrWrap);card.appendChild(codeLabel);card.appendChild(codeVal);card.appendChild(hr2);card.appendChild(evInfo);card.appendChild(hint);
+  overlay.appendChild(card);document.body.appendChild(overlay);
+  new QRCode(qrInner,{text:'Confirmacion: '+confID+'\nNombre: '+fn+(ln?' '+ln:'')+'\nAdultos: '+adults,width:200,height:200,colorDark:'#1A0C10',colorLight:'#ffffff'});
+}
 
 function submitRSVP(){
   var fn=((document.getElementById('ri-fn')||{}).value||'').trim();
@@ -899,94 +658,37 @@ function submitRSVP(){
   var msg=((document.getElementById('ri-msg')||{}).value||'').trim();
   var adultsRaw=(document.getElementById('ri-adults')||{}).value||'';
   var adults=parseInt(adultsRaw);
-
-  /* Validación */
-  var errors=[];
-  var t=T[currentLang]||T.es;
-  if(!fn) errors.push(t.rsvpFname||'Nombre');
-  if(!ln) errors.push(t.rsvpLname||'Apellido');
-  if(adultsRaw===''||isNaN(adults)||adults<1) errors.push(t.rsvpAdults||'Número de Adultos');
-
+  var errors=[],t=T[currentLang]||T.es;
+  if(!fn)errors.push(t.rsvpFname||'Nombre');
+  if(!ln)errors.push(t.rsvpLname||'Apellido');
+  if(adultsRaw===''||isNaN(adults)||adults<1)errors.push(t.rsvpAdults||'Número de Adultos');
   if(errors.length){
-    /* Marcar campos en rojo */
-    var fields={fn:'ri-fn',ln:'ri-ln',adults:'ri-adults'};
-    var checks={fn:!!fn,ln:!!ln,adults:adultsRaw!==''&&!isNaN(adults)&&adults>=1};
-    ['ri-fn','ri-ln','ri-adults'].forEach(function(id){
-      var el=document.getElementById(id);
-      if(!el)return;
-      var ok=(id==='ri-fn'?checks.fn:id==='ri-ln'?checks.ln:checks.adults);
-      el.style.border=ok?'1px solid rgba(200,150,90,.3)':'2px solid #C0392B';
-      el.style.background=ok?'#FDFAF8':'#FFF5F5';
-    });
-
-    /* Mostrar mensaje de error inline */
+    ['ri-fn','ri-ln','ri-adults'].forEach(function(id){var el=document.getElementById(id);if(!el)return;var ok=(id==='ri-fn'?!!fn:id==='ri-ln'?!!ln:adultsRaw!==''&&!isNaN(adults)&&adults>=1);el.style.border=ok?'1px solid rgba(200,150,90,.3)':'2px solid #C0392B';el.style.background=ok?'#FDFAF8':'#FFF5F5';});
     var errBox=document.getElementById('rsvp-err');
-    if(!errBox){
-      errBox=document.createElement('div');
-      errBox.id='rsvp-err';
-      errBox.style.cssText='margin-top:12px;padding:10px 14px;background:#FFF0F0;border:1px solid #C0392B;border-radius:3px;font-size:.62rem;color:#C0392B;letter-spacing:1px;font-family:var(--sans);text-align:left;line-height:1.8;';
-      var btn=document.getElementById('rsvp-submit');
-      if(btn&&btn.parentNode)btn.parentNode.insertBefore(errBox,btn.nextSibling);
-    }
-    errBox.innerHTML='&#9888; '+(t.rsvpErrorMsg||'Por favor completa:')+' <strong>'+errors.join(', ')+'</strong>';
-    errBox.style.display='block';
-    return;
+    if(!errBox){errBox=document.createElement('div');errBox.id='rsvp-err';errBox.style.cssText='margin-top:12px;padding:10px 14px;background:#FFF0F0;border:1px solid #C0392B;border-radius:3px;font-size:.62rem;color:#C0392B;letter-spacing:1px;font-family:var(--sans);text-align:left;line-height:1.8;';var btn=document.getElementById('rsvp-submit');if(btn&&btn.parentNode)btn.parentNode.insertBefore(errBox,btn.nextSibling);}
+    errBox.innerHTML='⚠ '+(t.rsvpErrorMsg||'Por favor completa:')+' <strong>'+errors.join(', ')+'</strong>';errBox.style.display='block';return;
   }
-
-  /* Limpiar errores si todo OK */
-  ['ri-fn','ri-ln','ri-adults'].forEach(function(id){
-    var el=document.getElementById(id);
-    if(el){el.style.border='1px solid rgba(200,150,90,.3)';el.style.background='#FDFAF8';}
-  });
-  var errBox=document.getElementById('rsvp-err');
-  if(errBox)errBox.style.display='none';
-
-  var confID=genConfID();
-  showQRModal(fn,ln,adults,confID);
-  setTimeout(function(){
-    var canvas=document.querySelector('#qr-code canvas');
-    var qrBase64=canvas?canvas.toDataURL('image/png'):'';
-    fetch('https://script.google.com/macros/s/AKfycbzOIWq-icHJdBdNeJMfCCDpcMmuz1K6NWpSiejkjwMk0NgZRbUaWUB10_5finf4D3jFbA/exec',{
-      method:'POST',
-      body:JSON.stringify({nombre:fn,apellido:ln,adultos:adults,mensaje:msg,confirmacion:confID})
-    }).catch(function(){});
-  },400);
+  ['ri-fn','ri-ln','ri-adults'].forEach(function(id){var el=document.getElementById(id);if(el){el.style.border='1px solid rgba(200,150,90,.3)';el.style.background='#FDFAF8';}});
+  var errBox=document.getElementById('rsvp-err');if(errBox)errBox.style.display='none';
+  showQRModal(fn,ln,adults,genConfID());
 }
+
 function setSongUI(on){var fpi=document.getElementById('fmp-pi');if(fpi)fpi.innerHTML=on?'<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>':'<path d="M8 5v14l11-7z"/>';}
 function stopSong(){playing=false;setSongUI(false);}
-function updateFmpUI(){var ring=document.getElementById('fmp-ring-fill');if(ring&&audio&&audio.duration)ring.style.strokeDashoffset=((2*Math.PI*27)*(1-audio.currentTime/audio.duration)).toFixed(2);}
-function toggleSong(){if(CFG.songAudio){if(!audio){audio=new Audio(CFG.songAudio);audio.onended=stopSong;audio.ontimeupdate=updateFmpUI;}if(playing){audio.pause();stopSong();}else{audio.currentTime=audio.currentTime||18;audio.play().then(function(){playing=true;setSongUI(true);}).catch(function(){});}}else{if(!playing){playing=true;setSongUI(true);window.open(CFG.songSpotify,'_blank');}else stopSong();}}
+function toggleSong(){if(!playing){playing=true;setSongUI(true);window.open(CFG.songSpotify,'_blank');}else stopSong();}
 
-function mkP(){return{x:Math.random()*innerWidth,y:Math.random()*-innerHeight,r:Math.random()*7+4,sp:Math.random()*1+.4,sx:Math.random()*1.2-.6,sw:Math.random()*.03+.01,sc:Math.random()*Math.PI*2,op:Math.random()*.5+.2,h:Math.random()<.5,fk:Math.random()*Math.PI*2,fks:Math.random()*.18+.08,fkd:Math.random()*.55+.25};}
+function mkP(){return{x:Math.random()*innerWidth,y:Math.random()*-innerHeight,r:Math.random()*7+4,sp:Math.random()*1+.4,sx:Math.random()*1.2-.6,sw:Math.random()*.03+.01,sc:Math.random()*Math.PI*2,h:Math.random()<.5,fk:Math.random()*Math.PI*2,fks:Math.random()*.18+.08,fkd:Math.random()*.55+.25};}
 function initPetals(){pC=document.getElementById('pc');if(!pC)return;pC.width=innerWidth;pC.height=innerHeight;pX=pC.getContext('2d');window.addEventListener('resize',function(){if(pC){pC.width=innerWidth;pC.height=innerHeight;}});for(var i=0;i<12;i++)pts.push(mkP());pC.classList.add('show');pR=true;animP();}
 function animP(){
-  if(!pR)return;
-  pX.clearRect(0,0,pC.width,pC.height);
+  if(!pR)return;pX.clearRect(0,0,pC.width,pC.height);
   pts.forEach(function(p){
     p.y+=p.sp;p.x+=Math.sin(p.sc)*p.sx;p.sc+=p.sw;p.fk+=p.fks;
     var flicker=1-(p.fkd*(0.6*(0.5+0.5*Math.sin(p.fk))+0.4*(0.5+0.5*Math.sin(p.fk*2.3+1.1))));
-    var px=p.x+Math.sin(p.sc)*3;
-    var dx=px-mouseX,dy=p.y-mouseY,dist=Math.sqrt(dx*dx+dy*dy);
-    var proximity=Math.max(0,1-dist/180);
-    var eased=proximity*proximity*(3-2*proximity);
-    var sr=p.r*(1+eased*0.55);
-    pX.save();
-    pX.translate(px,p.y);
-    pX.globalAlpha=Math.min(1,(0.45+flicker*0.45)+(0.1)*eased);
-    pX.filter='blur('+(Math.max(0,5*(1-eased))).toFixed(1)+'px)';
-    pX.shadowColor='rgba(220,80,140,'+(0.25+eased*0.65)+')';
-    pX.shadowBlur=4+eased*26;
-    if(p.h){
-      pX.beginPath();pX.moveTo(0,-sr);pX.bezierCurveTo(sr,-sr,sr,sr/2,0,sr);pX.bezierCurveTo(-sr,sr/2,-sr,-sr,0,-sr);
-      pX.fillStyle='rgb('+Math.round(242+flicker*8)+','+Math.round(198+flicker*6)+','+Math.round(208+flicker*8)+')';
-      pX.fill();
-    } else {
-      pX.beginPath();pX.ellipse(0,0,sr*.6,sr,Math.sin(p.sc)*.5,0,Math.PI*2);
-      pX.fillStyle='rgba('+Math.round(232+flicker*10+eased*12)+','+Math.round(148+flicker*8)+','+Math.round(178+flicker*12)+',.92)';
-      pX.fill();
-    }
-    pX.restore();
-    if(p.y>innerHeight+20){p.y=-20;p.x=Math.random()*innerWidth;}
+    var px=p.x+Math.sin(p.sc)*3;var dx=px-mouseX,dy=p.y-mouseY,dist=Math.sqrt(dx*dx+dy*dy);var proximity=Math.max(0,1-dist/180);var eased=proximity*proximity*(3-2*proximity);var sr=p.r*(1+eased*0.55);
+    pX.save();pX.translate(px,p.y);pX.globalAlpha=Math.min(1,(0.45+flicker*0.45)+(0.1)*eased);pX.shadowColor='rgba(220,80,140,'+(0.25+eased*0.65)+')';pX.shadowBlur=4+eased*26;
+    if(p.h){pX.beginPath();pX.moveTo(0,-sr);pX.bezierCurveTo(sr,-sr,sr,sr/2,0,sr);pX.bezierCurveTo(-sr,sr/2,-sr,-sr,0,-sr);pX.fillStyle='rgb('+Math.round(242+flicker*8)+','+Math.round(198+flicker*6)+','+Math.round(208+flicker*8)+')';pX.fill();}
+    else{pX.beginPath();pX.ellipse(0,0,sr*.6,sr,Math.sin(p.sc)*.5,0,Math.PI*2);pX.fillStyle='rgba('+Math.round(232+flicker*10+eased*12)+','+Math.round(148+flicker*8)+','+Math.round(178+flicker*12)+',.92)';pX.fill();}
+    pX.restore();if(p.y>innerHeight+20){p.y=-20;p.x=Math.random()*innerWidth;}
   });
   requestAnimationFrame(animP);
 }
@@ -994,25 +696,17 @@ document.addEventListener('mousemove',function(e){mouseX=e.clientX;mouseY=e.clie
 
 function startInvite(lang){
   var splash=document.getElementById('splash');if(!splash)return;
-  setLang(lang);buildGallery();
-  requestAnimationFrame(buildRopeBulbs);
-  if(CFG.songAudio){if(!audio){audio=new Audio(CFG.songAudio);audio.onended=stopSong;audio.ontimeupdate=updateFmpUI;}audio.currentTime=18;audio.play().then(function(){playing=true;setSongUI(true);}).catch(function(){});}
+  setLang(lang);buildGallery();requestAnimationFrame(buildRopeBulbs);
   splash.style.transition='opacity .7s ease';splash.style.opacity='0';
-  setTimeout(function(){
-    if(splash.parentNode)splash.parentNode.removeChild(splash);
-    window.scrollTo(0,0);
-    document.body.focus();
-    initPetals();setTimeout(triggerWrite,300);setTimeout(function(){var fmp=document.getElementById('fmp');if(fmp)fmp.classList.add('show');},800);
-  },700);
+  setTimeout(function(){if(splash.parentNode)splash.parentNode.removeChild(splash);window.scrollTo(0,0);document.body.focus();initPetals();setTimeout(triggerWrite,300);setTimeout(function(){var fmp=document.getElementById('fmp');if(fmp)fmp.classList.add('show');},800);},700);
 }
 function obsSF(el){new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('vis');});},{threshold:.06}).observe(el);}
 window.addEventListener('scroll',function(){document.querySelectorAll('.sf:not(.vis)').forEach(function(el){if(el.getBoundingClientRect().top<window.innerHeight*.9)el.classList.add('vis');});},{passive:true});
 
 window.addEventListener('DOMContentLoaded',function(){
-  buildNameSpans();buildSS();buildGallery();
-  requestAnimationFrame(buildRopeBulbs);
+  buildNameSpans();buildSS();buildGallery();requestAnimationFrame(buildRopeBulbs);
   var rf=document.getElementById('fmp-ring-fill');if(rf){var C=(2*Math.PI*27).toFixed(2);rf.style.strokeDasharray=C;rf.style.strokeDashoffset=C;}
-  var fc=document.getElementById('f-couple');if(fc)fc.innerHTML='X\u00f3chitl &amp; Sarbjit &middot; 2026';
+  var fc=document.getElementById('f-couple');if(fc)fc.innerHTML='Xóchitl &amp; Sarbjit · 2026';
   setLang('es');
   document.querySelectorAll('.sf').forEach(function(el){obsSF(el);});
   (function(){var tgt=new Date('2026-07-03T17:00:00').getTime();function pad(n){return n<10?'0'+n:''+n;}function tick(){var diff=Math.max(0,tgt-Date.now());var a=document.getElementById('cd-d'),b=document.getElementById('cd-h'),c=document.getElementById('cd-m'),d=document.getElementById('cd-s');if(a)a.innerHTML=pad(Math.floor(diff/86400000));if(b)b.innerHTML=pad(Math.floor((diff%86400000)/3600000));if(c)c.innerHTML=pad(Math.floor((diff%3600000)/60000));if(d)d.innerHTML=pad(Math.floor((diff%60000)/1000));}tick();setInterval(tick,1000);})();
@@ -1038,7 +732,7 @@ window.addEventListener('DOMContentLoaded',function(){
   document.getElementById('gal-prev').addEventListener('click',function(){galleryNav(-1);});
   document.getElementById('gal-next').addEventListener('click',function(){galleryNav(1);});
   var go=document.getElementById('gal-outer');if(go){var tx=0;go.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;},{passive:true});go.addEventListener('touchend',function(e){var dx=tx-e.changedTouches[0].clientX;if(Math.abs(dx)>40)galleryNav(dx>0?1:-1);},{passive:true});}
-  document.addEventListener('keydown',function(e){var lb=document.getElementById('lb');if(!lb||!lb.classList.contains('open'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft'){lbIdx=(lbIdx-1+lbImgs.length)%lbImgs.length;var img=document.getElementById('lb-img');if(img)img.src=lbImgs[lbIdx]||'';}if(e.key==='ArrowRight'){lbIdx=(lbIdx+1)%lbImgs.length;var img2=document.getElementById('lb-img');if(img2)img2.src=lbImgs[lbIdx]||'';}});
+  document.addEventListener('keydown',function(e){var lb=document.getElementById('lb');if(!lb||!lb.classList.contains('open'))return;if(e.key==='Escape')closeLB();});
   document.addEventListener('click',function(e){if(!e.target.closest('#lang-wrap'))closeLangDD();});
 });
 </script>
