@@ -950,7 +950,7 @@ function submitRSVP(){
     var qrBase64=canvas?canvas.toDataURL('image/png'):'';
     fetch('https://script.google.com/macros/s/AKfycbyhtgy6IIwGCGM0OxFC3tx8ARV2OVs_bMYj2-WUdsQqN5sg7pszfisMY7mNPpvW0UZZhg/exec',{
       method:'POST',
-      body:JSON.stringify({nombre:fn,apellido:ln,adultos:adults,mensaje:msg,confirmacion:confID,qr:qrBase64})
+      body:JSON.stringify({nombre:fn,apellido:ln,adultos:adults,mensaje:msg,confirmacion:confID})
     }).catch(function(){});
   },400);
 }
