@@ -712,52 +712,97 @@ function showQRModal(fn,ln,adults,confID){
 
   var overlay=document.createElement('div');
   overlay.id='qr-modal';
-  overlay.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,4,6,.92);z-index:99999;display:flex;align-items:center;justify-content:center;padding:20px;';
+  overlay.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,4,6,.92);z-index:99999;display:flex;align-items:center;justify-content:center;padding:16px;overflow-y:auto;';
 
-  var box=document.createElement('div');
-  box.style.cssText='background:white;padding:32px 24px 24px;text-align:center;max-width:320px;width:100%;position:relative;border:1px solid rgba(200,150,90,.3);max-height:90vh;overflow-y:auto;border-radius:4px;';
+  /* ── CARD ── */
+  var card=document.createElement('div');
+  card.style.cssText='background:linear-gradient(160deg,#FEF5F0,#F5E8F4);width:100%;max-width:340px;position:relative;padding:28px 22px 22px;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.5);';
 
+  /* Doble borde dorado */
+  var b1=document.createElement('div');
+  b1.style.cssText='position:absolute;inset:8px;border:2px solid #C8965A;pointer-events:none;';
+  var b2=document.createElement('div');
+  b2.style.cssText='position:absolute;inset:14px;border:1px solid rgba(200,150,90,.35);pointer-events:none;';
+
+  /* Botón cerrar */
   var closeBtn=document.createElement('button');
   closeBtn.innerHTML='&#10005;';
-  closeBtn.style.cssText='position:absolute;top:10px;right:14px;background:none;border:none;font-size:1.6rem;cursor:pointer;color:#aaa;line-height:1;';
+  closeBtn.style.cssText='position:absolute;top:18px;right:18px;background:none;border:none;font-size:1.2rem;cursor:pointer;color:rgba(200,150,90,.7);z-index:2;line-height:1;';
   closeBtn.onclick=function(){document.body.removeChild(overlay);};
   overlay.addEventListener('click',function(e){if(e.target===overlay)document.body.removeChild(overlay);});
 
-  var title=document.createElement('div');
-  title.style.cssText='font-family:Great Vibes,cursive;font-size:2.2rem;color:#C8965A;margin-bottom:8px;';
-  title.innerHTML=t.qrConfirmed||'¡Confirmado!';
+  /* Título script */
+  var ttl=document.createElement('div');
+  ttl.style.cssText='font-family:Great Vibes,cursive;font-size:2rem;background:linear-gradient(160deg,#FFE08A,#C8860A 30%,#F5D060 60%,#8B5E08);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:2px;margin-top:8px;';
+  ttl.innerHTML='Xóchitl & Sarbjit';
 
+  /* Línea */
+  var hr1=document.createElement('div');
+  hr1.style.cssText='height:1px;background:rgba(200,150,90,.4);margin:8px 20px;';
+
+  /* Subtítulo */
   var sub=document.createElement('p');
-  sub.style.cssText='font-size:.58rem;letter-spacing:3px;text-transform:uppercase;color:#8A5060;margin-bottom:12px;font-family:Montserrat,sans-serif;';
+  sub.style.cssText='font-size:.48rem;letter-spacing:4px;text-transform:uppercase;color:#9B5070;font-family:Montserrat,sans-serif;margin-bottom:10px;';
   sub.innerHTML=t.qrSaveHint||'Guarda tu código QR';
 
-  var qrDiv=document.createElement('div');
-  qrDiv.id='qr-code';
-  qrDiv.style.cssText='display:flex;justify-content:center;margin:12px 0;';
+  /* Nombre invitado */
+  var guestName=document.createElement('div');
+  guestName.style.cssText='font-family:Cormorant Garamond,Georgia,serif;font-size:1.5rem;font-style:italic;font-weight:600;color:#1A0C10;margin-bottom:2px;';
+  guestName.innerHTML=fn+(ln?' '+ln:'');
 
+  /* Adultos */
+  var adultsEl=document.createElement('p');
+  adultsEl.style.cssText='font-size:.55rem;letter-spacing:3px;text-transform:uppercase;color:#6A3848;font-family:Montserrat,sans-serif;margin-bottom:12px;';
+  adultsEl.innerHTML=adults+' adulto'+(adults!=1?'s':'');
+
+  /* QR */
+  var qrWrap=document.createElement('div');
+  qrWrap.style.cssText='display:flex;justify-content:center;margin:0 auto 12px;';
+  var qrInner=document.createElement('div');
+  qrInner.id='qr-code';
+  qrInner.style.cssText='padding:8px;background:white;box-shadow:0 4px 18px rgba(0,0,0,.18);';
+  qrWrap.appendChild(qrInner);
+
+  /* Código label */
   var codeLabel=document.createElement('p');
-  codeLabel.style.cssText='font-size:.52rem;letter-spacing:3px;text-transform:uppercase;color:#C8965A;margin-bottom:4px;font-family:Montserrat,sans-serif;';
+  codeLabel.style.cssText='font-size:.46rem;letter-spacing:4px;text-transform:uppercase;color:#C8965A;font-family:Montserrat,sans-serif;margin-bottom:3px;';
   codeLabel.innerHTML=t.qrCodeLabel||'Código de confirmación';
 
+  /* Código valor */
   var codeVal=document.createElement('p');
-  codeVal.style.cssText='font-family:Cormorant Garamond,Georgia,serif;font-size:1.3rem;font-weight:700;color:#1A0C10;margin-bottom:16px;letter-spacing:2px;';
+  codeVal.style.cssText='font-family:Cormorant Garamond,Georgia,serif;font-size:1.2rem;font-weight:700;color:#1A0C10;letter-spacing:3px;margin-bottom:10px;';
   codeVal.innerHTML=confID;
 
-  var saveBtn=document.createElement('button');
-  saveBtn.style.cssText='width:100%;padding:13px;background:linear-gradient(135deg,#C8965A,#A8720A);border:none;color:white;font-family:Montserrat,sans-serif;font-size:.58rem;letter-spacing:3px;text-transform:uppercase;cursor:pointer;border-radius:3px;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:10px;';
-  saveBtn.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> '+(t.qrSaveBtn||'Guardar imagen');
+  /* Línea */
+  var hr2=document.createElement('div');
+  hr2.style.cssText='height:1px;background:rgba(200,150,90,.35);margin:0 20px 10px;';
 
+  /* Evento info */
+  var evInfo=document.createElement('p');
+  evInfo.style.cssText='font-family:Cormorant Garamond,Georgia,serif;font-size:.85rem;font-style:italic;color:#6A3848;line-height:1.8;margin-bottom:14px;';
+  evInfo.innerHTML='Recepción · Viernes 3 de Julio de 2026<br>8:00 PM · Estaca Chihuahua México';
+
+  /* Botón guardar */
+  var saveBtn=document.createElement('button');
+  saveBtn.style.cssText='width:100%;padding:12px;background:linear-gradient(135deg,#C8965A,#A8720A);border:none;color:white;font-family:Montserrat,sans-serif;font-size:.55rem;letter-spacing:3px;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px;';
+  saveBtn.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>'+(t.qrSaveBtn||'Guardar imagen');
+
+  /* Hint */
   var hint=document.createElement('p');
-  hint.style.cssText='font-size:.6rem;color:#8A5060;line-height:1.7;font-family:Montserrat,sans-serif;';
+  hint.style.cssText='font-size:.52rem;color:#9B5070;font-family:Montserrat,sans-serif;letter-spacing:1px;';
   hint.innerHTML=t.qrEventHint||'Necesitarás esta imagen el día del evento.';
 
-  box.appendChild(closeBtn);box.appendChild(title);box.appendChild(sub);
-  box.appendChild(qrDiv);box.appendChild(codeLabel);box.appendChild(codeVal);
-  box.appendChild(saveBtn);box.appendChild(hint);
-  overlay.appendChild(box);
+  card.appendChild(b1);card.appendChild(b2);card.appendChild(closeBtn);
+  card.appendChild(ttl);card.appendChild(hr1);card.appendChild(sub);
+  card.appendChild(guestName);card.appendChild(adultsEl);
+  card.appendChild(qrWrap);
+  card.appendChild(codeLabel);card.appendChild(codeVal);
+  card.appendChild(hr2);card.appendChild(evInfo);
+  card.appendChild(saveBtn);card.appendChild(hint);
+  overlay.appendChild(card);
   document.body.appendChild(overlay);
 
-  new QRCode(qrDiv,{text:'Confirmacion: '+confID+'\nNombre: '+fn+(ln?' '+ln:'')+'\nAdultos: '+adults+'\nBoda: Xochitl & Sarbjit\n3 Jul 2026',width:220,height:220,colorDark:'#1A0C10',colorLight:'#ffffff'});
+  new QRCode(qrInner,{text:'Confirmacion: '+confID+'\nNombre: '+fn+(ln?' '+ln:'')+'\nAdultos: '+adults+'\nBoda: Xochitl & Sarbjit\n3 Jul 2026',width:200,height:200,colorDark:'#1A0C10',colorLight:'#ffffff'});
   saveBtn.onclick=function(){saveConfirmationImage(fn,ln,adults,confID);};
 }
 function saveConfirmationImage(fn,ln,adults,confID){
@@ -903,7 +948,7 @@ function submitRSVP(){
   setTimeout(function(){
     var canvas=document.querySelector('#qr-code canvas');
     var qrBase64=canvas?canvas.toDataURL('image/png'):'';
-    fetch('https://script.google.com/macros/s/AKfycbzhscRSi5vUk0tubVNfXlia8ZNdYOQ11nulaKsuflAsqpGLOzXfLAsCRrPQZJuF1_Qgyw/exec',{
+    fetch('https://script.google.com/macros/s/AKfycbyhtgy6IIwGCGM0OxFC3tx8ARV2OVs_bMYj2-WUdsQqN5sg7pszfisMY7mNPpvW0UZZhg/exec',{
       method:'POST',
       body:JSON.stringify({nombre:fn,apellido:ln,adultos:adults,mensaje:msg,confirmacion:confID,qr:qrBase64})
     }).catch(function(){});
