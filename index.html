@@ -487,8 +487,10 @@ function buildGifts(){
   var ppL1=isEN?'PayPal':isPA?'PayPal':'Transferencia';
   var ppL2=isEN?'Transfer':isPA?'\u0a1f\u0a4d\u0a30\u0a3e\u0a02\u0a38\u0a2b\u0a3c\u0a30':'PayPal';
   var ppTap=isEN?'Tap to go to PayPal':isPA?'PayPal \u0a24\u0a47 \u0a1c\u0a3e\u0a13':'Toca para ir a PayPal';
-  var lbMX=isEN?'Bank Transfer (Mexico)':isPA?'Bank Transfer (Mexico)':'Transferencia Bancaria (M\u00e9xico)';
-  var lbCA=isEN?'Bank Transfer (Canada)':isPA?'Bank Transfer (Canada)':'Transferencia Bancaria (Canad\u00e1)';
+  var lbMX1=isEN?'Bank':'Transferencia';
+  var lbMX2=isEN?'Transfer (Mexico)':'Bancaria (M\u00e9xico)';
+  var lbCA1=isEN?'Bank':'Transferencia';
+  var lbCA2=isEN?'Transfer (Canada)':'Bancaria (Canad\u00e1)';
 
   function mkF(lb,vl,cp){var f=document.createElement('div');f.className='bank-field';var l=document.createElement('span');l.className='bank-field-lbl';l.textContent=lb;var r=document.createElement('div');r.className='bank-field-row';var v=document.createElement('span');v.className='bank-field-val';v.textContent=vl;r.appendChild(v);if(cp){var b=document.createElement('button');b.className='bank-copy-ic';b.innerHTML=COPY_SVG;(function(val,btn){b.addEventListener('click',function(e){e.stopPropagation();doCopy(btn,val);});})(vl,b);r.appendChild(b);}f.appendChild(l);f.appendChild(r);return f;}
 
@@ -501,7 +503,7 @@ function buildGifts(){
   bk1.appendChild(mkF(titLb,'Xochitl Dallany Oyarzabal A.',true));
   bk1.appendChild(mkF(banLb,'Banorte',false));
   bk1.appendChild(mkF(cardLb,'5264 2468 3149 1278',true));
-  i1.appendChild(mkBankFront(lbMX,'Xochitl Dallany Oyarzabal A.'));i1.appendChild(bk1);w1.appendChild(i1);
+  i1.appendChild(mkBankFront(lbMX1,lbMX2));i1.appendChild(bk1);w1.appendChild(i1);
   w1.addEventListener('click',function(e){if(e.target.closest('.bank-copy-ic'))return;w1.classList.toggle('flipped');});
   gg.appendChild(w1);
 
@@ -511,7 +513,7 @@ function buildGifts(){
   var bk2=document.createElement('div');bk2.className='bank-face bank-face-back';
   bk2.appendChild(mkF(titLb,'Sarbjit Singh',true));
   bk2.appendChild(mkF('Email','Sarbjit.singh.env@outlook.com',true));
-  i2.appendChild(mkBankFront(lbCA,'Sarbjit Singh'));i2.appendChild(bk2);w2.appendChild(i2);
+  i2.appendChild(mkBankFront(lbCA1,lbCA2));i2.appendChild(bk2);w2.appendChild(i2);
   w2.addEventListener('click',function(e){if(e.target.closest('.bank-copy-ic'))return;w2.classList.toggle('flipped');});
   gg.appendChild(w2);
 
