@@ -264,18 +264,18 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
         var i=0,el=document.getElementById('splash-date');
         if(!el)return;
         function next(){
-          el.style.webkitTransition='opacity 0.5s ease';
-          el.style.transition='opacity 0.5s ease';
+          el.style.webkitTransition='opacity 1.4s ease';
+          el.style.transition='opacity 1.4s ease';
           el.style.opacity='0';
           setTimeout(function(){
             i=(i+1)%dates.length;
             el.innerHTML=dates[i];
-            el.style.webkitTransition='opacity 0.5s ease';
-            el.style.transition='opacity 0.5s ease';
+            el.style.webkitTransition='opacity 1.4s ease';
+            el.style.transition='opacity 1.4s ease';
             el.style.opacity='1';
-          },550);
+          },1500);
         }
-        setInterval(next,2400);
+        setInterval(next,4000);
       })();
     </script>
     <div style="width:40px;height:1px;background:rgba(200,150,90,.4);margin:0 auto 20px;"></div>
