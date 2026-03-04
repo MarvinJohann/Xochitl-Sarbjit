@@ -74,7 +74,24 @@ body{background:#1A0C10;color:var(--text);font-family:var(--sans);min-height:100
 .empty-state{text-align:center;padding:48px 20px;color:var(--muted);}
 .empty-state p{font-family:var(--serif);font-style:italic;font-size:1.1rem;margin-top:8px;}
 
-/* ── QR SCANNER ── */
+/* ── SCAN LOG ── */
+var logLines=[];
+function scanLog(msg,color){
+  var el=document.getElementById('scan-log');
+  if(!el)return;
+  el.style.display='block';
+  var ts=new Date().toLocaleTimeString('es-MX',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  var c=color||'#7CFC7C';
+  logLines.push('<span style="color:'+c+';">['+ts+'] '+msg+'</span>');
+  if(logLines.length>8)logLines.shift();
+  el.innerHTML=logLines.join('<br>');
+  el.scrollTop=el.scrollHeight;
+}
+function clearScanLog(){
+  logLines=[];
+  var el=document.getElementById('scan-log');
+  if(el){el.innerHTML='';el.style.display='none';}
+}
 #scanner-panel{padding:20px 16px;display:none;}
 .scanner-wrap{position:relative;max-width:400px;margin:0 auto;background:#000;border-radius:8px;overflow:hidden;}
 #qr-video{width:100%;display:block;border-radius:8px;}
@@ -151,7 +168,7 @@ body{background:#1A0C10;color:var(--text);font-family:var(--sans);min-height:100
   <div id="tab-scanner" style="display:none;">
     <div id="scanner-panel" style="display:block;">
       <div class="scanner-wrap">
-        <video id="qr-video" playsinline muted></video>
+        <video id="qr-video" playsinline autoplay muted webkit-playsinline style="width:100%;display:block;border-radius:8px;"></video>
         <div class="scan-overlay">
           <div style="position:relative;display:flex;align-items:center;justify-content:center;">
             <div class="scan-frame"></div>
@@ -164,20 +181,16 @@ body{background:#1A0C10;color:var(--text);font-family:var(--sans);min-height:100
         <button class="scan-ctrl" id="stop-scan-btn" style="display:none;">■ Detener</button>
       </div>
 
-      <div id="scan-result"></div>
+      <div id="scan-log" style="max-width:400px;margin:10px auto 0;background:#1A0C10;border-radius:4px;padding:10px 14px;font-family:monospace;font-size:.65rem;color:#7CFC7C;min-height:48px;display:none;"></div>
 
-      <div class="manual-lookup">
+      <div id="scan-result"></div>
         <div class="lookup-title">Búsqueda manual por código</div>
         <div class="lookup-row">
           <input class="search-input" id="manual-code" placeholder="CONF-XXXXXXXX" style="flex:1;">
           <button class="scan-ctrl primary" id="manual-lookup-btn" style="flex:0 0 auto;padding:8px 16px;">Buscar</button>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-<div id="toast"></div>
+      <div class="manual-lookup">
 
 <script>
 /* ── CREDENTIALS (change as needed) ── */
@@ -319,33 +332,69 @@ document.getElementById('filter-pending').addEventListener('click',function(){
 /* ── QR SCANNER ── */
 async function startScanner(){
   var video=document.getElementById('qr-video');
+  clearScanLog();
+  scanLog('Solicitando acceso a cámara...','#FFD700');
   try{
-    /* Try back camera first, fall back to any camera (important for iPhone) */
-    var constraints={video:{facingMode:{ideal:'environment'}}};
+    var stream;
     try{
-      scanStream=await navigator.mediaDevices.getUserMedia(constraints);
-    }catch(e){
-      scanStream=await navigator.mediaDevices.getUserMedia({video:true});
+      scanLog('Intentando cámara trasera (exact)...','#FFD700');
+      stream=await navigator.mediaDevices.getUserMedia({
+        video:{facingMode:{exact:'environment'},width:{ideal:1280},height:{ideal:720}}
+      });
+      scanLog('✅ Cámara trasera (exact) OK','#7CFC7C');
+    }catch(e1){
+      scanLog('⚠️ exact falló: '+e1.message+' — intentando ideal...','#FFA500');
+      try{
+        stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'}});
+        scanLog('✅ Cámara trasera (ideal) OK','#7CFC7C');
+      }catch(e2){
+        scanLog('⚠️ ideal falló: '+e2.message+' — usando cualquier cámara...','#FFA500');
+        stream=await navigator.mediaDevices.getUserMedia({video:true});
+        scanLog('✅ Cámara genérica OK','#7CFC7C');
+      }
     }
-    video.srcObject=scanStream;
+    scanStream=stream;
+    video.srcObject=stream;
+    video.setAttribute('playsinline','');
+    video.setAttribute('autoplay','');
+    video.setAttribute('muted','');
+    video.muted=true;
+    scanLog('Iniciando reproducción de video...','#FFD700');
     await video.play();
+    scanLog('▶ Video activo — escaneando...','#7CFC7C');
     scanActive=true;
     document.getElementById('start-scan-btn').style.display='none';
     document.getElementById('stop-scan-btn').style.display='block';
     var canvas=document.createElement('canvas');
     var ctx=canvas.getContext('2d');
+    var frameCount=0;
     scanInterval=setInterval(function(){
-      if(!scanActive||video.readyState!==video.HAVE_ENOUGH_DATA)return;
-      canvas.width=video.videoWidth;canvas.height=video.videoHeight;
-      ctx.drawImage(video,0,0,canvas.width,canvas.height);
-      var img=ctx.getImageData(0,0,canvas.width,canvas.height);
-      var code=jsQR(img.data,img.width,img.height);
-      if(code&&code.data){
-        var confID=extractConfID(code.data);
-        if(confID){stopScanner();processCheckIn(confID);}
+      if(!scanActive||video.readyState<video.HAVE_ENOUGH_DATA||video.videoWidth===0){
+        frameCount++;
+        if(frameCount%10===0)scanLog('⏳ Esperando video (readyState='+video.readyState+', w='+video.videoWidth+')','#FFA500');
+        return;
       }
-    },300);
+      canvas.width=video.videoWidth;
+      canvas.height=video.videoHeight;
+      ctx.drawImage(video,0,0,canvas.width,canvas.height);
+      try{
+        var img=ctx.getImageData(0,0,canvas.width,canvas.height);
+        var code=jsQR(img.data,img.width,img.height,{inversionAttempts:'dontInvert'});
+        if(code&&code.data){
+          scanLog('🎯 QR detectado: '+code.data.substring(0,30)+'...','#7CFC7C');
+          var confID=extractConfID(code.data);
+          if(confID){
+            scanLog('✅ Código válido: '+confID,'#7CFC7C');
+            stopScanner();
+            processCheckIn(confID);
+          } else {
+            scanLog('❌ Código no reconocido: '+code.data.substring(0,20),'#FF6B6B');
+          }
+        }
+      }catch(e){scanLog('❌ Error procesando frame: '+e.message,'#FF6B6B');}
+    },400);
   }catch(e){
+    scanLog('❌ Error cámara: '+e.message,'#FF6B6B');
     showToast('Error cámara: '+e.message);
     console.error('Camera error:',e);
   }
@@ -359,6 +408,7 @@ function stopScanner(){
   video.srcObject=null;
   document.getElementById('start-scan-btn').style.display='block';
   document.getElementById('stop-scan-btn').style.display='none';
+  scanLog('■ Escáner detenido','#FFA500');
 }
 
 function extractConfID(text){
