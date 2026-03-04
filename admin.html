@@ -238,6 +238,8 @@ function loadGuests(){
     allGuests=Object.values(data).sort(function(a,b){return new Date(b.fecha)-new Date(a.fecha);});
     renderGuests();
     updateStats();
+  },function(error){
+    document.getElementById('guest-list').innerHTML='<div class="empty-state"><p>Error: '+error.message+'</p></div>';
   });
 }
 
@@ -318,9 +320,15 @@ document.getElementById('filter-pending').addEventListener('click',function(){
 async function startScanner(){
   var video=document.getElementById('qr-video');
   try{
-    scanStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'}});
+    /* Try back camera first, fall back to any camera (important for iPhone) */
+    var constraints={video:{facingMode:{ideal:'environment'}}};
+    try{
+      scanStream=await navigator.mediaDevices.getUserMedia(constraints);
+    }catch(e){
+      scanStream=await navigator.mediaDevices.getUserMedia({video:true});
+    }
     video.srcObject=scanStream;
-    video.play();
+    await video.play();
     scanActive=true;
     document.getElementById('start-scan-btn').style.display='none';
     document.getElementById('stop-scan-btn').style.display='block';
@@ -337,7 +345,10 @@ async function startScanner(){
         if(confID){stopScanner();processCheckIn(confID);}
       }
     },300);
-  }catch(e){showToast('No se pudo acceder a la cámara');}
+  }catch(e){
+    showToast('Error cámara: '+e.message);
+    console.error('Camera error:',e);
+  }
 }
 
 function stopScanner(){
