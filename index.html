@@ -6,6 +6,8 @@
 <title>Invitación Xóchitl &amp; Sarbjit</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Great+Vibes&family=Montserrat:wght@200;300;400&family=Noto+Sans+Gurmukhi:wght@300;400&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
 <style>
 :root{--cream:#FEF9F6;--pk:#D4608A;--gold:#A8720A;--text:#1A0C10;--muted:#6A3848;--serif:'Cormorant Garamond',serif;--script:'Great Vibes',cursive;--sans:'Montserrat',sans-serif;}
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -350,6 +352,10 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
 </div>
 
 <script>
+var FIREBASE_CONFIG={apiKey:"AIzaSyC-_EwIbk-2_Dq3e86HCE3CDQIVFxGZiDA",authDomain:"invitationsdatabase.firebaseapp.com",databaseURL:"https://invitationsdatabase-default-rtdb.firebaseio.com",projectId:"invitationsdatabase",storageBucket:"invitationsdatabase.firebasestorage.app",messagingSenderId:"798475793480",appId:"1:798475793480:web:82f45b6449f80c4d00547d"};
+firebase.initializeApp(FIREBASE_CONFIG);
+var db=firebase.database();
+
 var CFG={
   name1:'X\u00f3chitl',name2:'Sarbjit',dateISO:'2026-07-03T17:00:00',
   brideParents:'Ernesto Oyarzabal Barrios & Xochitl Aragon Dominguez',
@@ -539,11 +545,7 @@ function genConfID(){var chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';var id='CONF-'
 function submitRSVP(){var fn=((document.getElementById('ri-fn')||{}).value||'').trim();var ln=((document.getElementById('ri-ln')||{}).value||'').trim();var msg=((document.getElementById('ri-msg')||{}).value||'').trim();var adultsRaw=(document.getElementById('ri-adults')||{}).value||'';var adults=parseInt(adultsRaw);var errors=[],t=T[currentLang]||T.es;if(!fn)errors.push(t.rsvpFname||'Nombre');if(!ln)errors.push(t.rsvpLname||'Apellido');if(adultsRaw===''||isNaN(adults)||adults<1)errors.push(t.rsvpAdults||'Número de Adultos');if(errors.length){['ri-fn','ri-ln','ri-adults'].forEach(function(id){var el=document.getElementById(id);if(!el)return;var ok=(id==='ri-fn'?!!fn:id==='ri-ln'?!!ln:adultsRaw!==''&&!isNaN(adults)&&adults>=1);el.style.border=ok?'1px solid rgba(200,150,90,.3)':'2px solid #C0392B';el.style.background=ok?'#FDFAF8':'#FFF5F5';});var errBox=document.getElementById('rsvp-err');if(!errBox){errBox=document.createElement('div');errBox.id='rsvp-err';errBox.style.cssText='margin-top:12px;padding:10px 14px;background:#FFF0F0;border:1px solid #C0392B;border-radius:3px;font-size:.62rem;color:#C0392B;letter-spacing:1px;font-family:var(--sans);text-align:left;line-height:1.8;';var btn=document.getElementById('rsvp-submit');if(btn&&btn.parentNode)btn.parentNode.insertBefore(errBox,btn.nextSibling);}errBox.innerHTML='&#9888; '+(t.rsvpErrorMsg||'Por favor completa:')+' <strong>'+errors.join(', ')+'</strong>';errBox.style.display='block';return;}['ri-fn','ri-ln','ri-adults'].forEach(function(id){var el=document.getElementById(id);if(el){el.style.border='1px solid rgba(200,150,90,.3)';el.style.background='#FDFAF8';}});var errBox=document.getElementById('rsvp-err');if(errBox)errBox.style.display='none';  var confID=genConfID();showQRModal(fn,ln,adults,confID);
   setTimeout(function(){
     var entry={nombre:fn,apellido:ln,adultos:adults,mensaje:msg,confirmacion:confID,fecha:new Date().toISOString(),checkedIn:false};
-    try{
-      var all=JSON.parse(localStorage.getItem('rsvp_list')||'{}');
-      all[confID]=entry;
-      localStorage.setItem('rsvp_list',JSON.stringify(all));
-    }catch(e){}
+    db.ref('rsvp/'+confID).set(entry).catch(function(){});
   },400);
 }
 
