@@ -479,20 +479,26 @@ function buildGifts(){var gg=document.getElementById('gifts-grid');if(!gg)return
 /* ── buildDress: labels above = gender, labels below = garment type ── */
 function buildDress(){
   var t=T[currentLang]||T.es,c=document.getElementById('dress-cols');if(!c)return;
+  var imgW='min(420px,90vw)';
   c.innerHTML=
-    /* ABOVE image: gender labels only */
-    '<div style="display:flex;justify-content:center;gap:clamp(40px,12vw,100px);margin-bottom:18px;">'
-      +'<div style="text-align:center;"><div class="dress-lbl">'+(t.dressLadies||'Mujeres')+'</div></div>'
-      +'<div style="text-align:center;"><div class="dress-lbl">'+(t.dressGents||'Hombres')+'</div></div>'
-    +'</div>'
-    /* Image */
-    +'<div style="text-align:center;margin:0 auto;">'
-      +'<img src="img/dresscode.png" alt="Dress code" style="max-width:min(420px,90vw);width:100%;border-radius:4px;box-shadow:0 8px 32px rgba(0,0,0,.18);">'
-    +'</div>'
-    /* BELOW image: garment type labels */
-    +'<div style="display:flex;justify-content:center;gap:clamp(40px,12vw,100px);margin-top:18px;">'
-      +'<div style="text-align:center;"><div class="dress-garment">'+(t.vestidoLargo||'Vestido Largo')+'</div></div>'
-      +'<div style="text-align:center;"><div class="dress-garment">'+(t.traje||'Traje')+'</div></div>'
+    /* Wrapper keeps labels + image at the same max-width and centered */
+    '<div style="width:'+imgW+';margin:0 auto;">'
+
+      /* ABOVE image: gender labels, one anchored left, one anchored right */
+      +'<div style="display:flex;justify-content:space-between;margin-bottom:12px;padding:0 4px;">'
+        +'<div style="text-align:left;"><div class="dress-lbl">'+(t.dressLadies||'Mujeres')+'</div></div>'
+        +'<div style="text-align:right;"><div class="dress-lbl">'+(t.dressGents||'Hombres')+'</div></div>'
+      +'</div>'
+
+      /* Image */
+      +'<img src="img/dresscode.png" alt="Dress code" style="width:100%;border-radius:4px;box-shadow:0 8px 32px rgba(0,0,0,.18);display:block;">'
+
+      /* BELOW image: garment labels aligned with the ones above */
+      +'<div style="display:flex;justify-content:space-between;margin-top:12px;padding:0 4px;">'
+        +'<div style="text-align:left;"><div class="dress-garment">'+(t.vestidoLargo||'Vestido Largo')+'</div></div>'
+        +'<div style="text-align:right;"><div class="dress-garment">'+(t.traje||'Traje')+'</div></div>'
+      +'</div>'
+
     +'</div>';
   var sw=document.getElementById('avoid-sw');if(!sw)return;sw.innerHTML='';
   CFG.avoidColors.forEach(function(col){var s=document.createElement('div');s.className='av-sw';s.style.background=col;sw.appendChild(s);});
