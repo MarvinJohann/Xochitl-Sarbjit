@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Admin · Xóchitl & Sarbjit</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jsQR/1.4.0/jsQR.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 :root{--gold:#A8720A;--pk:#D4608A;--cream:#FEF9F6;--text:#1A0C10;--muted:#6A3848;--green:#2E7D4F;--red:#C0392B;--serif:'Cormorant Garamond',serif;--sans:'Montserrat',sans-serif;}
@@ -181,16 +183,15 @@ body{background:#1A0C10;color:var(--text);font-family:var(--sans);min-height:100
 /* ── CREDENTIALS (change as needed) ── */
 var CREDS={user:'admin',pass:'boda2026'};
 
-/* ── STORAGE HELPERS (localStorage) ── */
-function getAllGuests(){
-  try{return JSON.parse(localStorage.getItem('rsvp_list')||'{}');}catch(e){return {};}
-}
-function saveGuest(g){
-  try{var all=getAllGuests();all[g.confirmacion]=g;localStorage.setItem('rsvp_list',JSON.stringify(all));}catch(e){}
-}
-function deleteGuestFromStorage(confID){
-  try{var all=getAllGuests();delete all[confID];localStorage.setItem('rsvp_list',JSON.stringify(all));}catch(e){}
-}
+/* ── FIREBASE ── */
+var FIREBASE_CONFIG={apiKey:"AIzaSyC-_EwIbk-2_Dq3e86HCE3CDQIVFxGZiDA",authDomain:"invitationsdatabase.firebaseapp.com",databaseURL:"https://invitationsdatabase-default-rtdb.firebaseio.com",projectId:"invitationsdatabase",storageBucket:"invitationsdatabase.firebasestorage.app",messagingSenderId:"798475793480",appId:"1:798475793480:web:82f45b6449f80c4d00547d"};
+firebase.initializeApp(FIREBASE_CONFIG);
+var db=firebase.database();
+
+/* ── STORAGE HELPERS (Firebase) ── */
+function saveGuest(g){return db.ref('rsvp/'+g.confirmacion).set(g);}
+function deleteGuestFromStorage(confID){return db.ref('rsvp/'+confID).remove();}
+function getGuest(confID){return db.ref('rsvp/'+confID).once('value').then(function(s){return s.val();});}
 
 /* ── LOGIN ── */
 document.getElementById('login-btn').onclick=function(){
@@ -226,13 +227,15 @@ document.querySelectorAll('.tab').forEach(function(tab){
   });
 });
 
-/* ── LOAD GUESTS ── */
+/* ── LOAD GUESTS — realtime listener ── */
 function loadGuests(){
   document.getElementById('guest-list').innerHTML='<div class="loading">Cargando...</div>';
-  var raw=getAllGuests();
-  allGuests=Object.values(raw).sort(function(a,b){return new Date(b.fecha)-new Date(a.fecha);});
-  renderGuests();
-  updateStats();
+  db.ref('rsvp').on('value',function(snapshot){
+    var data=snapshot.val()||{};
+    allGuests=Object.values(data).sort(function(a,b){return new Date(b.fecha)-new Date(a.fecha);});
+    renderGuests();
+    updateStats();
+  });
 }
 
 /* ── RENDER LIST ── */
@@ -290,7 +293,6 @@ function toggleCheckIn(confID){
   if(!g)return;
   g.checkedIn=!g.checkedIn;
   saveGuest(g);
-  renderGuests();updateStats();
   showToast(g.checkedIn?'✓ Check-in registrado':'Check-in removido');
 }
 
@@ -298,8 +300,6 @@ function toggleCheckIn(confID){
 function deleteGuest(confID){
   if(!confirm('¿Eliminar esta confirmación?'))return;
   deleteGuestFromStorage(confID);
-  allGuests=allGuests.filter(function(g){return g.confirmacion!==confID;});
-  renderGuests();updateStats();
   showToast('Confirmación eliminada');
 }
 
@@ -353,18 +353,13 @@ function extractConfID(text){
 }
 
 async function processCheckIn(confID){
-  var el=document.getElementById('scan-result');
-  var all=getAllGuests();
-  var g=all[confID];
+  var g=await getGuest(confID);
   if(!g){showScanResult(false,null,'Código no encontrado: '+confID);return;}
   if(g.checkedIn){
     showScanResult('warn',g,'Ya registró entrada');
   } else {
     g.checkedIn=true;
-    saveGuest(g);
-    var idx=allGuests.findIndex(function(x){return x.confirmacion===confID;});
-    if(idx>-1)allGuests[idx]=g; else allGuests.push(g);
-    updateStats();
+    await saveGuest(g);
     showScanResult(true,g,'¡Entrada registrada!');
   }
 }
@@ -415,8 +410,7 @@ function showToast(msg){
   toastTimer=setTimeout(function(){el.classList.remove('show');},2500);
 }
 
-/* ── REFRESH every 30s ── */
-setInterval(function(){if(document.getElementById('app').style.display!=='none')loadGuests();},30000);
+/* ── REFRESH: ya no necesario, Firebase es realtime ── */
 </script>
 </body>
 </html>
