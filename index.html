@@ -76,7 +76,7 @@ body{background:var(--cream);color:var(--text);font-family:var(--serif);overflow
 .nav-inner{padding:24px 0 40px;}
 .nav-couple{text-align:center;padding:0 20px 20px;border-bottom:1px solid rgba(200,150,90,.15);margin-bottom:6px;}
 .nav-cn{font-family:var(--script);font-size:1.55rem;color:var(--text);}
-.nav-cd{font-size:.52rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-top:3px;font-family:var(--sans);}
+.nav-cd{font-family:var(--sans);font-size:.62rem;letter-spacing:4px;font-weight:300;color:var(--gold);margin-top:3px;}
 .nav-item{display:flex;align-items:center;gap:12px;padding:10px 22px;color:var(--text);font-size:.62rem;letter-spacing:2px;text-transform:uppercase;font-weight:300;cursor:pointer;border:none;background:none;width:100%;font-family:var(--sans);}
 .nav-item:hover{background:#FAEEF2;color:var(--pk);}
 .ni{filter:sepia(1) saturate(4) hue-rotate(-15deg) brightness(.85);}
@@ -132,7 +132,7 @@ body{background:var(--cream);color:var(--text);font-family:var(--serif);overflow
 .nom-frame-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;}
 .nombram-inner{position:relative;z-index:2;padding:0 24px;}
 .nm-item{margin-bottom:28px;text-align:center;}
-.nm-role{font-family:var(--sans);font-size:.68rem;letter-spacing:5px;text-transform:uppercase;font-weight:700;margin-bottom:8px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;-webkit-text-stroke:0.3px #A06010;}
+.nm-role{font-family:var(--sans);font-size:.72rem;letter-spacing:2px;font-weight:600;margin-bottom:8px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;-webkit-text-stroke:0.3px #A06010;}
 .nm-names{font-family:var(--serif);font-size:clamp(.72rem,2.8vw,1.25rem);font-style:italic;font-weight:600;background:var(--grad-soft);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 1px 3px rgba(120,80,0,.3));white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 
 /* ── Event cards ── */
@@ -145,7 +145,7 @@ body{background:var(--cream);color:var(--text);font-family:var(--serif);overflow
 .ecard-title{font-family:var(--script);font-size:1.7rem;background:var(--grad-soft);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:4px;}
 .ecard-dots{text-align:center;letter-spacing:5px;color:rgba(180,130,60,.45);font-size:.5rem;margin:8px 0;}
 /* Event card labels (small caps) */
-.ecard-lbl{font-family:var(--sans);font-size:.5rem;letter-spacing:4px;text-transform:uppercase;font-weight:700;color:var(--gold);text-align:center;margin-bottom:3px;}
+.ecard-lbl{font-family:var(--sans);font-size:.58rem;letter-spacing:2px;font-weight:600;color:var(--gold);text-align:center;margin-bottom:3px;}
 /* Event card body text */
 .ecard-info{font-family:var(--serif);font-style:italic;font-size:.92rem;color:#3A2510;text-align:center;line-height:1.8;}
 .ecard-hora{font-family:var(--serif);font-size:1.05rem;font-style:italic;font-weight:600;background:var(--grad-soft);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-top:4px;}
@@ -177,10 +177,7 @@ body{background:var(--cream);color:var(--text);font-family:var(--serif);overflow
 .sg-photo{background:#FEFCF8;padding:9px 9px 44px;box-shadow:0 20px 60px rgba(0,0,0,.4);cursor:pointer;width:240px;}
 .sg-photo img{width:100%;aspect-ratio:.85;object-fit:cover;display:block;}
 .sg-ph{width:100%;aspect-ratio:.85;background:#D8C4D0;display:flex;align-items:center;justify-content:center;font-size:2.5rem;}
-#rope-bulbs{position:absolute;top:0;left:0;right:0;pointer-events:none;z-index:2;}
-.rb-stem{position:absolute;width:2px;background:#5A3A10;transform:translateX(-50%);}
-.rb-bulb{position:absolute;width:14px;height:14px;border-radius:50%;background:#FFD060;transform:translateX(-50%);box-shadow:0 0 10px 4px rgba(255,176,0,.85),0 0 22px 7px rgba(255,90,0,.5);}
-@media(max-width:600px){.rb-bulb{width:10px;height:10px;box-shadow:0 0 7px 3px rgba(255,176,0,.8),0 0 14px 5px rgba(255,90,0,.45);}.rb-stem{width:1.5px;}}
+#rope-bulbs{display:none;}
 
 /* ── Gifts ── */
 .gifts-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:24px;}
@@ -200,7 +197,7 @@ body{background:var(--cream);color:var(--text);font-family:var(--serif);overflow
 
 /* ── Dress code ── */
 .dress-cols{display:flex;flex-direction:column;align-items:center;gap:0;margin:32px auto 24px;}
-.dress-lbl{font-family:var(--sans);font-size:.56rem;letter-spacing:5px;text-transform:uppercase;color:var(--gold);font-weight:600;}
+.dress-lbl{font-family:var(--sans);font-size:.65rem;letter-spacing:2px;color:var(--gold);font-weight:600;}
 .dress-garment{font-family:var(--serif);font-style:italic;font-size:1rem;font-weight:600;background:var(--grad-soft);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:4px;}
 .avoid-lbl{font-family:var(--serif);font-style:italic;font-size:1rem;color:#5A3A44;margin:18px 0 10px;}
 .avoid-sw{display:flex;justify-content:center;gap:16px;}
@@ -212,7 +209,7 @@ body{background:var(--cream);color:var(--text);font-family:var(--serif);overflow
 .h-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--pk));}
 .h-stars{color:var(--gold);font-size:.72rem;letter-spacing:2px;margin-bottom:7px;}
 .h-name{font-family:var(--serif);font-size:1.05rem;font-style:italic;font-weight:600;background:var(--grad-soft);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:5px;}
-.h-dist{font-family:var(--sans);font-size:.58rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:600;}
+.h-dist{font-family:var(--sans);font-size:.65rem;letter-spacing:1px;color:var(--gold);margin-bottom:8px;font-weight:600;}
 .h-note{font-family:var(--serif);font-style:italic;font-size:.9rem;color:#3A1820;line-height:1.9;padding-top:8px;border-top:1px solid rgba(200,150,90,.25);}
 .h-link{display:inline-block;margin-top:10px;font-family:var(--sans);font-size:.56rem;letter-spacing:2px;text-transform:uppercase;color:#1A0C10;text-decoration:none;border-bottom:1px solid rgba(160,100,40,.6);font-weight:600;}
 
@@ -221,14 +218,14 @@ body{background:var(--cream);color:var(--text);font-family:var(--serif);overflow
 .rsvp-box{background:white;border:1px solid rgba(200,150,90,.22);padding:26px 20px;}
 .rr2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
 .rfg{margin-bottom:12px;}
-.rl{display:block;font-family:var(--sans);font-size:.54rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;font-weight:500;}
+.rl{display:block;font-family:var(--sans);font-size:.6rem;letter-spacing:1.5px;color:var(--gold);margin-bottom:4px;font-weight:500;}
 .rl .req{color:var(--pk);}
 .ri,.rta{width:100%;border:1px solid rgba(200,150,90,.3);background:#FDFAF8;padding:9px 11px;font-family:var(--serif);font-size:.95rem;color:var(--text);font-style:italic;outline:none;}
 .rta{resize:vertical;min-height:76px;}
-.r-sub{width:100%;margin-top:14px;padding:12px;background:rgba(200,150,90,.08);border:1px solid var(--gold);color:#7A5A18;font-family:var(--sans);font-size:.58rem;letter-spacing:4px;text-transform:uppercase;cursor:pointer;}
+.r-sub{width:100%;margin-top:14px;padding:12px;background:rgba(200,150,90,.08);border:1px solid var(--gold);color:#7A5A18;font-family:var(--sans);font-size:.65rem;letter-spacing:2px;cursor:pointer;}
 .rwa-t{font-family:var(--serif);font-size:1.3rem;font-style:italic;font-weight:600;background:var(--grad-soft);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;}
 .rwa-b{font-family:var(--serif);font-style:italic;font-size:.9rem;color:var(--muted);line-height:1.9;margin-bottom:14px;}
-.rwa-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px;background:#E8A0B4;color:white;font-family:var(--sans);font-size:.6rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;width:100%;}
+.rwa-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px;background:#E8A0B4;color:white;font-family:var(--sans);font-size:.65rem;letter-spacing:2px;text-decoration:none;width:100%;}
 
 /* ── Countdown ── */
 .cd-section{background:#FEF9F6;padding:46px 20px;text-align:center;box-shadow:0 8px 40px rgba(200,150,90,.18),0 -4px 20px rgba(200,150,90,.1);}
@@ -256,7 +253,21 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
     <span style="position:absolute;bottom:10px;left:10px;width:22px;height:22px;border-bottom:1px solid rgba(200,150,90,.5);border-left:1px solid rgba(200,150,90,.5);display:block;"></span>
     <span style="position:absolute;bottom:10px;right:10px;width:22px;height:22px;border-bottom:1px solid rgba(200,150,90,.5);border-right:1px solid rgba(200,150,90,.5);display:block;"></span>
     <div style="font-family:'Great Vibes',cursive;font-size:clamp(2.2rem,8vw,3.4rem);background:linear-gradient(160deg,#FFE08A,#C8860A 20%,#F5D060 38%,#A06010 55%,#F0C840 72%,#8B5E08 88%,#E8C050);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2;margin-bottom:4px;">Xóchitl &amp; Sarbjit</div>
-    <div style="font-family:'Montserrat',sans-serif;font-size:.48rem;letter-spacing:6px;text-transform:uppercase;font-weight:300;color:#9B5070;margin-bottom:28px;">3 &middot; VII &middot; 2026</div>
+    <div id="splash-date" style="font-family:'Montserrat',sans-serif;font-size:.75rem;letter-spacing:6px;font-weight:300;color:#9B5070;margin-bottom:28px;transition:opacity .6s ease;">3 &middot; Julio &middot; 2026</div>
+    <script>
+      (function(){
+        var dates=['3 \u00b7 Julio \u00b7 2026','3 \u00b7 July \u00b7 2026','3 \u00b7 \u0a1c\u0a41\u0a32\u0a3e\u0a08 \u00b7 2026'];
+        var i=0,el=document.getElementById('splash-date');
+        setInterval(function(){
+          el.style.opacity='0';
+          setTimeout(function(){
+            i=(i+1)%dates.length;
+            el.innerHTML=dates[i];
+            el.style.opacity='1';
+          },600);
+        },2200);
+      })();
+    </script>
     <div style="width:40px;height:1px;background:rgba(200,150,90,.4);margin:0 auto 20px;"></div>
     <div style="display:flex;flex-direction:column;gap:10px;">
       <button id="btn-es" style="padding:12px;background:rgba(200,150,90,.08);border:1px solid rgba(200,150,90,.45);font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#7A4A60;cursor:pointer;display:flex;align-items:center;gap:10px;justify-content:center;"><span>&#127474;&#127485;</span><span style="letter-spacing:2px;">Espa&#241;ol</span></button>
@@ -268,7 +279,7 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
 
 <div id="nav-ov"></div>
 <div id="nav-drawer"><div class="nav-inner">
-  <div class="nav-couple"><div class="nav-cn">Xóchitl &amp; Sarbjit</div><div class="nav-cd">3 &middot; VII &middot; 2026</div></div>
+  <div class="nav-couple"><div class="nav-cn">Xóchitl &amp; Sarbjit</div><div class="nav-cd">3 &middot; Julio &middot; 2026</div></div>
   <button class="nav-item" id="nav-home"><span class="ni">&#127968;</span>&nbsp;<span data-i18n="nav_home"></span></button>
   <button class="nav-item" id="nav-parents"><span class="ni">&#128106;</span>&nbsp;<span data-i18n="nav_parents"></span></button>
   <button class="nav-item" id="nav-dates"><span class="ni">&#128197;</span>&nbsp;<span data-i18n="nav_dates"></span></button>
@@ -336,9 +347,30 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
 <section id="sec-gallery" style="background:#F5EBF8;padding:50px 0 44px;">
   <div class="inn" style="margin-bottom:28px;"><h2 class="sc-ttl" data-i18n="galleryTitle"></h2></div>
   <div id="rope-wrap" style="position:relative;width:100%;">
-    <svg id="gal-rope" style="width:100%;height:56px;display:block;overflow:visible;" viewBox="0 0 1000 28" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,14 Q50,7 100,14 Q150,21 200,14 Q250,7 300,14 Q350,21 400,14 Q450,7 500,14 Q550,21 600,14 Q650,7 700,14 Q750,21 800,14 Q850,7 900,14 Q950,21 1000,14" stroke="#4A2E08" stroke-width="3" fill="none"/>
-      <path d="M0,13 Q50,6 100,13 Q150,20 200,13 Q250,6 300,13 Q350,20 400,13 Q450,6 500,13 Q550,20 600,13 Q650,6 700,13 Q750,20 800,13 Q850,6 900,13 Q950,20 1000,13" stroke="#C89030" stroke-width="1" fill="none" opacity=".5"/>
+    <svg id="gal-rope" style="width:100%;height:56px;display:block;overflow:visible;" viewBox="0 0 1000 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="ropeGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#8B5E30"/>
+          <stop offset="35%" stop-color="#C8965A"/>
+          <stop offset="65%" stop-color="#7A4A18"/>
+          <stop offset="100%" stop-color="#5A3410"/>
+        </linearGradient>
+        <filter id="ropeShadow" x="-2%" y="-20%" width="104%" height="160%">
+          <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="rgba(40,20,5,.45)"/>
+        </filter>
+      </defs>
+      <!-- Rope body -->
+      <path d="M0,22 C80,10 160,34 250,22 C340,10 420,34 500,22 C580,10 660,34 750,22 C840,10 920,34 1000,22" stroke="url(#ropeGrad)" stroke-width="7" fill="none" stroke-linecap="round" filter="url(#ropeShadow)"/>
+      <!-- Twist highlight -->
+      <path d="M0,21 C80,9 160,33 250,21 C340,9 420,33 500,21 C580,9 660,33 750,21 C840,9 920,33 1000,21" stroke="rgba(220,170,100,.45)" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <!-- Twist shadow -->
+      <path d="M0,24 C80,12 160,36 250,24 C340,12 420,36 500,24 C580,12 660,36 750,24 C840,12 920,36 1000,24" stroke="rgba(60,30,5,.3)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <!-- Left wall anchor -->
+      <circle cx="4" cy="22" r="5" fill="#6B4020" stroke="#3A1E08" stroke-width="1.5"/>
+      <circle cx="4" cy="22" r="2.5" fill="#C8965A"/>
+      <!-- Right wall anchor -->
+      <circle cx="996" cy="22" r="5" fill="#6B4020" stroke="#3A1E08" stroke-width="1.5"/>
+      <circle cx="996" cy="22" r="2.5" fill="#C8965A"/>
     </svg>
     <div id="rope-bulbs"></div>
     <div id="gal-outer" style="position:relative;width:100%;height:460px;overflow:hidden;margin-top:-28px;">
