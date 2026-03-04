@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Admin · Xóchitl & Sarbjit</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jsQR/1.4.0/jsQR.min.js"></script>
+<script src="https://unpkg.com/jsqr@1.4.0/dist/jsQR.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
@@ -325,6 +325,13 @@ function clearScanLog(){
 async function startScanner(){
   clearScanLog();
   var video=document.getElementById('qr-video');
+  /* Verify jsQR loaded */
+  if(typeof jsQR==='undefined'){
+    scanLog('❌ jsQR no cargó — verifica conexión a internet','#FF6B6B');
+    showToast('Error: librería QR no disponible');
+    return;
+  }
+  scanLog('✅ jsQR cargado correctamente','#7CFC7C');
   scanLog('Solicitando acceso a cámara...','#FFD700');
   try{
     var stream;
