@@ -23,9 +23,9 @@ body{background:var(--cream);color:var(--text);font-family:var(--serif);overflow
 /* N2 */
 .lvl2{font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(1.3rem,3vw,1.7rem);background:var(--grad-soft);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 1px 4px rgba(120,80,0,.3));line-height:1.5;}
 /* N3 */
-.lvl3,.bt,.qt{font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(1rem,2.2vw,1.15rem);background:var(--grad-soft);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 1px 3px rgba(120,80,0,.25));line-height:2.1;}
+.lvl3,.bt{font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(1rem,2.2vw,1.15rem);background:var(--grad-soft);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 1px 3px rgba(120,80,0,.25));line-height:2.1;}
 /* N4 */
-.lvl4,.nm-names,.h-note,.rwa-b,.gfc-field-val{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.05rem;color:#3A2510;line-height:1.85;}
+.lvl4,.nm-names,.h-note,.rwa-b,.gfc-field-val,.qt{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.05rem;color:#3A2510;line-height:1.85;}
 .nm-role{font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(1.3rem,3vw,1.7rem);background:var(--grad-soft);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 1px 4px rgba(120,80,0,.3));margin-bottom:8px;}
 .h-name{font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(1.3rem,3vw,1.7rem);background:var(--grad-soft);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:5px;}
 .nm-names{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -110,8 +110,8 @@ body{background:var(--cream);color:var(--text);font-family:var(--serif);overflow
 .ss-dot.active{background:var(--gold);transform:scale(1.4);}
 .quote-s{position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 28px;background:linear-gradient(160deg,#FBF0F6,#F5E8F4,#EEE4F2);}
 .qi{position:relative;z-index:1;max-width:700px;padding:0 12px;}
-.qt::before{content:'\201C';font-size:clamp(1.3rem,3vw,1.7rem);margin-right:2px;}
-.qt::after{content:'\201D';font-size:clamp(1.3rem,3vw,1.7rem);margin-left:2px;}
+.qt::before{content:'\201C';font-size:1.05rem;margin-right:2px;}
+.qt::after{content:'\201D';font-size:1.05rem;margin-left:2px;}
 .qa{font-family:var(--sans);font-size:.58rem;letter-spacing:2px;text-transform:none;color:var(--muted);margin-top:16px;}
 #sec-nombram{position:relative;overflow:visible;background:linear-gradient(160deg,#F9EEF3,#F2E4EC 50%,#EEE4F0);}
 .nom-frame-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;}
@@ -124,7 +124,6 @@ body{background:var(--cream);color:var(--text);font-family:var(--serif);overflow
 .ecard:hover{transform:translateY(-5px);}
 .ecard-img{width:100%;height:160px;object-fit:cover;display:block;flex-shrink:0;}
 .ecard-body{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:0;}
-/* Each row: label + value stacked, with equal min-heights for alignment */
 .ecard-row{display:flex;flex-direction:column;justify-content:flex-start;}
 .ecard-row.r-name{min-height:72px;justify-content:center;}
 .ecard-row.r-addr{min-height:56px;justify-content:center;}
@@ -467,7 +466,7 @@ pa:{countdown:'\u0a09\u0a32\u0a1f\u0a40 \u0a17\u0a3f\u0a23\u0a24\u0a40',days:'\u
     galleryTitle:'\u0a38\u0a3e\u0a21\u0a3c\u0a47 \u0a2a\u0a32',
     hotelTitle:'\u0a39\u0a4b\u0a1f\u0a32',hotelBody:'\u0a38\u0a3f\u0a2b\u0a3c\u0a3e\u0a30\u0a38\u0a3c \u0a39\u0a4b\u0a1f\u0a32',hotelDir:'\u0a28\u0a15\u0a38\u0a3c\u0a3e',
     giftsTitle:'\u0a26\u0a3f\u0a32\u0a4b\u0a82 \u0a24\u0a4b\u0a39\u0a2b\u0a3c\u0a3e',giftsBody:'\u0a24\u0a41\u0a39\u0a3e\u0a21\u0a3c\u0a40 \u0a39\u0a3e\u0a1c\u0a3c\u0a30\u0a40',
-    rsvpTitle:'\u0a39\u0a3e\u0a1c\u0a3c\u0a30\u0a40 \u0a2a\u0a71\u0a15\u0a40 \u0a15\u0a30\u0a4b',rsvpPre:'\u0a07\u0a38 \u0a24\u0a3e\u0a30\u0a40\u0a16 \u0a24\u0a4b\u0a02 \u0a2a\u0a39\u0a3f\u0a32\u0a3e\u0a82',rsvpFname:'\u0a28\u0a3e\u0a2e',rsvpLname:'\u0a09\u0a2a\u0a28\u0a3e\u0a2e',rsvpMsg:'\u0a38\u0a70\u0a26\u0a47\u0a38\u0a3c\u0a3e',rsvpAdults:'\u0a2c\u0a3e\u0a32\u0a17\u0a3e\u0a02 \u0a26\u0a40 \u0a17\u0a3f\u0a23\u0a24\u0a40',rsvpSubmit:'\u0a2a\u0a41\u0a38\u0a3c\u0a1f\u0a40 \u0a2d\u0a47\u0a1c\u0a4b',rsvpWaTitle:'\u0a38\u0a35\u0a3e\u0a32?',rsvpWaBody:'WhatsApp \u0a24\u0a47 \u0a38\u0a70\u0a2a\u0a30\u0a15 \u0a15\u0a30\u0a4b',rsvp18Notice:'18 \u0a38\u0a3e\u0a32 \u0a24\u0a4b\u0a02 \u0a35\u0a71\u0a21\u0a47',rsvpErrorMsg:'\u0a15\u0a3f\u0a30\u0a2a\u0a3e \u0a2d\u0a30\u0a4b:',
+    rsvpTitle:'\u0a39\u0a3e\u0a1c\u0a3c\u0a30\u0a40 \u0a2a\u0a71\u0a15\u0a40 \u0a15\u0a30\u0a4b',rsvpPre:'\u0a07\u0a38 \u0a24\u0a3e\u0a30\u0a40\u0a16 \u0a24\u0a4b\u0a02 \u0a2a\u0a39\u0a3f\u0a32\u0a3e\u0a82',rsvpFname:'\u0a28\u0a3e\u0a2e',rsvpLname:'\u0a09\u0a2a\u0a28\u0a3e\u0a2e',rsvpMsg:'\u0a38\u0a70\u0a26\u0a47\u0a38\u0a3c\u0a3e',rsvpAdults:'\u0a2c\u0a3e\u0a32\u0a17\u0a3e\u0a82 \u0a26\u0a40 \u0a17\u0a3f\u0a23\u0a24\u0a40',rsvpSubmit:'\u0a2a\u0a41\u0a38\u0a3c\u0a1f\u0a40 \u0a2d\u0a47\u0a1c\u0a4b',rsvpWaTitle:'\u0a38\u0a35\u0a3e\u0a32?',rsvpWaBody:'WhatsApp \u0a24\u0a47 \u0a38\u0a70\u0a2a\u0a30\u0a15 \u0a15\u0a30\u0a4b',rsvp18Notice:'18 \u0a38\u0a3e\u0a32 \u0a24\u0a4b\u0a02 \u0a35\u0a71\u0a21\u0a47',rsvpErrorMsg:'\u0a15\u0a3f\u0a30\u0a2a\u0a3e \u0a2d\u0a30\u0a4b:',
     qrConfirmed:'\u0a2a\u0a71\u0a15\u0a40 \u0a39\u0a4b \u0a17\u0a88!',qrSaveHint:'\u0a05\u0a2a\u0a28\u0a3e QR \u0a15\u0a4b\u0a21 \u0a38\u0a70\u0a2d\u0a3e\u0a32\u0a4b',qrCodeLabel:'\u0a2a\u0a41\u0a38\u0a3c\u0a1f\u0a40 \u0a15\u0a4b\u0a21',qrSaveBtn:'\u0a24\u0a38\u0a35\u0a40\u0a30 \u0a38\u0a70\u0a2d\u0a3e\u0a32\u0a4b',qrEventHint:'\u0a07\u0a38 \u0a24\u0a38\u0a35\u0a40\u0a30 \u0a26\u0a40 \u0a38\u0a2e\u0a3e\u0a17\u0a2e \u0a35\u0a3e\u0a32\u0a47 \u0a26\u0a3f\u0a28 \u0a32\u0a4b\u0a5c \u0a39\u0a4b\u0a35\u0a47\u0a17\u0a40\u0a2c.',
     nav_home:'\u0a2e\u0a41\u0a71\u0a16 \u0a2a\u0a70\u0a28\u0a3e',nav_parents:'\u0a38\u0a3c\u0a3e\u0a21\u0a3c\u0a47 \u0a2a\u0a30\u0a3f\u0a35\u0a3e\u0a30',nav_dates:'\u0a24\u0a3e\u0a30\u0a40\u0a16\u0a3e\u0a82',nav_attire:'\u0a2a\u0a39\u0a3f\u0a30\u0a3e\u0a35\u0a3e',nav_gallery:'\u0a17\u0a48\u0a32\u0a30\u0a40',nav_hotels:'\u0a39\u0a4b\u0a1f\u0a32',nav_gifts:'\u0a24\u0a4b\u0a39\u0a2b\u0a3c\u0a47',nav_rsvp:'\u0a2a\u0a41\u0a38\u0a3c\u0a1f\u0a40'}
 };
