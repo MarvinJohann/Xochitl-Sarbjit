@@ -27,7 +27,8 @@ body{background:var(--cream);color:var(--text);font-family:var(--serif);overflow
 .qt{font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(1.15rem,2.8vw,1.45rem);color:#3A2510;line-height:2;}
 .nm-role{font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(1.3rem,3vw,1.7rem);background:var(--grad-soft);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 1px 4px rgba(120,80,0,.3));margin-bottom:8px;}
 .h-name{font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(1.3rem,3vw,1.7rem);background:var(--grad-soft);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:5px;}
-.nm-names{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+/* single-line parent names */
+.nm-names{white-space:nowrap;font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.05rem;color:#3A2510;line-height:1.85;}
 .h-note{padding-top:8px;border-top:1px solid rgba(200,150,90,.25);}
 .gfc-field-val{word-break:break-all;text-align:center;}
 .rwa-b{margin-bottom:14px;}
@@ -111,7 +112,6 @@ body{background:var(--cream);color:var(--text);font-family:var(--serif);overflow
 .qi{position:relative;z-index:1;max-width:700px;padding:0 12px;}
 .qt::before{content:'\201C';font-size:clamp(1.15rem,2.8vw,1.45rem);margin-right:2px;}
 .qt::after{content:'\201D';font-size:clamp(1.15rem,2.8vw,1.45rem);margin-left:2px;}
-/* ── MORONI: negro, tamaño reducido ── */
 .qa{font-family:var(--sans);font-size:.68rem;letter-spacing:2px;color:#1A1A1A;margin-top:16px;font-weight:700;}
 #sec-nombram{position:relative;overflow:visible;background:linear-gradient(160deg,#F9EEF3,#F2E4EC 50%,#EEE4F0);}
 .nom-frame-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;}
@@ -126,7 +126,8 @@ body{background:var(--cream);color:var(--text);font-family:var(--serif);overflow
 .ecard-row.r-name{min-height:72px;justify-content:center;}
 .ecard-row.r-addr{min-height:56px;justify-content:center;}
 .ecard-row.r-date{min-height:56px;justify-content:center;}
-.ecard-div{height:1px;background:rgba(180,130,60,.2);margin:8px 0;}
+/* +++ divider replacing lines */
+.ecard-plus{text-align:center;color:rgba(168,114,10,.55);font-size:.65rem;letter-spacing:5px;margin:7px 0;font-family:var(--sans);font-weight:300;user-select:none;}
 .ecard-title{font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(1.3rem,3vw,1.7rem);background:var(--grad-soft);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 1px 4px rgba(120,80,0,.3));text-align:center;margin-bottom:10px;}
 .ecard-lbl{font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(1rem,2.2vw,1.2rem);background:var(--grad-soft);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:2px;}
 .ecard-info{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.05rem;color:#3A2510;text-align:center;line-height:1.6;}
@@ -194,19 +195,17 @@ body{background:var(--cream);color:var(--text);font-family:var(--serif);overflow
 .rwa-t{font-family:var(--serif);font-size:1.3rem;font-style:italic;font-weight:600;background:var(--grad-soft);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;}
 .rwa-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px;background:#E8A0B4;color:white;font-family:var(--sans);font-size:.65rem;letter-spacing:2px;text-decoration:none;width:100%;}
 .dress-cols{display:flex;flex-direction:column;align-items:center;gap:0;margin:32px auto 24px;}
-/* ── DRESS-LBL: mismo estilo que dress-garment ── */
 .dress-lbl{font-family:var(--serif);font-style:italic;font-size:1rem;font-weight:600;background:var(--grad-soft);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px;}
 .dress-garment{font-family:var(--serif);font-style:italic;font-size:1rem;font-weight:600;background:var(--grad-soft);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:4px;}
 .avoid-lbl{font-family:var(--serif);font-style:italic;font-size:1rem;color:#5A3A44;margin:18px 0 10px;}
 .avoid-sw{display:flex;justify-content:center;gap:16px;}
 .av-sw{width:46px;height:46px;border-radius:50%;border:2px solid rgba(100,60,40,.25);box-shadow:inset 0 0 0 1px rgba(255,255,255,.6),0 2px 6px rgba(0,0,0,.15);}
 .cd-section{background:#FEF9F6;padding:46px 20px;text-align:center;box-shadow:0 8px 40px rgba(200,150,90,.18),0 -4px 20px rgba(200,150,90,.1);}
-.cd-lbl{font-family:var(--sans);font-size:.85rem;letter-spacing:3px;text-transform:capitalize !important;font-weight:300;background:linear-gradient(160deg,#E8C068,#C8965A 40%,#F0D080 60%,#A87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;margin-bottom:10px;filter:drop-shadow(0 1px 4px rgba(160,100,0,.3));}
 .cd-num{font-family:var(--serif);font-size:clamp(4rem,12vw,7rem);font-weight:300;font-style:italic;line-height:1;background:linear-gradient(170deg,#FFF0A8 0%,#E8C040 18%,#FFE080 34%,#C8860A 52%,#F0D060 68%,#A06010 84%,#E8C050 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 4px 12px rgba(160,100,0,.5)) drop-shadow(0 1px 3px rgba(0,0,0,.25));letter-spacing:-.02em;}
 .cd-unit{font-family:var(--sans);font-size:.72rem;letter-spacing:2px;text-transform:capitalize !important;font-weight:300;background:linear-gradient(160deg,#E8C068,#C8965A 40%,#F0D080 60%,#A87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:6px;}
 footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padding:32px 20px;}
 .f-brand{font-family:var(--script);font-size:2.4rem;color:rgba(255,255,255,.7);display:block;margin-bottom:2px;}
-.f-url{font-family:var(--sans);font-size:.52rem;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.3);display:block;margin-bottom:14px;}
+.f-url{font-family:var(--sans);font-size:.52rem;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.3);display:block;margin-bottom:6px;}
 .f-couple{font-family:var(--sans);font-size:.52rem;letter-spacing:4px;text-transform:uppercase;}
 .fdv{width:100%;line-height:0;overflow:hidden;display:block;}.fdv svg{width:100%;display:block;}
 .slim-div{padding:6px 0;text-align:center;}
@@ -286,7 +285,7 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
   <div class="nombram-inner inn">
     <h2 class="sc-ttl" data-i18n="nombramTitle"></h2>
     <p class="lvl3" style="margin:16px auto 0;max-width:520px;line-height:2.1;text-align:center;" data-i18n="nmThanks"></p>
-    <div id="nm-list" style="max-width:600px;margin:24px auto 0;"></div>
+    <div id="nm-list" style="max-width:700px;margin:24px auto 0;"></div>
   </div>
 </section>
 
@@ -319,6 +318,7 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
   <div class="inn">
     <h2 class="sc-ttl" data-i18n="giftsTitle"></h2>
     <p class="bt" data-i18n="giftsBody"></p>
+    <p class="lvl4" data-i18n="giftsOnlyCash" style="margin-top:10px;font-style:italic;color:#5A3A30;"></p>
     <div id="gifts-grid" style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:20px;margin-top:24px;"></div>
   </div>
 </section>
@@ -403,8 +403,8 @@ var db=firebase.database();
 
 var CFG={
   name1:'X\u00f3chitl',name2:'Sarbjit',dateISO:'2026-07-03T17:00:00',
-  brideParents:'† Ernesto Oyarzabal Barrios&† Xochitl Aragon Dominguez',
-  groomParents:'† Jobanjit Singh Kahlon&Devinder Kaur',
+  brideParents:'Ernesto Oyarzabal Barrios&Xochitl Aragon Dominguez',
+  groomParents:'Jobanjit Singh Kahlon&Devinder Kaur',
   events:[
     {tkLabel:{es:'Sellamiento',en:'Sealing',pa:'\u0a30\u0a38\u0a2e'},photo:'img/coloniajuareztemple.jpeg',
      name:{es:'Templo de Ciudad Ju\u00e1rez',en:'Ciudad Ju\u00e1rez Temple',pa:'Temple'},
@@ -433,38 +433,38 @@ var CFG={
 
 var T={
 es:{countdown:'Cuenta Regresiva',days:'Dias',hours:'Horas',minutes:'Minutos',seconds:'Segundos',
-    quoteText:'Y la caridad sufre con paciencia, y es bondadosa, y no envidia, y no se envanece; no busca lo suyo, no se irrita f\u00e1cilmente, no piensa el mal; no se regocija en la iniquidad sino que se regocija en la verdad; todo lo sufre, todo lo cree, todo lo espera, todo lo soporta.',
+    quoteText:'Y la caridad es sufrida y es benigna, y no tiene envidia, ni se envanece, no busca lo suyo, no se irrita f\u00e1cilmente, no piensa el mal, no se regocija en la iniquidad, sino se regocija en la verdad; todo lo sufre, todo lo cree, todo lo espera, todo lo soporta.',
     nombramTitle:'Nuestras Familias',nmThanks:'Con el amor y bendici\u00f3n de nuestros padres.',
     padresNovia:'Padres de la Novia',padresNovio:'Padres del Novio',
     eventsTitle:'Eventos',eLblAddr:'Direcci\u00f3n',eLblDateTime:'Fecha y Hora',eLblDate:'Fecha',
     dresscodeTitle2:'Vestimenta Formal',dressLadies:'Mujeres',dressGents:'Hombres',vestidoLargo:'Vestido Largo',traje:'Traje',avoidColors:'Evita usar los siguientes colores',
     galleryTitle:'Nuestros Momentos',
     hotelTitle:'Opciones de Hospedaje',hotelBody:'Para mayor comodidad, recomendamos los siguientes hoteles.',hotelDir:'Mapa',
-    giftsTitle:'Un Regalo del Coraz\u00f3n',giftsBody:'Tu presencia es nuestro mejor regalo.',
+    giftsTitle:'Un Regalo del Coraz\u00f3n',giftsBody:'Tu presencia es nuestro mejor regalo.',giftsOnlyCash:'Solo se aceptar\u00e1n regalos en efectivo o transferencia bancaria.',
     rsvpTitle:'Confirmar Asistencia',rsvpPre:'Por favor, confirma tu asistencia antes del',rsvpFname:'Nombre',rsvpLname:'Apellido',rsvpMsg:'Mensaje para los novios',rsvpAdults:'N\u00famero de adultos',rsvpSubmit:'Enviar mi confirmaci\u00f3n',rsvpWaTitle:'\u00bfDudas?',rsvpWaBody:'Env\u00edanos un WhatsApp.',rsvp18Notice:'Exclusivamente mayores de 18 a\u00f1os',rsvpErrorMsg:'Por favor completa:',
     qrConfirmed:'¡Confirmado!',qrSaveHint:'Guarda tu código QR',qrCodeLabel:'Código de confirmación',qrSaveBtn:'Guardar imagen',qrEventHint:'Necesitarás esta imagen el día del evento.',
     nav_home:'Inicio',nav_parents:'Nuestras Familias',nav_dates:'Fechas y Ubicaci\u00f3n',nav_attire:'Vestimenta',nav_gallery:'Galer\u00eda',nav_hotels:'Hospedaje',nav_gifts:'Regalos',nav_rsvp:'Confirmar',navDate:'3 \u00b7 Julio \u00b7 2026'},
 en:{countdown:'Countdown',days:'Days',hours:'Hours',minutes:'Minutes',seconds:'Seconds',
-    quoteText:'And charity suffereth long, and is kind, and envieth not, and is not puffed up, seeketh not her own, is not easily provoked, thinketh no evil, and rejoiceth not in iniquity but rejoiceth in the truth, beareth all things, believeth all things, hopeth all things, endureth all things.',
+    quoteText:'Y la caridad es sufrida y es benigna, y no tiene envidia, ni se envanece, no busca lo suyo, no se irrita f\u00e1cilmente, no piensa el mal, no se regocija en la iniquidad, sino se regocija en la verdad; todo lo sufre, todo lo cree, todo lo espera, todo lo soporta.',
     nombramTitle:'Our Families',nmThanks:'With the love and blessing of our parents.',
     padresNovia:"Bride's Parents",padresNovio:"Groom's Parents",
     eventsTitle:'Events',eLblAddr:'Address',eLblDateTime:'Date & Time',eLblDate:'Date',
     dresscodeTitle2:'Formal Attire',dressLadies:'Women',dressGents:'Men',vestidoLargo:'Long Gown',traje:'Suit',avoidColors:'Please avoid these colors',
     galleryTitle:'Our Moments',
     hotelTitle:'Lodging Options',hotelBody:'For your convenience, we recommend the following hotels.',hotelDir:'Map',
-    giftsTitle:'A Gift from the Heart',giftsBody:'Your presence is our greatest gift.',
+    giftsTitle:'A Gift from the Heart',giftsBody:'Your presence is our greatest gift.',giftsOnlyCash:'Only cash or bank transfer gifts will be accepted.',
     rsvpTitle:'Confirm Attendance',rsvpPre:'Please confirm your attendance before',rsvpFname:'First Name',rsvpLname:'Last Name',rsvpMsg:'Message for the couple',rsvpAdults:'Number of adults',rsvpSubmit:'Send my confirmation',rsvpWaTitle:'Questions?',rsvpWaBody:'Send us a WhatsApp.',rsvp18Notice:'Exclusively for guests 18 and older',rsvpErrorMsg:'Please complete:',
     qrConfirmed:'Confirmed!',qrSaveHint:'Save your QR code',qrCodeLabel:'Confirmation code',qrSaveBtn:'Save image',qrEventHint:'You will need this image on the day of the event.',
     nav_home:'Home',nav_parents:'Our Families',nav_dates:'Dates & Location',nav_attire:'Attire',nav_gallery:'Gallery',nav_hotels:'Lodging',nav_gifts:'Gifts',nav_rsvp:'RSVP',navDate:'3 \u00b7 July \u00b7 2026'},
 pa:{countdown:'\u0a09\u0a32\u0a1f\u0a40 \u0a17\u0a3f\u0a23\u0a24\u0a40',days:'\u0a26\u0a3f\u0a28',hours:'\u0a18\u0a70\u0a1f\u0a47',minutes:'\u0a2e\u0a3f\u0a70\u0a1f',seconds:'\u0a38\u0a15\u0a3f\u0a70\u0a1f',
-    quoteText:'\u0a05\u0a24\u0a47 \u0a2a\u0a3f\u0a06\u0a30 \u0a38\u0a2c\u0a30 \u0a30\u0a71\u0a16\u0a26\u0a3e \u0a39\u0a48 \u0a05\u0a24\u0a47 \u0a26\u0a3f\u0a06\u0a32\u0a3e \u0a39\u0a48\u0964',
+    quoteText:'Y la caridad es sufrida y es benigna, y no tiene envidia, ni se envanece, no busca lo suyo, no se irrita f\u00e1cilmente, no piensa el mal, no se regocija en la iniquidad, sino se regocija en la verdad; todo lo sufre, todo lo cree, todo lo espera, todo lo soporta.',
     nombramTitle:'\u0a38\u0a3c\u0a3e\u0a21\u0a3c\u0a47 \u0a2a\u0a30\u0a3f\u0a35\u0a3e\u0a30',nmThanks:'\u0a38\u0a3c\u0a3e\u0a21\u0a3c\u0a47 \u0a2e\u0a3e\u0a24\u0a3e-\u0a2a\u0a3f\u0a24\u0a3e \u0a26\u0a47 \u0a2a\u0a3f\u0a06\u0a30 \u0a05\u0a24\u0a47 \u0a05\u0a38\u0a3c\u0a40\u0a30\u0a35\u0a3e\u0a26 \u0a28\u0a3e\u0a32\u0964',
     padresNovia:'\u0a32\u0a3e\u0a5c\u0a40 \u0a26\u0a47 \u0a2e\u0a3e\u0a24\u0a3e-\u0a2a\u0a3f\u0a24\u0a3e',padresNovio:'\u0a32\u0a3e\u0a5c\u0a47 \u0a26\u0a47 \u0a2e\u0a3e\u0a24\u0a3e-\u0a2a\u0a3f\u0a24\u0a3e',
     eventsTitle:'\u0a38\u0a2e\u0a3e\u0a17\u0a2e',eLblAddr:'\u0a2a\u0a24\u0a3e',eLblDateTime:'\u0a24\u0a3e\u0a30\u0a40\u0a16 \u0a05\u0a24\u0a47 \u0a38\u0a2e\u0a3e\u0a82',eLblDate:'\u0a24\u0a3e\u0a30\u0a40\u0a16',
     dresscodeTitle2:'\u0a30\u0a38\u0a2e\u0a40 \u0a2a\u0a39\u0a3f\u0a30\u0a3e\u0a35\u0a3e',dressLadies:'\u0a14\u0a30\u0a24\u0a3e\u0a82',dressGents:'\u0a2e\u0a30\u0a26',vestidoLargo:'\u0a32\u0a70\u0a2c\u0a3e \u0a32\u0a3f\u0a2c\u0a3e\u0a38',traje:'\u0a38\u0a42\u0a1f',avoidColors:'\u0a07\u0a39 \u0a30\u0a70\u0a17 \u0a28\u0a3e \u0a2a\u0a39\u0a3f\u0a28\u0a4b',
     galleryTitle:'\u0a38\u0a3e\u0a21\u0a3c\u0a47 \u0a2a\u0a32',
     hotelTitle:'\u0a39\u0a4b\u0a1f\u0a32',hotelBody:'\u0a38\u0a3f\u0a2b\u0a3c\u0a3e\u0a30\u0a38\u0a3c \u0a39\u0a4b\u0a1f\u0a32',hotelDir:'\u0a28\u0a15\u0a38\u0a3c\u0a3e',
-    giftsTitle:'\u0a26\u0a3f\u0a32\u0a4b\u0a82 \u0a24\u0a4b\u0a39\u0a2b\u0a3c\u0a3e',giftsBody:'\u0a24\u0a41\u0a39\u0a3e\u0a21\u0a3c\u0a40 \u0a39\u0a3e\u0a1c\u0a3c\u0a30\u0a40',
+    giftsTitle:'\u0a26\u0a3f\u0a32\u0a4b\u0a82 \u0a24\u0a4b\u0a39\u0a2b\u0a3c\u0a3e',giftsBody:'\u0a24\u0a41\u0a39\u0a3e\u0a21\u0a3c\u0a40 \u0a39\u0a3e\u0a1c\u0a3c\u0a30\u0a40',giftsOnlyCash:'\u0a38\u0a3f\u0a30\u0a2b\u0a3c \u0a28\u0a15\u0a26 \u0a1c\u0a3e\u0a02 \u0a2c\u0a48\u0a02\u0a15 \u0a1f\u0a30\u0a3e\u0a02\u0a38\u0a2b\u0a3c\u0a30 \u0a24\u0a4b\u0a39\u0a2b\u0a3c\u0a47 \u0a39\u0a40 \u0a38\u0a35\u0a40\u0a15\u0a3e\u0a30 \u0a15\u0a40\u0a24\u0a47 \u0a1c\u0a3e\u0a23\u0a17\u0a47\u0964',
     rsvpTitle:'\u0a39\u0a3e\u0a1c\u0a3c\u0a30\u0a40 \u0a2a\u0a71\u0a15\u0a40 \u0a15\u0a30\u0a4b',rsvpPre:'\u0a07\u0a38 \u0a24\u0a3e\u0a30\u0a40\u0a16 \u0a24\u0a4b\u0a02 \u0a2a\u0a39\u0a3f\u0a32\u0a3e\u0a82',rsvpFname:'\u0a28\u0a3e\u0a2e',rsvpLname:'\u0a09\u0a2a\u0a28\u0a3e\u0a2e',rsvpMsg:'\u0a38\u0a70\u0a26\u0a47\u0a38\u0a3c\u0a3e',rsvpAdults:'\u0a2c\u0a3e\u0a32\u0a17\u0a3e\u0a82 \u0a26\u0a40 \u0a17\u0a3f\u0a23\u0a24\u0a40',rsvpSubmit:'\u0a2a\u0a41\u0a38\u0a3c\u0a1f\u0a40 \u0a2d\u0a47\u0a1c\u0a4b',rsvpWaTitle:'\u0a38\u0a35\u0a3e\u0a32?',rsvpWaBody:'WhatsApp \u0a24\u0a47 \u0a38\u0a70\u0a2a\u0a30\u0a15 \u0a15\u0a30\u0a4b',rsvp18Notice:'18 \u0a38\u0a3e\u0a32 \u0a24\u0a4b\u0a02 \u0a35\u0a71\u0a21\u0a47',rsvpErrorMsg:'\u0a15\u0a3f\u0a30\u0a2a\u0a3e \u0a2d\u0a30\u0a4b:',
     qrConfirmed:'\u0a2a\u0a71\u0a15\u0a40 \u0a39\u0a4b \u0a17\u0a88!',qrSaveHint:'\u0a05\u0a2a\u0a28\u0a3e QR \u0a15\u0a4b\u0a21 \u0a38\u0a70\u0a2d\u0a3e\u0a32\u0a4b',qrCodeLabel:'\u0a2a\u0a41\u0a38\u0a3c\u0a1f\u0a40 \u0a15\u0a4b\u0a21',qrSaveBtn:'\u0a24\u0a38\u0a35\u0a40\u0a30 \u0a38\u0a70\u0a2d\u0a3e\u0a32\u0a4b',qrEventHint:'\u0a07\u0a38 \u0a24\u0a38\u0a35\u0a40\u0a30 \u0a26\u0a40 \u0a38\u0a2e\u0a3e\u0a17\u0a2e \u0a35\u0a3e\u0a32\u0a47 \u0a26\u0a3f\u0a28 \u0a32\u0a4b\u0a5c \u0a39\u0a4b\u0a35\u0a47\u0a17\u0a40\u0a2c.',
     nav_home:'\u0a2e\u0a41\u0a71\u0a16 \u0a2a\u0a70\u0a28\u0a3e',nav_parents:'\u0a38\u0a3c\u0a3e\u0a21\u0a3c\u0a47 \u0a2a\u0a30\u0a3f\u0a35\u0a3e\u0a30',nav_dates:'\u0a24\u0a3e\u0a30\u0a40\u0a16\u0a3e\u0a82',nav_attire:'\u0a2a\u0a39\u0a3f\u0a30\u0a3e\u0a35\u0a3e',nav_gallery:'\u0a17\u0a48\u0a32\u0a30\u0a40',nav_hotels:'\u0a39\u0a4b\u0a1f\u0a32',nav_gifts:'\u0a24\u0a4b\u0a39\u0a2b\u0a3c\u0a47',nav_rsvp:'\u0a2a\u0a41\u0a38\u0a3c\u0a1f\u0a40',navDate:'3 \u00b7 \u0a1c\u0a41\u0a32\u0a3e\u0a08 \u00b7 2026'}
@@ -487,8 +487,8 @@ function buildGifts(){var gg=document.getElementById('gifts-grid');if(!gg)return
 function buildDress(){var t=T[currentLang]||T.es,c=document.getElementById('dress-cols');if(!c)return;var imgW='min(420px,90vw)';c.innerHTML='<div style="width:'+imgW+';margin:0 auto;"><div style="display:flex;justify-content:space-between;margin-bottom:12px;padding:0 52px;"><div style="text-align:left;"><div class="dress-lbl">'+(t.dressLadies||'Mujeres')+'</div></div><div style="text-align:right;"><div class="dress-lbl">'+(t.dressGents||'Hombres')+'</div></div></div><img src="img/dresscode.png" alt="Dress code" style="width:100%;border-radius:4px;box-shadow:0 8px 32px rgba(0,0,0,.18);display:block;"><div style="display:flex;justify-content:space-between;margin-top:12px;padding:0 52px;"><div style="text-align:left;"><div class="dress-garment">'+(t.vestidoLargo||'Vestido Largo')+'</div></div><div style="text-align:right;"><div class="dress-garment">'+(t.traje||'Traje')+'</div></div></div></div>';var sw=document.getElementById('avoid-sw');if(!sw)return;sw.innerHTML='';CFG.avoidColors.forEach(function(col){var s=document.createElement('div');s.className='av-sw';s.style.background=col;sw.appendChild(s);});}
 function setLang(lang){currentLang=lang;var ll=document.getElementById('lang-label');if(ll)ll.innerHTML={es:'ES',en:'EN',pa:'PA'}[lang]||lang.toUpperCase();['es','en','pa'].forEach(function(l){var el=document.getElementById('lo-'+l);if(el){el.classList.remove('active');if(l===lang)el.classList.add('active');}});var t=T[lang]||T.es;document.querySelectorAll('[data-i18n]').forEach(function(n){var k=n.getAttribute('data-i18n');if(k&&t[k]!=null)n.innerHTML=String(t[k]).replace(/</g,'&lt;').replace(/>/g,'&gt;');});var phMap={'ri-fn':{es:'Nombre',en:'First Name',pa:'\u0a28\u0a3e\u0a2e'},'ri-ln':{es:'Apellido',en:'Last Name',pa:'\u0a09\u0a2a\u0a28\u0a3e\u0a2e'},'ri-msg':{es:'Escribe tu mensaje aqu\u00ed...',en:'Write your message here...',pa:'\u0a38\u0a70\u0a26\u0a47\u0a38\u0a3c\u0a3e...'},'ri-adults':{es:'0',en:'0',pa:'0'}};Object.keys(phMap).forEach(function(id){var el=document.getElementById(id);if(el)el.placeholder=phMap[id][lang]||phMap[id].es;});var dl=document.getElementById('rsvp-dl');if(dl)dl.innerHTML=(t.rsvpPre||'')+' <strong>'+((CFG.rsvpDeadline&&CFG.rsvpDeadline[lang])||'')+'</strong>';var wa=document.getElementById('rwa-link');if(wa)wa.href='https://wa.me/'+CFG.rsvpWa+'?text='+encodeURIComponent('Hola, pregunta sobre la boda de X\u00f3chitl & Sarbjit');
   var nd=document.getElementById('nav-cd-date');if(nd&&t.navDate)nd.innerHTML=t.navDate;buildNombram();buildEvents();buildDress();buildHotels();buildGifts();}
-function buildNombram(){var t=T[currentLang]||T.es,c=document.getElementById('nm-list');if(!c)return;c.innerHTML='';NM_DATA.forEach(function(it,i){var d=document.createElement('div');d.className='nm-item sf';var rawNames=CFG[it.names]||'';var lines=rawNames.split('&').map(function(n){return n.trim();}).filter(Boolean);var namesHTML=lines.map(function(n){return '<p class="nm-names">'+n+'</p>';}).join('');var sep=i<NM_DATA.length-1?'<div style="text-align:center;padding:8px 0;"><svg viewBox="0 0 380 24" style="width:min(300px,80vw)" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="12" x2="148" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".4"/><polygon points="162,12 168,7 174,12 168,17" fill="none" stroke="#C8965A" stroke-width=".8"/><circle cx="186" cy="12" r="2.5" fill="#C8965A" opacity=".7"/><polygon points="198,12 204,7 210,12 204,17" fill="none" stroke="#C8965A" stroke-width=".8"/><line x1="222" y1="12" x2="380" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".4"/></svg></div>':'';d.innerHTML='<p class="nm-role">'+(t[it.roleKey]||'')+'</p>'+namesHTML+sep;c.appendChild(d);obsSF(d);});}
-function buildEvents(){var g=document.getElementById('ec-grid');if(!g)return;g.innerHTML='';var t=T[currentLang]||T.es;CFG.events.forEach(function(ev){var card=document.createElement('div');card.className='ecard sf';var img=document.createElement('img');img.className='ecard-img';img.src=ev.photo||'';img.alt='';card.appendChild(img);var body=document.createElement('div');body.className='ecard-body';var dateLabel=ev.hora?(t.eLblDateTime||'Fecha y Hora'):(t.eLblDate||'Fecha');var horaHtml=ev.hora?'<p class="ecard-hora">'+ev.hora+'</p>':'';var mapBtn=ev.ck==='reception'&&ev.map?'<div style="text-align:center;margin-top:10px;"><a href="'+ev.map+'" target="_blank" style="display:inline-flex;align-items:center;gap:7px;padding:8px 18px;background:rgba(139,94,32,.08);border:1.5px solid rgba(139,94,32,.5);border-radius:3px;font-family:var(--sans);font-size:.52rem;letter-spacing:2px;color:#5A3200;text-decoration:none;font-weight:600;">&#x1F4CD; '+(t.hotelDir||'Mapa')+'</a></div>':'';body.innerHTML='<div class="ecard-title">'+((ev.tkLabel&&ev.tkLabel[currentLang])||'')+'</div><div class="ecard-div"></div><div class="ecard-row r-name"><p class="ecard-info" style="font-weight:500">'+((ev.name&&ev.name[currentLang])||'')+'</p></div><div class="ecard-div"></div><div class="ecard-row r-addr"><p class="ecard-lbl">'+(t.eLblAddr||'')+'</p><p class="ecard-info">'+((ev.addr&&ev.addr[currentLang])||'')+'</p></div><div class="ecard-div"></div><div class="ecard-row r-date"><p class="ecard-lbl">'+dateLabel+'</p><p class="ecard-info">'+((ev.date&&ev.date[currentLang])||'')+'</p>'+horaHtml+mapBtn+'</div>';card.appendChild(body);g.appendChild(card);obsSF(card);});}
+function buildNombram(){var t=T[currentLang]||T.es,c=document.getElementById('nm-list');if(!c)return;c.innerHTML='';NM_DATA.forEach(function(it,i){var d=document.createElement('div');d.className='nm-item sf';var rawNames=CFG[it.names]||'';var names=rawNames.split('&').map(function(n){return n.trim();}).filter(Boolean);/* join all names on ONE line with · separator */var namesHTML='<p class="nm-names">'+names.join(' \u00b7 ')+'</p>';var sep=i<NM_DATA.length-1?'<div style="text-align:center;padding:8px 0;"><svg viewBox="0 0 380 24" style="width:min(300px,80vw)" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="12" x2="148" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".4"/><polygon points="162,12 168,7 174,12 168,17" fill="none" stroke="#C8965A" stroke-width=".8"/><circle cx="186" cy="12" r="2.5" fill="#C8965A" opacity=".7"/><polygon points="198,12 204,7 210,12 204,17" fill="none" stroke="#C8965A" stroke-width=".8"/><line x1="222" y1="12" x2="380" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".4"/></svg></div>':'';d.innerHTML='<p class="nm-role">'+(t[it.roleKey]||'')+'</p>'+namesHTML+sep;c.appendChild(d);obsSF(d);});}
+function buildEvents(){var g=document.getElementById('ec-grid');if(!g)return;g.innerHTML='';var t=T[currentLang]||T.es;var PLU='<div class="ecard-plus">+ + +</div>';CFG.events.forEach(function(ev){var card=document.createElement('div');card.className='ecard sf';var img=document.createElement('img');img.className='ecard-img';img.src=ev.photo||'';img.alt='';card.appendChild(img);var body=document.createElement('div');body.className='ecard-body';var dateLabel=ev.hora?(t.eLblDateTime||'Fecha y Hora'):(t.eLblDate||'Fecha');var horaHtml=ev.hora?'<p class="ecard-hora">'+ev.hora+'</p>':'';var mapBtn=ev.ck==='reception'&&ev.map?'<div style="text-align:center;margin-top:10px;"><a href="'+ev.map+'" target="_blank" style="display:inline-flex;align-items:center;gap:7px;padding:8px 18px;background:rgba(139,94,32,.08);border:1.5px solid rgba(139,94,32,.5);border-radius:3px;font-family:var(--sans);font-size:.52rem;letter-spacing:2px;color:#5A3200;text-decoration:none;font-weight:600;">&#x1F4CD; '+(t.hotelDir||'Mapa')+'</a></div>':'';body.innerHTML='<div class="ecard-title">'+((ev.tkLabel&&ev.tkLabel[currentLang])||'')+'</div>'+PLU+'<div class="ecard-row r-name"><p class="ecard-info" style="font-weight:500">'+((ev.name&&ev.name[currentLang])||'')+'</p></div>'+PLU+'<div class="ecard-row r-addr"><p class="ecard-lbl">'+(t.eLblAddr||'')+'</p><p class="ecard-info">'+((ev.addr&&ev.addr[currentLang])||'')+'</p></div>'+PLU+'<div class="ecard-row r-date"><p class="ecard-lbl">'+dateLabel+'</p><p class="ecard-info">'+((ev.date&&ev.date[currentLang])||'')+'</p>'+horaHtml+mapBtn+'</div>';card.appendChild(body);g.appendChild(card);obsSF(card);});}
 function buildHotels(){var c=document.getElementById('h-cards');if(!c)return;var t=T[currentLang]||T.es;c.innerHTML='';CFG.hotels.forEach(function(h){var s='&#9733;'.repeat(h.stars)+'&#9734;'.repeat(5-h.stars);var card=document.createElement('div');card.className='h-card sf';card.innerHTML='<div class="h-stars">'+s+'</div><div class="h-name">'+h.name+'</div><div class="h-dist">&#x1F4CD; '+((h.dist&&h.dist[currentLang])||'')+'</div><p class="h-note">'+((h.note&&h.note[currentLang])||'')+'</p>';var a=document.createElement('a');a.className='h-link';a.href=h.url||'#';a.target='_blank';a.innerHTML=(t.hotelDir||'')+' &rarr;';card.appendChild(a);c.appendChild(card);obsSF(card);});}
 function buildSS(){var t=document.getElementById('ss-track'),d=document.getElementById('ss-dots');if(!t||!d)return;t.innerHTML='';d.innerHTML='';ssSlides=[];CFG.slideshow.forEach(function(src,i){var s=document.createElement('div');s.className='ss-slide'+(i===0?' active':'');if(src){var img=document.createElement('img');img.src=src;img.alt='';s.appendChild(img);}t.appendChild(s);ssSlides.push(s);var dot=document.createElement('button');dot.className='ss-dot'+(i===0?' active':'');(function(n){dot.addEventListener('click',function(){ssGo(n);});})(i);d.appendChild(dot);});}
 function ssGo(n){if(!ssSlides.length)return;var dots=document.querySelectorAll('.ss-dots .ss-dot');if(ssSlides[ssIdx])ssSlides[ssIdx].classList.remove('active');if(dots[ssIdx])dots[ssIdx].classList.remove('active');ssIdx=(n+ssSlides.length)%ssSlides.length;if(ssSlides[ssIdx])ssSlides[ssIdx].classList.add('active');if(dots[ssIdx])dots[ssIdx].classList.add('active');}
@@ -517,7 +517,25 @@ function initPetals(){pC=document.getElementById('pc');if(!pC)return;pC.width=in
 function animP(){if(!pR)return;pX.clearRect(0,0,pC.width,pC.height);pts.forEach(function(p){p.y+=p.sp;p.x+=Math.sin(p.sc)*p.sx;p.sc+=p.sw;p.fk+=p.fks;var flicker=1-(p.fkd*(0.6*(0.5+0.5*Math.sin(p.fk))+0.4*(0.5+0.5*Math.sin(p.fk*2.3+1.1))));var px=p.x+Math.sin(p.sc)*3;var dx=px-mouseX,dy=p.y-mouseY,dist=Math.sqrt(dx*dx+dy*dy);var proximity=Math.max(0,1-dist/180);var eased=proximity*proximity*(3-2*proximity);var sr=p.r*(1+eased*0.55);pX.save();pX.translate(px,p.y);pX.globalAlpha=Math.min(1,(0.45+flicker*0.45)+(0.1)*eased);pX.filter='blur('+(Math.max(0,5*(1-eased))).toFixed(1)+'px)';pX.shadowColor='rgba(220,80,140,'+(0.25+eased*0.65)+')';pX.shadowBlur=4+eased*26;if(p.h){pX.beginPath();pX.moveTo(0,-sr);pX.bezierCurveTo(sr,-sr,sr,sr/2,0,sr);pX.bezierCurveTo(-sr,sr/2,-sr,-sr,0,-sr);pX.fillStyle='rgb('+Math.round(242+flicker*8)+','+Math.round(198+flicker*6)+','+Math.round(208+flicker*8)+')';}else{pX.beginPath();pX.ellipse(0,0,sr*.6,sr,Math.sin(p.sc)*.5,0,Math.PI*2);pX.fillStyle='rgba('+Math.round(232+flicker*10+eased*12)+','+Math.round(148+flicker*8)+','+Math.round(178+flicker*12)+',.92)';}pX.fill();pX.restore();if(p.y>innerHeight+20){p.y=-20;p.x=Math.random()*innerWidth;}});requestAnimationFrame(animP);}
 document.addEventListener('mousemove',function(e){mouseX=e.clientX;mouseY=e.clientY;});
 document.addEventListener('visibilitychange',function(){if(!audio||!playing)return;if(document.hidden){audio.pause();}else{audio.play().catch(function(){});}});
-function startInvite(lang){var splash=document.getElementById('splash');if(!splash)return;setLang(lang);buildGallery();requestAnimationFrame(buildRopeBulbs);splash.style.transition='opacity .7s ease';splash.style.opacity='0';setTimeout(function(){if(splash.parentNode)splash.parentNode.removeChild(splash);window.scrollTo(0,0);document.body.focus();initPetals();setTimeout(triggerWrite,300);setTimeout(function(){var fmp=document.getElementById('fmp');if(fmp)fmp.classList.add('show');if(CFG.songAudio&&!playing){if(!audio){audio=new Audio(CFG.songAudio);audio.loop=false;audio.onended=stopSong;audio.ontimeupdate=updateFmpUI;}audio.currentTime=18;audio.play().then(function(){playing=true;setSongUI(true);}).catch(function(){});}},800);},700);}
+function startInvite(lang){var splash=document.getElementById('splash');if(!splash)return;
+  /* ── Unlock audio IMMEDIATELY inside the user-gesture click ── */
+  if(CFG.songAudio&&!audio){
+    audio=new Audio(CFG.songAudio);
+    audio.loop=false;
+    audio.onended=stopSong;
+    audio.ontimeupdate=updateFmpUI;
+    audio.currentTime=18;
+    audio.play().then(function(){playing=true;setSongUI(true);}).catch(function(){});
+  }
+  setLang(lang);buildGallery();requestAnimationFrame(buildRopeBulbs);
+  splash.style.transition='opacity .7s ease';splash.style.opacity='0';
+  setTimeout(function(){
+    if(splash.parentNode)splash.parentNode.removeChild(splash);
+    window.scrollTo(0,0);document.body.focus();initPetals();
+    setTimeout(triggerWrite,300);
+    setTimeout(function(){var fmp=document.getElementById('fmp');if(fmp)fmp.classList.add('show');},800);
+  },700);
+}
 function obsSF(el){new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('vis');});},{threshold:.06}).observe(el);}
 window.addEventListener('scroll',function(){document.querySelectorAll('.sf:not(.vis)').forEach(function(el){if(el.getBoundingClientRect().top<window.innerHeight*.9)el.classList.add('vis');});},{passive:true});
 window.addEventListener('DOMContentLoaded',function(){
