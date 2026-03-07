@@ -76,7 +76,7 @@ body{background:var(--cream);color:var(--text);font-family:var(--serif);overflow
 .nav-item:hover{background:#FAEEF2;color:var(--pk);}
 .ni{filter:sepia(1) saturate(4) hue-rotate(-15deg) brightness(.85);}
 .nav-sep{height:1px;background:rgba(200,150,90,.12);margin:4px 20px;}
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 60px;position:relative;overflow:hidden;background:linear-gradient(160deg,#F9EEF3,#EEE4F0);}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 60px;position:relative;overflow:visible;background:linear-gradient(160deg,#F9EEF3,#EEE4F0);}
 .hero-bg{position:absolute;inset:0;background-image:url('img/IMG_7517.jpeg');background-size:cover;background-position:center;z-index:0;opacity:0;transition:opacity 1.2s ease;}
 .hero-bg.show{opacity:1;}
 .hero>*{position:relative;z-index:1;}
@@ -85,6 +85,7 @@ body{background:var(--cream);color:var(--text);font-family:var(--serif);overflow
 .hcbl{position:absolute;bottom:38px;left:18px;width:54px;height:54px;border-bottom:1px solid rgba(200,150,90,.3);border-left:1px solid rgba(200,150,90,.3);z-index:1;}
 .hcbr{position:absolute;bottom:38px;right:18px;width:54px;height:54px;border-bottom:1px solid rgba(200,150,90,.3);border-right:1px solid rgba(200,150,90,.3);z-index:1;}
 .hno{position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;max-width:92vw;overflow:visible;padding-bottom:1.2em;z-index:1;}
+@media(min-width:768px){.hno{top:44%;transform:translate(-50%,-50%);}}
 .nwl{position:absolute;top:0;left:50%;transform:translateX(-50%);text-align:center;pointer-events:none;z-index:2;white-space:nowrap;transition:opacity .6s,transform .6s;transform-origin:center top;}
 .nwl.exit{opacity:0;transform:translateX(-50%) scale(.92) translateY(-14px);}
 .nwl-ln{display:block;font-family:var(--script);font-size:clamp(3.2rem,11vw,6.5rem);color:#fff;white-space:nowrap;text-shadow:0 2px 18px rgba(20,8,12,.6);overflow:visible;line-height:1.6;padding-bottom:.3em;}
