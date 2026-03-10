@@ -608,4 +608,9 @@ window.addEventListener('DOMContentLoaded',function(){
   document.getElementById('gal-prev').addEventListener('click',function(){galleryNav(-1);});
   document.getElementById('gal-next').addEventListener('click',function(){galleryNav(1);});
   var go=document.getElementById('gal-outer');if(go){var tx=0;go.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;},{passive:true});go.addEventListener('touchend',function(e){var dx=tx-e.changedTouches[0].clientX;if(Math.abs(dx)>40)galleryNav(dx>0?1:-1);},{passive:true});}
-  document.addEventListener('keydown',function(e){var lb=document.getElementById('lb');if(!lb||!lb.classList.contains('open'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft'){lbIdx=(lbIdx-1+lbImgs.length)%lbImgs.length;var img=document.getElementById('lb-img');if(img)img.src=lbImgs[lbIdx]||'';}if(e.key==='
+  document.addEventListener('keydown',function(e){var lb=document.getElementById('lb');if(!lb||!lb.classList.contains('open'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft'){lbIdx=(lbIdx-1+lbImgs.length)%lbImgs.length;var img=document.getElementById('lb-img');if(img)img.src=lbImgs[lbIdx]||'';}if(e.key==='ArrowRight'){lbIdx=(lbIdx+1)%lbImgs.length;var img2=document.getElementById('lb-img');if(img2)img2.src=lbImgs[lbIdx]||'';}});
+  document.addEventListener('click',function(e){if(!e.target.closest('#lang-wrap'))closeLangDD();});
+});
+</script>
+</body>
+</html>
