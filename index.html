@@ -112,6 +112,7 @@ body{background:var(--cream);color:var(--text);font-family:var(--serif);overflow
 .ss-dot.active{background:var(--gold);transform:scale(1.4);}
 .quote-s{position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 28px;background:linear-gradient(160deg,#FBF0F6,#F5E8F4,#EEE4F2);}
 .qi{position:relative;z-index:1;max-width:700px;padding:0 12px;}
+.qt{font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(1.15rem,2.8vw,1.45rem);color:#3A2510;line-height:2;}
 .qt::before{content:'\201C';font-size:clamp(1.15rem,2.8vw,1.45rem);margin-right:2px;}
 .qt::after{content:'\201D';font-size:clamp(1.15rem,2.8vw,1.45rem);margin-left:2px;}
 .qa{font-family:var(--sans);font-size:.68rem;letter-spacing:2px;color:#1A1A1A;margin-top:16px;font-weight:700;}
@@ -280,6 +281,13 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
 
 <div class="quote-s"><div class="qi"><p class="qt" data-i18n="quoteText"></p><p class="qa">&mdash; Moroni 7:45</p></div></div>
 
+<!-- NEW COUPLE MESSAGE SECTION -->
+<div class="quote-s" style="background:linear-gradient(160deg,#F5EBF0,#EEE0EC,#F2E8F5);border-top:1px solid rgba(200,150,90,.12);border-bottom:1px solid rgba(200,150,90,.12);">
+  <div class="qi">
+    <p class="qt" data-i18n="coupleMessage"></p>
+  </div>
+</div>
+
 <section id="sec-nombram" class="sp sf">
   <svg width="0" height="0" style="position:absolute"><defs><linearGradient id="gld" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#C8860A"/><stop offset="30%" stop-color="#FFD060"/><stop offset="60%" stop-color="#C8860A"/><stop offset="80%" stop-color="#F0C040"/><stop offset="100%" stop-color="#8B5E08"/></linearGradient></defs></svg>
   <svg class="nom-frame-svg" viewBox="0 0 900 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="880" height="580" fill="none" stroke="url(#gld)" stroke-width="2.2" vector-effect="non-scaling-stroke"/><rect x="20" y="17" width="860" height="566" fill="none" stroke="url(#gld)" stroke-width="1" opacity=".5" vector-effect="non-scaling-stroke"/></svg>
@@ -438,6 +446,7 @@ var CFG={
 var T={
 es:{countdown:'Cuenta Regresiva',days:'Dias',hours:'Horas',minutes:'Minutos',seconds:'Segundos',
     quoteText:'Y la caridad es sufrida y es benigna, y no tiene envidia, ni se envanece, no busca lo suyo, no se irrita f\u00e1cilmente, no piensa el mal, no se regocija en la iniquidad, sino se regocija en la verdad; todo lo sufre, todo lo cree, todo lo espera, todo lo soporta.',
+    coupleMessage:'La vida nos ha regalado el amor m\u00e1s hermoso y queremos compartir nuestra alegr\u00eda contigo. Ven a celebrar nuestra boda y a ser parte de esta nueva aventura que comenzamos juntos.',
     nombramTitle:'Nuestras Familias',nmThanks:'Con el amor y bendici\u00f3n de nuestros padres.',
     padresNovia:'Padres de la Novia',padresNovio:'Padres del Novio',
     eventsTitle:'Eventos',eLblAddr:'Direcci\u00f3n',eLblDateTime:'Fecha y Hora',eLblDate:'Fecha',
@@ -451,6 +460,7 @@ es:{countdown:'Cuenta Regresiva',days:'Dias',hours:'Horas',minutes:'Minutos',sec
     nav_home:'Inicio',nav_parents:'Nuestras Familias',nav_dates:'Fechas y Ubicaci\u00f3n',nav_attire:'Vestimenta',nav_gallery:'Galer\u00eda',nav_hotels:'Hospedaje',nav_gifts:'Regalos',nav_rsvp:'Confirmar',navDate:'3 \u00b7 Julio \u00b7 2026'},
 en:{countdown:'Countdown',days:'Days',hours:'Hours',minutes:'Minutes',seconds:'Seconds',
     quoteText:'And charity suffereth long, and is kind, and envieth not, and is not puffed up, seeketh not her own, is not easily provoked, thinketh no evil, and rejoiceth not in iniquity but rejoiceth in the truth, beareth all things, believeth all things, hopeth all things, endureth all things.',
+    coupleMessage:'Life has given us the most beautiful love, and we want to share our joy with you. Come celebrate our wedding and be part of this new adventure we are beginning together.',
     nombramTitle:'Our Families',nmThanks:'With the love and blessing of our parents.',
     padresNovia:"Bride's Parents",padresNovio:"Groom's Parents",
     eventsTitle:'Events',eLblAddr:'Address',eLblDateTime:'Date & Time',eLblDate:'Date',
@@ -464,6 +474,7 @@ en:{countdown:'Countdown',days:'Days',hours:'Hours',minutes:'Minutes',seconds:'S
     nav_home:'Home',nav_parents:'Our Families',nav_dates:'Dates & Location',nav_attire:'Attire',nav_gallery:'Gallery',nav_hotels:'Lodging',nav_gifts:'Gifts',nav_rsvp:'RSVP',navDate:'3 \u00b7 July \u00b7 2026'},
 pa:{countdown:'\u0a09\u0a32\u0a1f\u0a40 \u0a17\u0a3f\u0a23\u0a24\u0a40',days:'\u0a26\u0a3f\u0a28',hours:'\u0a18\u0a70\u0a1f\u0a47',minutes:'\u0a2e\u0a3f\u0a70\u0a1f',seconds:'\u0a38\u0a15\u0a3f\u0a70\u0a1f',
     quoteText:'\u0a05\u0a24\u0a47 \u0a2a\u0a3f\u0a06\u0a30 \u0a38\u0a2c\u0a30 \u0a30\u0a71\u0a16\u0a26\u0a3e \u0a39\u0a48, \u0a05\u0a24\u0a47 \u0a26\u0a3f\u0a06\u0a32\u0a42 \u0a39\u0a48, \u0a05\u0a24\u0a47 \u0a08\u0a30\u0a16\u0a3e \u0a28\u0a39\u0a40\u0a02 \u0a15\u0a30\u0a26\u0a3e, \u0a39\u0a70\u0a15\u0a3e\u0a30 \u0a28\u0a39\u0a40\u0a02 \u0a15\u0a30\u0a26\u0a3e; \u0a06\u0a2a\u0a23\u0a3e \u0a28\u0a39\u0a40\u0a02 \u0a32\u0a71\u0a2d\u0a26\u0a3e, \u0a1c\u0a32\u0a26\u0a40 \u0a28\u0a39\u0a40\u0a02 \u0a2d\u0a5c\u0a15\u0a26\u0a3e, \u0a2c\u0a41\u0a30\u0a3e \u0a28\u0a39\u0a40\u0a02 \u0a38\u0a4b\u0a1a\u0a26\u0a3e; \u0a2c\u0a41\u0a30\u0a3e\u0a88 \u0a35\u0a3f\u0a71\u0a1a \u0a16\u0a41\u0a38\u0a3c \u0a28\u0a39\u0a40\u0a02 \u0a39\u0a41\u0a70\u0a26\u0a3e, \u0a38\u0a17\u0a4b\u0a02 \u0a38\u0a71\u0a1a \u0a35\u0a3f\u0a71\u0a1a \u0a16\u0a41\u0a38\u0a3c \u0a39\u0a41\u0a70\u0a26\u0a3e \u0a39\u0a48; \u0a38\u0a2d \u0a15\u0a41\u0a1d \u0a38\u0a39\u0a3f\u0a70\u0a26\u0a3e, \u0a38\u0a2d \u0a15\u0a41\u0a1d \u0a2e\u0a70\u0a28\u0a26\u0a3e, \u0a38\u0a2d \u0a15\u0a41\u0a1d \u0a06\u0a38 \u0a30\u0a71\u0a16\u0a26\u0a3e, \u0a38\u0a2d \u0a15\u0a41\u0a1d \u0a1d\u0a71\u0a32\u0a26\u0a3e \u0a39\u0a48\u0964',
+    coupleMessage:'\u0a1c\u0a3c\u0a3f\u0a70\u0a26\u0a17\u0a40 \u0a28\u0a47 \u0a38\u0a3c\u0a3e\u0a21\u0a3c\u0a47 \u0a28\u0a42\u0a70 \u0a38\u0a2d \u0a24\u0a4b\u0a02 \u0a38\u0a41\u0a70\u0a26\u0a30 \u0a2a\u0a3f\u0a06\u0a30 \u0a26\u0a3f\u0a71\u0a24\u0a3e \u0a39\u0a48, \u0a05\u0a24\u0a47 \u0a05\u0a38\u0a40\u0a02 \u0a24\u0a41\u0a39\u0a3e\u0a21\u0a3c\u0a47 \u0a28\u0a3e\u0a32 \u0a2a\u0a4d\u0a30\u0a38\u0a70\u0a28\u0a24\u0a3e \u0a38\u0a3c\u0a3e\u0a02\u0a1d\u0a3e \u0a15\u0a30\u0a28\u0a3e \u0a1a\u0a3e\u0a39\u0a41\u0a70\u0a26\u0a47 \u0a39\u0a3e\u0a02\u0964 \u0a38\u0a3c\u0a3e\u0a21\u0a3c\u0a40 \u0a35\u0a3f\u0a06\u0a39 \u0a35\u0a3f\u0a71\u0a1a \u0a06\u0a13 \u0a05\u0a24\u0a47 \u0a09\u0a38 \u0a28\u0a35\u0a40\u0a02 \u0a38\u0a2b\u0a3c\u0a30 \u0a26\u0a3e \u0a39\u0a3f\u0a71\u0a38\u0a3e \u0a2c\u0a23\u0a4b \u0a1c\u0a4b \u0a05\u0a38\u0a40\u0a02 \u0a07\u0a15\u0a71\u0a20\u0a47 \u0a38\u0a3c\u0a41\u0a30\u0a42 \u0a15\u0a30\u0a26\u0a47 \u0a39\u0a3e\u0a02\u0964',
     nombramTitle:'\u0a38\u0a3c\u0a3e\u0a21\u0a3c\u0a47 \u0a2a\u0a30\u0a3f\u0a35\u0a3e\u0a30',nmThanks:'\u0a38\u0a3c\u0a3e\u0a21\u0a3c\u0a47 \u0a2e\u0a3e\u0a24\u0a3e-\u0a2a\u0a3f\u0a24\u0a3e \u0a26\u0a47 \u0a2a\u0a3f\u0a06\u0a30 \u0a05\u0a24\u0a47 \u0a05\u0a38\u0a3c\u0a40\u0a30\u0a35\u0a3e\u0a26 \u0a28\u0a3e\u0a32\u0964',
     padresNovia:'\u0a32\u0a3e\u0a5c\u0a40 \u0a26\u0a47 \u0a2e\u0a3e\u0a24\u0a3e-\u0a2a\u0a3f\u0a24\u0a3e',padresNovio:'\u0a32\u0a3e\u0a5c\u0a47 \u0a26\u0a47 \u0a2e\u0a3e\u0a24\u0a3e-\u0a2a\u0a3f\u0a24\u0a3e',
     eventsTitle:'\u0a38\u0a2e\u0a3e\u0a17\u0a2e',eLblAddr:'\u0a2a\u0a24\u0a3e',eLblDateTime:'\u0a24\u0a3e\u0a30\u0a40\u0a16 \u0a05\u0a24\u0a47 \u0a38\u0a2e\u0a3e\u0a82',eLblDate:'\u0a24\u0a3e\u0a30\u0a40\u0a16',
