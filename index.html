@@ -284,7 +284,21 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
 <!-- NEW COUPLE MESSAGE SECTION -->
 <div class="quote-s" style="background:linear-gradient(160deg,#F5EBF0,#EEE0EC,#F2E8F5);border-top:1px solid rgba(200,150,90,.12);border-bottom:1px solid rgba(200,150,90,.12);">
   <div class="qi">
+    <svg viewBox="0 0 380 24" style="width:min(320px,80vw);display:block;margin:0 auto 22px;" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="12" x2="148" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".6"/>
+      <polygon points="162,12 168,7 174,12 168,17" fill="none" stroke="#C8965A" stroke-width=".8"/>
+      <circle cx="186" cy="12" r="2.5" fill="#C8965A" opacity=".9"/>
+      <polygon points="198,12 204,7 210,12 204,17" fill="none" stroke="#C8965A" stroke-width=".8"/>
+      <line x1="222" y1="12" x2="380" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".6"/>
+    </svg>
     <p class="qt" data-i18n="coupleMessage"></p>
+    <svg viewBox="0 0 380 24" style="width:min(320px,80vw);display:block;margin:22px auto 0;" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="12" x2="148" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".6"/>
+      <polygon points="162,12 168,7 174,12 168,17" fill="none" stroke="#C8965A" stroke-width=".8"/>
+      <circle cx="186" cy="12" r="2.5" fill="#C8965A" opacity=".9"/>
+      <polygon points="198,12 204,7 210,12 204,17" fill="none" stroke="#C8965A" stroke-width=".8"/>
+      <line x1="222" y1="12" x2="380" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".6"/>
+    </svg>
   </div>
 </div>
 
@@ -398,7 +412,7 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
 <footer>
   <a href="https://makinvitations.com" target="_blank" class="f-brand" style="text-decoration:none;">Mak Invitations</a>
   <span class="f-url">makinvitations.com</span>
-  <a href="mailto:makinvitationsmx@gmail.com" style="font-family:var(--sans);font-size:.52rem;letter-spacing:3px;color:rgba(255,255,255,.3);display:block;margin-bottom:14px;text-decoration:none;">makinvitationsmx@gmail.com</a>
+  <a href="/cdn-cgi/l/email-protection#4924282220273f203d283d2026273a2431092e24282025672a2624" style="font-family:var(--sans);font-size:.52rem;letter-spacing:3px;color:rgba(255,255,255,.3);display:block;margin-bottom:14px;text-decoration:none;"><span class="__cf_email__" data-cfemail="3954585250574f504d584d5056574a5441795e54585055175a5654">[email&#160;protected]</span></a>
   <span class="f-couple" id="f-couple"></span>
   <br><a href="admin.html" style="font-size:.42rem;letter-spacing:3px;color:rgba(255,255,255,.1);text-decoration:none;display:inline-block;margin-top:14px;">&#9679;</a>
 </footer>
@@ -408,7 +422,7 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
   <svg id="fmp-pi" width="26" height="26" viewBox="0 0 24 24" fill="#d8809e" style="position:relative;z-index:1;"><path d="M8 5v14l11-7z"/></svg>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 var FIREBASE_CONFIG={apiKey:"AIzaSyC-_EwIbk-2_Dq3e86HCE3CDQIVFxGZiDA",authDomain:"invitationsdatabase.firebaseapp.com",databaseURL:"https://invitationsdatabase-default-rtdb.firebaseio.com",projectId:"invitationsdatabase",storageBucket:"invitationsdatabase.firebasestorage.app",messagingSenderId:"798475793480",appId:"1:798475793480:web:82f45b6449f80c4d00547d"};
 firebase.initializeApp(FIREBASE_CONFIG);
 var db=firebase.database();
@@ -594,9 +608,4 @@ window.addEventListener('DOMContentLoaded',function(){
   document.getElementById('gal-prev').addEventListener('click',function(){galleryNav(-1);});
   document.getElementById('gal-next').addEventListener('click',function(){galleryNav(1);});
   var go=document.getElementById('gal-outer');if(go){var tx=0;go.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;},{passive:true});go.addEventListener('touchend',function(e){var dx=tx-e.changedTouches[0].clientX;if(Math.abs(dx)>40)galleryNav(dx>0?1:-1);},{passive:true});}
-  document.addEventListener('keydown',function(e){var lb=document.getElementById('lb');if(!lb||!lb.classList.contains('open'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft'){lbIdx=(lbIdx-1+lbImgs.length)%lbImgs.length;var img=document.getElementById('lb-img');if(img)img.src=lbImgs[lbIdx]||'';}if(e.key==='ArrowRight'){lbIdx=(lbIdx+1)%lbImgs.length;var img2=document.getElementById('lb-img');if(img2)img2.src=lbImgs[lbIdx]||'';}});
-  document.addEventListener('click',function(e){if(!e.target.closest('#lang-wrap'))closeLangDD();});
-});
-</script>
-</body>
-</html>
+  document.addEventListener('keydown',function(e){var lb=document.getElementById('lb');if(!lb||!lb.classList.contains('open'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft'){lbIdx=(lbIdx-1+lbImgs.length)%lbImgs.length;var img=document.getElementById('lb-img');if(img)img.src=lbImgs[lbIdx]||'';}if(e.key==='
