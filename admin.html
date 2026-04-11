@@ -246,6 +246,14 @@ body{background:#F2EAE6;color:var(--text);font-family:var(--sans);min-height:100
 .tag-add-btn:hover{opacity:.88;}
 .tag-add-btn:disabled{opacity:.35;cursor:default;}
 
+
+/* Lang toggle */
+.lang-toggle{display:flex;align-items:center;gap:0;border:1px solid rgba(200,150,90,.25);border-radius:2px;overflow:hidden;margin-right:8px;}
+.lang-btn{background:none;border:none;color:rgba(200,150,90,.5);font-size:.48rem;letter-spacing:2px;text-transform:uppercase;padding:6px 11px;cursor:pointer;font-family:var(--sans);font-weight:500;transition:all .2s;}
+.lang-btn.active{background:rgba(200,150,90,.15);color:rgba(200,150,90,.95);}
+.lang-btn:hover:not(.active){color:rgba(200,150,90,.75);}
+.lang-divider-v{width:1px;background:rgba(200,150,90,.25);height:20px;}
+
 /* TOAST */
 #toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(80px);background:linear-gradient(135deg,#1A0C10,#2A1018);color:rgba(255,255,255,.9);padding:11px 22px;font-size:.56rem;letter-spacing:2px;text-transform:uppercase;font-family:var(--sans);border-radius:2px;z-index:9999;transition:transform .35s cubic-bezier(.4,0,.2,1);pointer-events:none;box-shadow:0 8px 28px rgba(0,0,0,.4);border:1px solid rgba(200,150,90,.15);}
 #toast.show{transform:translateX(-50%) translateY(0);}
@@ -265,18 +273,18 @@ body{background:#F2EAE6;color:var(--text);font-family:var(--sans);min-height:100
     <div class="login-corner br"></div>
     <div class="login-icon">💍</div>
     <div class="login-title">Xóchitl & Sarbjit</div>
-    <div class="login-sub">Panel de Administración</div>
+    <div class="login-sub" data-i18n="adminPanel">Panel de Administración</div>
     <div class="login-divider"></div>
     <div class="login-field">
       <span class="login-field-icon">👤</span>
-      <input class="login-input" id="login-user" type="text" placeholder="Usuario" autocomplete="off">
+      <input class="login-input" id="login-user" type="text" placeholder="Usuario" data-i18n-ph="user" autocomplete="off">
     </div>
     <div class="login-field">
       <span class="login-field-icon">🔒</span>
-      <input class="login-input" id="login-pass" type="password" placeholder="Contraseña">
+      <input class="login-input" id="login-pass" type="password" placeholder="Contraseña" data-i18n-ph="pass">
     </div>
-    <button class="login-btn" id="login-btn">Ingresar</button>
-    <p class="login-err" id="login-err">Usuario o contraseña incorrectos.</p>
+    <button class="login-btn" id="login-btn" data-i18n="loginBtn">Ingresar</button>
+    <p class="login-err" id="login-err" data-i18n="loginErr">Usuario o contraseña incorrectos.</p>
   </div>
 </div>
 
@@ -290,29 +298,36 @@ body{background:#F2EAE6;color:var(--text);font-family:var(--sans);min-height:100
         <div class="bar-date">3 · VII · 2026 · Admin</div>
       </div>
     </div>
-    <button class="logout-btn" id="logout-btn">↩ Salir</button>
+    <div style="display:flex;align-items:center;gap:0;">
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="lang-es" onclick="setLang('es')">ES</button>
+        <div class="lang-divider-v"></div>
+        <button class="lang-btn" id="lang-en" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="logout-btn" id="logout-btn" data-i18n="logout">↩ Salir</button>
+    </div>
   </div>
 
   <div class="tabs">
-    <button class="tab active" data-tab="guests"><span class="tab-icon">📋</span>Confirmaciones</button>
-    <button class="tab" data-tab="tables"><span class="tab-icon">🪑</span>Mesas</button>
-    <button class="tab" data-tab="scanner"><span class="tab-icon">📷</span>Check-in QR</button>
+    <button class="tab active" data-tab="guests"><span class="tab-icon">📋</span><span data-i18n="tabGuests">Confirmaciones</span></button>
+    <button class="tab" data-tab="tables"><span class="tab-icon">🪑</span><span data-i18n="tabTables">Mesas</span></button>
+    <button class="tab" data-tab="scanner"><span class="tab-icon">📷</span><span data-i18n="tabScanner">Check-in QR</span></button>
   </div>
 
   <!-- ── GUESTS TAB ── -->
   <div id="tab-guests">
     <div class="stats-row">
-      <div class="stat-card"><div class="stat-icon">✉️</div><div class="stat-num" id="st-total">0</div><div class="stat-lbl">Confirmaciones</div></div>
-      <div class="stat-card"><div class="stat-icon">👥</div><div class="stat-num" id="st-adults">0</div><div class="stat-lbl">Total Adultos</div></div>
-      <div class="stat-card"><div class="stat-icon">✅</div><div class="stat-num" id="st-checkin">0</div><div class="stat-lbl">Check-in</div></div>
-      <div class="stat-card"><div class="stat-icon">⏳</div><div class="stat-num" id="st-pending">0</div><div class="stat-lbl">Pendientes</div></div>
+      <div class="stat-card"><div class="stat-icon">✉️</div><div class="stat-num" id="st-total">0</div><div class="stat-lbl" data-i18n="statRSVP">Confirmaciones</div></div>
+      <div class="stat-card"><div class="stat-icon">👥</div><div class="stat-num" id="st-adults">0</div><div class="stat-lbl" data-i18n="statAdults">Total Adultos</div></div>
+      <div class="stat-card"><div class="stat-icon">✅</div><div class="stat-num" id="st-checkin">0</div><div class="stat-lbl" data-i18n="statCheckin">Check-in</div></div>
+      <div class="stat-card"><div class="stat-icon">⏳</div><div class="stat-num" id="st-pending">0</div><div class="stat-lbl" data-i18n="statPending">Pendientes</div></div>
     </div>
     <div class="list-controls">
       <div class="search-wrap">
         <span class="search-icon">🔍</span>
-        <input class="search-input" id="search-input" placeholder="Buscar por nombre o código..." type="text">
+        <input class="search-input" id="search-input" placeholder="Buscar por nombre o código..." data-i18n-ph="searchPh" type="text">
       </div>
-      <button class="filter-btn" id="filter-pending">Solo pendientes</button>
+      <button class="filter-btn" id="filter-pending" data-i18n="filterPending">Solo pendientes</button>
     </div>
     <div class="guest-list" id="guest-list"><div class="loading"></div></div>
   </div>
@@ -323,27 +338,27 @@ body{background:#F2EAE6;color:var(--text);font-family:var(--sans);min-height:100
 
       <!-- Summary -->
       <div class="tables-summary">
-        <div class="tsum-card"><div class="tsum-num" id="ts-tables">0</div><div class="tsum-lbl">Mesas</div></div>
-        <div class="tsum-card"><div class="tsum-num" id="ts-assigned">0</div><div class="tsum-lbl">Asignados</div></div>
-        <div class="tsum-card"><div class="tsum-num" id="ts-seats">0</div><div class="tsum-lbl">Lugares totales</div></div>
+        <div class="tsum-card"><div class="tsum-num" id="ts-tables">0</div><div class="tsum-lbl" data-i18n="tsTables">Mesas</div></div>
+        <div class="tsum-card"><div class="tsum-num" id="ts-assigned">0</div><div class="tsum-lbl" data-i18n="tsAssigned">Asignados</div></div>
+        <div class="tsum-card"><div class="tsum-num" id="ts-seats">0</div><div class="tsum-lbl" data-i18n="tsSeats">Lugares totales</div></div>
       </div>
 
       <!-- Add table form -->
       <div class="add-table-card">
         <div class="add-table-header">
           <span style="font-size:1rem;">🪑</span>
-          <span class="add-table-label">Agregar mesa</span>
+          <span class="add-table-label" data-i18n="addTable">Agregar mesa</span>
         </div>
         <div class="add-table-body">
           <div class="field-group">
-            <span class="field-label">Nombre de la mesa</span>
-            <input class="field-input" id="new-table-name" placeholder="Ej. Mesa 1, Familia, VIP…">
+            <span class="field-label" data-i18n="tableName">Nombre de la mesa</span>
+            <input class="field-input" id="new-table-name" placeholder="Ej. Mesa 1, Familia, VIP…" data-i18n-ph="tableNamePh">
           </div>
           <div class="field-group" style="flex:0 0 auto;">
-            <span class="field-label">Lugares</span>
+            <span class="field-label" data-i18n="seats">Lugares</span>
             <input class="field-input" id="new-table-cap" type="number" min="1" max="50" placeholder="8">
           </div>
-          <button class="add-table-btn" id="add-table-btn">+ Agregar</button>
+          <button class="add-table-btn" id="add-table-btn" data-i18n="addBtn">+ Agregar</button>
         </div>
       </div>
 
@@ -356,8 +371,8 @@ body{background:#F2EAE6;color:var(--text);font-family:var(--sans);min-height:100
   <div id="tab-scanner" style="display:none;">
     <div class="scanner-section">
       <div class="scanner-header">
-        <div class="scanner-title">Escanear QR de Invitado</div>
-        <div class="scanner-sub">Apunta la cámara al código de confirmación</div>
+        <div class="scanner-title" data-i18n="scanTitle">Escanear QR de Invitado</div>
+        <div class="scanner-sub" data-i18n="scanSub">Apunta la cámara al código de confirmación</div>
       </div>
 
       <div class="scanner-card">
@@ -376,18 +391,18 @@ body{background:#F2EAE6;color:var(--text);font-family:var(--sans);min-height:100
         </div>
         <div id="scan-log"></div>
         <div class="scanner-btns">
-          <button class="scan-ctrl primary" id="start-scan-btn">▶ Iniciar Cámara</button>
-          <button class="scan-ctrl" id="stop-scan-btn" style="display:none;">■ Detener</button>
+          <button class="scan-ctrl primary" id="start-scan-btn" data-i18n="scanStart">▶ Iniciar Cámara</button>
+          <button class="scan-ctrl" id="stop-scan-btn" style="display:none;" data-i18n="scanStop">■ Detener</button>
         </div>
       </div>
 
       <div id="scan-result"></div>
 
       <div class="manual-card">
-        <div class="manual-title">Búsqueda manual</div>
+        <div class="manual-title" data-i18n="manualTitle">Búsqueda manual</div>
         <div class="lookup-row">
           <input class="search-input" id="manual-code" placeholder="CONF-XXXXXXXX" style="flex:1;">
-          <button class="scan-ctrl primary" id="manual-lookup-btn" style="flex:0 0 auto;padding:9px 18px;">Buscar</button>
+          <button class="scan-ctrl primary" id="manual-lookup-btn" style="flex:0 0 auto;padding:9px 18px;" data-i18n="manualBtn">Buscar</button>
         </div>
       </div>
     </div>
@@ -511,12 +526,12 @@ function renderGuests(){
   });
   var gl=document.getElementById('guest-list');
   if(!list.length){
-    gl.innerHTML='<div class="empty-state"><div class="empty-icon">'+(allGuests.length?'🔍':'💌')+'</div><p>'+(allGuests.length?'Sin resultados':'Aún no hay confirmaciones')+'</p><small>'+(allGuests.length?'Intenta otra búsqueda':'Las confirmaciones aparecerán aquí')+'</small></div>';
+    gl.innerHTML='<div class="empty-state"><div class="empty-icon">'+(allGuests.length?'🔍':'💌')+'</div><p>'+(allGuests.length?t('noResults'):t('emptyGuests'))+'</p><small>'+(allGuests.length?t('noResultsSub'):t('emptyGuestsSub'))+'</small></div>';
     return;
   }
   gl.innerHTML=list.map(function(g){
     var date=g.fecha?new Date(g.fecha).toLocaleDateString('es-MX',{day:'2-digit',month:'short',year:'numeric'}):'';
-    var badge=g.checkedIn?'<span class="badge-in">✓ Ingresó</span>':'';
+    var badge=g.checkedIn?'<span class="badge-in">'+t('badgeIn')+'</span>':'';
     var msgHtml=g.mensaje?'<div class="guest-msg">'+esc(g.mensaje)+'</div>':'';
 
     // Mesa info
@@ -538,7 +553,7 @@ function renderGuests(){
     var mesaRow=hasTables
       ?'<div class="mesa-assign-row">'
          +'<select class="mesa-select" id="mesa-sel-'+esc(g.confirmacion)+'">'+tableOpts+'</select>'
-         +'<button class="mesa-assign-btn" onclick="assignMesa(\''+esc(g.confirmacion)+'\')">Asignar</button>'
+         +'<button class="mesa-assign-btn" onclick="assignMesa(\''+esc(g.confirmacion)+'\')">'+t('assignBtn')+'</button>'
          +(g.mesa?'<button class="mesa-clear-btn" onclick="clearMesa(\''+esc(g.confirmacion)+'\')">✕</button>':'')
        +'</div>'
       :'';
@@ -548,15 +563,15 @@ function renderGuests(){
       +'<div class="guest-info">'
         +'<div class="guest-name">'+esc(g.nombre)+' '+esc(g.apellido)+badge+'</div>'
         +'<div class="guest-meta">'
-          +'<span class="meta-pill">'+g.adultos+' adulto'+(g.adultos!=1?'s':'')+'</span>'
+          +'<span class="meta-pill">'+g.adultos+' '+(g.adultos!=1?t('adultPlural'):t('adultSingle'))+'</span>'
           +'<span class="meta-pill">'+esc(g.confirmacion)+'</span>'
           +(date?'<span class="meta-pill">'+date+'</span>':'')
           +mesaPill
         +'</div>'+msgHtml+mesaRow
       +'</div>'
       +'<div class="guest-actions">'
-        +'<button class="action-btn check-btn'+(g.checkedIn?' done':'')+'" onclick="toggleCheckIn(\''+esc(g.confirmacion)+'\')">'+(g.checkedIn?'✓ Ingresó':'Check-in')+'</button>'
-        +'<button class="action-btn del-btn" onclick="deleteGuest(\''+esc(g.confirmacion)+'\')">Eliminar</button>'
+        +'<button class="action-btn check-btn'+(g.checkedIn?' done':'')+'" onclick="toggleCheckIn(\''+esc(g.confirmacion)+'\')">'+t(g.checkedIn?'checkinDone':'checkinPending')+'</button>'
+        +'<button class="action-btn del-btn" onclick="deleteGuest(\''+esc(g.confirmacion)+'\')">'+t('delBtn')+'</button>'
       +'</div>'
     +'</div>';
   }).join('');
@@ -577,13 +592,13 @@ function toggleCheckIn(id){
   if(!g)return;
   g.checkedIn=!g.checkedIn;
   saveGuest(g);
-  showToast(g.checkedIn?'✓ Check-in registrado':'Check-in removido');
+  showToast(g.checkedIn?t('toastCheckin'):t('toastUncheck'));
 }
 
 function deleteGuest(id){
-  if(!confirm('¿Eliminar esta confirmación?'))return;
+  if(!confirm(t('confirmDelete')))return;
   deleteGuestFromStorage(id);
-  showToast('Confirmación eliminada');
+  showToast(t('toastDelGuest'));
 }
 
 /* Mesa assignment from guest card */
@@ -603,13 +618,13 @@ function assignMesa(guestId){
     var alreadyHere=g.mesa===tableId;
     var projUsed=alreadyHere?used:(used+gAdults);
     if(projUsed>t.capacidad){
-      if(!confirm('⚠️ Esta asignación excede la capacidad de "'+t.nombre+'" ('+projUsed+'/'+t.capacidad+'). ¿Continuar de todas formas?'))return;
+      if(!confirm(t('confirmOverCap')+' "'+t.nombre+'" ('+projUsed+'/'+t.capacidad+'). '+t('confirmOverCapSuffix')))return;
     }
   }
 
   g.mesa=tableId;
   saveGuest(g);
-  showToast('Mesa asignada: '+(t?t.nombre:tableId));
+  showToast(t('toastMesaSet')+': '+(t?t.nombre:tableId));
 }
 
 function clearMesa(guestId){
@@ -617,7 +632,7 @@ function clearMesa(guestId){
   if(!g)return;
   delete g.mesa;
   saveGuest(g);
-  showToast('Mesa removida');
+  showToast(t('toastMesaCleared'));
 }
 
 document.getElementById('search-input').addEventListener('input',renderGuests);
@@ -649,7 +664,7 @@ function renderTables(){
   document.getElementById('ts-seats').innerHTML=totalSeats;
 
   if(!allTables.length){
-    grid.innerHTML='<div class="empty-state" style="grid-column:1/-1;"><div class="empty-icon">🪑</div><p>Aún no hay mesas</p><small>Agrega la primera mesa arriba</small></div>';
+    grid.innerHTML='<div class="empty-state" style="grid-column:1/-1;"><div class="empty-icon">🪑</div><p>'+t('emptyTables')+'</p><small>'+t('emptyTablesSub')+'</small></div>';
     return;
   }
 
@@ -659,9 +674,9 @@ function renderTables(){
     var unassigned=allGuests.filter(function(g){return !g.mesa;});
     var unassignedOpts=unassigned.length
       ?unassigned.map(function(g){
-          return '<option value="'+esc(g.confirmacion)+'">'+esc(g.nombre)+' '+esc(g.apellido)+' ('+g.adultos+' adlt.)</option>';
+          return '<option value="'+esc(g.confirmacion)+'">'+esc(g.nombre)+' '+esc(g.apellido)+' ('+g.adultos+' '+t('adultShort')+')</option>';
         }).join('')
-      :'<option value="" disabled>— Sin confirmaciones pendientes —</option>';
+      :"<option value=\"\" disabled>"+t('noUnassigned')+"</option>";
     var usedSeats=adultsForTable(t.id);
     var pct=t.capacidad>0?Math.min(100,Math.round(usedSeats/t.capacidad*100)):0;
     var overCap=usedSeats>t.capacidad;
@@ -673,42 +688,42 @@ function renderTables(){
       ?guests.map(function(g){
           return '<div class="table-guest-row">'
             +'<span class="tg-name">'+esc(g.nombre)+' '+esc(g.apellido)+'</span>'
-            +'<span class="tg-adults">'+g.adultos+' adlt.</span>'
+            +'<span class="tg-adults">'+g.adultos+' '+t('adultShort')+'</span>'
             +'<button class="tg-remove" title="Quitar de mesa" onclick="removeFromTable(\''+esc(g.confirmacion)+'\')">✕</button>'
           +'</div>';
         }).join('')
-      :'<div class="table-empty-guests">Sin invitados asignados</div>';
+      :'<div class="table-empty-guests">'+t('tableEmptyGuests')+'</div>';
 
     var overWarn=overCap
-      ?'<div class="overcap-warn">⚠️ Sobrepasado: '+usedSeats+' / '+t.capacidad+' lugares</div>'
+      ?'<div class="overcap-warn">⚠️ '+t('capOver')+': '+usedSeats+' / '+t.capacidad+'</div>'
       :'';
 
     return '<div class="table-card">'
       +'<div class="table-card-top '+topClass+'">'
         +'<div class="table-name-row">'
           +'<input class="table-name-input" id="tname-'+esc(t.id)+'" value="'+esc(t.nombre)+'" onkeydown="if(event.key===\'Enter\')updateTableName(\''+esc(t.id)+'\')" placeholder="Nombre de mesa">'
-          +'<button class="name-save-btn" onclick="updateTableName(\''+esc(t.id)+'\')">✓ Guardar</button>'
-          +'<button class="table-del-btn" onclick="deleteTable(\''+esc(t.id)+'\')">Eliminar</button>'
+          +'<button class="name-save-btn" onclick="updateTableName(\''+esc(t.id)+'\')">'+t('nameSave')+'</button>'
+          +'<button class="table-del-btn" onclick="deleteTable(\''+esc(t.id)+'\')">'+t('tableDelBtn')+'</button>'
         +'</div>'
         +'<div class="table-capacity-row">'
           +'<div class="capacity-bar-wrap"><div class="capacity-bar '+barClass+'" style="width:'+pct+'%"></div></div>'
           +'<span class="capacity-text">'+usedSeats+' / '+t.capacidad+'</span>'
         +'</div>'
         +'<div class="table-edit-cap">'
-          +'<span class="cap-label">Lugares:</span>'
+          +'<span class="cap-label">'+t('capLabel')+'</span>'
           +'<input class="cap-input" id="cap-'+esc(t.id)+'" type="number" min="1" max="100" value="'+t.capacidad+'">'
-          +'<button class="cap-save-btn" onclick="updateCapacity(\''+esc(t.id)+'\')">Guardar</button>'
+          +'<button class="cap-save-btn" onclick="updateCapacity(\''+esc(t.id)+'\')">'+t('capSave')+'</button>'
         +'</div>'
       +'</div>'
       +overWarn
       +'<div class="table-guests">'+guestRows+'</div>'
       +'<div class="table-add-guest">'
-        +'<span class="tag-label">Agregar confirmación</span>'
+        +'<span class="tag-label">'+t('addGuestLabel')+'</span>'
         +'<div class="tag-row">'
           +'<select class="tag-select" id="tag-sel-'+esc(t.id)+'">'
           +unassignedOpts
           +'</select>'
-          +'<button class="tag-add-btn" onclick="assignGuestFromTable(\''+esc(t.id)+'\')">+ Agregar</button>'
+          +'<button class="tag-add-btn" onclick="assignGuestFromTable(\''+esc(t.id)+'\')">'+t('addGuestBtn')+'</button>'
         +'</div>'
       +'</div>'
     +'</div>';
@@ -718,14 +733,14 @@ function renderTables(){
 function addTable(){
   var name=document.getElementById('new-table-name').value.trim();
   var cap=parseInt(document.getElementById('new-table-cap').value);
-  if(!name){showToast('Ingresa un nombre para la mesa');return;}
-  if(!cap||cap<1){showToast('Ingresa un número de lugares válido');return;}
+  if(!name){showToast(t('toastNoName'));return;}
+  if(!cap||cap<1){showToast(t('toastNoCap'));return;}
   var id='TBL-'+Date.now();
   var t={id:id,nombre:name,capacidad:cap};
   saveTable(t).then(function(){
     document.getElementById('new-table-name').value='';
     document.getElementById('new-table-cap').value='';
-    showToast('Mesa "'+name+'" creada');
+    showToast(t('toastTableCreated')+': "'+name+'"');
   }).catch(function(){});
 }
 
@@ -733,22 +748,22 @@ function updateCapacity(tableId){
   var inp=document.getElementById('cap-'+tableId);
   if(!inp)return;
   var cap=parseInt(inp.value);
-  if(!cap||cap<1){showToast('Número inválido');return;}
+  if(!cap||cap<1){showToast(t('toastInvalidCap'));return;}
   var t=allTables.find(function(x){return x.id===tableId;});
   if(!t)return;
   t.capacidad=cap;
-  saveTable(t).then(function(){showToast('Capacidad actualizada');});
+  saveTable(t).then(function(){showToast(t('toastCapUpdated'));});
 }
 
 function updateTableName(tableId){
   var inp=document.getElementById('tname-'+tableId);
   if(!inp)return;
   var name=inp.value.trim();
-  if(!name){showToast('El nombre no puede estar vacío');return;}
+  if(!name){showToast(t('toastInvalidName'));return;}
   var t=allTables.find(function(x){return x.id===tableId;});
   if(!t)return;
   t.nombre=name;
-  saveTable(t).then(function(){showToast('Nombre actualizado');}).catch(function(){});
+  saveTable(t).then(function(){showToast(t('toastNameUpdated'));}).catch(function(){});
 }
 
 function assignGuestFromTable(tableId){
@@ -762,23 +777,23 @@ function assignGuestFromTable(tableId){
     var used=adultsForTable(tableId);
     var gAdults=parseInt(g.adultos)||1;
     if(used+gAdults>t.capacidad){
-      if(!confirm('⚠️ Excede capacidad de "'+t.nombre+'" ('+(used+gAdults)+'/'+t.capacidad+'). ¿Continuar?'))return;
+      if(!confirm(t('confirmOverCap2')+' "'+t.nombre+'" ('+(used+gAdults)+'/'+t.capacidad+'). '+t('confirmOverCap2Suffix')))return;
     }
   }
   g.mesa=tableId;
-  saveGuest(g).then(function(){showToast((t?t.nombre:'Mesa')+': '+g.nombre+' asignado');}).catch(function(){});
+  saveGuest(g).then(function(){showToast((t?t.nombre:'Mesa')+': '+g.nombre+' '+t('toastGuestAdded'));}).catch(function(){});
 }
 
 function deleteTable(tableId){
   var t=allTables.find(function(x){return x.id===tableId;});
   var guestsAssigned=guestsForTable(tableId);
-  var msg='¿Eliminar mesa "'+(t?t.nombre:tableId)+'"?';
-  if(guestsAssigned.length)msg+='\n\n⚠️ Hay '+guestsAssigned.length+' confirmación(es) asignada(s). Se desasignarán.';
+  var msg=t('confirmTableDelete')+' "'+(t?t.nombre:tableId)+'"'+t('confirmTableDeleteSuffix');
+  if(guestsAssigned.length)msg+=t('confirmTableGuests')+' '+guestsAssigned.length+' '+t('confirmTableGuestsB');
   if(!confirm(msg))return;
   // Unassign guests
   var saves=guestsAssigned.map(function(g){delete g.mesa;return saveGuest(g);});
   Promise.all(saves).then(function(){
-    deleteTableFromDB(tableId).then(function(){showToast('Mesa eliminada');});
+    deleteTableFromDB(tableId).then(function(){showToast(t('toastTableDeleted'));});
   });
 }
 
@@ -786,7 +801,7 @@ function removeFromTable(guestId){
   var g=allGuests.find(function(x){return x.confirmacion===guestId;});
   if(!g)return;
   delete g.mesa;
-  saveGuest(g).then(function(){showToast('Invitado removido de la mesa');});
+  saveGuest(g).then(function(){showToast(t('toastGuestRemoved'));});
 }
 
 document.getElementById('add-table-btn').addEventListener('click',addTable);
@@ -812,40 +827,40 @@ function clearScanLog(){logLines=[];var el=document.getElementById('scan-log');i
 async function startScanner(){
   clearScanLog();
   var video=document.getElementById('qr-video');
-  if(typeof jsQR==='undefined'){scanLog('jsQR no cargó','err');showToast('Error: librería QR no disponible');return;}
-  scanLog('jsQR listo','ok');
-  scanLog('Solicitando acceso a cámara...','info');
+  if(typeof jsQR==='undefined'){scanLog(t('scanLog_noLib'),'err');showToast(t('toastQRLib'));return;}
+  scanLog(t('scanLog_jqrReady'),'ok');
+  scanLog(t('scanLog_camReq'),'info');
   try{
     var stream;
-    try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{exact:'environment'},width:{ideal:1280},height:{ideal:720}}});scanLog('Cámara trasera activa','ok');}
+    try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{exact:'environment'},width:{ideal:1280},height:{ideal:720}}});scanLog(t('scanLog_backOk'),'ok');}
     catch(e1){
-      try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'}});scanLog('Cámara trasera (ideal) activa','ok');}
-      catch(e2){stream=await navigator.mediaDevices.getUserMedia({video:true});scanLog('Cámara activa','ok');}
+      try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'}});scanLog(t('scanLog_fallbackOk'),'ok');}
+      catch(e2){stream=await navigator.mediaDevices.getUserMedia({video:true});scanLog(t('scanLog_genericOk'),'ok');}
     }
     scanStream=stream;video.srcObject=stream;video.muted=true;
     await video.play();
     scanActive=true;
     document.getElementById('start-scan-btn').style.display='none';
     document.getElementById('stop-scan-btn').style.display='block';
-    scanLog('Escaneando — acerca el QR','ok');
+    scanLog(t('scanLog_ready'),'ok');
     var canvas=document.createElement('canvas'),ctx=canvas.getContext('2d'),wait=0;
     scanInterval=setInterval(function(){
       if(!scanActive)return;
-      if(video.readyState<video.HAVE_ENOUGH_DATA||video.videoWidth===0){if(++wait%8===0)scanLog('Esperando video...','warn');return;}
+      if(video.readyState<video.HAVE_ENOUGH_DATA||video.videoWidth===0){if(++wait%8===0)scanLog(t('scanLog_waiting'),'warn');return;}
       canvas.width=video.videoWidth;canvas.height=video.videoHeight;
       ctx.drawImage(video,0,0,canvas.width,canvas.height);
       try{
         var img=ctx.getImageData(0,0,canvas.width,canvas.height);
         var code=jsQR(img.data,img.width,img.height,{inversionAttempts:'dontInvert'});
         if(code&&code.data){
-          scanLog('QR detectado: '+code.data.substring(0,32)+'...','ok');
+          scanLog(t('scanLog_detected')+' '+code.data.substring(0,32)+'...','ok');
           var id=extractConfID(code.data);
-          if(id){scanLog('Código válido: '+id,'ok');stopScanner();processCheckIn(id);}
-          else scanLog('No es un código de confirmación','err');
+          if(id){scanLog(t('scanLog_valid')+' '+id,'ok');stopScanner();processCheckIn(id);}
+          else scanLog(t('scanLog_notConf'),'err');
         }
-      }catch(e){scanLog('Error frame: '+e.message,'err');}
+      }catch(e){scanLog(t('scanLog_frameErr')+' '+e.message,'err');}
     },400);
-  }catch(e){scanLog('Error cámara: '+e.message,'err');showToast('Error: '+e.message);}
+  }catch(e){scanLog(t('scanLog_camErr')+' '+e.message,'err');showToast('Error: '+e.message);}
 }
 
 function stopScanner(){
@@ -855,16 +870,16 @@ function stopScanner(){
   var v=document.getElementById('qr-video');if(v)v.srcObject=null;
   document.getElementById('start-scan-btn').style.display='block';
   document.getElementById('stop-scan-btn').style.display='none';
-  scanLog('Escáner detenido','warn');
+  scanLog(t('scanLog_stopped'),'warn');
 }
 
 function extractConfID(text){var m=text.match(/CONF-[A-Z0-9]{8}/);return m?m[0]:null;}
 
 async function processCheckIn(id){
   var g=await getGuest(id);
-  if(!g){showScanResult('error',null,'Código no encontrado: '+id);return;}
-  if(g.checkedIn){showScanResult('warning',g,'Ya registró entrada anteriormente');}
-  else{g.checkedIn=true;await saveGuest(g);showScanResult('success',g,'¡Entrada registrada exitosamente!');}
+  if(!g){showScanResult('error',null,t('resultNotFound')+' '+id);return;}
+  if(g.checkedIn){showScanResult('warning',g,t('resultAlready'));}
+  else{g.checkedIn=true;await saveGuest(g);showScanResult('success',g,t('resultSuccess'));}
 }
 
 function showScanResult(type,g,msg){
@@ -876,7 +891,7 @@ function showScanResult(type,g,msg){
   if(g&&g.mesa){var t=allTables.find(function(x){return x.id===g.mesa;});if(t)mesa='<div class="result-detail" style="margin-top:4px;">🪑 '+esc(t.nombre)+'</div>';}
   el.innerHTML='<div class="result-icon">'+icon+'</div>'
     +(g?'<div class="result-name">'+esc(g.nombre)+' '+esc(g.apellido)+'</div>'
-        +'<div class="result-detail">'+g.adultos+' adulto'+(g.adultos!=1?'s':'')+' &nbsp;·&nbsp; '+esc(g.confirmacion)+'</div>'+mesa:'')
+        +'<div class="result-detail">'+g.adultos+' '+(g.adultos!=1?t('adultPlural'):t('adultSingle'))+' &nbsp;·&nbsp; '+esc(g.confirmacion)+'</div>'+mesa:'')
     +'<div class="result-msg" style="color:'+color+'">'+msg+'</div>';
   setTimeout(function(){el.style.display='none';},5000);
 }
@@ -886,7 +901,7 @@ document.getElementById('stop-scan-btn').onclick=stopScanner;
 document.getElementById('manual-lookup-btn').onclick=function(){
   var raw=document.getElementById('manual-code').value.trim().toUpperCase();
   var id=extractConfID(raw)||raw;
-  if(!id){showToast('Ingresa un código válido');return;}
+  if(!id){showToast(t('toastInvalidCode'));return;}
   processCheckIn(id);document.getElementById('manual-code').value='';
 };
 document.getElementById('manual-code').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('manual-lookup-btn').click();});
@@ -899,6 +914,131 @@ function showToast(msg){
   if(toastTimer)clearTimeout(toastTimer);
   toastTimer=setTimeout(function(){el.classList.remove('show');},2800);
 }
+
+/* ─────────────── i18n ─────────────── */
+var LANG='es';
+var T={
+  es:{
+    logout:'↩ Salir', adminPanel:'Panel de Administración', loginBtn:'Ingresar',
+    loginErr:'Usuario o contraseña incorrectos.',
+    user:'Usuario', pass:'Contraseña',
+    tabGuests:'Confirmaciones', tabTables:'Mesas', tabScanner:'Check-in QR',
+    statRSVP:'Confirmaciones', statAdults:'Total Adultos', statCheckin:'Check-in', statPending:'Pendientes',
+    searchPh:'Buscar por nombre o código...', filterPending:'Solo pendientes',
+    tsTables:'Mesas', tsAssigned:'Asignados', tsSeats:'Lugares totales',
+    addTable:'Agregar mesa', tableName:'Nombre de la mesa', tableNamePh:'Ej. Mesa 1, Familia, VIP…',
+    seats:'Lugares', addBtn:'+ Agregar',
+    scanTitle:'Escanear QR de Invitado', scanSub:'Apunta la cámara al código de confirmación',
+    scanStart:'▶ Iniciar Cámara', scanStop:'■ Detener',
+    manualTitle:'Búsqueda manual', manualBtn:'Buscar',
+    // dynamic toasts & messages
+    toastCheckin:'✓ Check-in registrado', toastUncheck:'Check-in removido',
+    toastDelGuest:'Confirmación eliminada', toastMesaSet:'Mesa asignada',
+    toastMesaCleared:'Mesa removida', toastTableCreated:'Mesa creada',
+    toastCapUpdated:'Capacidad actualizada', toastNameUpdated:'Nombre actualizado',
+    toastTableDeleted:'Mesa eliminada', toastGuestRemoved:'Invitado removido de la mesa',
+    toastGuestAdded:'asignado', toastInvalidName:'El nombre no puede estar vacío',
+    toastInvalidCap:'Número inválido', toastInvalidCode:'Ingresa un código válido',
+    toastNoName:'Ingresa un nombre para la mesa', toastNoCap:'Ingresa un número de lugares válido',
+    toastQRLib:'Error: librería QR no disponible',
+    confirmDelete:'¿Eliminar esta confirmación?',
+    confirmTableDelete:'¿Eliminar mesa', confirmTableDeleteSuffix:'?',
+    confirmTableGuests:'\n\n⚠️ Hay',confirmTableGuestsB:'confirmación(es) asignada(s). Se desasignarán.',
+    confirmOverCap:'⚠️ Esta asignación excede la capacidad de',confirmOverCapSuffix:'¿Continuar de todas formas?',
+    confirmOverCap2:'⚠️ Excede capacidad de',confirmOverCap2Suffix:'¿Continuar?',
+    emptyGuests:'Aún no hay confirmaciones', emptyGuestsSub:'Las confirmaciones aparecerán aquí',
+    noResults:'Sin resultados', noResultsSub:'Intenta otra búsqueda',
+    emptyTables:'Aún no hay mesas', emptyTablesSub:'Agrega la primera mesa arriba',
+    noUnassigned:'— Sin confirmaciones pendientes —',
+    tableEmptyGuests:'Sin invitados asignados',
+    capLabel:'Lugares:', capSave:'Guardar', addGuestLabel:'Agregar confirmación', addGuestBtn:'+ Agregar',
+    nameSave:'✓ Guardar', tableDelBtn:'Eliminar', assignBtn:'Asignar',
+    adultShort:'adlt.', adultSingle:'adulto', adultPlural:'adultos',
+    badgeIn:'✓ Ingresó', checkinDone:'✓ Ingresó', checkinPending:'Check-in', delBtn:'Eliminar',
+    capOver:'Sobrepasado', scanStopped:'Escáner detenido',
+    scanLog_jqrReady:'jsQR listo', scanLog_camReq:'Solicitando acceso a cámara...',
+    scanLog_tryBack:'Intentando cámara trasera...', scanLog_backOk:'Cámara trasera activa',
+    scanLog_fallback:'Fallback a cámara ideal...', scanLog_fallbackOk:'Cámara trasera (ideal) activa',
+    scanLog_generic:'Fallback a cámara genérica...', scanLog_genericOk:'Cámara activa',
+    scanLog_starting:'Iniciando video...', scanLog_ready:'Escaneando — acerca el QR',
+    scanLog_waiting:'Esperando video...', scanLog_detected:'QR detectado:',
+    scanLog_valid:'Código válido:', scanLog_notConf:'No es un código de confirmación',
+    scanLog_frameErr:'Error frame:', scanLog_camErr:'Error cámara:', scanLog_stopped:'Escáner detenido',
+    scanLog_noLib:'jsQR no cargó — verifica tu conexión',
+    resultNotFound:'Código no encontrado:', resultAlready:'Ya registró entrada anteriormente',
+    resultSuccess:'¡Entrada registrada exitosamente!',
+    filterPendingOn:'Solo pendientes',
+  },
+  en:{
+    logout:'↩ Sign out', adminPanel:'Administration Panel', loginBtn:'Sign In',
+    loginErr:'Incorrect username or password.',
+    user:'Username', pass:'Password',
+    tabGuests:'RSVPs', tabTables:'Tables', tabScanner:'QR Check-in',
+    statRSVP:'RSVPs', statAdults:'Total Guests', statCheckin:'Checked In', statPending:'Pending',
+    searchPh:'Search by name or code...', filterPending:'Pending only',
+    tsTables:'Tables', tsAssigned:'Assigned', tsSeats:'Total seats',
+    addTable:'Add table', tableName:'Table name', tableNamePh:'e.g. Table 1, Family, VIP…',
+    seats:'Seats', addBtn:'+ Add',
+    scanTitle:'Scan Guest QR Code', scanSub:'Point the camera at the confirmation code',
+    scanStart:'▶ Start Camera', scanStop:'■ Stop',
+    manualTitle:'Manual lookup', manualBtn:'Search',
+    toastCheckin:'✓ Check-in recorded', toastUncheck:'Check-in removed',
+    toastDelGuest:'RSVP deleted', toastMesaSet:'Table assigned',
+    toastMesaCleared:'Table removed', toastTableCreated:'Table created',
+    toastCapUpdated:'Capacity updated', toastNameUpdated:'Name updated',
+    toastTableDeleted:'Table deleted', toastGuestRemoved:'Guest removed from table',
+    toastGuestAdded:'assigned', toastInvalidName:'Name cannot be empty',
+    toastInvalidCap:'Invalid number', toastInvalidCode:'Enter a valid code',
+    toastNoName:'Enter a table name', toastNoCap:'Enter a valid seat count',
+    toastQRLib:'Error: QR library not available',
+    confirmDelete:'Delete this RSVP?',
+    confirmTableDelete:'Delete table', confirmTableDeleteSuffix:'?',
+    confirmTableGuests:'\n\n⚠️ There are',confirmTableGuestsB:'RSVP(s) assigned. They will be unassigned.',
+    confirmOverCap:'⚠️ This assignment exceeds capacity of',confirmOverCapSuffix:'Continue anyway?',
+    confirmOverCap2:'⚠️ Exceeds capacity of',confirmOverCap2Suffix:'Continue?',
+    emptyGuests:'No RSVPs yet', emptyGuestsSub:'Confirmations will appear here',
+    noResults:'No results', noResultsSub:'Try a different search',
+    emptyTables:'No tables yet', emptyTablesSub:'Add the first table above',
+    noUnassigned:'— No unassigned RSVPs —',
+    tableEmptyGuests:'No guests assigned',
+    capLabel:'Seats:', capSave:'Save', addGuestLabel:'Add RSVP', addGuestBtn:'+ Add',
+    nameSave:'✓ Save', tableDelBtn:'Delete', assignBtn:'Assign',
+    adultShort:'gsts.', adultSingle:'guest', adultPlural:'guests',
+    badgeIn:'✓ Checked in', checkinDone:'✓ Checked in', checkinPending:'Check-in', delBtn:'Delete',
+    capOver:'Over capacity', scanStopped:'Scanner stopped',
+    scanLog_jqrReady:'jsQR ready', scanLog_camReq:'Requesting camera access...',
+    scanLog_tryBack:'Trying rear camera...', scanLog_backOk:'Rear camera active',
+    scanLog_fallback:'Fallback to ideal camera...', scanLog_fallbackOk:'Rear camera (ideal) active',
+    scanLog_generic:'Fallback to generic camera...', scanLog_genericOk:'Camera active',
+    scanLog_starting:'Starting video...', scanLog_ready:'Scanning — bring QR closer',
+    scanLog_waiting:'Waiting for video...', scanLog_detected:'QR detected:',
+    scanLog_valid:'Valid code:', scanLog_notConf:'Not a confirmation code',
+    scanLog_frameErr:'Frame error:', scanLog_camErr:'Camera error:', scanLog_stopped:'Scanner stopped',
+    scanLog_noLib:'jsQR failed to load — check connection',
+    resultNotFound:'Code not found:', resultAlready:'Already checked in previously',
+    resultSuccess:'Entry recorded successfully!',
+    filterPendingOn:'Pending only',
+  }
+};
+
+function t(key){ return (T[LANG]&&T[LANG][key]!==undefined)?T[LANG][key]:(T['es'][key]||key); }
+
+function setLang(lang){
+  LANG=lang;
+  document.getElementById('lang-es').classList.toggle('active',lang==='es');
+  document.getElementById('lang-en').classList.toggle('active',lang==='en');
+  // Update all data-i18n elements
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    el.innerHTML=t(el.getAttribute('data-i18n'));
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(function(el){
+    el.placeholder=t(el.getAttribute('data-i18n-ph'));
+  });
+  // Re-render dynamic content
+  renderGuests();
+  renderTables();
+}
+
 </script>
 </body>
 </html>
