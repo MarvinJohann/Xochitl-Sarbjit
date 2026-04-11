@@ -229,6 +229,23 @@ body{background:#F2EAE6;color:var(--text);font-family:var(--sans);min-height:100
 .manual-title::after{content:'';flex:1;height:1px;background:rgba(200,150,90,.2);}
 .lookup-row{display:flex;gap:8px;}
 
+
+/* Inline name edit */
+.table-name-input{font-family:var(--serif);font-style:italic;font-size:1.25rem;font-weight:600;color:var(--text);border:none;border-bottom:1.5px solid rgba(200,150,90,.4);background:transparent;outline:none;width:100%;min-width:0;padding:2px 4px;transition:border-color .2s;}
+.table-name-input:focus{border-bottom-color:var(--gold);}
+.name-save-btn{background:linear-gradient(135deg,#C8965A,#A8720A);border:none;color:white;font-size:.42rem;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;cursor:pointer;font-family:var(--sans);flex-shrink:0;white-space:nowrap;}
+.name-save-btn:hover{opacity:.88;}
+
+/* Add-guest-to-table panel */
+.table-add-guest{border-top:1px dashed rgba(200,150,90,.18);padding:10px 14px;background:rgba(254,249,246,.6);}
+.tag-label{font-size:.43rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:7px;display:block;}
+.tag-row{display:flex;gap:7px;align-items:center;}
+.tag-select{flex:1;border:1px solid rgba(200,150,90,.28);background:#FDFAF8;padding:6px 10px;font-family:var(--serif);font-style:italic;font-size:.88rem;color:var(--text);outline:none;cursor:pointer;}
+.tag-select:focus{border-color:var(--gold);}
+.tag-add-btn{padding:6px 14px;background:linear-gradient(135deg,#C8965A,#A8720A);border:none;color:white;font-family:var(--sans);font-size:.45rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;flex-shrink:0;}
+.tag-add-btn:hover{opacity:.88;}
+.tag-add-btn:disabled{opacity:.35;cursor:default;}
+
 /* TOAST */
 #toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(80px);background:linear-gradient(135deg,#1A0C10,#2A1018);color:rgba(255,255,255,.9);padding:11px 22px;font-size:.56rem;letter-spacing:2px;text-transform:uppercase;font-family:var(--sans);border-radius:2px;z-index:9999;transition:transform .35s cubic-bezier(.4,0,.2,1);pointer-events:none;box-shadow:0 8px 28px rgba(0,0,0,.4);border:1px solid rgba(200,150,90,.15);}
 #toast.show{transform:translateX(-50%) translateY(0);}
@@ -638,6 +655,13 @@ function renderTables(){
 
   grid.innerHTML=allTables.map(function(t){
     var guests=guestsForTable(t.id);
+    // Guests not yet assigned to any table (for the add-guest dropdown)
+    var unassigned=allGuests.filter(function(g){return !g.mesa;});
+    var unassignedOpts=unassigned.length
+      ?unassigned.map(function(g){
+          return '<option value="'+esc(g.confirmacion)+'">'+esc(g.nombre)+' '+esc(g.apellido)+' ('+g.adultos+' adlt.)</option>';
+        }).join('')
+      :'<option value="" disabled>— Sin confirmaciones pendientes —</option>';
     var usedSeats=adultsForTable(t.id);
     var pct=t.capacidad>0?Math.min(100,Math.round(usedSeats/t.capacidad*100)):0;
     var overCap=usedSeats>t.capacidad;
@@ -662,7 +686,8 @@ function renderTables(){
     return '<div class="table-card">'
       +'<div class="table-card-top '+topClass+'">'
         +'<div class="table-name-row">'
-          +'<span class="table-name">'+esc(t.nombre)+'</span>'
+          +'<input class="table-name-input" id="tname-'+esc(t.id)+'" value="'+esc(t.nombre)+'" onkeydown="if(event.key===\'Enter\')updateTableName(\''+esc(t.id)+'\')" placeholder="Nombre de mesa">'
+          +'<button class="name-save-btn" onclick="updateTableName(\''+esc(t.id)+'\')">✓ Guardar</button>'
           +'<button class="table-del-btn" onclick="deleteTable(\''+esc(t.id)+'\')">Eliminar</button>'
         +'</div>'
         +'<div class="table-capacity-row">'
@@ -677,6 +702,15 @@ function renderTables(){
       +'</div>'
       +overWarn
       +'<div class="table-guests">'+guestRows+'</div>'
+      +'<div class="table-add-guest">'
+        +'<span class="tag-label">Agregar confirmación</span>'
+        +'<div class="tag-row">'
+          +'<select class="tag-select" id="tag-sel-'+esc(t.id)+'">'
+          +unassignedOpts
+          +'</select>'
+          +'<button class="tag-add-btn" onclick="assignGuestFromTable(\''+esc(t.id)+'\')">+ Agregar</button>'
+        +'</div>'
+      +'</div>'
     +'</div>';
   }).join('');
 }
@@ -704,6 +738,35 @@ function updateCapacity(tableId){
   if(!t)return;
   t.capacidad=cap;
   saveTable(t).then(function(){showToast('Capacidad actualizada');});
+}
+
+function updateTableName(tableId){
+  var inp=document.getElementById('tname-'+tableId);
+  if(!inp)return;
+  var name=inp.value.trim();
+  if(!name){showToast('El nombre no puede estar vacío');return;}
+  var t=allTables.find(function(x){return x.id===tableId;});
+  if(!t)return;
+  t.nombre=name;
+  saveTable(t).then(function(){showToast('Nombre actualizado');}).catch(function(){});
+}
+
+function assignGuestFromTable(tableId){
+  var sel=document.getElementById('tag-sel-'+tableId);
+  if(!sel||!sel.value)return;
+  var guestId=sel.value;
+  var g=allGuests.find(function(x){return x.confirmacion===guestId;});
+  if(!g)return;
+  var t=allTables.find(function(x){return x.id===tableId;});
+  if(t){
+    var used=adultsForTable(tableId);
+    var gAdults=parseInt(g.adultos)||1;
+    if(used+gAdults>t.capacidad){
+      if(!confirm('⚠️ Excede capacidad de "'+t.nombre+'" ('+(used+gAdults)+'/'+t.capacidad+'). ¿Continuar?'))return;
+    }
+  }
+  g.mesa=tableId;
+  saveGuest(g).then(function(){showToast((t?t.nombre:'Mesa')+': '+g.nombre+' asignado');}).catch(function(){});
 }
 
 function deleteTable(tableId){
