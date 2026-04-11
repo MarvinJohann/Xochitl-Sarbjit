@@ -395,6 +395,16 @@ var FIREBASE_CONFIG={
 firebase.initializeApp(FIREBASE_CONFIG);
 var db=firebase.database();
 
+/* ── IMPORTANT: Firebase Rules must allow tables/ path
+   Go to Firebase Console → Realtime Database → Rules and set:
+   {
+     "rules": {
+       "rsvp": { ".read": true, ".write": true },
+       "tables": { ".read": true, ".write": true }
+     }
+   }
+   ──────────────────────────────────────────────────── */
+
 /* ─────────────── STATE ─────────────── */
 var allGuests=[],allTables=[],filterPending=false,
     scanActive=false,scanStream=null,scanInterval=null;
@@ -404,8 +414,20 @@ function saveGuest(g){return db.ref('rsvp/'+g.confirmacion).set(g);}
 function deleteGuestFromStorage(id){return db.ref('rsvp/'+id).remove();}
 function getGuest(id){return db.ref('rsvp/'+id).once('value').then(function(s){return s.val();});}
 
-function saveTable(t){return db.ref('tables/'+t.id).set(t);}
-function deleteTableFromDB(id){return db.ref('tables/'+id).remove();}
+function saveTable(t){
+  return db.ref('tables/'+t.id).set(t).catch(function(err){
+    showToast('❌ Error Firebase: '+err.message);
+    console.error('saveTable error:',err);
+    throw err;
+  });
+}
+function deleteTableFromDB(id){
+  return db.ref('tables/'+id).remove().catch(function(err){
+    showToast('❌ Error Firebase: '+err.message);
+    console.error('deleteTable error:',err);
+    throw err;
+  });
+}
 
 /* ─────────────── LOGIN ─────────────── */
 document.getElementById('login-btn').onclick=function(){
@@ -670,7 +692,7 @@ function addTable(){
     document.getElementById('new-table-name').value='';
     document.getElementById('new-table-cap').value='';
     showToast('Mesa "'+name+'" creada');
-  });
+  }).catch(function(){});
 }
 
 function updateCapacity(tableId){
