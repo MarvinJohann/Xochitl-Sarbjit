@@ -205,10 +205,11 @@ body{background:var(--cream);color:var(--text);font-family:var(--serif);overflow
 .cd-section{background:#FEF9F6;padding:46px 20px;text-align:center;box-shadow:0 8px 40px rgba(200,150,90,.18),0 -4px 20px rgba(200,150,90,.1);}
 .cd-num{font-family:var(--serif);font-size:clamp(4rem,12vw,7rem);font-weight:300;font-style:italic;line-height:1;color:#C8860A;filter:drop-shadow(0 4px 12px rgba(160,100,0,.4));letter-spacing:-.02em;}
 .cd-unit{font-family:var(--sans);font-size:.72rem;letter-spacing:2px;text-transform:capitalize!important;font-weight:300;background:linear-gradient(160deg,#E8C068,#C8965A 40%,#F0D080 60%,#A87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-top:6px;}
-footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padding:32px 20px;}
-.f-brand{font-family:var(--script);font-size:2.4rem;color:rgba(255,255,255,.7);display:block;margin-bottom:2px;}
-.f-url{font-family:var(--sans);font-size:.52rem;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.3);display:block;margin-bottom:6px;}
-.f-couple{font-family:var(--sans);font-size:.52rem;letter-spacing:4px;text-transform:uppercase;}
+/* ── FOOTER: light theme ── */
+footer{background:linear-gradient(160deg,#FEF5F0,#F5E8F4);color:rgba(26,12,16,.4);text-align:center;padding:36px 20px 28px;border-top:1px solid rgba(200,150,90,.2);}
+.f-brand{display:block;margin-bottom:8px;}
+.f-url{font-family:var(--sans);font-size:.52rem;letter-spacing:4px;text-transform:uppercase;color:rgba(26,12,16,.35);display:block;margin-bottom:6px;}
+.f-couple{font-family:var(--sans);font-size:.52rem;letter-spacing:4px;text-transform:uppercase;color:rgba(26,12,16,.3);}
 .fdv{width:100%;line-height:0;overflow:hidden;display:block;}.fdv svg{width:100%;display:block;}
 .slim-div{padding:6px 0;text-align:center;}
 </style>
@@ -225,7 +226,6 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
     <span style="position:absolute;bottom:10px;right:10px;width:22px;height:22px;border-bottom:1px solid rgba(200,150,90,.5);border-right:1px solid rgba(200,150,90,.5);display:block;"></span>
     <div style="font-family:'Great Vibes',cursive;font-size:clamp(2.2rem,8vw,3.4rem);background:linear-gradient(160deg,#FFE08A,#C8860A 20%,#F5D060 38%,#A06010 55%,#F0C840 72%,#8B5E08 88%,#E8C050);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2;margin-bottom:4px;">Xóchitl &amp; Sarbjit</div>
     <div id="splash-date" style="font-family:'Montserrat',sans-serif;font-size:.75rem;letter-spacing:6px;font-weight:400;color:#1A1A1A;margin-bottom:28px;min-height:1.2em;">3 &middot; Julio &middot; 2026</div>
-    <!-- date cycling handled in main script -->
     <div style="width:40px;height:1px;background:rgba(200,150,90,.4);margin:0 auto 20px;"></div>
     <div style="display:flex;flex-direction:column;gap:10px;">
       <button id="btn-es" style="padding:12px;background:rgba(200,150,90,.08);border:1px solid rgba(200,150,90,.45);font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#7A4A60;cursor:pointer;display:flex;align-items:center;gap:10px;justify-content:center;"><span>&#127474;&#127485;</span><span style="letter-spacing:2px;">Espa&#241;ol</span></button>
@@ -281,8 +281,6 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
 
 <div class="quote-s" style="padding:70px 28px;">
   <div class="qi" style="position:relative;padding:38px 32px 32px;">
-
-    <!-- Asymmetric corner frame SVG -->
     <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;" viewBox="0 0 500 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="qfg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -292,52 +290,34 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
           <stop offset="100%" stop-color="#8B5E08"/>
         </linearGradient>
       </defs>
-
-      <!-- TOP-LEFT: long horizontal + short vertical -->
       <line x1="0" y1="0" x2="110" y2="0" stroke="url(#qfg)" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
       <line x1="0" y1="0" x2="0" y2="55" stroke="url(#qfg)" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
-      <!-- inner double: starts from same corner, slightly shorter -->
       <line x1="0" y1="5" x2="80" y2="5" stroke="#C8965A" stroke-width=".6" opacity=".5" vector-effect="non-scaling-stroke"/>
       <line x1="5" y1="0" x2="5" y2="38" stroke="#C8965A" stroke-width=".6" opacity=".5" vector-effect="non-scaling-stroke"/>
-
-      <!-- TOP-RIGHT: short horizontal + long vertical -->
       <line x1="500" y1="0" x2="360" y2="0" stroke="url(#qfg)" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
       <line x1="500" y1="0" x2="500" y2="80" stroke="url(#qfg)" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
-      <!-- inner double -->
       <line x1="500" y1="5" x2="392" y2="5" stroke="#C8965A" stroke-width=".6" opacity=".5" vector-effect="non-scaling-stroke"/>
       <line x1="495" y1="0" x2="495" y2="55" stroke="#C8965A" stroke-width=".6" opacity=".5" vector-effect="non-scaling-stroke"/>
-
-      <!-- BOTTOM-LEFT: short horizontal + long vertical -->
       <line x1="0" y1="200" x2="80" y2="200" stroke="url(#qfg)" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
       <line x1="0" y1="200" x2="0" y2="120" stroke="url(#qfg)" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
-      <!-- inner double -->
       <line x1="0" y1="195" x2="55" y2="195" stroke="#C8965A" stroke-width=".6" opacity=".5" vector-effect="non-scaling-stroke"/>
       <line x1="5" y1="200" x2="5" y2="148" stroke="#C8965A" stroke-width=".6" opacity=".5" vector-effect="non-scaling-stroke"/>
-
-      <!-- BOTTOM-RIGHT: long horizontal + short vertical -->
       <line x1="500" y1="200" x2="360" y2="200" stroke="url(#qfg)" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
       <line x1="500" y1="200" x2="500" y2="155" stroke="url(#qfg)" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
-      <!-- inner double -->
       <line x1="500" y1="195" x2="392" y2="195" stroke="#C8965A" stroke-width=".6" opacity=".5" vector-effect="non-scaling-stroke"/>
       <line x1="495" y1="200" x2="495" y2="168" stroke="#C8965A" stroke-width=".6" opacity=".5" vector-effect="non-scaling-stroke"/>
-
-      <!-- center top ornament -->
       <line x1="228" y1="0" x2="244" y2="0" stroke="#C8965A" stroke-width=".7" opacity=".5" vector-effect="non-scaling-stroke"/>
       <circle cx="250" cy="0" r="2" fill="#C8965A" opacity=".6" vector-effect="non-scaling-stroke"/>
       <line x1="256" y1="0" x2="272" y2="0" stroke="#C8965A" stroke-width=".7" opacity=".5" vector-effect="non-scaling-stroke"/>
-
-      <!-- center bottom ornament -->
       <line x1="228" y1="200" x2="244" y2="200" stroke="#C8965A" stroke-width=".7" opacity=".5" vector-effect="non-scaling-stroke"/>
       <circle cx="250" cy="200" r="2" fill="#C8965A" opacity=".6" vector-effect="non-scaling-stroke"/>
       <line x1="256" y1="200" x2="272" y2="200" stroke="#C8965A" stroke-width=".7" opacity=".5" vector-effect="non-scaling-stroke"/>
     </svg>
-
     <p class="qt" data-i18n="quoteText"></p>
     <p class="qa">&mdash; Moroni 7:45</p>
   </div>
 </div>
 
-<!-- NEW COUPLE MESSAGE SECTION -->
 <div class="quote-s" style="background:linear-gradient(160deg,#F5EBF0,#EEE0EC,#F2E8F5);border-top:1px solid rgba(200,150,90,.12);border-bottom:1px solid rgba(200,150,90,.12);">
   <div class="qi">
     <svg viewBox="0 0 380 24" style="width:min(320px,80vw);display:block;margin:0 auto 22px;" xmlns="http://www.w3.org/2000/svg">
@@ -465,12 +445,15 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
   </div>
 </div>
 
+<!-- ── FOOTER: fondo claro, logo imagen, correo sin protección ── -->
 <footer>
-  <a href="https://makinvitations.com" target="_blank" class="f-brand" style="text-decoration:none;">Mak Invitations</a>
+  <a href="https://makinvitations.com" target="_blank" class="f-brand" style="text-decoration:none;">
+    <img src="img/LOGO.png" alt="Mak Invitations" style="height:52px;width:auto;display:block;margin:0 auto;">
+  </a>
   <span class="f-url">makinvitations.com</span>
-  <a href="/cdn-cgi/l/email-protection#4924282220273f203d283d2026273a2431092e24282025672a2624" style="font-family:var(--sans);font-size:.52rem;letter-spacing:3px;color:rgba(255,255,255,.3);display:block;margin-bottom:14px;text-decoration:none;"><span class="__cf_email__" data-cfemail="3954585250574f504d584d5056574a5441795e54585055175a5654">[email&#160;protected]</span></a>
+  <a href="mailto:makinvitationsmx@gmail.com" style="font-family:var(--sans);font-size:.52rem;letter-spacing:3px;color:rgba(26,12,16,.4);display:block;margin-bottom:14px;text-decoration:none;">makinvitationsmx@gmail.com</a>
   <span class="f-couple" id="f-couple"></span>
-  <br><a href="admin.html" style="font-size:.42rem;letter-spacing:3px;color:rgba(255,255,255,.1);text-decoration:none;display:inline-block;margin-top:14px;">&#9679;</a>
+  <br><a href="admin.html" style="font-size:.42rem;letter-spacing:3px;color:rgba(26,12,16,.1);text-decoration:none;display:inline-block;margin-top:14px;">&#9679;</a>
 </footer>
 
 <div id="fmp">
@@ -478,7 +461,7 @@ footer{background:var(--text);color:rgba(255,255,255,.25);text-align:center;padd
   <svg id="fmp-pi" width="26" height="26" viewBox="0 0 24 24" fill="#d8809e" style="position:relative;z-index:1;"><path d="M8 5v14l11-7z"/></svg>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 var FIREBASE_CONFIG={apiKey:"AIzaSyC-_EwIbk-2_Dq3e86HCE3CDQIVFxGZiDA",authDomain:"invitationsdatabase.firebaseapp.com",databaseURL:"https://invitationsdatabase-default-rtdb.firebaseio.com",projectId:"invitationsdatabase",storageBucket:"invitationsdatabase.firebasestorage.app",messagingSenderId:"798475793480",appId:"1:798475793480:web:82f45b6449f80c4d00547d"};
 var db=null;
 try{firebase.initializeApp(FIREBASE_CONFIG);db=firebase.database();}catch(e){console.warn('Firebase init failed:',e.message);}
@@ -544,14 +527,14 @@ en:{countdown:'Countdown',days:'Days',hours:'Hours',minutes:'Minutes',seconds:'S
     nav_home:'Home',nav_parents:'Our Families',nav_dates:'Dates & Location',nav_attire:'Attire',nav_gallery:'Gallery',nav_hotels:'Lodging',nav_gifts:'Gifts',nav_rsvp:'RSVP',navDate:'3 \u00b7 July \u00b7 2026'},
 pa:{countdown:'\u0a09\u0a32\u0a1f\u0a40 \u0a17\u0a3f\u0a23\u0a24\u0a40',days:'\u0a26\u0a3f\u0a28',hours:'\u0a18\u0a70\u0a1f\u0a47',minutes:'\u0a2e\u0a3f\u0a70\u0a1f',seconds:'\u0a38\u0a15\u0a3f\u0a70\u0a1f',
     quoteText:'\u0a05\u0a24\u0a47 \u0a2a\u0a3f\u0a06\u0a30 \u0a38\u0a2c\u0a30 \u0a30\u0a71\u0a16\u0a26\u0a3e \u0a39\u0a48, \u0a05\u0a24\u0a47 \u0a26\u0a3f\u0a06\u0a32\u0a42 \u0a39\u0a48, \u0a05\u0a24\u0a47 \u0a08\u0a30\u0a16\u0a3e \u0a28\u0a39\u0a40\u0a02 \u0a15\u0a30\u0a26\u0a3e, \u0a39\u0a70\u0a15\u0a3e\u0a30 \u0a28\u0a39\u0a40\u0a02 \u0a15\u0a30\u0a26\u0a3e; \u0a06\u0a2a\u0a23\u0a3e \u0a28\u0a39\u0a40\u0a02 \u0a32\u0a71\u0a2d\u0a26\u0a3e, \u0a1c\u0a32\u0a26\u0a40 \u0a28\u0a39\u0a40\u0a02 \u0a2d\u0a5c\u0a15\u0a26\u0a3e, \u0a2c\u0a41\u0a30\u0a3e \u0a28\u0a39\u0a40\u0a02 \u0a38\u0a4b\u0a1a\u0a26\u0a3e; \u0a2c\u0a41\u0a30\u0a3e\u0a88 \u0a35\u0a3f\u0a71\u0a1a \u0a16\u0a41\u0a38\u0a3c \u0a28\u0a39\u0a40\u0a02 \u0a39\u0a41\u0a70\u0a26\u0a3e, \u0a38\u0a17\u0a4b\u0a02 \u0a38\u0a71\u0a1a \u0a35\u0a3f\u0a71\u0a1a \u0a16\u0a41\u0a38\u0a3c \u0a39\u0a41\u0a70\u0a26\u0a3e \u0a39\u0a48; \u0a38\u0a2d \u0a15\u0a41\u0a1d \u0a38\u0a39\u0a3f\u0a70\u0a26\u0a3e, \u0a38\u0a2d \u0a15\u0a41\u0a1d \u0a2e\u0a70\u0a28\u0a26\u0a3e, \u0a38\u0a2d \u0a15\u0a41\u0a1d \u0a06\u0a38 \u0a30\u0a71\u0a16\u0a26\u0a3e, \u0a38\u0a2d \u0a15\u0a41\u0a1d \u0a1d\u0a71\u0a32\u0a26\u0a3e \u0a39\u0a48\u0964',
-    coupleMessage:'\u0a1c\u0a3c\u0a3f\u0a70\u0a26\u0a17\u0a40 \u0a28\u0a47 \u0a38\u0a3c\u0a3e\u0a21\u0a3c\u0a47 \u0a28\u0a42\u0a70 \u0a38\u0a2d \u0a24\u0a4b\u0a02 \u0a38\u0a41\u0a70\u0a26\u0a30 \u0a2a\u0a3f\u0a06\u0a30 \u0a26\u0a3f\u0a71\u0a24\u0a3e \u0a39\u0a48, \u0a05\u0a24\u0a47 \u0a05\u0a38\u0a40\u0a02 \u0a24\u0a41\u0a39\u0a3e\u0a21\u0a3c\u0a47 \u0a28\u0a3e\u0a32 \u0a2a\u0a4d\u0a30\u0a38\u0a70\u0a28\u0a24\u0a3e \u0a38\u0a3c\u0a3e\u0a02\u0a1d\u0a3e \u0a15\u0a30\u0a28\u0a3e \u0a1a\u0a3e\u0a39\u0a41\u0a70\u0a26\u0a47 \u0a39\u0a3e\u0a02\u0964 \u0a38\u0a3c\u0a3e\u0a21\u0a3c\u0a40 \u0a35\u0a3f\u0a06\u0a39 \u0a35\u0a3f\u0a71\u0a1a \u0a06\u0a13 \u0a05\u0a24\u0a47 \u0a09\u0a38 \u0a28\u0a35\u0a40\u0a02 \u0a38\u0a2b\u0a3c\u0a30 \u0a26\u0a3e \u0a39\u0a3f\u0a71\u0a38\u0a3e \u0a2c\u0a23\u0a4b \u0a1c\u0a4b \u0a05\u0a38\u0a40\u0a02 \u0a07\u0a15\u0a71\u0a20\u0a47 \u0a38\u0a3c\u0a41\u0a30\u0a42 \u0a15\u0a30\u0a26\u0a47 \u0a39\u0a3e\u0a02\u0964',
+    coupleMessage:'\u0a1c\u0a3c\u0a3f\u0a70\u0a26\u0a17\u0a40 \u0a28\u0a47 \u0a38\u0a3c\u0a3e\u0a21\u0a3c\u0a47 \u0a28\u0a42\u0a70 \u0a38\u0a2d \u0a24\u0a4b\u0a02 \u0a38\u0a41\u0a70\u0a26\u0a30 \u0a2a\u0a3f\u0a06\u0a30 \u0a26\u0a3f\u0a71\u0a24\u0a3e \u0a39\u0a48, \u0a05\u0a24\u0a47 \u0a05\u0a38\u0a40\u0a02 \u0a24\u0a41\u0a39\u0a3e\u0a21\u0a3c\u0a47 \u0a28\u0a3e\u0a32 \u0a2a\u0a4d\u0a30\u0a38\u0a70\u0a28\u0a24\u0a3e \u0a38\u0a3c\u0a3e\u0a02\u0a1d\u0a3e \u0a15\u0a30\u0a28\u0a3e \u0a1a\u0a3e\u0a39\u0a41\u0a70\u0a26\u0a47 \u0a39\u0a3e\u0a02\u0964 \u0a38\u0a3c\u0a3e\u0a21\u0a3c\u0a40 \u0a35\u0a3f\u0a06\u0a39 \u0a35\u0a3f\u0a71\u0a1a \u0a06\u0a13 \u0a05\u0a24\u0a47 \u0a09\u0a38 \u0a28\u0a35\u0a40\u0a02 \u0a38\u0a2b\u0a3c\u0a30 \u0a26\u0a3e \u0a39\u0a3f\u0a71\u0a38\u0a3a \u0a2c\u0a23\u0a4b \u0a1c\u0a4b \u0a05\u0a38\u0a40\u0a02 \u0a07\u0a15\u0a71\u0a20\u0a47 \u0a38\u0a3c\u0a41\u0a30\u0a42 \u0a15\u0a30\u0a26\u0a47 \u0a39\u0a3e\u0a02\u0964',
     nombramTitle:'\u0a38\u0a3c\u0a3e\u0a21\u0a3c\u0a47 \u0a2a\u0a30\u0a3f\u0a35\u0a3e\u0a30',nmThanks:'\u0a38\u0a3c\u0a3e\u0a21\u0a3c\u0a47 \u0a2e\u0a3e\u0a24\u0a3e-\u0a2a\u0a3f\u0a24\u0a3e \u0a26\u0a47 \u0a2a\u0a3f\u0a06\u0a30 \u0a05\u0a24\u0a47 \u0a05\u0a38\u0a3c\u0a40\u0a30\u0a35\u0a3e\u0a26 \u0a28\u0a3e\u0a32\u0964',
     padresNovia:'\u0a32\u0a3e\u0a5c\u0a40 \u0a26\u0a47 \u0a2e\u0a3e\u0a24\u0a3e-\u0a2a\u0a3f\u0a24\u0a3e',padresNovio:'\u0a32\u0a3e\u0a5c\u0a47 \u0a26\u0a47 \u0a2e\u0a3e\u0a24\u0a3e-\u0a2a\u0a3f\u0a24\u0a3e',
     eventsTitle:'\u0a38\u0a2e\u0a3e\u0a17\u0a2e',eLblAddr:'\u0a2a\u0a24\u0a3e',eLblDateTime:'\u0a24\u0a3e\u0a30\u0a40\u0a16 \u0a05\u0a24\u0a47 \u0a38\u0a2e\u0a3e\u0a82',eLblDate:'\u0a24\u0a3e\u0a30\u0a40\u0a16',
     dresscodeTitle2:'\u0a30\u0a38\u0a2e\u0a40 \u0a2a\u0a39\u0a3f\u0a30\u0a3e\u0a35\u0a3e',dressLadies:'\u0a14\u0a30\u0a24\u0a3e\u0a82',dressGents:'\u0a2e\u0a30\u0a26',vestidoLargo:'\u0a32\u0a70\u0a2c\u0a3e \u0a32\u0a3f\u0a2c\u0a3e\u0a38',traje:'\u0a38\u0a42\u0a1f',avoidColors:'\u0a07\u0a39 \u0a30\u0a70\u0a17 \u0a28\u0a3e \u0a2a\u0a39\u0a3f\u0a28\u0a4b',
     galleryLabel:'\u0a2b\u0a4b\u0a1f\u0a4b \u0a17\u0a48\u0a32\u0a30\u0a40',galleryTitle:'\u0a38\u0a3e\u0a21\u0a3c\u0a47 \u0a2a\u0a32',
     hotelTitle:'\u0a39\u0a4b\u0a1f\u0a32',hotelBody:'\u0a38\u0a3f\u0a2b\u0a3c\u0a3e\u0a30\u0a38\u0a3c \u0a39\u0a4b\u0a1f\u0a32',hotelDir:'\u0a28\u0a15\u0a38\u0a3c\u0a3e',
-    giftsTitle:'\u0a26\u0a3f\u0a32\u0a4b\u0a82 \u0a24\u0a4b\u0a39\u0a2b\u0a3c\u0a3e',giftsBody:'\u0a24\u0a41\u0a39\u0a3e\u0a21\u0a3c\u0a40 \u0a39\u0a3e\u0a1c\u0a3c\u0a30\u0a40',
+    giftsTitle:'\u0a26\u0a3f\u0a32\u0a4b\u0a02 \u0a24\u0a4b\u0a39\u0a2b\u0a3c\u0a3e',giftsBody:'\u0a24\u0a41\u0a39\u0a3e\u0a21\u0a3c\u0a40 \u0a39\u0a3e\u0a1c\u0a3c\u0a30\u0a40',
     giftsOnlyCash:'\u0a05\u0a38\u0a40\u0a02 \u0a38\u0a3f\u0a30\u0a2b\u0a3c \u0a28\u0a15\u0a26 \u0a1c\u0a3e\u0a02 \u0a2c\u0a48\u0a02\u0a15 \u0a1f\u0a30\u0a3e\u0a02\u0a38\u0a2b\u0a3c\u0a30 \u0a24\u0a4b\u0a39\u0a2b\u0a3c\u0a47 \u0a39\u0a40 \u0a38\u0a35\u0a40\u0a15\u0a3e\u0a30 \u0a15\u0a30\u0a3e\u0a02\u0a17\u0a47\u0964',
     rsvpTitle:'\u0a39\u0a3e\u0a1c\u0a3c\u0a30\u0a40 \u0a2a\u0a71\u0a15\u0a40 \u0a15\u0a30\u0a4b',rsvpPre:'\u0a07\u0a38 \u0a24\u0a3e\u0a30\u0a40\u0a16 \u0a24\u0a4b\u0a02 \u0a2a\u0a39\u0a3f\u0a32\u0a3e\u0a82',rsvpFname:'\u0a28\u0a3e\u0a2e',rsvpLname:'\u0a09\u0a2a\u0a28\u0a3e\u0a2e',rsvpMsg:'\u0a38\u0a70\u0a26\u0a47\u0a38\u0a3c\u0a3e',rsvpAdults:'\u0a2c\u0a3e\u0a32\u0a17\u0a3e\u0a82 \u0a26\u0a40 \u0a17\u0a3f\u0a23\u0a24\u0a40',rsvpSubmit:'\u0a2a\u0a41\u0a38\u0a3c\u0a1f\u0a40 \u0a2d\u0a47\u0a1c\u0a4b',rsvpWaTitle:'\u0a38\u0a35\u0a3e\u0a32?',rsvpWaBody:'WhatsApp \u0a24\u0a47 \u0a38\u0a70\u0a2a\u0a30\u0a15 \u0a15\u0a30\u0a4b',rsvp18Notice:'18 \u0a38\u0a3e\u0a32 \u0a24\u0a4b\u0a02 \u0a35\u0a71\u0a21\u0a47',rsvpErrorMsg:'\u0a15\u0a3f\u0a30\u0a2a\u0a3e \u0a2d\u0a30\u0a4b:',
     qrConfirmed:'\u0a2a\u0a71\u0a15\u0a40 \u0a39\u0a4b \u0a17\u0a88!',qrSaveHint:'\u0a05\u0a2a\u0a28\u0a3e QR \u0a15\u0a4b\u0a21 \u0a38\u0a70\u0a2d\u0a3e\u0a32\u0a4b',qrCodeLabel:'\u0a2a\u0a41\u0a38\u0a3c\u0a1f\u0a40 \u0a15\u0a4b\u0a21',qrSaveBtn:'\u0a24\u0a38\u0a35\u0a40\u0a30 \u0a38\u0a70\u0a2d\u0a3e\u0a32\u0a4b',qrEventHint:'\u0a07\u0a38 \u0a24\u0a38\u0a35\u0a40\u0a30 \u0a26\u0a40 \u0a38\u0a2e\u0a3e\u0a17\u0a2e \u0a35\u0a3e\u0a32\u0a47 \u0a26\u0a3f\u0a28 \u0a32\u0a4b\u0a5c \u0a39\u0a4b\u0a35\u0a47\u0a17\u0a40\u0a2c.',
