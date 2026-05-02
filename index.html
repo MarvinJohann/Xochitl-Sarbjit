@@ -164,21 +164,6 @@ body{background:var(--cream);color:var(--text);font-family:var(--serif);overflow
 .rb-stem{position:absolute;width:2px;background:#5A3A10;transform:translateX(-50%);}
 .rb-bulb{position:absolute;width:14px;height:14px;border-radius:50%;background:#FFD060;transform:translateX(-50%);box-shadow:0 0 10px 4px rgba(255,176,0,.85),0 0 22px 7px rgba(255,90,0,.5);}
 @media(max-width:600px){.rb-bulb{width:10px;height:10px;box-shadow:0 0 7px 3px rgba(255,176,0,.8),0 0 14px 5px rgba(255,90,0,.45);}.rb-stem{width:1.5px;}}
-.gfc-wrap{width:220px;height:220px;perspective:900px;cursor:pointer;flex-shrink:0;}
-.gfc-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.4,0,.2,1);}
-.gfc-wrap.flipped .gfc-inner{transform:rotateY(180deg);}
-.gfc-front{position:absolute;inset:0;-webkit-backface-visibility:hidden;backface-visibility:hidden;border:1px solid rgba(200,150,90,.28);background:white;display:flex;flex-direction:column;overflow:hidden;}
-.gfc-back{position:absolute;inset:0;-webkit-backface-visibility:hidden;backface-visibility:hidden;transform:rotateY(180deg);border:1px solid rgba(200,150,90,.28);background:white;display:flex;flex-direction:column;justify-content:center;padding:10px 14px;overflow:hidden;}
-.gfc-icon{flex:1;display:flex;align-items:center;justify-content:center;}
-.gfc-labels{height:74px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;border-top:1px solid rgba(200,150,90,.15);}
-.gfc-hint-row{height:36px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border-top:1px solid rgba(200,150,90,.08);}
-.gfc-line{display:block;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:400;letter-spacing:1.5px;color:#A8720A;line-height:1.7;white-space:nowrap;text-align:center;}
-.gfc-hint-txt{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:300;color:#6A3848;white-space:nowrap;}
-.gfc-field{width:100%;padding:5px 0;border-bottom:1px solid rgba(200,150,90,.12);text-align:center;}
-.gfc-field:last-child{border-bottom:none;}
-.gfc-field-lbl{display:block;font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:2px;color:#A8720A;font-weight:600;margin-bottom:2px;}
-.gfc-field-row{display:flex;align-items:center;justify-content:center;gap:4px;}
-.gfc-copy{background:none;border:none;cursor:pointer;padding:3px;color:rgba(200,150,90,.5);}
 .h-cards{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;max-width:860px;margin:28px auto 0;}
 .h-card{background:white;border:1px solid rgba(200,150,90,.28);padding:22px 18px;min-width:195px;max-width:250px;flex:1;text-align:center;position:relative;overflow:hidden;}
 .h-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--pk));}
@@ -281,14 +266,7 @@ footer{background:linear-gradient(160deg,#FEF5F0,#F5E8F4);color:rgba(26,12,16,.4
 <div class="quote-s" style="padding:70px 28px;">
   <div class="qi" style="position:relative;padding:38px 32px 32px;">
     <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;" viewBox="0 0 500 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="qfg" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#C8860A"/>
-          <stop offset="40%" stop-color="#F0D060"/>
-          <stop offset="70%" stop-color="#C8860A"/>
-          <stop offset="100%" stop-color="#8B5E08"/>
-        </linearGradient>
-      </defs>
+      <defs><linearGradient id="qfg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#C8860A"/><stop offset="40%" stop-color="#F0D060"/><stop offset="70%" stop-color="#C8860A"/><stop offset="100%" stop-color="#8B5E08"/></linearGradient></defs>
       <line x1="0" y1="0" x2="110" y2="0" stroke="url(#qfg)" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
       <line x1="0" y1="0" x2="0" y2="55" stroke="url(#qfg)" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
       <line x1="0" y1="5" x2="80" y2="5" stroke="#C8965A" stroke-width=".6" opacity=".5" vector-effect="non-scaling-stroke"/>
@@ -319,21 +297,9 @@ footer{background:linear-gradient(160deg,#FEF5F0,#F5E8F4);color:rgba(26,12,16,.4
 
 <div class="quote-s" style="background:linear-gradient(160deg,#F5EBF0,#EEE0EC,#F2E8F5);border-top:1px solid rgba(200,150,90,.12);border-bottom:1px solid rgba(200,150,90,.12);">
   <div class="qi">
-    <svg viewBox="0 0 380 24" style="width:min(320px,80vw);display:block;margin:0 auto 22px;" xmlns="http://www.w3.org/2000/svg">
-      <line x1="0" y1="12" x2="148" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".6"/>
-      <polygon points="162,12 168,7 174,12 168,17" fill="none" stroke="#C8965A" stroke-width=".8"/>
-      <circle cx="186" cy="12" r="2.5" fill="#C8965A" opacity=".9"/>
-      <polygon points="198,12 204,7 210,12 204,17" fill="none" stroke="#C8965A" stroke-width=".8"/>
-      <line x1="222" y1="12" x2="380" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".6"/>
-    </svg>
+    <svg viewBox="0 0 380 24" style="width:min(320px,80vw);display:block;margin:0 auto 22px;" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="12" x2="148" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".6"/><polygon points="162,12 168,7 174,12 168,17" fill="none" stroke="#C8965A" stroke-width=".8"/><circle cx="186" cy="12" r="2.5" fill="#C8965A" opacity=".9"/><polygon points="198,12 204,7 210,12 204,17" fill="none" stroke="#C8965A" stroke-width=".8"/><line x1="222" y1="12" x2="380" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".6"/></svg>
     <p class="qt" data-i18n="coupleMessage"></p>
-    <svg viewBox="0 0 380 24" style="width:min(320px,80vw);display:block;margin:22px auto 0;" xmlns="http://www.w3.org/2000/svg">
-      <line x1="0" y1="12" x2="148" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".6"/>
-      <polygon points="162,12 168,7 174,12 168,17" fill="none" stroke="#C8965A" stroke-width=".8"/>
-      <circle cx="186" cy="12" r="2.5" fill="#C8965A" opacity=".9"/>
-      <polygon points="198,12 204,7 210,12 204,17" fill="none" stroke="#C8965A" stroke-width=".8"/>
-      <line x1="222" y1="12" x2="380" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".6"/>
-    </svg>
+    <svg viewBox="0 0 380 24" style="width:min(320px,80vw);display:block;margin:22px auto 0;" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="12" x2="148" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".6"/><polygon points="162,12 168,7 174,12 168,17" fill="none" stroke="#C8965A" stroke-width=".8"/><circle cx="186" cy="12" r="2.5" fill="#C8965A" opacity=".9"/><polygon points="198,12 204,7 210,12 204,17" fill="none" stroke="#C8965A" stroke-width=".8"/><line x1="222" y1="12" x2="380" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".6"/></svg>
   </div>
 </div>
 
@@ -470,21 +436,10 @@ var CFG={
   groomParents:'Jobanjit Singh Kahlon&Devinder Kaur',
   events:[
     {tkLabel:{es:'Sellamiento',en:'Sealing',pa:'\u0a30\u0a38\u0a2e'},photo:'img/coloniajuareztemple.jpeg',
-     /* ── CHANGE 1: updated name, address, hora and map for the temple event ── */
-     name:{
-       es:'Templo de Colonia Ju\u00e1rez Chihuahua',
-       en:'Colonia Ju\u00e1rez Chihuahua Temple',
-       pa:'Colonia Ju\u00e1rez Chihuahua Temple'
-     },
+     name:{es:'Templo de Colonia Ju\u00e1rez Chihuahua',en:'Colonia Ju\u00e1rez Chihuahua Temple',pa:'Colonia Ju\u00e1rez Chihuahua Temple'},
      date:{es:'Jueves, 2 de Julio de 2026',en:'Thursday, July 2nd, 2026',pa:'2 \u0a1c\u0a41\u0a32\u0a3e\u0a08 2026'},
-     addr:{
-       es:'Calles Chihuahua y D\u00edaz, Colonia Ju\u00e1rez, Chih.',
-       en:'Calles Chihuahua y D\u00edaz, Colonia Ju\u00e1rez, Chih.',
-       pa:'Calles Chihuahua y D\u00edaz, Colonia Ju\u00e1rez, Chih.'
-     },
-     hora:'12:00 PM',
-     map:'https://maps.app.goo.gl/eg9KmouoQDHwnmay6',
-     ck:'temple'},
+     addr:{es:'Calles Chihuahua y D\u00edaz, Colonia Ju\u00e1rez, Chih.',en:'Calles Chihuahua y D\u00edaz, Colonia Ju\u00e1rez, Chih.',pa:'Calles Chihuahua y D\u00edaz, Colonia Ju\u00e1rez, Chih.'},
+     hora:'12:00 PM',map:'https://maps.app.goo.gl/eg9KmouoQDHwnmay6',ck:'temple'},
     {tkLabel:{es:'Recepci\u00f3n',en:'Reception',pa:'\u0a38\u0a35\u0a3e\u0a17\u0a24'},photo:'img/church.jpg',
      name:{es:'La Iglesia de Jesucristo de los Santos de los \u00DAltimos D\u00EDas',en:'The Church of Jesus Christ of Latter-day Saints',pa:'\u0a2f\u0a3f\u0a38\u0a42 \u0a2e\u0a38\u0a40\u0a39 \u0a26\u0a40 \u0a1a\u0a30\u0a1a'},
      date:{es:'Viernes, 3 de Julio de 2026',en:'Friday, July 3rd, 2026',pa:'3 \u0a1c\u0a41\u0a32\u0a3e\u0a08 2026'},
@@ -563,29 +518,139 @@ function galGoTo(n){if(n===galIdx)return;galIdx=n;galApplyPos(false);}
 function galleryNav(dir){galIdx=(galIdx+dir+CFG.photos.length)%CFG.photos.length;galApplyPos(false);}
 window.addEventListener('resize',function(){galApplyPos(true);requestAnimationFrame(buildRopeBulbs);},{passive:true});
 function doCopy(btn,val){try{navigator.clipboard.writeText(val);}catch(e){var ta=document.createElement('textarea');ta.value=val;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e2){}document.body.removeChild(ta);}btn.innerHTML='&#10003;';btn.style.color='#C8965A';setTimeout(function(){btn.innerHTML=COPY_SVG;btn.style.color='';},1600);}
-function buildGifts(){var gg=document.getElementById('gifts-grid');if(!gg)return;gg.innerHTML='';var lg=currentLang;var bankIcon='<span style="font-size:2.4rem;line-height:1;">&#x1F3E6;</span>';var ppIcon='<span style="position:relative;display:inline-block;width:52px;height:44px;"><span style="font-family:Arial Black,sans-serif;font-size:2.8rem;font-weight:900;color:#003087;position:absolute;left:0;top:0;line-height:1;">P</span><span style="font-family:Arial Black,sans-serif;font-size:2.8rem;font-weight:900;color:#009cde;position:absolute;left:18px;top:4px;line-height:1;">P</span></span>';
-var GL={
-  cardLine1:{es:'Transferencia',en:'Bank',pa:'\u0a2c\u0a48\u0a02\u0a15'},
-  cardLine2:{es:'Bancaria',en:'Transfer',pa:'\u0a1f\u0a30\u0a3e\u0a02\u0a38\u0a2b\u0a3c\u0a30'},
-  mxLine3:{es:'(M\u00e9xico)',en:'(Mexico)',pa:'(\u0a2e\u0a48\u0a15\u0a38\u0a40\u0a15\u0a4b)'},
-  caLine3:{es:'(Canad\u00e1)',en:'(Canada)',pa:'(\u0a15\u0a28\u0a47\u0a21\u0a3e)'},
-  ppLine1:{es:'Transferencia',en:'PayPal',pa:'\u0a2a\u0a47\u0a05\u0a2a\u0a48\u0a32'},
-  ppLine2:{es:'PayPal',en:'Transfer',pa:'\u0a1f\u0a30\u0a3e\u0a02\u0a38\u0a2b\u0a3c\u0a30'},
-  tapTxt:{es:'Toca para ver datos \u21bb',en:'Tap to see details \u21bb',pa:'\u0a35\u0a47\u0a30\u0a35\u0a47 \u0a32\u0a08 \u0a1f\u0a48\u0a2a \u0a15\u0a30\u0a4b \u21bb'},
-  ppTapTxt:{es:'Toca para ir a PayPal \u2197',en:'Tap to go to PayPal \u2197',pa:'PayPal \u0a32\u0a08 \u0a1c\u0a3e\u0a13 \u2197'},
-  titLb:{es:'Titular',en:'Account holder',pa:'\u0a16\u0a3e\u0a24\u0a3e \u0a27\u0a3e\u0a30\u0a15'},
-  banLb:{es:'Banco',en:'Bank',pa:'\u0a2c\u0a48\u0a02\u0a15'},
-  cardLb:{es:'N\u00famero de Tarjeta',en:'Card number',pa:'\u0a15\u0a3e\u0a30\u0a21 \u0a28\u0a70\u0a2c\u0a30'}
-};
-var tapTxt=GL.tapTxt[lg]||GL.tapTxt.es;var ppTapTxt=GL.ppTapTxt[lg]||GL.ppTapTxt.es;var titLb=GL.titLb[lg]||GL.titLb.es;var banLb=GL.banLb[lg]||GL.banLb.es;var cardLb=GL.cardLb[lg]||GL.cardLb.es;function mkLine(t){var s=document.createElement('span');s.className='gfc-line';s.textContent=t;return s;}function mkHint(t){var d=document.createElement('div');d.className='gfc-hint-row';var s=document.createElement('span');s.className='gfc-hint-txt';s.textContent=t;d.appendChild(s);return d;}function mkFront(icon,l1,l2,l3,hint){var d=document.createElement('div');d.className='gfc-front';var ic=document.createElement('div');ic.className='gfc-icon';ic.innerHTML=icon;var lb=document.createElement('div');lb.className='gfc-labels';lb.appendChild(mkLine(l1));lb.appendChild(mkLine(l2));if(l3)lb.appendChild(mkLine(l3));d.appendChild(ic);d.appendChild(lb);d.appendChild(mkHint(hint));return d;}function mkField(lbl,val,cp){var f=document.createElement('div');f.className='gfc-field';var l=document.createElement('span');l.className='gfc-field-lbl';l.textContent=lbl;var r=document.createElement('div');r.className='gfc-field-row';var v=document.createElement('span');v.className='gfc-field-val';v.textContent=val;r.appendChild(v);if(cp){var b=document.createElement('button');b.className='gfc-copy';b.innerHTML=COPY_SVG;(function(vv,bb){b.addEventListener('click',function(e){e.stopPropagation();doCopy(bb,vv);});})(val,b);r.appendChild(b);}f.appendChild(l);f.appendChild(r);return f;}function mkWrap(front,back,fn){var w=document.createElement('div');w.className='gfc-wrap';var i=document.createElement('div');i.className='gfc-inner';i.appendChild(front);if(back)i.appendChild(back);w.appendChild(i);w.addEventListener('click',function(e){if(e.target.closest('.gfc-copy'))return;if(fn)fn();else w.classList.toggle('flipped');});return w;}var bk1=document.createElement('div');bk1.className='gfc-back';bk1.appendChild(mkField(titLb,'Xochitl Dallany Oyarzabal',true));bk1.appendChild(mkField(banLb,'Banorte',false));bk1.appendChild(mkField(cardLb,'5264 2468 3149 1278',true));gg.appendChild(mkWrap(mkFront(bankIcon,GL.cardLine1[lg]||GL.cardLine1.es,GL.cardLine2[lg]||GL.cardLine2.es,GL.mxLine3[lg]||GL.mxLine3.es,tapTxt),bk1,null));var bk2=document.createElement('div');bk2.className='gfc-back';bk2.appendChild(mkField(titLb,'Sarbjit Singh',true));bk2.appendChild(mkField('Email','Sarbjit.singh.env@outlook.com',true));gg.appendChild(mkWrap(mkFront(bankIcon,GL.cardLine1[lg]||GL.cardLine1.es,GL.cardLine2[lg]||GL.cardLine2.es,GL.caLine3[lg]||GL.caLine3.es,tapTxt),bk2,null));gg.appendChild(mkWrap(mkFront(ppIcon,GL.ppLine1[lg]||GL.ppLine1.es,GL.ppLine2[lg]||GL.ppLine2.es,'',ppTapTxt),null,function(){window.open('https://paypal.me/xochitloyarzabal','_blank');}));}
+
+/* ═══════════════════════════════════════════════════════
+   buildGifts — cards estáticas, sin flip
+   · Banorte logo sobre datos de Xóchitl (México)
+   · Interac logo sobre datos de Sarbjit (Canadá)
+   · Email de Sarbjit en font pequeño para que no se corte
+   · PayPal igual que antes
+═══════════════════════════════════════════════════════ */
+function buildGifts(){
+  var gg=document.getElementById('gifts-grid');
+  if(!gg)return;
+  gg.innerHTML='';
+  var lg=currentLang;
+
+  var GL={
+    cardLine1:{es:'Transferencia',en:'Bank',pa:'\u0a2c\u0a48\u0a02\u0a15'},
+    cardLine2:{es:'Bancaria',en:'Transfer',pa:'\u0a1f\u0a30\u0a3e\u0a02\u0a38\u0a2b\u0a3c\u0a30'},
+    mxLine3:{es:'(M\u00e9xico)',en:'(Mexico)',pa:'(\u0a2e\u0a48\u0a15\u0a38\u0a40\u0a15\u0a4b)'},
+    caLine3:{es:'(Canad\u00e1)',en:'(Canada)',pa:'(\u0a15\u0a28\u0a47\u0a21\u0a3e)'},
+    ppLine1:{es:'Transferencia',en:'PayPal',pa:'\u0a2a\u0a47\u0a05\u0a2a\u0a48\u0a32'},
+    ppLine2:{es:'PayPal',en:'Transfer',pa:'\u0a1f\u0a30\u0a3e\u0a02\u0a38\u0a2b\u0a3c\u0a30'},
+    ppTapTxt:{es:'Toca para ir a PayPal \u2197',en:'Tap to go to PayPal \u2197',pa:'PayPal \u0a32\u0a08 \u0a1c\u0a3e\u0a13 \u2197'},
+    titLb:{es:'Titular',en:'Account holder',pa:'\u0a16\u0a3e\u0a24\u0a3e \u0a27\u0a3e\u0a30\u0a15'},
+    banLb:{es:'Banco',en:'Bank',pa:'\u0a2c\u0a48\u0a02\u0a15'},
+    cardLb:{es:'N\u00famero de Tarjeta',en:'Card number',pa:'\u0a15\u0a3e\u0a30\u0a21 \u0a28\u0a70\u0a2c\u0a30'},
+    emailLb:{es:'Email / Referencia',en:'Email / Reference',pa:'\u0a08\u0a2e\u0a47\u0a32'}
+  };
+
+  var titLb=GL.titLb[lg]||GL.titLb.es;
+  var banLb=GL.banLb[lg]||GL.banLb.es;
+  var cardLb=GL.cardLb[lg]||GL.cardLb.es;
+  var emailLb=GL.emailLb[lg]||GL.emailLb.es;
+
+  var cardBase='background:white;border:1px solid rgba(200,150,90,.28);border-radius:4px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.10);width:min(240px,88vw);display:flex;flex-direction:column;align-items:center;padding:20px 16px 18px;';
+
+  function mkField(lbl,val,smallFont){
+    var wrap=document.createElement('div');
+    wrap.style.cssText='width:100%;padding:6px 0;border-bottom:1px solid rgba(200,150,90,.12);text-align:center;';
+    var l=document.createElement('span');
+    l.style.cssText='display:block;font-family:Montserrat,sans-serif;font-size:9px;letter-spacing:2px;color:#A8720A;font-weight:600;margin-bottom:3px;';
+    l.textContent=lbl;
+    var row=document.createElement('div');
+    row.style.cssText='display:flex;align-items:center;justify-content:center;gap:4px;';
+    var v=document.createElement('span');
+    v.style.cssText='font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:700;color:#3A2510;text-align:center;'+(smallFont?'font-size:.72rem;word-break:break-all;':'font-size:1rem;');
+    v.textContent=val;
+    var btn=document.createElement('button');
+    btn.style.cssText='background:none;border:none;cursor:pointer;padding:3px;color:rgba(200,150,90,.5);flex-shrink:0;';
+    btn.innerHTML=COPY_SVG;
+    (function(vv,bb){btn.addEventListener('click',function(e){e.stopPropagation();doCopy(bb,vv);});})(val,btn);
+    row.appendChild(v);
+    row.appendChild(btn);
+    wrap.appendChild(l);
+    wrap.appendChild(row);
+    return wrap;
+  }
+
+  function mkTitle(line1,line2,line3){
+    var d=document.createElement('div');
+    d.style.cssText='font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:700;font-size:1.05rem;background:linear-gradient(160deg,#C8860A,#8B5E08 30%,#C8860A 60%,#8B5E08);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:12px;line-height:1.5;';
+    d.innerHTML=line1+' '+line2+(line3?'<br><span style="font-size:.78rem;">'+line3+'</span>':'');
+    return d;
+  }
+
+  /* ── CARD 1: Banorte / México ── */
+  var c1=document.createElement('div');
+  c1.style.cssText=cardBase;
+
+  var banorteLogo=document.createElement('div');
+  banorteLogo.style.cssText='margin-bottom:14px;';
+  banorteLogo.innerHTML=
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 38" height="36" style="display:block;margin:0 auto;">'
+    +'<rect width="130" height="38" rx="5" fill="#E30613"/>'
+    +'<text x="65" y="26" font-family="Arial Black,sans-serif" font-size="15" font-weight="900" fill="white" text-anchor="middle" letter-spacing="1.5">BANORTE</text>'
+    +'</svg>';
+
+  c1.appendChild(banorteLogo);
+  c1.appendChild(mkTitle(GL.cardLine1[lg]||GL.cardLine1.es, GL.cardLine2[lg]||GL.cardLine2.es, GL.mxLine3[lg]||GL.mxLine3.es));
+  c1.appendChild(mkField(titLb,'Xochitl Dallany Oyarzabal',false));
+  c1.appendChild(mkField(banLb,'Banorte',false));
+  c1.appendChild(mkField(cardLb,'5264 2468 3149 1278',false));
+  gg.appendChild(c1);
+
+  /* ── CARD 2: Interac / Canadá ── */
+  var c2=document.createElement('div');
+  c2.style.cssText=cardBase;
+
+  var interacLogo=document.createElement('div');
+  interacLogo.style.cssText='margin-bottom:14px;';
+  interacLogo.innerHTML=
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 38" height="36" style="display:block;margin:0 auto;">'
+    +'<rect width="130" height="38" rx="5" fill="#FDB913"/>'
+    +'<text x="65" y="26" font-family="Arial Black,sans-serif" font-size="14" font-weight="900" fill="#231F20" text-anchor="middle" letter-spacing="1">INTERAC</text>'
+    +'</svg>';
+
+  c2.appendChild(interacLogo);
+  c2.appendChild(mkTitle(GL.cardLine1[lg]||GL.cardLine1.es, GL.cardLine2[lg]||GL.cardLine2.es, GL.caLine3[lg]||GL.caLine3.es));
+  c2.appendChild(mkField(titLb,'Sarbjit Singh',false));
+  /* font pequeño para que el email largo no se corte */
+  c2.appendChild(mkField(emailLb,'Sarbjit.singh.env@outlook.com',true));
+  gg.appendChild(c2);
+
+  /* ── CARD 3: PayPal ── */
+  var ppIcon='<span style="position:relative;display:inline-block;width:52px;height:44px;"><span style="font-family:Arial Black,sans-serif;font-size:2.8rem;font-weight:900;color:#003087;position:absolute;left:0;top:0;line-height:1;">P</span><span style="font-family:Arial Black,sans-serif;font-size:2.8rem;font-weight:900;color:#009cde;position:absolute;left:18px;top:4px;line-height:1;">P</span></span>';
+  var ppTapTxt=GL.ppTapTxt[lg]||GL.ppTapTxt.es;
+
+  var c3=document.createElement('div');
+  c3.style.cssText=cardBase+'cursor:pointer;';
+
+  var ppIco=document.createElement('div');
+  ppIco.style.cssText='display:flex;align-items:center;justify-content:center;height:60px;margin-bottom:10px;';
+  ppIco.innerHTML=ppIcon;
+
+  var ppT=document.createElement('div');
+  ppT.style.cssText='font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:700;font-size:1.05rem;background:linear-gradient(160deg,#C8860A,#8B5E08 30%,#C8860A 60%,#8B5E08);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:12px;line-height:1.5;';
+  ppT.innerHTML=(GL.ppLine1[lg]||GL.ppLine1.es)+'<br>'+(GL.ppLine2[lg]||GL.ppLine2.es);
+
+  var ppHint=document.createElement('div');
+  ppHint.style.cssText='font-family:Montserrat,sans-serif;font-size:.6rem;color:#6A3848;text-align:center;margin-top:8px;';
+  ppHint.textContent=ppTapTxt;
+
+  c3.appendChild(ppIco);
+  c3.appendChild(ppT);
+  c3.appendChild(ppHint);
+  c3.addEventListener('click',function(){window.open('https://paypal.me/xochitloyarzabal','_blank');});
+  gg.appendChild(c3);
+}
+
 function buildDress(){var t=T[currentLang]||T.es,c=document.getElementById('dress-cols');if(!c)return;var imgW='min(420px,90vw)';c.innerHTML='<div style="width:'+imgW+';margin:0 auto;"><div style="display:flex;justify-content:space-between;margin-bottom:12px;padding:0 52px;"><div style="text-align:left;"><div class="dress-lbl">'+(t.dressLadies||'Mujeres')+'</div></div><div style="text-align:right;"><div class="dress-lbl">'+(t.dressGents||'Hombres')+'</div></div></div><img src="img/dresscode.png" alt="Dress code" style="width:100%;border-radius:4px;box-shadow:0 8px 32px rgba(0,0,0,.18);display:block;"><div style="display:flex;justify-content:space-between;margin-top:12px;padding:0 52px;"><div style="text-align:left;"><div class="dress-garment">'+(t.vestidoLargo||'Vestido Largo')+'</div></div><div style="text-align:right;"><div class="dress-garment">'+(t.traje||'Traje')+'</div></div></div></div>';var sw=document.getElementById('avoid-sw');if(!sw)return;sw.innerHTML='';CFG.avoidColors.forEach(function(col){var s=document.createElement('div');s.className='av-sw';s.style.background=col;sw.appendChild(s);});}
 function setLang(lang){currentLang=lang;var ll=document.getElementById('lang-label');if(ll)ll.innerHTML={es:'ES',en:'EN',pa:'PA'}[lang]||lang.toUpperCase();['es','en','pa'].forEach(function(l){var el=document.getElementById('lo-'+l);if(el){el.classList.remove('active');if(l===lang)el.classList.add('active');}});var t=T[lang]||T.es;document.querySelectorAll('[data-i18n]').forEach(function(n){var k=n.getAttribute('data-i18n');if(k&&t[k]!=null)n.innerHTML=String(t[k]).replace(/</g,'&lt;').replace(/>/g,'&gt;');});var phMap={'ri-fn':{es:'Nombre',en:'First Name',pa:'\u0a28\u0a3e\u0a2e'},'ri-ln':{es:'Apellido',en:'Last Name',pa:'\u0a09\u0a2a\u0a28\u0a3e\u0a2e'},'ri-msg':{es:'Escribe tu mensaje aqu\u00ed...',en:'Write your message here...',pa:'\u0a38\u0a70\u0a26\u0a47\u0a38\u0a3c\u0a3e...'},'ri-adults':{es:'0',en:'0',pa:'0'}};Object.keys(phMap).forEach(function(id){var el=document.getElementById(id);if(el)el.placeholder=phMap[id][lang]||phMap[id].es;});var dl=document.getElementById('rsvp-dl');if(dl)dl.innerHTML=(t.rsvpPre||'')+' <strong>'+((CFG.rsvpDeadline&&CFG.rsvpDeadline[lang])||'')+'</strong>';var wa=document.getElementById('rwa-link');if(wa)wa.href='https://wa.me/'+CFG.rsvpWa+'?text='+encodeURIComponent('Hola, pregunta sobre la boda de X\u00f3chitl & Sarbjit');
   var nd=document.getElementById('nav-cd-date');if(nd&&t.navDate)nd.innerHTML=t.navDate;buildNombram();buildEvents();buildDress();buildHotels();buildGifts();}
 function buildNombram(){var t=T[currentLang]||T.es,c=document.getElementById('nm-list');if(!c)return;c.innerHTML='';NM_DATA.forEach(function(it,i){var d=document.createElement('div');d.className='nm-item sf';if(i<NM_DATA.length-1)d.style.marginBottom='0';var rawNames=CFG[it.names]||'';var names=rawNames.split('&').map(function(n){return n.trim();}).filter(Boolean);var namesHTML='<p class="nm-names">'+names.join(' &amp; ')+'</p>';var sep=i<NM_DATA.length-1?'<div style="text-align:center;padding:8px 0;"><svg viewBox="0 0 380 24" style="width:min(300px,80vw)" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="12" x2="148" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".4"/><polygon points="162,12 168,7 174,12 168,17" fill="none" stroke="#C8965A" stroke-width=".8"/><circle cx="186" cy="12" r="2.5" fill="#C8965A" opacity=".7"/><polygon points="198,12 204,7 210,12 204,17" fill="none" stroke="#C8965A" stroke-width=".8"/><line x1="222" y1="12" x2="380" y2="12" stroke="#C8965A" stroke-width=".5" opacity=".4"/></svg></div>':'';d.innerHTML='<p class="nm-role">'+(t[it.roleKey]||'')+'</p>'+namesHTML+sep;c.appendChild(d);obsSF(d);});}
-function buildEvents(){var g=document.getElementById('ec-grid');if(!g)return;g.innerHTML='';var t=T[currentLang]||T.es;var PLU='<div class="ecard-plus">+ + + + +</div>';CFG.events.forEach(function(ev){var card=document.createElement('div');card.className='ecard sf';var img=document.createElement('img');img.className='ecard-img';img.src=ev.photo||'';img.alt='';card.appendChild(img);var body=document.createElement('div');body.className='ecard-body';var dateLabel=ev.hora?(t.eLblDateTime||'Fecha y Hora'):(t.eLblDate||'Fecha');var horaHtml=ev.hora?'<p class="ecard-hora">'+ev.hora+'</p>':'';
-  /* ── CHANGE 2: show map button for any event that has a map link, not just reception ── */
-  var mapBtn=ev.map?'<div style="text-align:center;margin-top:10px;"><a href="'+ev.map+'" target="_blank" style="display:inline-flex;align-items:center;gap:7px;padding:8px 18px;background:rgba(139,94,32,.08);border:1.5px solid rgba(139,94,32,.5);border-radius:3px;font-family:var(--sans);font-size:.52rem;letter-spacing:2px;color:#5A3200;text-decoration:none;font-weight:600;">&#x1F4CD; '+(t.hotelDir||'Mapa')+'</a></div>':'';
-  body.innerHTML='<div class="ecard-title">'+((ev.tkLabel&&ev.tkLabel[currentLang])||'')+'</div>'+PLU+'<div class="ecard-row r-name"><p class="ecard-info" style="font-weight:500">'+((ev.name&&ev.name[currentLang])||'')+'</p></div>'+PLU+'<div class="ecard-row r-addr"><p class="ecard-lbl">'+(t.eLblAddr||'')+'</p><p class="ecard-info">'+((ev.addr&&ev.addr[currentLang])||'')+'</p></div>'+PLU+'<div class="ecard-row r-date"><p class="ecard-lbl">'+dateLabel+'</p><p class="ecard-info">'+((ev.date&&ev.date[currentLang])||'')+'</p>'+horaHtml+mapBtn+'</div>';card.appendChild(body);g.appendChild(card);obsSF(card);});}
+function buildEvents(){var g=document.getElementById('ec-grid');if(!g)return;g.innerHTML='';var t=T[currentLang]||T.es;var PLU='<div class="ecard-plus">+ + + + +</div>';CFG.events.forEach(function(ev){var card=document.createElement('div');card.className='ecard sf';var img=document.createElement('img');img.className='ecard-img';img.src=ev.photo||'';img.alt='';card.appendChild(img);var body=document.createElement('div');body.className='ecard-body';var dateLabel=ev.hora?(t.eLblDateTime||'Fecha y Hora'):(t.eLblDate||'Fecha');var horaHtml=ev.hora?'<p class="ecard-hora">'+ev.hora+'</p>':'';var mapBtn=ev.map?'<div style="text-align:center;margin-top:10px;"><a href="'+ev.map+'" target="_blank" style="display:inline-flex;align-items:center;gap:7px;padding:8px 18px;background:rgba(139,94,32,.08);border:1.5px solid rgba(139,94,32,.5);border-radius:3px;font-family:var(--sans);font-size:.52rem;letter-spacing:2px;color:#5A3200;text-decoration:none;font-weight:600;">&#x1F4CD; '+(t.hotelDir||'Mapa')+'</a></div>':'';body.innerHTML='<div class="ecard-title">'+((ev.tkLabel&&ev.tkLabel[currentLang])||'')+'</div>'+PLU+'<div class="ecard-row r-name"><p class="ecard-info" style="font-weight:500">'+((ev.name&&ev.name[currentLang])||'')+'</p></div>'+PLU+'<div class="ecard-row r-addr"><p class="ecard-lbl">'+(t.eLblAddr||'')+'</p><p class="ecard-info">'+((ev.addr&&ev.addr[currentLang])||'')+'</p></div>'+PLU+'<div class="ecard-row r-date"><p class="ecard-lbl">'+dateLabel+'</p><p class="ecard-info">'+((ev.date&&ev.date[currentLang])||'')+'</p>'+horaHtml+mapBtn+'</div>';card.appendChild(body);g.appendChild(card);obsSF(card);});}
 function buildHotels(){var c=document.getElementById('h-cards');if(!c)return;var t=T[currentLang]||T.es;c.innerHTML='';CFG.hotels.forEach(function(h){var s='&#9733;'.repeat(h.stars)+'&#9734;'.repeat(5-h.stars);var card=document.createElement('div');card.className='h-card sf';card.innerHTML='<div class="h-stars">'+s+'</div><div class="h-name">'+h.name+'</div><div class="h-dist">&#x1F4CD; '+((h.dist&&h.dist[currentLang])||'')+'</div><p class="h-note">'+((h.note&&h.note[currentLang])||'')+'</p>';var a=document.createElement('a');a.className='h-link';a.href=h.url||'#';a.target='_blank';a.innerHTML=(t.hotelDir||'')+' &rarr;';card.appendChild(a);c.appendChild(card);obsSF(card);});}
 function buildSS(){var t=document.getElementById('ss-track'),d=document.getElementById('ss-dots');if(!t||!d)return;t.innerHTML='';d.innerHTML='';ssSlides=[];CFG.slideshow.forEach(function(src,i){var s=document.createElement('div');s.className='ss-slide'+(i===0?' active':'');if(src){var img=document.createElement('img');img.src=src;img.alt='';s.appendChild(img);}t.appendChild(s);ssSlides.push(s);var dot=document.createElement('button');dot.className='ss-dot'+(i===0?' active':'');(function(n){dot.addEventListener('click',function(){ssGo(n);});})(i);d.appendChild(dot);});}
 function ssGo(n){if(!ssSlides.length)return;var dots=document.querySelectorAll('.ss-dots .ss-dot');if(ssSlides[ssIdx])ssSlides[ssIdx].classList.remove('active');if(dots[ssIdx])dots[ssIdx].classList.remove('active');ssIdx=(n+ssSlides.length)%ssSlides.length;if(ssSlides[ssIdx])ssSlides[ssIdx].classList.add('active');if(dots[ssIdx])dots[ssIdx].classList.add('active');}
