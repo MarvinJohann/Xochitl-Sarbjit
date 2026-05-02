@@ -346,7 +346,7 @@ footer{background:linear-gradient(160deg,#FEF5F0,#F5E8F4);color:rgba(26,12,16,.4
     <h2 class="sc-ttl" data-i18n="giftsTitle"></h2>
     <p class="bt" data-i18n="giftsBody"></p>
     <p class="lvl4" data-i18n="giftsOnlyCash" style="margin-top:10px;font-style:italic;color:#5A3A30;"></p>
-    <div id="gifts-grid" style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:20px;margin-top:24px;"></div>
+    <div id="gifts-grid" style="display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:20px;margin-top:24px;"></div>
   </div>
 </section>
 
@@ -520,11 +520,10 @@ window.addEventListener('resize',function(){galApplyPos(true);requestAnimationFr
 function doCopy(btn,val){try{navigator.clipboard.writeText(val);}catch(e){var ta=document.createElement('textarea');ta.value=val;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e2){}document.body.removeChild(ta);}btn.innerHTML='&#10003;';btn.style.color='#C8965A';setTimeout(function(){btn.innerHTML=COPY_SVG;btn.style.color='';},1600);}
 
 /* ═══════════════════════════════════════════════════════
-   buildGifts — cards estáticas, sin flip
-   · Banorte logo sobre datos de Xóchitl (México)
-   · Interac logo sobre datos de Sarbjit (Canadá)
-   · Email de Sarbjit en font pequeño para que no se corte
-   · PayPal igual que antes
+   buildGifts — 3 cards uniformes con imágenes reales
+   · img/banorte-og-logo.jpg  → Card Xóchitl (México)
+   · img/InteracLogo.svg.png  → Card Sarbjit (Canadá)
+   · PP letters               → Card PayPal
 ═══════════════════════════════════════════════════════ */
 function buildGifts(){
   var gg=document.getElementById('gifts-grid');
@@ -541,17 +540,48 @@ function buildGifts(){
     ppLine2:{es:'PayPal',en:'Transfer',pa:'\u0a1f\u0a30\u0a3e\u0a02\u0a38\u0a2b\u0a3c\u0a30'},
     ppTapTxt:{es:'Toca para ir a PayPal \u2197',en:'Tap to go to PayPal \u2197',pa:'PayPal \u0a32\u0a08 \u0a1c\u0a3e\u0a13 \u2197'},
     titLb:{es:'Titular',en:'Account holder',pa:'\u0a16\u0a3e\u0a24\u0a3e \u0a27\u0a3e\u0a30\u0a15'},
-    banLb:{es:'Banco',en:'Bank',pa:'\u0a2c\u0a48\u0a02\u0a15'},
     cardLb:{es:'N\u00famero de Tarjeta',en:'Card number',pa:'\u0a15\u0a3e\u0a30\u0a21 \u0a28\u0a70\u0a2c\u0a30'},
     emailLb:{es:'Email / Referencia',en:'Email / Reference',pa:'\u0a08\u0a2e\u0a47\u0a32'}
   };
 
   var titLb=GL.titLb[lg]||GL.titLb.es;
-  var banLb=GL.banLb[lg]||GL.banLb.es;
   var cardLb=GL.cardLb[lg]||GL.cardLb.es;
   var emailLb=GL.emailLb[lg]||GL.emailLb.es;
 
-  var cardBase='background:white;border:1px solid rgba(200,150,90,.28);border-radius:4px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.10);width:min(240px,88vw);display:flex;flex-direction:column;align-items:center;padding:20px 16px 18px;';
+  /* Shared card style — fixed width + min-height so all 3 are uniform */
+  var cardBase='background:white;border:1px solid rgba(200,150,90,.28);border-radius:4px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.10);width:220px;min-height:340px;display:flex;flex-direction:column;align-items:center;';
+
+  /* Square logo image area — identical for all cards */
+  function mkLogoImg(src,alt){
+    var wrap=document.createElement('div');
+    wrap.style.cssText='width:100%;height:120px;background:#f8f4ee;display:flex;align-items:center;justify-content:center;flex-shrink:0;border-bottom:1px solid rgba(200,150,90,.15);overflow:hidden;';
+    var img=document.createElement('img');
+    img.src=src;img.alt=alt;
+    img.style.cssText='width:100%;height:100%;object-fit:contain;padding:16px;';
+    wrap.appendChild(img);
+    return wrap;
+  }
+
+  /* PayPal logo area — same height as image area */
+  function mkPayPalLogo(){
+    var wrap=document.createElement('div');
+    wrap.style.cssText='width:100%;height:120px;background:#f8f4ee;display:flex;align-items:center;justify-content:center;flex-shrink:0;border-bottom:1px solid rgba(200,150,90,.15);';
+    wrap.innerHTML='<span style="position:relative;display:inline-block;width:72px;height:60px;"><span style="font-family:Arial Black,sans-serif;font-size:3.6rem;font-weight:900;color:#003087;position:absolute;left:0;top:0;line-height:1;">P</span><span style="font-family:Arial Black,sans-serif;font-size:3.6rem;font-weight:900;color:#009cde;position:absolute;left:24px;top:5px;line-height:1;">P</span></span>';
+    return wrap;
+  }
+
+  function mkBody(){
+    var d=document.createElement('div');
+    d.style.cssText='padding:16px 16px 18px;width:100%;display:flex;flex-direction:column;align-items:center;flex:1;';
+    return d;
+  }
+
+  function mkTitle(line1,line2,line3){
+    var d=document.createElement('div');
+    d.style.cssText='font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:700;font-size:1rem;background:linear-gradient(160deg,#C8860A,#8B5E08 30%,#C8860A 60%,#8B5E08);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:12px;line-height:1.5;';
+    d.innerHTML=line1+' '+line2+(line3?'<br><span style="font-size:.78rem;">'+line3+'</span>':'');
+    return d;
+  }
 
   function mkField(lbl,val,smallFont){
     var wrap=document.createElement('div');
@@ -568,80 +598,47 @@ function buildGifts(){
     btn.style.cssText='background:none;border:none;cursor:pointer;padding:3px;color:rgba(200,150,90,.5);flex-shrink:0;';
     btn.innerHTML=COPY_SVG;
     (function(vv,bb){btn.addEventListener('click',function(e){e.stopPropagation();doCopy(bb,vv);});})(val,btn);
-    row.appendChild(v);
-    row.appendChild(btn);
-    wrap.appendChild(l);
-    wrap.appendChild(row);
+    row.appendChild(v);row.appendChild(btn);
+    wrap.appendChild(l);wrap.appendChild(row);
     return wrap;
-  }
-
-  function mkTitle(line1,line2,line3){
-    var d=document.createElement('div');
-    d.style.cssText='font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:700;font-size:1.05rem;background:linear-gradient(160deg,#C8860A,#8B5E08 30%,#C8860A 60%,#8B5E08);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:12px;line-height:1.5;';
-    d.innerHTML=line1+' '+line2+(line3?'<br><span style="font-size:.78rem;">'+line3+'</span>':'');
-    return d;
   }
 
   /* ── CARD 1: Banorte / México ── */
   var c1=document.createElement('div');
   c1.style.cssText=cardBase;
-
-  var banorteLogo=document.createElement('div');
-  banorteLogo.style.cssText='margin-bottom:14px;';
-  banorteLogo.innerHTML=
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 38" height="36" style="display:block;margin:0 auto;">'
-    +'<rect width="130" height="38" rx="5" fill="#E30613"/>'
-    +'<text x="65" y="26" font-family="Arial Black,sans-serif" font-size="15" font-weight="900" fill="white" text-anchor="middle" letter-spacing="1.5">BANORTE</text>'
-    +'</svg>';
-
-  c1.appendChild(banorteLogo);
-  c1.appendChild(mkTitle(GL.cardLine1[lg]||GL.cardLine1.es, GL.cardLine2[lg]||GL.cardLine2.es, GL.mxLine3[lg]||GL.mxLine3.es));
-  c1.appendChild(mkField(titLb,'Xochitl Dallany Oyarzabal',false));
-  c1.appendChild(mkField(banLb,'Banorte',false));
-  c1.appendChild(mkField(cardLb,'5264 2468 3149 1278',false));
+  c1.appendChild(mkLogoImg('img/banorte-og-logo.jpg','Banorte'));
+  var b1=mkBody();
+  b1.appendChild(mkTitle(GL.cardLine1[lg]||GL.cardLine1.es, GL.cardLine2[lg]||GL.cardLine2.es, GL.mxLine3[lg]||GL.mxLine3.es));
+  b1.appendChild(mkField(titLb,'Xochitl Dallany Oyarzabal',false));
+  b1.appendChild(mkField(cardLb,'5264 2468 3149 1278',false));
+  c1.appendChild(b1);
   gg.appendChild(c1);
 
   /* ── CARD 2: Interac / Canadá ── */
   var c2=document.createElement('div');
   c2.style.cssText=cardBase;
-
-  var interacLogo=document.createElement('div');
-  interacLogo.style.cssText='margin-bottom:14px;';
-  interacLogo.innerHTML=
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 38" height="36" style="display:block;margin:0 auto;">'
-    +'<rect width="130" height="38" rx="5" fill="#FDB913"/>'
-    +'<text x="65" y="26" font-family="Arial Black,sans-serif" font-size="14" font-weight="900" fill="#231F20" text-anchor="middle" letter-spacing="1">INTERAC</text>'
-    +'</svg>';
-
-  c2.appendChild(interacLogo);
-  c2.appendChild(mkTitle(GL.cardLine1[lg]||GL.cardLine1.es, GL.cardLine2[lg]||GL.cardLine2.es, GL.caLine3[lg]||GL.caLine3.es));
-  c2.appendChild(mkField(titLb,'Sarbjit Singh',false));
-  /* font pequeño para que el email largo no se corte */
-  c2.appendChild(mkField(emailLb,'Sarbjit.singh.env@outlook.com',true));
+  c2.appendChild(mkLogoImg('img/InteracLogo.svg.png','Interac'));
+  var b2=mkBody();
+  b2.appendChild(mkTitle(GL.cardLine1[lg]||GL.cardLine1.es, GL.cardLine2[lg]||GL.cardLine2.es, GL.caLine3[lg]||GL.caLine3.es));
+  b2.appendChild(mkField(titLb,'Sarbjit Singh',false));
+  b2.appendChild(mkField(emailLb,'Sarbjit.singh.env@outlook.com',true));
+  c2.appendChild(b2);
   gg.appendChild(c2);
 
   /* ── CARD 3: PayPal ── */
-  var ppIcon='<span style="position:relative;display:inline-block;width:52px;height:44px;"><span style="font-family:Arial Black,sans-serif;font-size:2.8rem;font-weight:900;color:#003087;position:absolute;left:0;top:0;line-height:1;">P</span><span style="font-family:Arial Black,sans-serif;font-size:2.8rem;font-weight:900;color:#009cde;position:absolute;left:18px;top:4px;line-height:1;">P</span></span>';
   var ppTapTxt=GL.ppTapTxt[lg]||GL.ppTapTxt.es;
-
   var c3=document.createElement('div');
   c3.style.cssText=cardBase+'cursor:pointer;';
-
-  var ppIco=document.createElement('div');
-  ppIco.style.cssText='display:flex;align-items:center;justify-content:center;height:60px;margin-bottom:10px;';
-  ppIco.innerHTML=ppIcon;
-
+  c3.appendChild(mkPayPalLogo());
+  var b3=mkBody();
   var ppT=document.createElement('div');
-  ppT.style.cssText='font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:700;font-size:1.05rem;background:linear-gradient(160deg,#C8860A,#8B5E08 30%,#C8860A 60%,#8B5E08);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:12px;line-height:1.5;';
+  ppT.style.cssText='font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:700;font-size:1rem;background:linear-gradient(160deg,#C8860A,#8B5E08 30%,#C8860A 60%,#8B5E08);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:12px;line-height:1.5;';
   ppT.innerHTML=(GL.ppLine1[lg]||GL.ppLine1.es)+'<br>'+(GL.ppLine2[lg]||GL.ppLine2.es);
-
   var ppHint=document.createElement('div');
   ppHint.style.cssText='font-family:Montserrat,sans-serif;font-size:.6rem;color:#6A3848;text-align:center;margin-top:8px;';
   ppHint.textContent=ppTapTxt;
-
-  c3.appendChild(ppIco);
-  c3.appendChild(ppT);
-  c3.appendChild(ppHint);
+  b3.appendChild(ppT);b3.appendChild(ppHint);
+  c3.appendChild(b3);
   c3.addEventListener('click',function(){window.open('https://paypal.me/xochitloyarzabal','_blank');});
   gg.appendChild(c3);
 }
